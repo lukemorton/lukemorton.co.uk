@@ -1,4 +1,5 @@
-/vendor/
+/vendor/*
+!/vendor/system
 /composer.phar
 /composer.lock
 .DS_Store
