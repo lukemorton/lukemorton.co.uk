@@ -1,0 +1,73 @@
+<h1>
+  {{title}}
+</h1>
+
+<p class="credit">
+  <em>By Luke Morton</em>
+</p>
+
+<p>
+  Like both the atoms that make us and the systems that comprise the universe in
+  which we live, the Internet is a complex organism that we explore daily.
+</p>
+
+<p>
+  Here you will find a collection of my thoughts on the Internet and the systems
+  that make it so complex. You will also find some of those thoughts realised in
+  the form of open source code. Hopefully the resources contained within these
+  HTML walls will encourage you to explore for yourself this rich and
+  interesting landscape.
+</p>
+
+<p>
+  You can find a little more about me <a href="{{about_url}}">here</a> and
+  please do get in touch via twitter
+  <a href="{{twitter.url}}">{{twitter.handle}}</a>.
+</p>
+
+<p>
+  Finally, everything you find here is yours to keep unless licensed otherwise.
+</p>
+
+<h2>
+  Thoughts
+</h2>
+
+<ul>
+  {{#thoughts}}
+    <li>
+      <h4>
+        <a href="{{href}}">{{title}}</a>
+      </h4>
+
+      <p>
+        <em>Updated on {{updated}}</em><br />
+
+        {{intro}}
+      </p>
+    </li>
+  {{/thoughts}}
+</ul>
+
+<h2>
+  Open Source Projects
+</h2>
+
+<ul>
+  {{#projects}}
+    <li>
+      <h4>
+        <a href="{{href}}">{{name}}</a>
+      </h4>
+
+      <p>
+        {{desc}}
+      </p>
+    </li>
+  {{/projects}}
+</ul>
+
+<p>
+  You can find even more of my open source work on my
+  <a href="{{github_href}}">GitHub profile</a>.
+</p>
