@@ -8,3 +8,6 @@ production:
 
 deploy:
 	ansible-playbook private/ansible/deploy.yml -i private/ansible/production -l production
+
+dev:
+	php -S localhost:8000 -t public/ public/index.php
