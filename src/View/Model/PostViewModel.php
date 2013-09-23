@@ -11,7 +11,7 @@ class PostViewModel extends AbstractViewModel
 		return [
 			'title' => $data['post']['title'],
 			'content' => $data['post']['content'],
-			'updated' => $this->formatted_date($data['post']['updated']),
+			'created' => $this->formatted_date($data['post']['created']),
 			'index_url' => $data['index_url'],
 		];
 	}

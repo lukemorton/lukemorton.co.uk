@@ -17,18 +17,22 @@ class PostsIndexDataModel extends AbstractDataModel
                 dirname($posts_dir_path));
 
         foreach ($posts_dir as $_file) {
-            $posts[] =
+            $basename = $_file->getBasename('.md');
+            list($y, $m, $d) = explode('-', $basename, 4);
+
+            $posts[$basename] =
                 $this->title_and_intro_from_markdown_file(
                     $data['markdown'],
                     $_file)
                 + [
-                    'filename' => $_file->getFilename(),
-                    'slug' => $_file->getBasename('.md'),
-                    'updated' => $_file->getMTime(),
+                    'slug' => $basename,
+                    'created' => strtotime("{$y}-{$m}-{$d}"),
                 ];
         }
 
-        return compact('posts');
+        krsort($posts);
+
+        return array('posts' => array_values($posts));
     }
 
     private function title_from_markdown_file($file)

@@ -32,7 +32,7 @@ class IndexViewModel extends AbstractViewModel
 			array_map(
 				function ($post)
 				{
-					$post['updated'] = $this->formatted_date($post['updated']);
+					$post['created'] = $this->formatted_date($post['created']);
 					$post['href'] = '/thoughts/'.$post['slug'];
 					return $post;
 				},

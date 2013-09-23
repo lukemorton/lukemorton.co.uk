@@ -8,6 +8,8 @@ class PostDataModel extends AbstractDataModel
 {
     public function as_array($data)
     {
+        list($y, $m, $d) = explode('-', $data['slug'], 4);
+
         $post_path = $data['root'].'/posts/'.$data['slug'].'.md';
 
         if ( ! file_exists($post_path)) {
@@ -24,7 +26,7 @@ class PostDataModel extends AbstractDataModel
                 'content' =>
                     $data['markdown']->transform(
                         substr($post_content, $first_new_line_pos)),
-                'updated' => filemtime($post_path),
+                'created' => strtotime("{$y}-{$m}-{$d}"),
             ],
         ];
     }
