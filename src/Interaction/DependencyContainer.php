@@ -4,7 +4,7 @@ namespace Interaction;
 
 use Interaction\Controller;
 
-use Michelf\Markdown;
+use Michelf\MarkdownExtra;
 
 use Data;
 use View;
@@ -81,7 +81,7 @@ class DependencyContainer extends Pimple
         });
 
         $this['markdown'] = $this->share(function () {
-            return new Markdown;
+            return new MarkdownExtra;
         });
     }
 }
