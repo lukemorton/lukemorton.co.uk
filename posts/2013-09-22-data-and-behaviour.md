@@ -8,7 +8,7 @@ entity. Yes that's right, an object. To an OOP magician this
 is a self contained unit that can passed around a program but
 ideally doesn't leak implementation details.
 
-~~~
+~~~ ruby
 require 'date'
 
 class User < Struct.new(:first_name, :last_name, :dob)
@@ -93,7 +93,7 @@ Let's solve each of these bug bears.
 We can use the same solution found in a [previous post][1] on
 the single resposibility principle.
 
-~~~
+~~~ ruby
 require 'date'
 
 class User

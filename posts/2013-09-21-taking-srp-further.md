@@ -10,7 +10,7 @@ The principle [tells us][1] that:
 
 Let's dig straight into an example in ruby.
 
-~~~
+~~~ ruby
 class BlogPostViewModel
   def initialize(config)
     @post = config[:post]
@@ -51,7 +51,7 @@ responsibility comes in the form of a single entry point to
 the behaviour of an object. That means one public function
 only! I would personally write the above code like so:
 
-~~~
+~~~ ruby
 class BlogPostViewModel
   def to_hash(config)
     post = config[:post]
