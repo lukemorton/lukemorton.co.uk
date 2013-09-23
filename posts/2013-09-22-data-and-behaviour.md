@@ -97,4 +97,4 @@ than bespoke objects common to fewer libraries.
 I'll talk more in the future about the versatilities of using
 hashes to store data.
 
-[1]: /thoughts/taking-srp-further
+[1]: /thoughts/2013-09-21-taking-srp-further
