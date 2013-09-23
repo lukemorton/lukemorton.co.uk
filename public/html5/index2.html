@@ -1,0 +1,198 @@
+<!doctype html>
+<html dir="ltr" lang="en-GB">
+<head>
+<title>HTML5</title>
+<base href="http://lukemorton.co.uk/html5/" target="_self" />
+<meta charset="utf-8" />
+<style type="text/css">
+ /* A font by Jos Buivenga (exljbris) -> www.exljbris.nl */
+@font-face {
+	font-family: "Fontin Sans";
+	src: url(fonts/Fontin_Sans_SC_45b.otf) format("opentype");
+	font-variant: small-caps;
+	font-weight:normal;
+	font-style:normal;
+} 				
+@font-face {
+	font-family: "Fontin Sans";
+	src: url(fonts/Fontin_Sans_I_45b.otf) format("opentype");
+	font-style: italic;
+	font-weight:normal;
+}
+@font-face {
+	font-family: "Fontin Sans";
+	src: url(fonts/Fontin_Sans_B_45b.otf) format("opentype");
+	font-weight: bold;
+	font-style:normal;
+}
+@font-face {
+	font-family: "Fontin Sans";
+	src: url(fonts/Fontin_Sans_BI_45b.otf) format("opentype");
+	font-style: italic;
+	font-weight: bold;
+}
+@font-face {
+	font-family: "Fontin Sans";
+	src:	local("Fontin Sans Regular"),
+			local("FontinSans-Regular"),
+			url(fonts/Fontin_Sans_R_45b.otf);
+	font-weight:normal;
+	font-style:normal;
+}
+
+* { margin: 0; padding: 0; }
+body {
+	width: 80%;
+	max-width: 900px;
+	margin: 10px auto 0 auto;
+	background-color: #3C790A;
+	color: #0b3200;
+	font: 14px/1.5 arial, sans-serif;
+}
+header, nav, section, article, footer {	display: block; }
+ul { list-style: none; }
+ul, p, blockquote { margin-bottom: 10px; }
+p:last-child { margin-bottom: 0; }
+code { background-color: rgba(255,255,255,0.15); }
+a:link, a:visited, a:active { 
+	text-decoration: none;
+	font-weight: bold;
+	color: #0b3200;
+	border-bottom: 1px dashed #0b3200;
+	background-color: rgba(255,255,255,0.15);
+}
+a:hover { background-color: rgba(255,255,255,0.50); }
+
+body > header, 
+body > nav, 
+body > section, 
+body > article, 
+body > footer {
+	display: block;
+	background-color: #c1dd76;
+	border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+nav.primary { padding: 10px 20px; }
+nav.primary ul { overflow: hidden; margin: 0; }
+nav.primary ul li { float: left; }
+nav.primary ul li a { 
+	float: left;
+	padding: 3px 15px;
+	background-color: #83b529;
+	border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #c1dd76;
+	margin-right: 10px;
+	text-shadow: 0px 0px 2px rgba(0,0,0,0.25);
+	border-bottom: 1px solid #666;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	border-right: 1px solid rgba(0,0,0,0.25);
+}
+nav.primary ul li a:hover {
+	border: none;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
+	border-top: 1px solid rgba(0,0,0,0.25);
+	border-left: 1px solid rgba(0,0,0,0.25);
+}
+nav.secondary { 
+	float: right;
+	width: 25%;
+	margin: 0;
+}
+nav.secondary ul li {
+	float: left;
+	margin-left: 10px;
+}
+body > footer { overflow: hidden; font-size: 0.8em; }
+body > footer > p {
+	float: left;
+	width: 33%;
+	margin: 0;
+}
+
+h1 {
+	font: 56px/1.2 "Fontin Sans", arial, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+h2 {
+	font-size: 36px;
+}
+article ul.meta { color: #3C790A; }
+article section.intro, article pre {
+	border-left: 3px solid #83b529;
+	padding : 5px 0 5px 10px;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+</style>
+<!--[if IE]>  
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body class="lukemorton-co-uk" id="home">
+	<header>
+		<div class="logo">
+			<a href="/html5/">LUKEHTML5</a>
+		</div>
+		<p class="slogan">An attempt at least</p>
+	</header>
+	<nav class="primary">
+		<ul>
+			<li><a href="index.html">home</a></li>
+			<li><a href="http://whatwg.org">whatwg</a></li>
+			<li><a href="http://www.zeldman.com/superfriends/guide/">superfriends thoughts</a></li>
+			<li><a href="http://lukemorton.co.uk">my website</a></li>
+		</ul>
+	</nav>
+	<article class="latest" id="a-nice-welcoming">
+		<header>
+			<h1>This is my first (X)HTML5 page, the way I see it</h1>
+			<ul class="meta">
+				<li class="published">Published on <time datetime="2009-09-01">1st September 2009</time></li>
+				<li class="vcard">By <a href="http://lukemorton.co.uk/" class="fn url">Luke Morton</a></li>
+			</ul>
+		</header>
+		<section class="intro">
+			<p>After seeing a sudden influx of HTML5 blog posts, and well written articles (often too persuading) I have decided to start implementing test HTML5 web pages to see what it will be like.</p>
+			<p>Since I prefer well formed, interchangable formats I have stuck with XML or XHTML based syntax. Hate me or love me I care very little. Also please note, although the code imitates XML, it is strictly speaking HTML still.</p>
+		</section>
+		<p>My first few issues arise from <code>&lt;nav&gt;</code> whereby it does not nest <code>&lt;li&gt;</code> within itself but requires an unordered list container, the classic <code>&lt;ul&gt;</code>, thinking about it, it is not that bad, it may even be more semantic to still wrap the list items as an unordered list, but I am not writing a list of an unordered kind, it is a navigation list, something unrelated to both <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> which just bloat my code, IMO of course.</p>
+		<h2>Footer issue? What issue?</h2>
+		<p>Looks like Zeldman and crew's wishes were met, whether it was their influence or not it is good to see the draft is still <a href="http://html5.org/tools/web-apps-tracker?from=3750&amp;to=3751">malleable</a>.</p>
+		<h2>Kicking IE into action</h2>
+		<p>With the use of this shiv I have managed to get IE to at least recognise the new HTML elements. I am also using CSS3 techniques, some of which may not work in many browsers but since this is a test page, I don't give a shit!</p>
+		<h2>An annoyance with a validator</h2>
+		<p>Although the validator is experimental and probably not that up to date if at all usable, I still tried to validate this page which validated <em>tentatively</em> according to the <a href="http://validator.w3.org">w3 device</a>. It simply does not recognise <code>&lt;meta charset=&quot;utf-8&quot; /&gt;</code> as an alternative to the old school <code>&lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot;" /&gt;</code>. Through my stuborness I fixed this issue by creating a <a href="http://httpd.apache.org/docs/2.2/howto/htaccess.html#what">.htaccess</a> file.</p>
+		<pre>AddType 'text/html; charset=UTF-8' html</pre>
+		<p>Yet even after delivering the page as forced UTF-8, the validator still told me to include a meta tag with the information in, STFU, I've done it already!</p>
+		<p>Oh boy this HTML5 stuff is fun! Got anything you want to share? <a href="mailto:lukemorton.designs@gmail.com">Get in touch</a>.</p>
+	</article>
+	<footer>
+		<p class="copyright">
+			No Copyright reserved
+			<br />
+			Luke Morton 2009--
+		</p>
+		<nav class="secondary">
+			<ul>
+				<li><a href="http://lukemorton.co.uk/">The home</a></li>
+				<li><a href="http://lukemorton.co.uk/get-in-touch/">vCard</a></li>
+				<li><a href="http://lukemorton.co.uk/feed-parse/">atom2json</a></li>
+				<li><a href="http://lukemorton.co.uk/counter.php">counter</a></li>
+				<li><a href="http://validator.w3.org/check?uri=http%3A%2F%2Flukemorton.co.uk%2Fhtml5" title="This probably does not validate, since the validator may be out of sync with the spec">validator</a></li>
+				<li><a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Flukemorton.co.uk%2Fhtml5&amp;profile=css3&amp;usermedium=all&amp;warning=1&amp;lang=en" title="I doubt the CSS3 validates either, goodluck Spock">and CSS</a></li>
+			</ul>
+		</nav>
+	</footer>
+</body>
+</html>
