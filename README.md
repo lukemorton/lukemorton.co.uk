@@ -6,8 +6,14 @@ Running dev server:
 php -S localhost:8000 -t public/ public/index.php
 ```
 
+Provisioning (includes deploy):
+
+``` sh
+make
+```
+
 Deploying:
 
 ``` sh
-ansible-playbook private/ansible/site.yml -i private/ansible/production -l production
+make deploy
 ```
