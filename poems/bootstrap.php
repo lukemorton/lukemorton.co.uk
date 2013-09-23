@@ -81,7 +81,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  */
 Kohana::init(array(
 	'base_url'   => '/poems/',
-	'index_file' => 'index.php',
+	'index_file' => FALSE,
 	'errors'     => Kohana::$environment !== Kohana::PRODUCTION,
 	'profiling'  => Kohana::$environment !== Kohana::PRODUCTION,
 	'caching'    => Kohana::$environment === Kohana::PRODUCTION,
