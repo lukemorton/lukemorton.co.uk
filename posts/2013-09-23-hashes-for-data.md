@@ -19,11 +19,11 @@ called `#find_one_by_id`. When given an ID it returns a user.
 
 <script src="https://gist.github.com/DrPheltRight/6672861.js"></script>
 
-Surprise surprise I'm returning a hash here. Why is this cool?
-Because it's already independent of the data layer it just
-came from. It's not a Sequel dataset, or MongoDB cursor. It's
-a hash representing a record. Sequel and MongoDB even have
-nice ways of exporting records as hashes. And when you're
+Surprise surprise I'm returning a `Hash` here. Why is this
+cool? Because it's already independent of the data layer it
+just came from. It's not a Sequel dataset, or MongoDB cursor.
+It's a hash representing a record. Sequel and MongoDB even
+have nice ways of exporting records as hashes. And when you're
 testing, you can just make up hashes as you go along like my
 example above!
 
@@ -31,7 +31,7 @@ So let's talk about another layer. Data modelling. That's the
 transformative step that uses mappers and data to build up a
 model of data required by the application. The following
 example uses the mapper defined above and also a user ID to
-produce a data model
+produce a data model.
 
 <script src="https://gist.github.com/DrPheltRight/6672864.js"></script>
 
@@ -62,19 +62,20 @@ a bunch of useful methods that everyone knows about. All you
 need to care about are the key names.
 
 So now you're getting smarter. You're saying, "Why can't I
-extend `Hash` and add custom behaviour."
+extend `Hash` and add custom behaviour?"
 
 "In ruby we can make objects quack like a `Hash`."
 
 Well yah. But you still might have side effects. Passing a
-sequel query from your data mapper into your view model might
-error. At least if you transform your data provided by a
-mapper into a hash in the data model layer you can contain
+sequel query from your data mapper into your view model to be
+executed at some point in the future might error at that point
+in the future. At least if you transform your data provided by
+a mapper into a hash in the data model layer you can contain
 data errors where they are relevant.
 
-You can mock out with ease. Anywhere. If all your objects do
-is speak to each other in hashes then they all automatically
-speak the same language.
+You can mock out with ease too. Anywhere. If all your objects
+do is speak to each other in hashes then they all
+automatically speak the same language.
 
 It's true we pass mapper objects into the data model. So there
 are exceptions. However data mappers are directly related to
@@ -85,6 +86,6 @@ modeller. This means your application logic only knows to
 pass in mapper objects to a single entry point on a data model
 object. It's brilliant I tell you!
 
-Speak in hashes my friends.
+Speak in hashes my friends. Speak with a `Hash`.
 
 [1]: /thoughts/2013-09-22-data-and-behaviour
