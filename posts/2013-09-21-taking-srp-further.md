@@ -10,35 +10,7 @@ The principle [tells us][1] that:
 
 Let's dig straight into an example in ruby.
 
-~~~ ruby
-class BlogPostViewModel
-  def initialize(config)
-    @post = config[:post]
-    @router = config[:router]
-    @markdown_parser = config[:markdown_parser]
-  end
-
-  def title()
-    post[:title]
-  end
-
-  def permalink()
-    router.uri(:post, post[:slug])
-  end
-
-  def created()
-    Date.strptime(post[:created], '%e %B %Y')
-  end
-
-  def content()
-    markdown_parser.parse(post[:content])
-  end
-
-  private
-
-  attr_accessor :post, :router, :markdown_parser
-end
-~~~
+<script src="https://gist.github.com/DrPheltRight/6670928.js"></script>
 
 So here we have a class that follows SRP. It deals with the
 transformation of data ready to be merged with a template. In
@@ -51,37 +23,7 @@ responsibility comes in the form of a single entry point to
 the behaviour of an object. That means one public function
 only! I would personally write the above code like so:
 
-~~~ ruby
-class BlogPostViewModel
-  def to_hash(config)
-    post = config[:post]
-
-    {
-      :title => post[:title],
-      :permalink => permalink(router, post[:slug]),
-      :created => format_date(post[:created]),
-      :content =>
-        markdown_to_html(
-          config[:markdown_parser], 
-          post[:content]),
-    }
-  end
-
-  private
-
-  def permalink(slug)
-    router.uri(:post, slug)
-  end
-
-  def format_date(date)
-    Date.strptime(date, '%e %B %Y')
-  end
-
-  def markdown_to_html(markdown_parser, content)
-    markdown_parser.parse(content)
-  end
-end
-~~~
+<script src="https://gist.github.com/DrPheltRight/6670974.js"></script>
 
 You might observe that I'm not storing any state in this
 object. You'd be correct. This is more a functional style of

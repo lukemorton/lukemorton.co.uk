@@ -8,19 +8,7 @@ entity. Yes that's right, an object. To an OOP magician this
 is a self contained unit that can passed around a program but
 ideally doesn't leak implementation details.
 
-~~~ ruby
-require 'date'
-
-class User < Struct.new(:first_name, :last_name, :dob)
-  def full_name()
-    "#{first_name} #{last_name}"
-  end
-
-  def age()
-    (Date.today - Date.parse(dob)).to_i / 365
-  end
-end
-~~~
+<script src="https://gist.github.com/DrPheltRight/6670990.js"></script>
 
 The above example for instance doesn't leak how it formulates
 the full name of a `User` or how it works out their age. It
@@ -59,11 +47,7 @@ class defined above is given data on construction and produces
 an object which then can be used to work out some data that
 didn't exist on construction.
 
-~~~
-luke = User.new('Luke', 'Morton', '1990-04-19')
-luke.full_name # => 'Luke Morton'
-luke.age # => 23
-~~~
+<script src="https://gist.github.com/DrPheltRight/6670997.js"></script>
 
 The values `'Luke Morton'` and `23` were never passed to the
 `#new` method of `User`. They were produced by behaviour
@@ -93,31 +77,7 @@ Let's solve each of these bug bears.
 We can use the same solution found in a [previous post][1] on
 the single resposibility principle.
 
-~~~ ruby
-require 'date'
-
-class User
-  def to_hash(config)
-    {
-      :first_name => config[:first_name],
-      :last_name => config[:last_name],
-      :full_name => full_name(config),
-      :dob => config[:dob],
-      :age => age(config[:dob]),
-    }
-  end
-
-  private
-
-  def full_name(user)
-    "#{user[:first_name]} #{user[:last_name]}"
-  end
-
-  def age(dob)
-    (Date.today - Date.parse(dob)).to_i / 365
-  end
-end
-~~~
+<script src="https://gist.github.com/DrPheltRight/6671005.js"></script>
 
 This object only has one public method, `#to_hash`. Only one
 implementation to leak. It takes a hash of data and produces
