@@ -1,0 +1,15 @@
+body {
+font-size: 16px;
+line-height: 1.5;
+font-family: georgia;
+text-align: center;
+letter-spacing: 0.5px;
+word-spacing: 2px;
+color: #333;
+}
+
+h1 { color: #000; }
+ul{margin:0;padding:0;}
+a, a:active, a:visited { color: #009900; }
+a:hover { text-decoration: none;  }
+.small { font-size: 0.9em; }
