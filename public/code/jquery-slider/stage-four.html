@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Slider: Stage Four</title>
+		<style>
+			.slider-container {
+				width: 600px;
+				overflow:hidden;
+				position: relative;
+			}
+			.slider ul, .slider li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.slider-container ul {
+				width: 1800px;
+			}
+			.slider-container li {
+				float: left;
+			}
+			
+			.slider-container li,
+			.slider-container img { 
+				width: 600px;
+				height: 200px;
+			}
+			
+			.slider-nav {
+				overflow: hidden;
+				zoom: 1;
+			}
+			
+			.slider-nav li,
+			.slider-nav a {
+				float: left;
+			}
+			
+			.slider-nav a {
+				text-indent: -5000em;
+				background: grey;
+				-moz-border-radius: 5px;
+				width: 10px;
+				height: 10px;
+				display: block;
+				margin-right: 10px;
+			}
+			
+			.slider-nav a.current {
+				background: black;
+			}
+			
+			.slider-nav a.current-pink {
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slider" id="slider-one">
+			<div class="slider-container">
+				<ul>
+					<li id="one"><img src="https://github.com/images/modules/header/logov3-hover.png" /></li>
+					<li id="two"><img src="http://kohanaframework.org/media/img/kohana.png" /></li>
+					<li id="three"><img src="http://www.google.co.uk/images/logos/ps_logo2.png" /></li>
+				</ul>
+			</div>
+			<ul class="slider-nav">
+				<li>
+					<a href="#one">First</a>
+				</li>
+				<li>
+					<a href="#two">Two</a>
+				</li>
+				<li>
+					<a href="#three">Three</a>
+				</li>
+			</ul>
+		</div>
+		<div class="slider" id="slider-two">
+			<div class="slider-container">
+				<ul>
+					<li id="a"><img src="https://github.com/images/modules/header/logov3-hover.png" /></li>
+					<li id="b">Hello</li>
+					<li id="c"><img src="http://www.google.co.uk/images/logos/ps_logo2.png" /></li>
+				</ul>
+			</div>
+			<ul class="slider-nav">
+				<li>
+					<a href="#a">First</a>
+				</li>
+				<li>
+					<a href="#b">Two</a>
+				</li>
+				<li>
+					<a href="#c">Three</a>
+				</li>
+			</ul>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script>
+			// Global accessible
+			$.slider = {};
+			
+			// Provide global settings
+			$.slider.globalSettings = {
+				'containerSelector'  : '.slider-container',
+				'navigationSelector' : '.slider-nav',
+				'linkSelector'       : 'a',
+				'linkTargetAttr'     : 'href',
+				'linkCurrentClass'   : 'current',
+				'linkEvent'          : 'click',
+				'speed'              : 500
+			};
+			
+			// The plugin
+			$.fn.slider = function (settings) {
+				
+				// Combine global with local settings
+				settings = $.extend({}, $.slider.globalSettings, settings);
+				
+				// For each slider on page
+				return this.each(function () {
+					
+					// Collect the three main jQuery objects
+					var $slider = $(this);
+					var $container = $slider.children(settings.containerSelector);
+					var $nav = $slider.children(settings.navigationSelector);
+					var $links = $nav.find(settings.linkSelector);
+					
+					// Add current class to first
+					$links.first().addClass(settings.linkCurrentClass);
+					
+					// Healthy delegation
+					$nav.delegate(settings.linkSelector, settings.linkEvent, function (e) {
+						// Stop the hash tag, back button not needed here
+						e.preventDefault();
+						
+						// The clicked link, cached for reuse
+						var $link = $(this);
+						
+						// The target <li>
+						var $target = $($link.attr(settings.linkTargetAttr));
+						
+						// Remove .current from all links
+						$links.removeClass(settings.linkCurrentClass);
+						
+						// Add back to needed link
+						$link.addClass(settings.linkCurrentClass);
+						
+						// Animate to scroll position
+						$container
+							.animate({
+								// .scrollLeft() gives us how much the container
+								// is scrolled, then added how far the targets
+								// position is will give us the point to move to
+								'scrollLeft': $container.scrollLeft() + $target.position().left
+							}, settings.speed);
+					});
+				});
+			};
+			
+			$(function () {
+				// All selectors must be pink
+				$.slider.globalSettings.linkCurrentClass = 'current-pink';
+				
+				// Activate without local settings
+				$('#slider-one').slider();
+				
+				// Activate with local settings
+				$('#slider-two').slider({
+					// Custom event triggering
+					'linkEvent' : 'mouseenter'
+				});
+			});
+		</script>
+	</body>
+</html>

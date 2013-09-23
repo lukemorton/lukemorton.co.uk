@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Slider: Stage One</title>
+		<style>
+			.slider-container {
+				width: 600px;
+				overflow:hidden;
+			}
+			.slider ul, .slider li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.slider-container ul {
+				width: 1800px;
+			}
+			.slider-container li {
+				float: left;
+			}
+			
+			.slider-container li,
+			.slider-container img { 
+				width: 600px;
+				height: 200px;
+			}
+			
+			.slider-nav {
+				overflow: hidden;
+				zoom: 1;
+			}
+			
+			.slider-nav li,
+			.slider-nav a {
+				float: left;
+			}
+			
+			.slider-nav a {
+				text-indent: -5000em;
+				background: grey;
+				-moz-border-radius: 5px;
+				width: 10px;
+				height: 10px;
+				display: block;
+				margin-right: 10px;
+			}
+			
+			.slider-nav a.current {
+				background: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slider">
+			<div class="slider-container">
+				<ul>
+					<li id="one"><img src="https://github.com/images/modules/header/logov3-hover.png" /></li>
+					<li id="two"><img src="http://kohanaframework.org/media/img/kohana.png" /></li>
+					<li id="three"><img src="http://www.google.co.uk/images/logos/ps_logo2.png" /></li>
+				</ul>
+			</div>
+			<ul class="slider-nav">
+				<li>
+					<a href="#one">First</a>
+				</li>
+				<li>
+					<a href="#two">Two</a>
+				</li>
+				<li>
+					<a href="#three">Three</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

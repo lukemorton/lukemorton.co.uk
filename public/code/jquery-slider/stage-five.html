@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Slider: Stage Five</title>
+		<style>
+			.slider-container {
+				width: 600px;
+				overflow:hidden;
+				position: relative;
+			}
+			.slider ul, .slider li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.slider-container ul {
+				width: 1800px;
+			}
+			.slider-container li {
+				float: left;
+			}
+			
+			.slider-container li,
+			.slider-container img { 
+				width: 600px;
+				height: 200px;
+			}
+			
+			.slider-nav {
+				overflow: hidden;
+				zoom: 1;
+			}
+			
+			.slider-nav li,
+			.slider-nav a {
+				float: left;
+			}
+			
+			.slider-nav a {
+				text-indent: -5000em;
+				background: grey;
+				-moz-border-radius: 5px;
+				width: 10px;
+				height: 10px;
+				display: block;
+				margin-right: 10px;
+			}
+			
+			.slider-nav a.current {
+				background: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slider" id="slider-one">
+			<div class="slider-container">
+				<ul>
+					<li id="one"><img src="https://github.com/images/modules/header/logov3-hover.png" /></li>
+					<li id="two"><img src="http://kohanaframework.org/media/img/kohana.png" /></li>
+					<li id="three"><img src="http://www.google.co.uk/images/logos/ps_logo2.png" /></li>
+				</ul>
+			</div>
+			<ul class="slider-nav">
+				<li>
+					<a href="#one">First</a>
+				</li>
+				<li>
+					<a href="#two">Two</a>
+				</li>
+				<li>
+					<a href="#three">Three</a>
+				</li>
+			</ul>
+		</div>
+		<div class="slider" id="slider-two">
+			<div class="slider-container">
+				<ul>
+					<li id="a"><img src="https://github.com/images/modules/header/logov3-hover.png" /></li>
+					<li id="b">
+						<h2>Slides can contain normal HTML</h2>
+						<p>My step brother advised me to provide a bit more of an example than just "test". So above is a title, and here is a paragraph.</p>
+					</li>
+					<li id="c"><img src="http://www.google.co.uk/images/logos/ps_logo2.png" /></li>
+				</ul>
+			</div>
+			<ul class="slider-nav">
+				<li>
+					<a href="#a">First</a>
+				</li>
+				<li>
+					<a href="#b">Two</a>
+				</li>
+				<li>
+					<a href="#c">Three</a>
+				</li>
+			</ul>
+		</div>
+		<div class="slider" id="slider-three">
+			<div class="slider-container">
+				<ul>
+					<li id="i"><img src="https://github.com/images/modules/header/logov3-hover.png" /></li>
+					<li id="ii">
+						<h2>Slides can contain normal HTML</h2>
+						<p>My step brother advised me to provide a bit more of an example than just "test". So above is a title, and here is a paragraph.</p>
+					</li>
+					<li id="iii"><img src="http://www.google.co.uk/images/logos/ps_logo2.png" /></li>
+				</ul>
+			</div>
+			<ul class="slider-nav">
+				<li>
+					<a href="#i">First</a>
+				</li>
+				<li>
+					<a href="#ii">Two</a>
+				</li>
+				<li>
+					<a href="#iii">Three</a>
+				</li>
+			</ul>
+			<ul class="alt-nav">
+				<li>
+					<a href="#previous">Previous</a>
+				</li>
+				<li>
+					<a href="#nextious">Nextious</a>
+				</li>
+			</ul>
+		</div>
+		<a href="#stop" class="stop">Stop the sliding!!!</a>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+		<script>
+			// Global accessible
+			$.slider = {};
+			
+			// Provide global settings
+			$.slider.globalSettings = {
+				'containerSelector'  : '.slider-container',
+				'navigationSelector' : '.slider-nav',
+				'linkSelector'       : 'a',
+				'linkTargetAttr'     : 'href',
+				'linkCurrentClass'   : 'current',
+				'linkEvent'          : 'click',
+				'speed'              : 500,
+				'cycleSpeed'         : 3000
+			};
+			
+			// The plugin
+			$.fn.slider = function (settings) {
+				
+				// Alias for this
+				var slider = this;
+				
+				// Combine global with local settings
+				settings = $.extend({}, $.slider.globalSettings, settings);
+				
+				// For each slider on page
+				slider.each(function () {
+					
+					// Collect the three main jQuery objects
+					var $slider = $(this);
+					var $container = $slider.children(settings.containerSelector);
+					var $nav = $slider.children(settings.navigationSelector);
+					var $links = $nav.find(settings.linkSelector);
+						
+					// Add current class to first
+					$links.first().addClass(settings.linkCurrentClass);
+					
+					// Healthy delegation
+					$nav.delegate(settings.linkSelector, settings.linkEvent, function (e, cycle) {
+						// Stop the hash tag, back button not needed here
+						e.preventDefault();
+						
+						// The clicked link
+						var $link = $(this);
+						
+						// The target <li>
+						var $target = $($link.attr(settings.linkTargetAttr));
+						
+						// Remove .current from all links
+						$links.removeClass(settings.linkCurrentClass);
+						
+						// Add back to needed link
+						$link.addClass(settings.linkCurrentClass);
+						
+						// Animate to scroll position
+						$container
+							.animate({
+								'scrollLeft': $container.scrollLeft() + $target.position().left
+							}, settings.speed);
+							
+						// Wait another duration before cycling, this does not happen
+						// if this is a normal cycle generated click
+						if ( ! cycle && slider.cycleInstance !== null) {
+							slider
+								.stop()
+								.cycle();
+						}
+					});
+				});
+				
+				// Change target
+				slider.step = function (step) {
+					return slider.each(function () {
+						var $links = $(this).children(settings.navigationSelector).find(settings.linkSelector);
+						var $currentLink = $links.filter('.' + settings.linkCurrentClass);
+						var currentIndex = $links.index($currentLink);
+						var $nextLink;
+						
+						if ($links[currentIndex + step]) {
+							$nextLink = $links.eq(currentIndex + step);
+						} else if (step > 0) {
+							$nextLink = $links.first();
+						} else {
+							$nextLink = $links.last();
+						}
+						
+						$nextLink.trigger(settings.linkEvent, [true]);
+					});
+				};
+				
+				// Go forward
+				slider.next = function () {
+					return slider.step(+1);
+				};
+				
+				// Go back
+				slider.previous = function () {
+					return slider.step(-1);
+				};
+				
+				// Global cycle instance
+				slider.cycleInstance = null;
+				
+				// Add cycle functionality
+				slider.cycle = function (speed) {
+					
+					// No multi cycling
+					if (slider.cycleInstance !== null) {
+						return slider;
+					}
+					
+					// Allow custom speed or use default
+					speed = speed || settings.cycleSpeed;
+					
+					function cycle() {
+						// For each slider, trigger click
+						slider.next();
+						slider.cycleInstance = setTimeout(cycle, speed);
+					}
+					
+					slider.cycleInstance = setTimeout(cycle, speed);
+					
+					return slider;
+				};
+				
+				// Allow the stopping of cycle
+				slider.stop = function () {
+					if (slider.cycleInstance !== null) {
+						clearTimeout(slider.cycleInstance);
+						slider.cycleInstance = null;
+					}
+					return slider;
+				};
+				
+				// Return slider (aka this)
+				return slider;
+			};
+			
+			$(function () {
+				var $slider = $('.slider').not('#slider-three')
+					.slider()
+					.cycle();
+					
+				$('.stop').toggle(function () {
+					$slider.stop();
+					$(this).text('Okay start again');
+				}, function () {
+					$slider.cycle();
+					$(this).text('no, no, please stop');
+				});
+				
+				var $sliderThree = $('#slider-three')
+					.slider();
+				
+				// Listen to controls
+				$('a[href="#nextious"]')
+					.click($sliderThree.next);
+				$('a[href="#previous"]')
+					.click($sliderThree.previous);
+			});
+		</script>
+	</body>
+</html>
