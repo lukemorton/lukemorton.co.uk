@@ -1,0 +1,5 @@
+---
+- include: setup.yml
+- include: phpdev.yml
+- include: php-fpm.yml
+- include: apache.yml

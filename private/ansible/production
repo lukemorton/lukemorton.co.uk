@@ -1,0 +1,2 @@
+[production]
+50.56.186.52 ansible_ssh_user=root

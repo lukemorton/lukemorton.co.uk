@@ -1,0 +1,11 @@
+---
+app_env: production
+system_hostname: githash.io
+papertrail_log_host: logs.papertrailapp.com
+papertrail_log_port: 25456
+papertrail_log_files:
+  - /var/log/git_hash/*.log
+project_root: /var/www/githash
+app_user: ubuntu
+document_root: /var/www/githash/static
+server_name: githash.io

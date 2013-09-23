@@ -1,0 +1,6 @@
+; {{ ansible_managed }}
+extension=memcache.so
+
+memcache.default_port = {{ php_memcache_port|default('11211') }}
+memcache.hash_strategy = {{ php_memcache_hash|default('consistent') }}
+
