@@ -14,6 +14,7 @@ class MainController extends AbstractPageController
             $req['dc']['d']['model']['index']->as_array(
                 [
                     'root' => $req['root'],
+                    'markdown' => $req['dc']['markdown'],
                 ]);
 
         return $this->render($req, 'index', [

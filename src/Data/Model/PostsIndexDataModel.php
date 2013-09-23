@@ -18,7 +18,9 @@ class PostsIndexDataModel extends AbstractDataModel
 
         foreach ($posts_dir as $_file) {
             $posts[] =
-                $this->title_and_intro_from_markdown_file($_file)
+                $this->title_and_intro_from_markdown_file(
+                    $data['markdown'],
+                    $_file)
                 + [
                     'filename' => $_file->getFilename(),
                     'slug' => $_file->getBasename('.md'),
@@ -35,7 +37,7 @@ class PostsIndexDataModel extends AbstractDataModel
         return $title;
     }
 
-    private function intro_from_markdown_file($file)
+    private function intro_from_markdown_file($markdown, $file)
     {
         $intro = '';
 
@@ -44,17 +46,17 @@ class PostsIndexDataModel extends AbstractDataModel
             $intro .= $line;
         }
 
-        return $intro;
+        return $markdown->transform($intro);
     }
 
-    private function title_and_intro_from_markdown_file($fileinfo)
+    private function title_and_intro_from_markdown_file($markdown, $fileinfo)
     {
         $file = fopen($fileinfo->getRealPath(), 'r');
 
         $title = $this->title_from_markdown_file($file);
         fgets($file);
 
-        $intro = $this->intro_from_markdown_file($file);
+        $intro = $this->intro_from_markdown_file($markdown, $file);
         fclose($file);
 
         return compact('title', 'intro');
