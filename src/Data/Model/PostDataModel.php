@@ -2,9 +2,7 @@
 
 namespace Data\Model;
 
-use Data\Model\AbstractDataModel;
-
-class PostDataModel extends AbstractDataModel
+class PostDataModel
 {
     public function as_array($data)
     {

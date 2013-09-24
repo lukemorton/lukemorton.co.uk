@@ -2,11 +2,9 @@
 
 namespace Data\Model;
 
-use Data\Model\AbstractDataModel;
-
 use FilesystemIterator;
 
-class PostsIndexDataModel extends AbstractDataModel
+class PostsIndexDataModel
 {
     public function as_array($data)
     {
