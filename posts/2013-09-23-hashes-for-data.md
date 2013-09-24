@@ -1,6 +1,6 @@
 # Hashes for Data
 
-This is my take on using hashes to transfer data between
+This is my take on using **hashes** to transfer data between
 behaviour. You might know hashes as maps or associative
 arrays.
 
@@ -12,10 +12,9 @@ missing the monkeys. Hopefully I can assure you the world of
 separating data from behaviour is a more tidy and efficient
 one.
 
-## An example
-
-We'll start with a data source. In this case, a mapper method
-called `#find_one_by_id`. When given an ID it returns a user.
+Let's work with an example. We'll start with a data source. In
+this case, a mapper method called `#find_one_by_id`. When
+given an ID it returns a user.
 
 <script src="https://gist.github.com/DrPheltRight/6672861.js"></script>
 
