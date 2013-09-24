@@ -16,6 +16,7 @@
       with_items:
         - poems/logs/
         - poems/cache/
+        - logs/
 
     - name: deploy
       git:
@@ -23,7 +24,6 @@
         dest: /var/www/lukemorton.co.uk
         version: develop
       notify: apache-restart
-
 
   handlers:
     - include: roles/apache/handlers/main.yml
