@@ -95,3 +95,12 @@ li {
 .meta {
   color: #999;
 }
+
+.gist {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media only screen and (min-width: 800px) {
+  .gist { width: 700px; }
+}
