@@ -3,13 +3,6 @@
     - production
   user: root
   tasks:
-    - name: deploy
-      git:
-        repo: git@bitbucket.org:DrPheltRight/lukemorton.co.uk.git
-        dest: /var/www/lukemorton.co.uk
-        version: develop
-      notify: apache-restart
-
     - name: Update composer packages
       command: /usr/local/bin/composer install -d /var/www/lukemorton.co.uk
 
@@ -23,6 +16,14 @@
       with_items:
         - poems/logs/
         - poems/cache/
+
+    - name: deploy
+      git:
+        repo: git@bitbucket.org:DrPheltRight/lukemorton.co.uk.git
+        dest: /var/www/lukemorton.co.uk
+        version: develop
+      notify: apache-restart
+
 
   handlers:
     - include: roles/apache/handlers/main.yml
