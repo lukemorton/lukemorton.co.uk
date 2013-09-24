@@ -36,21 +36,6 @@ class Application extends RoutedApplication
             'about' => ['GET', '/about', $this->c('main', 'about')],
 
             'post' => ['GET', '/thoughts/:slug', $this->c('main', 'post')],
-
-            // [NULL, NULL, function ($request) use ($root) {
-            //     $file = $root.'/public/'.$request['uri'];
-
-            //     if (file_exists($file)) {
-            //         return
-            //             Res::ok(
-            //                 file_get_contents($file),
-            //                 [
-            //                     'Content-Type' => 'text/css',
-            //                 ]);
-            //     }
-
-            //     return Res::notFound();
-            // }]
         ];
     }
 }

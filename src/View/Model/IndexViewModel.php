@@ -38,23 +38,6 @@ class IndexViewModel extends AbstractViewModel
 					return $post;
 				},
 				$posts);
-		// [
-		// 	[
-		// 		'title' => 'Less Objects',
-		// 		'started' => $this->formatted_date(time()),
-		// 		'desc' => 'A look at moving away from object heavy development.',
-		// 	],
-		// 	[
-		// 		'title' => 'Less Frameworks',
-		// 		'started' => $this->formatted_date(time()),
-		// 		'desc' => 'A look at moving away from the reliance we have of frameworks.',
-		// 	],
-		// 	[
-		// 		'title' => 'A Trilogy of Web Application Patterns',
-		// 		'started' => $this->formatted_date(time()),
-		// 		'desc' => 'A 3 part journey into the programming patterns I use.',
-		// 	],
-		// ];
 	}
 
 	private function projects()
