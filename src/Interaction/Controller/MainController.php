@@ -17,6 +17,7 @@ class MainController extends AbstractPageController
                 ]);
 
         return $this->render($req, 'index', [
+            'index_url' => $req['app']->uri('index'),
             'markdown' => $req['dc']['markdown'],
             'about_url' => $req['app']->uri('about'),
             'posts' => $posts_data['posts'],
