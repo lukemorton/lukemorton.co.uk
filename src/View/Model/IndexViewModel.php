@@ -12,7 +12,7 @@ class IndexViewModel extends AbstractViewModel
 			'title' => 'An Exploration of the Web',
 			'about_url' => $data['about_url'],
 			'twitter' => $this->twitter(),
-			'thoughts' => $this->thoughts($data['posts']),
+			'thoughts' => $this->thoughts($data['markdown'], $data['posts']),
 			'projects' => $this->projects(),
 			'github_href' => $this->github_href(),
 		];
@@ -26,12 +26,13 @@ class IndexViewModel extends AbstractViewModel
 		];
 	}
 
-	private function thoughts($posts)
+	private function thoughts($markdown, $posts)
 	{
 		return
 			array_map(
-				function ($post)
+				function ($post) use ($markdown)
 				{
+					$post['intro'] = $markdown->transform($post['intro']);
 					$post['created'] = $this->formatted_date($post['created']);
 					$post['href'] = '/thoughts/'.$post['slug'];
 					return $post;

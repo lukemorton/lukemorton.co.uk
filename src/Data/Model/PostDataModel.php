@@ -23,9 +23,7 @@ class PostDataModel extends AbstractDataModel
         return [
             'post' => [
                 'title' => substr($post_content, 2, $first_new_line_pos),
-                'content' =>
-                    $data['markdown']->transform(
-                        substr($post_content, $first_new_line_pos)),
+                'content' => substr($post_content, $first_new_line_pos),
                 'created' => strtotime("{$y}-{$m}-{$d}"),
             ],
         ];

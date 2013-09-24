@@ -14,10 +14,10 @@ class MainController extends AbstractPageController
             $req['dc']['d']['model']['index']->as_array(
                 [
                     'root' => $req['root'],
-                    'markdown' => $req['dc']['markdown'],
                 ]);
 
         return $this->render($req, 'index', [
+            'markdown' => $req['dc']['markdown'],
             'about_url' => $req['app']->uri('about'),
             'posts' => $posts_data['posts'],
         ]);
@@ -28,7 +28,6 @@ class MainController extends AbstractPageController
         $post_data =
             $req['dc']['d']['model']['post']->as_array(
                 [
-                    'markdown' => $req['dc']['markdown'],
                     'root' => $req['root'],
                     'slug' => $req['params']['slug'],
                 ]);
@@ -38,6 +37,7 @@ class MainController extends AbstractPageController
         }
 
         return $this->render($req, 'post', [
+            'markdown' => $req['dc']['markdown'],
             'post' => $post_data['post'],
             'index_url' => $req['app']->uri('index'),
         ]);

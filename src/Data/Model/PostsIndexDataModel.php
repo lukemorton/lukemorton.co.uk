@@ -21,9 +21,7 @@ class PostsIndexDataModel extends AbstractDataModel
             list($y, $m, $d) = explode('-', $basename, 4);
 
             $posts[$basename] =
-                $this->title_and_intro_from_markdown_file(
-                    $data['markdown'],
-                    $_file)
+                $this->title_and_intro_from_markdown_file($_file)
                 + [
                     'slug' => $basename,
                     'created' => strtotime("{$y}-{$m}-{$d}"),
@@ -41,7 +39,7 @@ class PostsIndexDataModel extends AbstractDataModel
         return $title;
     }
 
-    private function intro_from_markdown_file($markdown, $file)
+    private function intro_from_markdown_file($file)
     {
         $intro = '';
 
@@ -50,17 +48,17 @@ class PostsIndexDataModel extends AbstractDataModel
             $intro .= $line;
         }
 
-        return $markdown->transform($intro);
+        return $intro;
     }
 
-    private function title_and_intro_from_markdown_file($markdown, $fileinfo)
+    private function title_and_intro_from_markdown_file($fileinfo)
     {
         $file = fopen($fileinfo->getRealPath(), 'r');
 
         $title = $this->title_from_markdown_file($file);
         fgets($file);
 
-        $intro = $this->intro_from_markdown_file($markdown, $file);
+        $intro = $this->intro_from_markdown_file($file);
         fclose($file);
 
         return compact('title', 'intro');
