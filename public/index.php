@@ -11,11 +11,13 @@ $response_status_handlers = [
     },
 ];
 
-if (getenv('PRODUCTION'))
-{
+if (getenv('PRODUCTION')) {
+    $env = 'production';
     $response_status_handlers[500] = function ($req) {
         return $req['dc']['c']['error']->error($req);
     };
+} else {
+    $env = 'development';
 }
 
 $response =
@@ -31,7 +33,7 @@ $response =
                 ]),
 
                 new Lily\Middleware\Injection([
-                    'inject' => compact('dc', 'root', 'app'),
+                    'inject' => compact('env', 'dc', 'root', 'app'),
                 ]),
             ]));
 
