@@ -20,4 +20,11 @@ class ErrorController extends AbstractPageController
 
         return Res::notFound($body);
     }
+
+    public function error($req)
+    {
+        return Res::response(500, $this->render($req, 'error', [
+            'index_url' => $req['app']->uri('index'),
+        ]));
+    }
 }
