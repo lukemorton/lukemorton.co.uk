@@ -17,12 +17,19 @@ class PostsIndexDataModel
         foreach ($posts_dir as $_file) {
             $basename = $_file->getBasename('.md');
             list($y, $m, $d) = explode('-', $basename, 4);
+            $created = strtotime("{$y}-{$m}-{$d}");
+
+            if (isset($data['before'])
+                AND $data['before'] < $created)
+            {
+                continue;
+            }
 
             $posts[$basename] =
                 $this->title_and_intro_from_markdown_file($_file)
                 + [
                     'slug' => $basename,
-                    'created' => strtotime("{$y}-{$m}-{$d}"),
+                    'created' => $created,
                 ];
         }
 
