@@ -13,17 +13,7 @@ TCP, ZeroMQ or whatever!
 
 Let's start with a sinatra application.
 
-~~~ ruby
-require 'sinatra'
-
-get '/' do
-  'Hello world'
-end
-
-get '/:name' do
-  "Hello #{params[:name]}"
-end
-~~~
+<script src="https://gist.github.com/DrPheltRight/6700336.js"></script>
 
 Okay so I've provided you a hello world for sinatra and
 minimal business logic. No data or view logic. However I've
@@ -34,26 +24,7 @@ It is however only suitable for limited life shelf
 applications or tiny ones. We need to introduce the other
 part of interaction now, controllers.
 
-~~~ ruby
-require 'sinatra'
-
-class HelloWorldController
-  def view(request)
-    name = request.fetch(:name, :world)
-    "Hello #{name}"
-  end
-end
-
-hello_world_controller = HelloWorldController.new
-
-get '/' do
-  hello_world_controller.view({})
-end
-
-get '/:name' do
-  hello_world_controller.view(:name => params[:name])
-end
-~~~
+<script src="https://gist.github.com/DrPheltRight/6700346.js"></script>
 
 So now we've added a controller to contain our (albeit over
 simplistic) business logic. This abstraction allows us to
