@@ -55,7 +55,7 @@ class IndexViewModel extends AbstractViewModel
 			],
 			[
 				'name' => 'alchemy.rb',
-				'desc' => 'An example of modular frameworkless application design.',
+				'desc' => 'An example of modular frameworkless application design using IDV.',
 				'href' => 'https://github.com/DrPheltRight/alchemy.rb',
 			],
 		];
