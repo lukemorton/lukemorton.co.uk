@@ -10,11 +10,14 @@ class MainController extends AbstractPageController
 {
     public function index($req)
     {
+        if ($req['env'] === 'production') {
+            $before = time();
+        }
+        
         $posts_data =
             $req['dc']['d']['model']['index']->as_array(
-                [
-                    'root' => $req['root'],
-                ]);
+                ['root' => $req['root']]
+                + compact('before'));
 
         return $this->render($req, 'index', [
             'index_url' => $req['app']->uri('index'),
