@@ -15,7 +15,7 @@ Let's start with a sinatra application.
 
 <script src="https://gist.github.com/DrPheltRight/6700336.js"></script>
 
-Okay so I've provided you a hello world for sinatra and
+Okay so I've provided you with a hello world for sinatra and
 minimal business logic. No data or view logic. However I've
 already talked that malarkey. This example is an application.
 It is the interface for HTTP that business logic requires.
