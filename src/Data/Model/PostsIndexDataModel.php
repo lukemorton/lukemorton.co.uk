@@ -14,6 +14,8 @@ class PostsIndexDataModel
             new FilesystemIterator(
                 dirname($posts_dir_path));
 
+        $posts = array();
+
         foreach ($posts_dir as $_file) {
             $basename = $_file->getBasename('.md');
             list($y, $m, $d) = explode('-', $basename, 4);
