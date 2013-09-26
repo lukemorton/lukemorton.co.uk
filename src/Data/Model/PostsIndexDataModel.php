@@ -19,8 +19,9 @@ class PostsIndexDataModel
             list($y, $m, $d) = explode('-', $basename, 4);
             $created = strtotime("{$y}-{$m}-{$d}");
 
-            if (isset($data['before'])
-                AND $data['before'] < $created)
+            if (isset($data['between'])
+                AND ($data['between'][0] > $created
+                     OR $data['between'][1] < $created))
             {
                 continue;
             }
