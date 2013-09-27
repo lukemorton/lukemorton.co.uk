@@ -10,7 +10,8 @@ body {
   background-color: #ffffff;
 }
 
-a, a code {
+a,
+a code {
   color: #0088cc;
   text-decoration: underline;
 }
