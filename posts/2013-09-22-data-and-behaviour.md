@@ -5,8 +5,8 @@ intertwinning components that make our programs.
 
 In OOP madland behaviour and data are combined into a single
 entity. Yes that's right, an object. To an OOP magician this
-is a self contained unit that can passed around a program but
-ideally doesn't leak implementation details.
+is a self contained unit that can be passed around a program
+but ideally doesn't leak implementation details.
 
 <script src="https://gist.github.com/DrPheltRight/6670990.js"></script>
 
