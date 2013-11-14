@@ -32,6 +32,7 @@ class IndexViewModel extends AbstractViewModel
 			array_map(
 				function ($post) use ($markdown)
 				{
+					$post['title'] = strip_tags($post['title']);
 					$post['intro'] = $markdown->transform($post['intro']);
 					$post['created'] = $this->formatted_date($post['created']);
 					$post['href'] = '/thoughts/'.$post['slug'];
