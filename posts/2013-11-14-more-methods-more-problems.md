@@ -1,14 +1,16 @@
 # More methods,<br /> more problems
 
-A quick explanation to why I don't like more than one public
-method per object.
+A explanation to why I don't like more than one public method
+per object.
 
-I've written about this [before][1]. If you're objects are
-going to have a single responsibility, why offer more than
+I've written about this [before][1]. If your objects are
+going to have a single responsibility why offer more than
 one way to perform that responsibility?
 
 Multiple methods per class – and by this I mean publically
 exposed ones – cause problems in a number of ways.
+
+## Multiple responsibilities
 
 Firstly methods should do something. If your class has
 multiple public methods it will likely be doing multiple
@@ -25,24 +27,30 @@ one class means you will have some shared logic in private
 methods but a hell of a lot of specific private methods that
 aren't used by the other public methods.
 
-Using the [Data][2] component of [IDV][3] you could create three data
-actions:
+Using the [Data][2] component of [IDV][3] you could create
+three data actions:
 
 <script src="https://gist.github.com/DrPheltRight/7466181.js"></script>
 
 They might share some logic but package that logic up in
 another object they all share rather than putting all this
-logic in one class. Also you could share logic by an abstract
-class but this isn't wise in the long run. Inheritence should
-be avoided as much as multiple public methods. Multiple
-responsibilities and extension of abstract (or even worse
-concrete) classes are examples of coupling and aren't as
-flexible as dependency injection. Inject shared logic at
-runtime rather than couple your code.
+logic in one class.
 
-So sometimes your methods might be completely related to one
-another. The only two examples of valid multi-method classes
-are [Interaction Controllers][4] and [Data Mappers][5].
+You could share logic by an abstract class but this isn't wise
+in the long run. Inheritence should be avoided as much as
+multiple public methods. Multiple responsibilities and
+extension of abstract (or even worse concrete) classes are
+examples of coupling and aren't as flexible as dependency
+injection.
+
+> Inject shared logic at runtime rather than couple your code
+> all the time
+
+## An Exception
+
+Let's move onto an exception. Sometimes your methods might be completely related to one another. The only two examples of
+valid multi-method classes I can think of are
+[Interaction Controllers][4] and [Data Mappers][2].
 
 Let's take a user data mapper for example.
 
@@ -60,17 +68,16 @@ standalone but will share the collection object injected so
 this is one bit of logic that would need to be repeated or
 inherited if we split this class into two.
 
-Both methods share the state initialised on construction. They
-share the collection. However they are still fairly
-independent and atomic. I see these methods as single
-responsibilties packaged under a single namespace
-`UserMongoDataMapper`. As long as the methods remain SRP and
-share the majority of logic within the data mapper then they
-can remain in one class.
+Both methods share the state initialised on construction, the collection, however they are still fairly independent and
+atomic. I see these methods as single responsibilties packaged
+under a single namespace `UserMongoDataMapper`. As long as the methods remain SRP and share the majority of logic within the
+data mapper then they can remain in one class.
 
-So we've now identified an exception, that is when methods are
-independent, atomic and share most private logic in the class
-then it might be okay to keep them in one object.
+So we've now identified an exception – that is – when methods
+are independent, atomic and share most private logic in the
+class then it might be okay to keep them in one object.
+
+## Atomic
 
 Atomicity is important. I might have just made that word up
 so I'll define it. When calling the method it should be
@@ -79,19 +86,22 @@ public methods. If by calling `#find_one_by_id` affected a
 later call to `#find_by_ids` then these methods would not be
 atomic. They are coupled and definitely not single
 responsibility. Furthermore leaking these implementation side
-affects into your application means your introducing hidden
+effects into your application means you are introducing hidden
 coupling into your application. Little secrets such as the
-side affects of calling methods of an object in different
+side effects of calling methods of an object in different
 orders lead to many subtle bugs. Just don't do it!
 
-Finally a note of the obvious. Multiple public methods make
+## The obvious
+
+Multiple public methods make
 an object more difficult to reason about. The developer using
 it will need to know when to use what methods, the interfaces
 for each method and so will your code. The more methods in
 your program the more coupled to implementation your
-application will become. This should be obvious the more code
-you write the more problems you are going to have so don't
-write as much.
+application will become. This should be obvious:
+
+> The more code you write the more problems you are going to
+> have so don't write as much
 
 ## Summary
 
@@ -103,8 +113,8 @@ problems".
    methods per object means the object is not single
    responsibility
  - Methods may share logic with related methods but they will
-   also have independent logic – coupling related methods can
-   be messy way to share logic between components –
+   also have independent logic – coupling related methods is
+   a messy way to share logic between components –
    try injecting logic instead
  - Methods should be atomic operations, if they aren't then
    you'll be introducing hidden coupling (think method call
@@ -123,7 +133,6 @@ your tempting object of tricks can stay away from my
 application party.
 
 [1]: /thoughts/2013-09-22-data-and-behaviour
-[2]: /thoughts/2013-09-24-views
+[2]: /thoughts/2013-09-25-data
 [3]: /thoughts/2013-09-27-IDV
-[4]: /thoughts/2013-09-26-data
-[5]: /thoughts/2013-09-25-interaction
+[4]: /thoughts/2013-09-26-interaction
