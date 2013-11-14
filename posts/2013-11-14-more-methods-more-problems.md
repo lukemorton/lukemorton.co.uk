@@ -1,6 +1,6 @@
 # More methods,<br /> more problems
 
-A explanation to why I don't like more than one public method
+An explanation to why I don't like more than one public method
 per object.
 
 I've written about this [before][1]. If your objects are
