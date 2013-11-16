@@ -1,9 +1,9 @@
 # More methods,<br /> more problems
 
-An explanation to why I don't like more than one public method
-per object.
+An explanation to why I don't like more than one **public
+method** per class.
 
-I've written about this [before][1]. If your objects are
+I've written about this [before][1]. If your classes are
 going to have a single responsibility why offer more than
 one way to perform that responsibility?
 
@@ -33,7 +33,7 @@ three data actions:
 <script src="https://gist.github.com/DrPheltRight/7466181.js"></script>
 
 They might share some logic but package that logic up in
-another object they all share rather than putting all this
+another class they all share rather than putting all this
 logic in one class.
 
 You could share logic by an abstract class but this isn't wise
@@ -64,7 +64,7 @@ documents by an array of IDs. Two responsibilities but I still
 think this is okay and let me explain why.
 
 The methods `#find_one_by_id` and `#find_by_ids` are
-standalone but will share the collection object injected so
+standalone but will share the collection instance injected so
 this is one bit of logic that would need to be repeated or
 inherited if we split this class into two.
 
@@ -88,17 +88,16 @@ atomic. They are coupled and definitely not single
 responsibility. Furthermore leaking these implementation side
 effects into your application means you are introducing hidden
 coupling into your application. Little secrets such as the
-side effects of calling methods of an object in different
+side effects of calling methods of an instance in different
 orders lead to many subtle bugs. Just don't do it!
 
 ## The obvious
 
-Multiple public methods make
-an object more difficult to reason about. The developer using
-it will need to know when to use what methods, the interfaces
-for each method and so will your code. The more methods in
-your program the more coupled to implementation your
-application will become. This should be obvious:
+Multiple public methods make a class more difficult to reason
+about. The developer using it will need to know when to use
+what methods, the interfaces for each method and so will your
+code. The more methods in your program the more coupled to implementation your application will become. This should be
+obvious:
 
 > The more code you write the more problems you are going to
 > have so don't write as much
@@ -110,7 +109,7 @@ argue in favour of the statement "more methods, more
 problems".
 
  - Methods have a single responsibility, having multiple
-   methods per object means the object is not single
+   methods per class means the class does not have a single
    responsibility
  - Methods may share logic with related methods but they will
    also have independent logic – coupling related methods is
@@ -122,14 +121,15 @@ problems".
  - The more methods you write, the more code your application
    will have, the more the code, the more the bugs
 
-The OOP lot like to hide complexity in pretty looking objects
-with chainable fluid interfaces. That's an ironically complex
-solution for a problem aimed at reducing complexity. And I
-know what the magicians are saying, "an object with a few
+The OOP lot like to hide complexity in pretty looking 
+chainable fluid interfaces. That's an ironically complex
+solution for a problem aimed at reducing complexity.
+
+I know what the magicians are saying, "a class with a few
 setters and getters is hardly complex."
 
 Maybe not but I'm not buying your evil magic friend. You and
-your tempting object of tricks can stay away from my
+your tempting class of tricks can stay away from my
 application party.
 
 [1]: /thoughts/2013-09-22-data-and-behaviour
