@@ -35,7 +35,10 @@ class Application extends RoutedApplication
 
             'about' => ['GET', '/about', $this->c('main', 'about')],
 
+            'atom' => ['GET', '/thoughts/latest.atom', $this->c('main', 'atom')],
+            
             'post' => ['GET', '/thoughts/:slug', $this->c('main', 'post')],
+
         ];
     }
 }

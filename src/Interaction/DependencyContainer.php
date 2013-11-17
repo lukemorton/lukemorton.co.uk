@@ -6,6 +6,8 @@ use Interaction\Controller;
 
 use Michelf\MarkdownExtra;
 
+use FeedWriter\Atom;
+
 use Data;
 use View;
 
@@ -30,6 +32,10 @@ class DependencyContainer extends Pimple
 
                 $c['index'] = $this->share(function () {
                     return new View\Model\IndexViewModel;
+                });
+
+                $c['atom'] = $this->share(function () {
+                    return new View\Model\AtomViewModel;
                 });
 
                 $c['post'] = $this->share(function () {
@@ -79,6 +85,10 @@ class DependencyContainer extends Pimple
 
             return $c;
         });
+
+        $this['atom_feed'] = function () {
+            return new Atom;
+        };
 
         $this['markdown'] = $this->share(function () {
             return new MarkdownExtra;
