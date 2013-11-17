@@ -6,8 +6,6 @@ class PostDataModel
 {
     public function as_array($data)
     {
-        list($y, $m, $d) = explode('-', $data['slug'], 4);
-
         $post_path = $data['root'].'/posts/'.$data['slug'].'.md';
 
         if ( ! file_exists($post_path)) {
@@ -18,6 +16,8 @@ class PostDataModel
 
         $first_new_line_pos = strpos($post_content, "\n\n");
 
+        list($y, $m, $d) = explode('-', $data['slug'], 4);
+        
         return [
             'post' => [
                 'title' => substr($post_content, 2, $first_new_line_pos),
