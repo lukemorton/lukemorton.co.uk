@@ -3,6 +3,9 @@
     - production
   user: root
   tasks:
+    - name: Update composer
+      command: /usr/local/bin/composer self-update
+
     - name: Update composer packages
       command: /usr/local/bin/composer install -d /var/www/lukemorton.co.uk
 
