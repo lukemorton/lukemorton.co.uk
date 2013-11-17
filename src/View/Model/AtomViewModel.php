@@ -11,6 +11,7 @@ class AtomViewModel extends AbstractViewModel
 		$feed = $data['atom_feed'];
 		$feed->setTitle('An Exploration of the Web');
 		$feed->setLink('http://lukemorton.co.uk');
+		$feed->setSelfLink('http://lukemorton.co.uk/thoughts/latest.atom');
 
 		$latest_post = current($data['posts']);
 		$feed->setDate($latest_post['created']);
@@ -29,7 +30,7 @@ class AtomViewModel extends AbstractViewModel
 					$post['title'] = strip_tags($post['title']);
 					$post['intro'] = $markdown->transform($post['intro']);
 					$post['href'] = '/thoughts/'.$post['slug'];
-					
+
 					return $post;
 				},
 				$posts);
