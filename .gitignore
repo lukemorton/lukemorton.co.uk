@@ -2,5 +2,6 @@
 !/vendor/modules
 !/vendor/system
 /composer.phar
-/composer.lock
 .DS_Store
+/public/photos
+/photos
