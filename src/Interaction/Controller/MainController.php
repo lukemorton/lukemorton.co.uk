@@ -44,7 +44,7 @@ class MainController extends AbstractPageController
                     'atom_feed' => $req['dc']['atom_feed'],
                 ]),
                 [
-                    'content-type' => 'application/atom+xml',
+                    'Content-Type' => 'application/atom+xml',
                 ]);
     }
 
