@@ -1,6 +1,6 @@
 # More methods,<br /> more problems
 
-An explanation to why I don't like more than one **public
+An explanation as to why I don't like more than one **public
 method** per class.
 
 I've written about this [before][1]. If your classes are
