@@ -1,13 +1,77 @@
 body {
-  max-width: 600px;
-  margin: 50px;
+  max-width: 640px;
+  margin: 3em;
 
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 1.6;
 
   color: #333333;
   background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 2;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3 {
+  margin: 1em 0 0.5em 0;
+}
+
+h1 {
+  font-size: 2.5em;
+  padding: 20px 0 30px 0;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+  margin: 0.5em 0 0.25em 0;
+}
+
+.intro {
+  font-size: 1.2em;
+  margin: 2em 0;
+}
+
+p {
+  margin: 0 0 1.6em 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 1.6em 1.6em 1.6em;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+blockquote {
+  padding: 0 0 0 1em;
+  margin: 0 0 1.5em 0;
+  font-style: italic;
+}
+
+blockquote p {
+  font-size: 1.2em;
 }
 
 a,
@@ -21,87 +85,25 @@ a:focus {
   color: #005580;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  margin: 10px 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  line-height: 20px;
-  color: inherit;
-  text-rendering: optimizelegibility;
-}
-
-h1 {
-  font-size: 44px;
-  line-height: 70px;
-  padding: 20px 0 30px 0;
-}
-
-h2,
-h3 {
-  line-height: 60px;
-}
-
-h2 {
-  font-size: 36px;
-}
-
-h3 {
-  font-size: 28px;
-}
-
-h4 {
-  font-size: 20px;
-}
-
-@media only screen and (max-width: 480px) {
-  body {
-    margin: 20px;
-  }
-  
-  h1 {
-  }
-
-  h2,
-  h3 {
-    line-height: 40px;
-  }
-
-  h2 {
-    font-size: 28px;
-  }
-
-  h3 {
-    font-size: 24px;
-  }
-}
-
-p {
-  margin: 0 0 24px 0;
-}
-
-ul,
-ol {
-  padding: 0;
-  margin: 0 25px 24px 25px;
-}
-
-li {
-  margin-bottom: 16px;
-}
-
 .meta {
   color: #999;
 }
 
 .gist {
   font-size: 14px;
-  line-height: 1.5;
-  margin: 0 0 24px 0;
+  line-height: 1.6;
+  margin: 0 0 1.6em 0;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 16px;
+    margin: 1em;
+  }
 }
 
 @media only screen and (min-width: 800px) {
-  .gist { width: 700px; }
+  .gist {
+    width: 700px;
+  }
 }
