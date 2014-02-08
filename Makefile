@@ -9,6 +9,9 @@ production:
 deploy:
 	ansible-playbook private/ansible/deploy.yml -i private/ansible/production -l production
 
+install:
+	curl -s https://getcomposer.org/installer | php && php composer.phar install
+
 update:
 	php composer.phar self-update
 	php composer.phar update
