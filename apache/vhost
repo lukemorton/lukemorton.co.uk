@@ -3,4 +3,25 @@
   ServerAlias www.lukemorton.co.uk
 	ServerAlias luke.theisland.io
 	DocumentRoot /var/www/lukemorton/public
+
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride None
+  </Directory>
+
+  <Directory /var/www/lukemorton/public>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    allow from all
+  </Directory>
+
+  SetEnv KOHANA_ENV production
+  SetEnv PRODUCTION yes
+
+  ErrorLog /var/www/lukemorton/logs/error.log
+
+  LogLevel warn
+
+  CustomLog /var/www/lukemorton/logs/access.log combined
 </VirtualHost>
