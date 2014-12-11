@@ -1,0 +1,75 @@
+---
+- hosts: hanoi
+  sudo: yes
+
+  vars:
+    repo: git@bitbucket.org:DrPheltRight/lukemorton.co.uk.git
+    dest: lukemorton
+    branch: develop
+
+  handlers:
+    - name: reload apache
+      service: name=apache2 state=reloaded
+
+  tasks:
+    - name: add deploy key
+      copy:
+        src: ../keys/deploy
+        dest: /home/ubuntu/{{ dest }}
+        mode: 0600
+      when: "'production' in group_names"
+
+    - name: clone repo
+      git:
+        repo: "{{ repo }}"
+        dest: /var/www/{{ dest }}
+        key_file: /home/ubuntu/{{ dest }}
+        accept_hostkey: true
+        version: "{{ branch }}"
+      notify: reload apache
+      when: "'production' in group_names"
+
+    - name: install composer
+      shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin creates=/usr/local/bin/composer
+      tags: composer
+
+    - name: rename composer.phar to composer
+      shell: mv /usr/local/bin/composer.phar /usr/local/bin/composer creates=/usr/local/bin/composer
+      tags: composer
+
+    - name: make composer executable
+      shell: chmod a+x /usr/local/bin/composer
+      tags: composer
+
+    - name: 'Install composer dependencies'
+      composer: working_dir=/var/www/{{ dest }}
+
+    - name: Create application log and cache directories
+      file:
+        dest: /var/www/{{ dest }}/${item}
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: 0755
+      with_items:
+        - poems/logs/
+        - poems/cache/
+        - logs/
+
+    - name: symlink vhost file
+      file:
+        src: "/var/www/{{ dest }}/apache/vhost"
+        dest: "/etc/apache2/sites-enabled/{{ dest }}.conf"
+        state: link
+      notify: reload apache
+
+    - name: change uploads permissions
+      file:
+        dest: "/var/www/{{ dest }}/blog/wp-content/uploads"
+        owner: www-data
+
+    - name: create database
+      mysql_db:
+        db: "{{ database.name }}"
+        state: present
+        encoding: utf8

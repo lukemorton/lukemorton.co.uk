@@ -1,0 +1,6 @@
+<VirtualHost *:80>
+	ServerName lukemorton.co.uk
+  ServerAlias www.lukemorton.co.uk
+	ServerAlias luke.theisland.io
+	DocumentRoot /var/www/lukemorton/public
+</VirtualHost>
