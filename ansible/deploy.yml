@@ -62,14 +62,3 @@
         dest: "/etc/apache2/sites-enabled/{{ dest }}.conf"
         state: link
       notify: reload apache
-
-    - name: change uploads permissions
-      file:
-        dest: "/var/www/{{ dest }}/blog/wp-content/uploads"
-        owner: www-data
-
-    - name: create database
-      mysql_db:
-        db: "{{ database.name }}"
-        state: present
-        encoding: utf8
