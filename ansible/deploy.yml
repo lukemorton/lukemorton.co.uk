@@ -1,5 +1,5 @@
 ---
-- hosts: hanoi
+- hosts: george
   sudo: yes
 
   vars:
