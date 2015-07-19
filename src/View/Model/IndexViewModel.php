@@ -45,6 +45,16 @@ class IndexViewModel extends AbstractViewModel
 	{
 		return [
 			[
+				'name' => 'cf-deploy',
+				'desc' => 'cf-deploy is the tool you use to deploy your rails app to CloudFoundry providers like Pivotal.',
+				'href' => 'https://github.com/madetech/cf-deploy',
+			],
+			[
+				'name' => 'rui',
+				'desc' => 'Very experimental ruby user interface library for HTML/CSS',
+				'href' => 'https://github.com/DrPheltRight/rui',
+			],
+			[
 				'name' => 'Lily',
 				'desc' => 'A lightweight web application library for PHP.',
 				'href' => 'https://github.com/DrPheltRight/lily',
