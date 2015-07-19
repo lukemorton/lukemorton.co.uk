@@ -46,7 +46,7 @@
 
     - name: Create application log and cache directories
       file:
-        dest: /var/www/{{ dest }}/${item}
+        dest: /var/www/{{ dest }}/{{ item }}
         state: directory
         owner: www-data
         group: www-data
