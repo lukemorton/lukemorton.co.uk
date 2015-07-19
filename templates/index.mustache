@@ -1,73 +1,79 @@
-<h1>
-  {{title}}
-</h1>
+<main>
+  <h1>
+    {{title}}
+  </h1>
 
-<p class="meta">
-  <em>By <a href="{{index_url}}">Luke Morton</a></em>
-</p>
+  <p class="meta">
+    <em>By <a href="{{index_url}}">Luke Morton</a></em>
+  </p>
 
-<p class="intro">
-  Like both the atoms that make us and the systems that comprise the universe in
-  which we live, the Internet is a complex organism that we explore daily.
-</p>
+  <p class="intro">
+    Like both the atoms that make us and the systems that comprise the universe in
+    which we live, the Internet is a complex organism that we explore daily.
+  </p>
 
-<p>
-  Here you will find a collection of my thoughts on the Internet and the systems
-  that make it so complex. You will also find some of those thoughts realised in
-  the form of open source code. Hopefully the resources contained within these
-  HTML walls will encourage you to explore for yourself this rich and
-  interesting landscape.
-</p>
+  <p>
+    Here you will find a collection of my thoughts on the Internet and the systems
+    that make it so complex. You will also find some of those thoughts realised in
+    the form of open source code. Hopefully the resources contained within these
+    HTML walls will encourage you to explore for yourself this rich and
+    interesting landscape.
+  </p>
 
-<p>
-  If you want you can find a little more <a href="{{about_url}}">about me</a>
-  and please do get in touch via twitter
-  <a href="{{twitter.url}}">{{twitter.handle}}</a>.
-</p>
+  <p>
+    If you want you can find a little more <a href="{{about_url}}">about me</a>
+    and please do get in touch via twitter
+    <a href="{{twitter.url}}">{{twitter.handle}}</a>.
+  </p>
 
-<p>
-  Finally, everything you find here is yours to keep unless licensed otherwise.
-</p>
+  <p>
+    Finally, everything you find here is yours to keep unless licensed otherwise.
+  </p>
 
-<h2>
-  Thoughts
-</h2>
+  <div class="thoughts">
+    <h2>
+      Thoughts
+    </h2>
 
-<ul>
-  {{#thoughts}}
-    <li class="post">
-      <h4>
-        <a href="{{href}}">{{title}}</a>
-      </h4>
+    <ul>
+      {{#thoughts}}
+        <li class="post">
+          <h4>
+            <a href="{{href}}">{{title}}</a>
+          </h4>
 
-      <div>
-        <em>{{created}}</em>
-      </div>
+          <div>
+            <em>{{created}}</em>
+          </div>
 
-      {{{intro}}}
-    </li>
-  {{/thoughts}}
-</ul>
+          {{{intro}}}
+        </li>
+      {{/thoughts}}
+    </ul>
+  </div>
 
-<h2>
-  Open Source Projects
-</h2>
+  <div class="projects">
+    <h2>
+      Open Source Projects
+    </h2>
 
-<ul>
-  {{#projects}}
-    <li>
-      <h4>
-        <a href="{{href}}">{{name}}</a>
-      </h4>
+    <ul>
+      {{#projects}}
+        <li>
+          <h4>
+            <a href="{{href}}">{{name}}</a>
+          </h4>
 
-      <p>
-        {{desc}}
-      </p>
-    </li>
-  {{/projects}}
-</ul>
+          <p>
+            {{desc}}
+          </p>
+        </li>
+      {{/projects}}
+    </ul>
 
-<p>
-  You can find even more of my open source work on my
-  <a href="{{github_href}}">GitHub profile</a>.
-</p>
+    <p>
+      You can find even more of my open source work on my
+      <a href="{{github_href}}">GitHub profile</a>.
+    </p>
+  </div>
+</main>

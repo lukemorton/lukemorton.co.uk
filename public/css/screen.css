@@ -1,5 +1,4 @@
 body {
-  max-width: 640px;
   margin: 3em;
 
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -8,6 +7,10 @@ body {
 
   color: #333333;
   background-color: #ffffff;
+}
+
+main {
+  max-width: 640px;
 }
 
 h1,
