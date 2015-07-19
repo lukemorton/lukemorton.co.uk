@@ -1,5 +1,7 @@
 # Hiatus Over
 
+Where I example what I've been up to.
+
 When I moved from the startup world of uncertainty to a little more certain
 world of [delivering web apps][made], e-commerce and otherwise, my writing
 slowed. Getting your knowledge down, distilling it into written form is an
