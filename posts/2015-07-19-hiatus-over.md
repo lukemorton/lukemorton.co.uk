@@ -1,6 +1,6 @@
 # Hiatus Over
 
-Where I example what I've been up to.
+Where I explain what I've been up to.
 
 When I moved from the startup world of uncertainty to a little more certain
 world of [delivering web apps][made], e-commerce and otherwise, my writing
