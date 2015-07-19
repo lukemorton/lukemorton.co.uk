@@ -8,10 +8,10 @@ slowed. Getting your knowledge down, distilling it into written form is an
 important part of consuming information. So here I am back ready to distill
 my current thought processes about the world wide web.
 
-Moving to MadeTech, introducing [continuous delivery pipelines][cd], bringing
-agile rails to [teams][cdp] who want to modernise, writing for
+Moving to [Made][made], introducing [continuous delivery pipelines][cd],
+bringing agile rails to [teams][cdp] who want to modernise, writing for
 [Made's blog][made-blog] and [hiring][richard] fledgling developers has been
-a career changer for me.
+a career changer for me. It's all very exciting stuff!
 
 The opportunities presented at MadeTech are eye openers and exciting but I'm
 also very busy. Being pushed into blogging with the rest of our team has only
