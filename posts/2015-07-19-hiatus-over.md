@@ -44,7 +44,7 @@ personal journeys through the web.
 [made-blog]: https://madetech.com/news
 [richard]: https://www.madetech.com/news/scary-new-code
 [rails]: http://rubyonrails.org/
-[chef]: http://rubyonrails.org/
+[chef]: https://www.chef.io/chef/
 [jenkins]: https://jenkins-ci.org/
 [lily]: https://github.com/DrPheltRight/lily
 [marionetta]: https://github.com/DrPheltRight/marionetta
