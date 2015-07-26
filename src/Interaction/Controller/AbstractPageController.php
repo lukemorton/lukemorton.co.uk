@@ -25,9 +25,12 @@ abstract class AbstractPageController
                 $template,
                 $viewModel);
 
+        $app = $request['app'];
+
         return
             $request['dc']['v']['template_engine']->render(
                 'layout',
-                compact('title', 'content'));
+                $request['dc']['v']['model']['layout']->as_array(
+                    compact('app', 'title', 'content')));
     }
 }

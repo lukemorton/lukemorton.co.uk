@@ -30,6 +30,10 @@ class DependencyContainer extends Pimple
             $c['model'] = $this->share(function () {
                 $c = new Pimple;
 
+                $c['layout'] = $this->share(function () {
+                    return new View\Model\LayoutViewModel;
+                });
+
                 $c['index'] = $this->share(function () {
                     return new View\Model\IndexViewModel;
                 });

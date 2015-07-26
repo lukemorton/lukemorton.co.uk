@@ -17,6 +17,7 @@ aside {
 h1,
 h2,
 h3,
+.h3,
 h4 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
@@ -27,7 +28,8 @@ h4 {
 
 h1,
 h2,
-h3 {
+h3,
+.h3 {
   margin: 1em 0 0.5em 0;
 }
 
@@ -40,7 +42,8 @@ h2 {
   font-size: 2em;
 }
 
-h3 {
+h3,
+.h3 {
   font-size: 1.5em;
 }
 
@@ -123,6 +126,29 @@ a:focus {
   display: block;
 }
 
+.navigation {
+  float: right;
+  text-align: right;
+  padding: 0 0 3em 0;
+}
+
+.navigation ol {
+  margin: 0;
+}
+
+.navigation li {
+  color: #666;
+  margin: 0;
+}
+
+.navigation a {
+  color: #999;
+}
+
+.navigation a:hover {
+  color: #333;
+}
+
 @media only screen and (min-width: 540px) {
   body {
     margin: 2em;
@@ -147,6 +173,15 @@ a:focus {
 @media only screen and (min-width: 800px) {
   .gist {
     width: 700px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .navigation {
+    position: fixed;
+    top: 4.9em;
+    right: 3em;
+    width: 8em;
   }
 }
 
