@@ -9,7 +9,7 @@ class LayoutViewModel extends AbstractViewModel
 	public function as_array($data)
 	{
 		return [
-			'title' => $data['title'],
+			'title' => "{$data['title']} by Luke Morton",
 			'content' => $data['content'],
 			'nav' => $this->nav($data['app']),
 		];
