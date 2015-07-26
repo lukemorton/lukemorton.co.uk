@@ -12,19 +12,21 @@
           href="/thoughts/latest.atom" />
   </head>
   <body class="animated fadeIn">
-    {{{content}}}
+    <div class="page">
+      {{{content}}}
 
-    <nav class="navigation">
-      <div class="h3">Chapters</div>
+      <nav class="navigation">
+        <div class="h3">Chapters</div>
 
-      <ol>
-        {{#nav}}
-          <li>
-            <a href="{{href}}">{{label}}</a>
-          </li>
-        {{/nav}}
-      </ol>
-    </nav>
+        <ol>
+          {{#nav}}
+            <li>
+              <a href="{{href}}">{{label}}</a>
+            </li>
+          {{/nav}}
+        </ol>
+      </nav>
+    </div>
 
     <script>
       var _gaq = _gaq || [];

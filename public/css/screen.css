@@ -11,7 +11,7 @@ body {
 
 main,
 aside {
-  max-width: 640px;
+  max-width: 36em;
 }
 
 h1,
@@ -127,13 +127,14 @@ a:focus {
 }
 
 .navigation {
-  float: right;
   text-align: right;
-  padding: 0 0 3em 0;
+  padding-top: 2em;
 }
 
 .navigation ol {
+  display: inline-block;
   margin: 0;
+  width: 8em;
 }
 
 .navigation li {
@@ -170,18 +171,23 @@ a:focus {
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 45em) {
   .gist {
-    width: 700px;
+    width: 40em;
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 60em) {
+  .page {
+    margin: 0 auto;
+    width: 50em;
+  }
+
   .navigation {
     position: fixed;
-    top: 4.9em;
-    right: 3em;
-    width: 8em;
+    top: 3em;
+    left: 50%;
+    margin-left: 17em;
   }
 }
 
