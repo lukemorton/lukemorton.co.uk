@@ -26,7 +26,7 @@ class MainController extends AbstractPageController
 
     public function index($req)
     {
-        $posts_data = $this->posts_data($req + ['limit' => 10]);
+        $posts_data = $this->posts_data($req + ['limit' => 5]);
 
         return $this->render($req, 'index', [
             'index_url' => $req['app']->uri('index'),
