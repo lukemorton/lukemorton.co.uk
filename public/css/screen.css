@@ -116,6 +116,10 @@ a:focus {
   margin: 0;
 }
 
+.post .content p:first-of-type {
+  margin-top: 0;
+}
+
 .post__published_at {
   padding-bottom: .5em;
 }
