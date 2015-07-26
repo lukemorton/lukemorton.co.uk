@@ -10,17 +10,11 @@ class PostsIndexDataModel
     {
         $posts_dir_path = $data['root'].'/posts/*';
 
-        $posts_dir =
-            array_reverse(
-                iterator_to_array(
-                    new FilesystemIterator(
-                        dirname($posts_dir_path))));
-
         $posts = array();
 
-        foreach ($posts_dir as $_file) {
-            $basename = $_file->getBasename('.md');
-            list($y, $m, $d) = explode('-', $basename, 4);
+        foreach ($this->filesInDateOrder($posts_dir_path) as $_basename => $_file)
+        {
+            list($y, $m, $d) = explode('-', $_basename, 4);
             $created = strtotime("{$y}-{$m}-{$d}");
 
             if (isset($data['between'])
@@ -30,10 +24,10 @@ class PostsIndexDataModel
                 continue;
             }
 
-            $posts[$basename] =
+            $posts[$_basename] =
                 $this->title_and_intro_from_markdown_file($_file)
                 + [
-                    'slug' => $basename,
+                    'slug' => $_basename,
                     'created' => $created,
                 ];
 
@@ -43,6 +37,22 @@ class PostsIndexDataModel
         }
 
         return array('posts' => array_values($posts));
+    }
+
+    private function filesInDateOrder($posts_dir_path)
+    {
+        $posts_dir =
+            new FilesystemIterator(
+                dirname($posts_dir_path));
+
+        $posts = array();
+
+        foreach ($posts_dir as $_file) {
+            $posts[$_file->getBasename('.md')] = $_file;
+        }
+
+        krsort($posts);
+        return $posts;
     }
 
     private function title_from_markdown_file($file)
