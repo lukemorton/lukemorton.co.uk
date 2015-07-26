@@ -10,7 +10,7 @@ class IndexViewModel extends AbstractViewModel
 	{
 		return [
 			'title' => 'An Exploration of the Web',
-			'formatted_title' => '<span>An Exploration</span> of the Web',
+			'formatted_title' => '<span class="break--mobile">An Exploration</span> of the Web',
 			'about_url' => $data['about_url'],
 			'twitter' => $this->twitter(),
 			'thoughts' => $this->thoughts($data['markdown'], $data['posts']),

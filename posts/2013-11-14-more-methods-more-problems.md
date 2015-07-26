@@ -1,4 +1,4 @@
-# More methods,<br /> more problems
+# <span class="break--always">More methods,</span> more problems
 
 An explanation as to why I don't like more than one **public
 method** per class.
@@ -121,7 +121,7 @@ problems".
  - The more methods you write, the more code your application
    will have, the more the code, the more the bugs
 
-The OOP lot like to hide complexity in pretty looking 
+The OOP lot like to hide complexity in pretty looking
 chainable fluid interfaces. That's an ironically complex
 solution for a problem aimed at reducing complexity.
 

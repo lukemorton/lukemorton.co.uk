@@ -36,10 +36,6 @@ h1 {
   margin: 2em 0 1em 0;
 }
 
-h1 span {
-  display: block;
-}
-
 h2 {
   font-size: 2em;
 }
@@ -121,8 +117,18 @@ a:focus {
   padding-bottom: .5em;
 }
 
+.break--mobile,
+.break--tablet,
+.break--always {
+  display: block;
+}
+
 @media only screen and (min-width: 540px) {
-  h1 span {
+  body {
+    margin: 2em;
+  }
+
+  .break--mobile {
     display: inline;
   }
 }
@@ -131,6 +137,10 @@ a:focus {
   body {
     margin: 3em;
     font-size: 18px;
+  }
+
+  .break--tablet {
+    display: inline;
   }
 }
 
