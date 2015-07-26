@@ -34,6 +34,10 @@ class DependencyContainer extends Pimple
                     return new View\Model\IndexViewModel;
                 });
 
+                $c['archive'] = $this->share(function () {
+                    return new View\Model\ArchiveViewModel;
+                });
+
                 $c['atom'] = $this->share(function () {
                     return new View\Model\AtomViewModel;
                 });

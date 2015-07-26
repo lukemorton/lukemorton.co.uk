@@ -12,6 +12,7 @@ class IndexViewModel extends AbstractViewModel
 			'title' => 'An Exploration of the Web',
 			'formatted_title' => '<span class="break--mobile">An Exploration</span> of the Web',
 			'about_url' => $data['about_url'],
+			'archive_url' => $data['archive_url'],
 			'twitter' => $this->twitter(),
 			'thoughts' => $this->thoughts($data['markdown'], $data['posts']),
 			'projects' => $this->projects(),
@@ -25,21 +26,6 @@ class IndexViewModel extends AbstractViewModel
 			'url' => 'https://twitter.com/LukeMorton',
 			'handle' => '@LukeMorton',
 		];
-	}
-
-	private function thoughts($markdown, $posts)
-	{
-		return
-			array_map(
-				function ($post) use ($markdown)
-				{
-					$post['title'] = strip_tags($post['title']);
-					$post['intro'] = $markdown->transform($post['intro']);
-					$post['created'] = $this->formatted_date($post['created']);
-					$post['href'] = '/thoughts/'.$post['slug'];
-					return $post;
-				},
-				$posts);
 	}
 
 	private function projects()
