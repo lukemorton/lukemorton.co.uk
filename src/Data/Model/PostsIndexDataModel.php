@@ -42,8 +42,6 @@ class PostsIndexDataModel
             }
         }
 
-        krsort($posts);
-
         return array('posts' => array_values($posts));
     }
 
