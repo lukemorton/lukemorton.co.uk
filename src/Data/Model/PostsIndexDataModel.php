@@ -11,8 +11,10 @@ class PostsIndexDataModel
         $posts_dir_path = $data['root'].'/posts/*';
 
         $posts_dir =
-            new FilesystemIterator(
-                dirname($posts_dir_path));
+            array_reverse(
+                iterator_to_array(
+                    new FilesystemIterator(
+                        dirname($posts_dir_path))));
 
         $posts = array();
 
@@ -34,6 +36,10 @@ class PostsIndexDataModel
                     'slug' => $basename,
                     'created' => $created,
                 ];
+
+            if (isset($data['limit']) AND count($posts) == $data['limit']) {
+                break;
+            }
         }
 
         krsort($posts);

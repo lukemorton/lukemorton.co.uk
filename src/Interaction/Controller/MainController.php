@@ -13,21 +13,35 @@ class MainController extends AbstractPageController
         if ($req['env'] === 'production') {
             $between = [0, time()];
         }
-        
+
+        if (isset($req['limit'])) {
+            $limit = $req['limit'];
+        }
+
         return
             $req['dc']['d']['model']['index']->as_array(
                 ['root' => $req['root']]
-                + compact('between'));
+                + compact('between', 'limit'));
     }
 
     public function index($req)
     {
-        $posts_data = $this->posts_data($req);
+        $posts_data = $this->posts_data($req + ['limit' => 10]);
 
         return $this->render($req, 'index', [
             'index_url' => $req['app']->uri('index'),
             'markdown' => $req['dc']['markdown'],
             'about_url' => $req['app']->uri('about'),
+            'posts' => $posts_data['posts'],
+        ]);
+    }
+
+    public function archive($req)
+    {
+        $posts_data = $this->posts_data($req);
+
+        return $this->render($req, 'index', [
+            'index_url' => $req['app']->uri('index'),
             'posts' => $posts_data['posts'],
         ]);
     }
