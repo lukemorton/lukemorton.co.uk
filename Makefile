@@ -17,4 +17,4 @@ update:
 	php composer.phar update
 
 dev:
-	php -S localhost:8000 -t public/ public/index.php
+	php -S 0.0.0.0:8000 -t public/ public/index.php
