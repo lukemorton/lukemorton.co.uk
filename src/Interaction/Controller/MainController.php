@@ -81,6 +81,7 @@ class MainController extends AbstractPageController
             'markdown' => $req['dc']['markdown'],
             'post' => $post_data['post'],
             'index_url' => $req['app']->uri('index'),
+            'archive_url' => $req['app']->uri('archive'),
         ]);
     }
 

@@ -14,8 +14,9 @@ class PostViewModel extends AbstractViewModel
 				'title' => $data['post']['title'],
 				'content' => $data['markdown']->transform($data['post']['content']),
 				'created' => $this->formatted_date($data['post']['created']),
-				'index_url' => $data['index_url'],
 			],
+			'index_url' => $data['index_url'],
+			'archive_url' => $data['archive_url'],
 		];
 	}
 }
