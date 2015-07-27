@@ -89,9 +89,12 @@ a:focus {
 
 .meta {
   color: #999;
-  line-height: 3em;
   margin-bottom: 3em;
   overflow: hidden;
+}
+
+.posts .meta {
+  line-height: 3em;
 }
 
 .author {
