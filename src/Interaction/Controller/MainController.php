@@ -43,6 +43,7 @@ class MainController extends AbstractPageController
 
         return $this->render($req, 'archive', [
             'index_url' => $req['app']->uri('index'),
+            'about_url' => $req['app']->uri('about'),
             'markdown' => $req['dc']['markdown'],
             'posts' => $posts_data['posts'],
         ]);
@@ -82,6 +83,7 @@ class MainController extends AbstractPageController
             'post' => $post_data['post'],
             'index_url' => $req['app']->uri('index'),
             'archive_url' => $req['app']->uri('archive'),
+            'about_url' => $req['app']->uri('about'),
         ]);
     }
 

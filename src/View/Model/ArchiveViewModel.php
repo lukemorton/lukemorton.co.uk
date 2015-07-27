@@ -10,7 +10,8 @@ class ArchiveViewModel extends AbstractViewModel
 	{
 		return [
 			'title' => 'Thought Archive',
-			'index_url' => $data['index_url'],
+            'index_url' => $data['index_url'],
+			'about_url' => $data['about_url'],
 			'thoughts' => $this->thoughts($data['markdown'], $data['posts']),
 		];
 	}
