@@ -21,14 +21,17 @@ class LayoutViewModel extends AbstractViewModel
 			[
 				'href' => $app->uri('index'),
 				'label' => 'Introduction',
+				'index' => 1,
 			],
 			[
 				'href' => $app->uri('archive'),
 				'label' => 'Thoughts',
+				'index' => 2,
 			],
 			[
 				'href' => $app->uri('about'),
 				'label' => 'About Author',
+				'index' => 3,
 			],
 		];
 	}
