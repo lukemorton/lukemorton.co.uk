@@ -148,9 +148,15 @@ a:focus {
   display: block;
 }
 
+.navigation_toggle {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
 .navigation {
   text-align: right;
-  padding-top: 2em;
+  padding: 1em 0 0 0;
 }
 
 .navigation ol {
@@ -177,6 +183,10 @@ a:focus {
     margin: 2em;
   }
 
+  .navigation_toggle {
+    right: 2em;
+  }
+
   .break--mobile {
     display: inline;
   }
@@ -186,6 +196,10 @@ a:focus {
   body {
     margin: 3em;
     font-size: 18px;
+  }
+
+  .navigation_toggle {
+    right: 3em;
   }
 
   .meta {
