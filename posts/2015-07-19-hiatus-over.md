@@ -13,7 +13,7 @@ bringing agile rails to [teams][cdp] who want to modernise, writing for
 [Made's blog][made-blog] and [hiring][richard] fledgling developers has been
 a career changer for me. It's all very exciting stuff!
 
-The opportunities presented at MadeTech are eye openers and exciting but I'm
+The opportunities presented at Made Tech are eye openers and exciting but I'm
 also very busy. Being pushed into blogging with the rest of our team has only
 highlighted the neglect I've been giving my own site. I am pretty opinionated
 but I also hope I'm a conduit for interesting conversations, I want to put more
