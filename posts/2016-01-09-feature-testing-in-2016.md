@@ -2,7 +2,7 @@
 
 In which I outline a strategy for Feature testing with rspec and capybara.
 
-At the end of last year I, along with friend and fellow [islander](http://theisland.io)
+At the end of last year I, along with friend, [colleague](https://www.madetech.com) and [fellow islander](http://theisland.io)
 [David](http://twitter.com/davidwinter) decided upon a set way of writing
 feature tests across our rails projects. Based on frustrations with cucumber,
 regex and too much code sharing between scenarios the following strategy was
