@@ -20,8 +20,8 @@ to fix the thing that's going wrong. Take a team that are suffering from slow
 and risky deployments.
 
 A team is in charge of deploying a large and rather unmagnificent monolithic
-application. It's built in PHP with it's earliest code written spaghetti western
-style, newer stuff in Symfony v1.
+application. It is built in PHP and has a mix of spaghetti western style and
+some newer features in Symfony v1.
 
 Deployments of the application are done over FTP with a maintenance mode so that
 database changes can be made by hand without resulting in user data loss. At
