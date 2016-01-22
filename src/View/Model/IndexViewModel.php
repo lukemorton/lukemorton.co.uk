@@ -39,28 +39,28 @@ class IndexViewModel extends AbstractViewModel
 			[
 				'name' => 'rui',
 				'desc' => 'Very experimental ruby user interface library for HTML/CSS',
-				'href' => 'https://github.com/DrPheltRight/rui',
+				'href' => 'https://github.com/lukemorton/rui',
 			],
 			[
 				'name' => 'Lily',
 				'desc' => 'A lightweight web application library for PHP.',
-				'href' => 'https://github.com/DrPheltRight/lily',
+				'href' => 'https://github.com/lukemorton/lily',
 			],
 			[
 				'name' => 'Uniform',
 				'desc' => 'A way of organising your front-end CoffeeScript or JavaScript.',
-				'href' => 'https://github.com/DrPheltRight/uniform',
+				'href' => 'https://github.com/lukemorton/uniform',
 			],
 			[
 				'name' => 'alchemy.rb',
 				'desc' => 'An example of modular frameworkless application design using IDV.',
-				'href' => 'https://github.com/DrPheltRight/alchemy.rb',
+				'href' => 'https://github.com/lukemorton/alchemy.rb',
 			],
 		];
 	}
 
 	private function github_href()
 	{
-		return 'https://github.com/DrPheltRight';
+		return 'https://github.com/lukemorton';
 	}
 }
