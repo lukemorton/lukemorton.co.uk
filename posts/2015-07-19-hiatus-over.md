@@ -46,6 +46,6 @@ personal journeys through the web.
 [rails]: http://rubyonrails.org/
 [chef]: https://www.chef.io/chef/
 [jenkins]: https://jenkins-ci.org/
-[lily]: https://github.com/DrPheltRight/lily
-[marionetta]: https://github.com/DrPheltRight/marionetta
+[lily]: https://github.com/lukemorton/lily
+[marionetta]: https://github.com/lukemorton/marionetta
 [testing]: https://www.madetech.com/news/feature-testing-with-rspec

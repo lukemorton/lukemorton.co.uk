@@ -129,6 +129,6 @@ database further. Or even learn as a rubyist how to be a DBA. One thing that
 came out of my education was database normalisation a concept some developers
 haven't heard of. Let the conversation continue...
 
-[pieces]: https://github.com/drpheltright/pieces
+[pieces]: https://github.com/lukemorton/pieces
 [made-careers]: madetech.com/careers
 [jack-of-all-trades]: https://en.wikipedia.org/wiki/Jack_of_all_trades,_master_of_none

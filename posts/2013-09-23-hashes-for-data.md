@@ -16,7 +16,7 @@ Let's work with an example. We'll start with a data source. In
 this case, a mapper method called `#find_one_by_id`. When
 given an ID it returns a user.
 
-<script src="https://gist.github.com/DrPheltRight/6672861.js"></script>
+<script src="https://gist.github.com/lukemorton/6672861.js"></script>
 
 Surprise surprise I'm returning a `Hash` here. Why is this
 cool? Because it's already independent of the data layer it
@@ -32,7 +32,7 @@ model of data required by the application. The following
 example uses the mapper defined above and also a user ID to
 produce a data model.
 
-<script src="https://gist.github.com/DrPheltRight/6672864.js"></script>
+<script src="https://gist.github.com/lukemorton/6672864.js"></script>
 
 Who'da thunk it? `#to_hash` returns a hash! You should also
 note it takes a hash to begin with. Versatile little things
@@ -40,7 +40,7 @@ aren't they?
 
 Let's add another tier. A view model.
 
-<script src="https://gist.github.com/DrPheltRight/6672868.js"></script>
+<script src="https://gist.github.com/lukemorton/6672868.js"></script>
 
 So we pass in another hash to `ProfileViewModel#to_hash`. This
 time with one key, `:profile_user` which in fact is the hash

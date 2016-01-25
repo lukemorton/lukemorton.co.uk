@@ -16,7 +16,7 @@ Firstly methods should do something. If your class has
 multiple public methods it will likely be doing multiple
 things.
 
-<script src="https://gist.github.com/DrPheltRight/7466167.js"></script>
+<script src="https://gist.github.com/lukemorton/7466167.js"></script>
 
 So here we have a large model `UserModel`. You should already
 have your nose up at this unimplemented class. It does too
@@ -30,7 +30,7 @@ aren't used by the other public methods.
 Using the [Data][2] component of [IDV][3] you could create
 three data actions:
 
-<script src="https://gist.github.com/DrPheltRight/7466181.js"></script>
+<script src="https://gist.github.com/lukemorton/7466181.js"></script>
 
 They might share some logic but package that logic up in
 another class they all share rather than putting all this
@@ -54,7 +54,7 @@ valid multi-method classes I can think of are
 
 Let's take a user data mapper for example.
 
-<script src="https://gist.github.com/DrPheltRight/7466187.js"></script>
+<script src="https://gist.github.com/lukemorton/7466187.js"></script>
 
 So why do I think this is okay? Well firstly a mongo specific
 data mapper for a user is a pretty specific responsibility.

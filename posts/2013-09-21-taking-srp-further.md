@@ -10,7 +10,7 @@ The principle [tells us][1] that:
 
 Let's dig straight into an example in ruby.
 
-<script src="https://gist.github.com/DrPheltRight/6670928.js"></script>
+<script src="https://gist.github.com/lukemorton/6670928.js"></script>
 
 So here we have a class that follows SRP. It deals with the
 transformation of data ready to be merged with a template. In
@@ -23,7 +23,7 @@ responsibility comes in the form of a single entry point to
 the behaviour of an object. That means one public function
 only! I would personally write the above code like so:
 
-<script src="https://gist.github.com/DrPheltRight/6670974.js"></script>
+<script src="https://gist.github.com/lukemorton/6670974.js"></script>
 
 You might observe that I'm not storing any state in this
 object. You'd be correct. This is more a functional style of

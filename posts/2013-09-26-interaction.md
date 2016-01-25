@@ -13,7 +13,7 @@ TCP, ZeroMQ or whatever!
 
 Let's start with a sinatra application.
 
-<script src="https://gist.github.com/DrPheltRight/6700336.js"></script>
+<script src="https://gist.github.com/lukemorton/6700336.js"></script>
 
 Okay so I've provided you with a hello world for sinatra and
 minimal business logic. No data or view logic. However I've
@@ -24,7 +24,7 @@ It is however only suitable for limited life shelf
 applications or tiny ones. We need to introduce the other
 part of interaction now, controllers.
 
-<script src="https://gist.github.com/DrPheltRight/6700346.js"></script>
+<script src="https://gist.github.com/lukemorton/6700346.js"></script>
 
 So now we've added a controller to contain our (albeit over
 simplistic) business logic. This abstraction allows us to

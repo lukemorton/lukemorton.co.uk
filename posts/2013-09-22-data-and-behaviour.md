@@ -8,7 +8,7 @@ entity. Yes that's right, an object. To an OOP magician this
 is a self contained unit that can be passed around a program
 but ideally doesn't leak implementation details.
 
-<script src="https://gist.github.com/DrPheltRight/6670990.js"></script>
+<script src="https://gist.github.com/lukemorton/6670990.js"></script>
 
 The above example for instance doesn't leak how it formulates
 the full name of a `User` or how it works out their age. It
@@ -47,7 +47,7 @@ class defined above is given data on construction and produces
 an object which then can be used to work out some data that
 didn't exist on construction.
 
-<script src="https://gist.github.com/DrPheltRight/6670997.js"></script>
+<script src="https://gist.github.com/lukemorton/6670997.js"></script>
 
 The values `'Luke Morton'` and `23` were never passed to the
 `#new` method of `User`. They were produced by behaviour
@@ -77,7 +77,7 @@ Let's solve each of these bug bears.
 We can use the same solution found in a [previous post][1] on
 the single resposibility principle.
 
-<script src="https://gist.github.com/DrPheltRight/6671005.js"></script>
+<script src="https://gist.github.com/lukemorton/6671005.js"></script>
 
 This object only has one public method, `#to_hash`. Only one
 implementation to leak. It takes a hash of data and produces

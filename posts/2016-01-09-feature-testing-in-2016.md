@@ -11,7 +11,7 @@ devised.
 It builds upon a blog post by Future Learn on
 [writing readable feature tests in rspec](https://about.futurelearn.com/blog/how-we-write-readable-feature-tests-with-rspec/). Without further ado:
 
-<script src="https://gist.github.com/drpheltright/6f56ef24dea0516803be.js"></script>
+<script src="https://gist.github.com/lukemorton/6f56ef24dea0516803be.js"></script>
 
 Along with this structure there are some rules for keeping things tidy and
 maintainable:
