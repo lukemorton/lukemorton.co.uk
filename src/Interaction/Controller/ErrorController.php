@@ -12,6 +12,7 @@ class ErrorController extends AbstractPageController
     {
         if (strpos($req['uri'], '.') === FALSE) {
             $body = $this->render($req, 'not_found', [
+                'title' => 'Page Not Found',
                 'index_url' => $req['app']->uri('index'),
             ]);
         } else {
@@ -24,6 +25,7 @@ class ErrorController extends AbstractPageController
     public function error($req)
     {
         return Res::response(500, $this->render($req, 'error', [
+            'title' => 'Oooops, an error happened',
             'index_url' => $req['app']->uri('index'),
         ]));
     }
