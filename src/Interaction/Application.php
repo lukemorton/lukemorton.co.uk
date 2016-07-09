@@ -33,10 +33,10 @@ class Application extends RoutedApplication
         return [
             'index' => ['GET', '/', $this->c('main', 'index')],
             'about' => ['GET', '/about', $this->c('main', 'about')],
-            'atom' => ['GET', '/thoughts/latest.atom', $this->c('main', 'atom')],
-            'json' => ['GET', '/thoughts/latest.json', $this->c('main', 'json')],
-            'archive' => ['GET', '/thoughts/archive', $this->c('main', 'archive')],
-            'post' => ['GET', '/thoughts/:slug', $this->c('main', 'post')],
+            'atom' => ['GET', '/thoughts/latest.atom', $this->c('feeds', 'atom')],
+            'json' => ['GET', '/thoughts/latest.json', $this->c('feeds', 'json')],
+            'archive' => ['GET', '/thoughts/archive', $this->c('posts', 'index')],
+            'post' => ['GET', '/thoughts/:slug', $this->c('posts', 'show')],
         ];
     }
 }

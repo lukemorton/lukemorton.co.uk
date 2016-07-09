@@ -91,6 +91,14 @@ class DependencyContainer extends Pimple
                 return new Controller\MainController;
             });
 
+            $c['posts'] = $this->share(function () {
+                return new Controller\PostsController;
+            });
+
+            $c['feeds'] = $this->share(function () {
+                return new Controller\FeedsController;
+            });
+
             $c['error'] = $this->share(function () {
                 return new Controller\ErrorController;
             });
