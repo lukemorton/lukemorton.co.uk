@@ -14,8 +14,8 @@ class MainController extends AbstractPageController
             $between = [0, time()];
         }
 
-        if (isset($req['limit'])) {
-            $limit = $req['limit'];
+        if (isset($req['query']['limit'])) {
+            $limit = $req['query']['limit'];
         }
 
         return
