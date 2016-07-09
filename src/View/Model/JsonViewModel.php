@@ -2,9 +2,9 @@
 
 namespace View\Model;
 
-use View\Model\FeedViewModel;
+use View\Model\AbstractFeedViewModel;
 
-class JsonViewModel extends FeedViewModel
+class JsonViewModel extends AbstractFeedViewModel
 {
 	public function as_json($data)
 	{

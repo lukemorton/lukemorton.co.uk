@@ -4,7 +4,7 @@ namespace View\Model;
 
 use View\Model\AbstractViewModel;
 
-abstract class FeedViewModel extends AbstractViewModel
+abstract class AbstractFeedViewModel extends AbstractViewModel
 {
 	protected function formatted_posts($markdown, $posts)
 	{

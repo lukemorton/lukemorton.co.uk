@@ -2,9 +2,9 @@
 
 namespace View\Model;
 
-use View\Model\FeedViewModel;
+use View\Model\AbstractFeedViewModel;
 
-class AtomViewModel extends FeedViewModel
+class AtomViewModel extends AbstractFeedViewModel
 {
 	public function as_atom($data)
 	{
