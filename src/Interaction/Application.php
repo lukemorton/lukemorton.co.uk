@@ -37,6 +37,7 @@ class Application extends RoutedApplication
             'json' => ['GET', '/thoughts/latest.json', $this->c('feeds', 'json')],
             'archive' => ['GET', '/thoughts/archive', $this->c('posts', 'index')],
             'post' => ['GET', '/thoughts/:slug', $this->c('posts', 'show')],
+            'postJson' => ['GET', '/thoughts/:slug.json', $this->c('posts', 'show_json')],
         ];
     }
 }
