@@ -2,11 +2,11 @@
 
 namespace View\Model;
 
-use View\Model\AbstractViewModel;
+use View\Model\FeedViewModel;
 
-class AtomViewModel extends AbstractViewModel
+class AtomViewModel extends FeedViewModel
 {
-	public function as_html($data)
+	public function as_atom($data)
 	{
 		$feed = $data['atom_feed'];
 		$feed->setTitle('An Exploration of the Web');
@@ -19,21 +19,6 @@ class AtomViewModel extends AbstractViewModel
 		$this->add_posts_as_feed_items($data);
 
 		return $feed->generateFeed();
-	}
-
-	private function formatted_posts($markdown, $posts)
-	{
-		return
-			array_map(
-				function ($post) use ($markdown)
-				{
-					$post['title'] = strip_tags($post['title']);
-					$post['intro'] = $markdown->transform($post['intro']);
-					$post['href'] = '/thoughts/'.$post['slug'];
-
-					return $post;
-				},
-				$posts);
 	}
 
 	private function add_posts_as_feed_items($data)

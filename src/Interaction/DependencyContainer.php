@@ -46,6 +46,10 @@ class DependencyContainer extends Pimple
                     return new View\Model\AtomViewModel;
                 });
 
+                $c['json'] = $this->share(function () {
+                    return new View\Model\JsonViewModel;
+                });
+
                 $c['post'] = $this->share(function () {
                     return new View\Model\PostViewModel;
                 });
