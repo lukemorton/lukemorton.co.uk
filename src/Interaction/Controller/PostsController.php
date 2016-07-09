@@ -37,6 +37,25 @@ class PostsController extends AbstractPostsController
         ]);
     }
 
+    public function show_json($req)
+    {
+        $post_data = $this->post_data($req);
+
+        if (empty($post_data)) {
+            return Res::notFound();
+        }
+
+        return
+            Res::ok(
+                $req['dc']['v']['model']['post']->as_json([
+                    'post' => $post_data['post'],
+                    'markdown' => $req['dc']['markdown'],
+                ]),
+                [
+                    'Content-Type' => 'application/json',
+                ]);
+    }
+
     private function post_data($req)
     {
         return
