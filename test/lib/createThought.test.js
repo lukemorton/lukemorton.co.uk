@@ -1,11 +1,12 @@
 import test from 'ava'
 import fs from 'fs'
+import path from 'path'
 import createThought from '../../lib/createThought'
 
 test('includes attributes', t => {
   const thought = createThought({
     slug: '2016-01-01-cool-things',
-    content: fs.readFileSync(__dirname + '/mockContent.md', { encoding: 'utf8' })
+    content: fs.readFileSync(path.join(__dirname, 'mockContent.md'), { encoding: 'utf8' })
   })
 
   t.is(thought.title, '<h1 id="a-span-title-span-">A <span>title</span></h1>\n')

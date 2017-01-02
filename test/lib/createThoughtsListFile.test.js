@@ -4,11 +4,11 @@ import path from 'path'
 import createThoughtsListFile from '../../lib/createThoughtsListFile'
 
 function deleteIfExists (filename) {
-  try { fs.unlinkSync(expectedFilename) } catch (e) {}
+  try { fs.unlinkSync(filename) } catch (e) {}
 }
 
 test('creates file in correct place', async t => {
-  const expectedFilename = path.normalize(__dirname + '/../../data/test.json')
+  const expectedFilename = path.join(__dirname, '../../data/test.json')
   deleteIfExists(expectedFilename)
 
   const filename = await createThoughtsListFile({ name: 'test' })
@@ -18,7 +18,7 @@ test('creates file in correct place', async t => {
 })
 
 test('can be limited', async t => {
-  deleteIfExists(__dirname + '/../../data/limitedTest.json')
+  deleteIfExists(path.join(__dirname, '/../../data/limitedTest.json'))
 
   const filename = await createThoughtsListFile({ name: 'limitedTest', limit: 2 })
 

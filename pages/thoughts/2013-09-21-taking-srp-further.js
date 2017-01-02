@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Page from '../../components/Page'
 import Thought from '../../components/Thought'
 import thoughts from '../../data/thoughts'

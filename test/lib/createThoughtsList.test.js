@@ -1,5 +1,6 @@
 import test from 'ava'
 import fs from 'fs'
+import path from 'path'
 import format from 'date-fns/format'
 import createThoughtsList from '../../lib/createThoughtsList'
 import sortByDateOrderDesc from '../../lib/sortByDateOrderDesc'
@@ -10,7 +11,7 @@ test('contains thoughts', async t => {
 })
 
 function latestThoughtDate () {
-  const basePath = __dirname + '/../../thoughts/'
+  const basePath = path.join(__dirname, '../../thoughts/')
   const filename = sortByDateOrderDesc(fs.readdirSync(basePath))[0]
   const [year, month, day] = filename.split('-')
   return format(new Date(year, month, day))

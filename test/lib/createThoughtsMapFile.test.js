@@ -4,11 +4,11 @@ import path from 'path'
 import createThoughtsMapFile from '../../lib/createThoughtsMapFile'
 
 function deleteIfExists (filename) {
-  try { fs.unlinkSync(expectedFilename) } catch (e) {}
+  try { fs.unlinkSync(filename) } catch (e) {}
 }
 
 test('creates file in correct place', async t => {
-  const expectedFilename = path.normalize(__dirname + '/../../data/thoughts.json')
+  const expectedFilename = path.join(__dirname, '../../data/thoughts.json')
   deleteIfExists(expectedFilename)
 
   const filename = await createThoughtsMapFile()
