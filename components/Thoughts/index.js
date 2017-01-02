@@ -1,11 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Thought = ({ title, url, publishedAt, intro }) =>
+const Thought = ({ title, thoughtTitleWrapper, url, publishedAt, intro }) =>
   <li className='post'>
-    <h3>
-      <Link href={url}>{title}</Link>
-    </h3>
+    {thoughtTitleWrapper(<Link href={url}>{title}</Link>)}
 
     <p className='meta'>
       <em>{publishedAt}</em>
@@ -17,12 +15,19 @@ const Thought = ({ title, url, publishedAt, intro }) =>
       />
   </li>
 
-export default ({ title, thoughts, after }) =>
+const thoughtMapper = (thoughtTitleWrapper) => (props, i) =>
+  <Thought
+    {...props}
+    key={i}
+    thoughtTitleWrapper={thoughtTitleWrapper}
+    />
+
+export default ({ title, thoughtTitleWrapper, thoughts, after }) =>
   <div className='thoughts'>
     {title}
 
     <ul>
-      {thoughts.map(Thought)}
+      {thoughts.map(thoughtMapper(thoughtTitleWrapper))}
     </ul>
 
     ---

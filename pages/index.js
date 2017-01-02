@@ -60,6 +60,7 @@ export default class extends React.Component {
         <aside>
           <Thoughts
             title={<h2>Thoughts</h2>}
+            thoughtTitleWrapper={(title) => <h3>{title}</h3>}
             thoughts={this.props.thoughts}
             after={<p>Please do read more from <a href={this.props.archiveUrl}>the archives</a>.</p>}
             />
