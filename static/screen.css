@@ -236,6 +236,7 @@ a:focus {
     top: 3em;
     left: 50%;
     margin-left: 17em;
+    z-index: 1;
   }
 }
 

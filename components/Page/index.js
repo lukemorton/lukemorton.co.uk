@@ -21,9 +21,9 @@ export default ({ title, backgroundImageSrc, children }) =>
       id='navigation_toggle'
       style={{ display: 'none' }}>menu</a>
 
+    <Chapters />
+
     <div className='animated fadeIn'>
       {children}
     </div>
-
-    <Chapters />
   </div>
