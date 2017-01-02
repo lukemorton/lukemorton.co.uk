@@ -13,5 +13,6 @@ test('includes attributes', t => {
   t.is(thought.slug, '2016-01-01-cool-things')
   t.is(thought.url, '/thoughts/2016-01-01-cool-things')
   t.regex(thought.publishedAt, /[\d]{1,2}(?:st|nd|rd|th) [A-Za-z]+ [\d]{4}/)
+  t.truthy(thought.publishedAtISO)
   t.is(thought.content.indexOf('<h1 id="a-span-title-span-">A <span>title</span></h1>'), 0)
 })
