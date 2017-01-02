@@ -5,7 +5,7 @@ import Thoughts from '../../components/Thoughts'
 import thoughtsArchive from '../../data/thoughtsArchive'
 
 export default class extends React.Component {
-  static async getInitialProps () {
+  static getInitialProps () {
     return {
       indexUrl: '/',
       aboutUrl: '/about',

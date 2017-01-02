@@ -6,7 +6,7 @@ import Projects from '../components/Projects'
 import latestThoughts from '../data/latestThoughts'
 
 export default class extends React.Component {
-  static async getInitialProps () {
+  static getInitialProps () {
     return {
       indexUrl: '/',
       aboutUrl: '/about',
