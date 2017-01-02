@@ -15,7 +15,7 @@
     "dev": "next",
     "test": "ava",
     "lint": "standard",
-    "build": "standard && ava"
+    "build": "standard && ava && ./bin/build.js"
   },
   "ava": {
     "require": [
