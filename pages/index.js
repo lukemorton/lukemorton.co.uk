@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Page from '../components/Page'
 import Thoughts from '../components/Thoughts'
 import Projects from '../components/Projects'
+import latestThoughts from '../data/latestThoughts'
 
 export default class extends React.Component {
   static async getInitialProps () {
@@ -13,7 +14,7 @@ export default class extends React.Component {
       twitterUrl: 'https://twitter.com/lukemorton',
       avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
       twitterHandle: '@LukeMorton',
-      thoughts: [],
+      thoughts: latestThoughts,
       projects: []
     }
   }

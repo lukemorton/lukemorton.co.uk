@@ -11,9 +11,10 @@ const Thought = ({ title, url, publishedAt, intro }) =>
       <em>{publishedAt}</em>
     </p>
 
-    <div className='content'>
-      {intro}
-    </div>
+    <div
+      className='content'
+      dangerouslySetInnerHTML={{ __html: intro }}
+      />
   </li>
 
 export default ({ title, thoughts, after }) =>
