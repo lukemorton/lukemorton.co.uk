@@ -5,7 +5,7 @@ import Page from '../components/Page'
 function errorMessage(res, xhr) {
   const statusCode = res ? res.statusCode : (xhr ? xhr.status : null)
 
-  if (statusCode === '404') {
+  if (statusCode === 404) {
     return 'Page Not Found'
   } else {
     return 'An error occured'
