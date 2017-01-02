@@ -10,7 +10,7 @@ export default class extends React.Component {
       indexUrl: '/',
       aboutUrl: '/about',
       avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
-      thoughts: thoughtsArchive,
+      thoughts: thoughtsArchive
     }
   }
 

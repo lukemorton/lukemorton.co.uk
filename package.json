@@ -33,7 +33,10 @@
     ]
   },
   "standard": {
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "ignore": [
+      "old/**"
+    ]
   },
   "license": "ISC"
 }

@@ -2,7 +2,7 @@ import test from 'ava'
 import fs from 'fs'
 import createDataFiles from '../../lib/createDataFiles'
 
-function deleteIfExists(filename) {
+function deleteIfExists (filename) {
   try { fs.unlinkSync(expectedFilename) } catch (e) {}
 }
 

@@ -8,7 +8,6 @@ test('includes attributes', t => {
     content: fs.readFileSync(__dirname + '/mockContent.md', { encoding: 'utf8' })
   })
 
-
   t.is(thought.title, '<h1 id="a-span-title-span-">A <span>title</span></h1>\n')
   t.is(thought.plainTitle, 'A title')
   t.is(thought.intro, '<p>An introduction\ncool.</p>\n')

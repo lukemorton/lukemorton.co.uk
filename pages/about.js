@@ -45,11 +45,11 @@ export default class extends React.Component {
             </p>
 
             <p>
-              I work for <a href="https://madetech.com">Made</a> with an awesome team of other generalist developers who love to <a href="https://madetech.com/news">share their knowledge</a>. We build web applications and also consult teams to help them do the same consistently and constantly. That means we encourage continuously integrated code, automated testing, immutable deploys and all other crazy practices that make big businesses dizzy.
+              I work for <a href='https://madetech.com'>Made</a> with an awesome team of other generalist developers who love to <a href='https://madetech.com/news'>share their knowledge</a>. We build web applications and also consult teams to help them do the same consistently and constantly. That means we encourage continuously integrated code, automated testing, immutable deploys and all other crazy practices that make big businesses dizzy.
             </p>
 
             <p>
-              I acknowledge the universe is intersectional and do my best to share and uncover information from all walks of life, mostly <a href="https://twitter.com/LukeMorton">via Twitter</a>. Basically I do my utmost to be a good human and be kind to the world and me.
+              I acknowledge the universe is intersectional and do my best to share and uncover information from all walks of life, mostly <a href='https://twitter.com/LukeMorton'>via Twitter</a>. Basically I do my utmost to be a good human and be kind to the world and me.
             </p>
 
             <h2>Timeline</h2>
@@ -112,7 +112,7 @@ export default class extends React.Component {
               </li>
 
               <li>
-                Got tired of sacking potatoes and went back to college. Also got an IT support job at <a href="http://freeola.com">Freeola</a>.
+                Got tired of sacking potatoes and went back to college. Also got an IT support job at <a href='http://freeola.com'>Freeola</a>.
               </li>
 
               <li>
@@ -136,10 +136,10 @@ export default class extends React.Component {
               </li>
 
               <li>
-                I worked for a startup, <a href="https://gignite.com">Gignite</a> where I made some very good friends, some of whom I'm still working with today.
+                I worked for a startup, <a href='https://gignite.com'>Gignite</a> where I made some very good friends, some of whom I'm still working with today.
               </li>
 
-              <li>Present day, and working at <a href="https://madetech.com">Made</a>.</li>
+              <li>Present day, and working at <a href='https://madetech.com'>Made</a>.</li>
             </ul>
           </div>
 

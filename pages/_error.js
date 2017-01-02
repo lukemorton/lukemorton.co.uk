@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../components/Page'
 
-function errorMessage(res, xhr) {
+function errorMessage (res, xhr) {
   const statusCode = res ? res.statusCode : (xhr ? xhr.status : null)
 
   if (statusCode === 404) {

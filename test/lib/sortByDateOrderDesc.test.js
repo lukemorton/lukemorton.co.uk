@@ -1,7 +1,7 @@
 import test from 'ava'
 import sortByDateOrderDesc from '../../lib/sortByDateOrderDesc'
 
-function thoughts(limit) {
+function thoughts (limit) {
   return sortByDateOrderDesc([
     '2015-03-01-cool-title',
     '2016-01-01-another-one',

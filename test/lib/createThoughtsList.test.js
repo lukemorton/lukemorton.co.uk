@@ -9,7 +9,7 @@ test('contains thoughts', async t => {
   t.true(thoughts.length > 2, thoughts)
 })
 
-function latestThoughtDate() {
+function latestThoughtDate () {
   const basePath = __dirname + '/../../thoughts/'
   const filename = sortByDateOrderDesc(fs.readdirSync(basePath))[0]
   const [year, month, day] = filename.split('-')

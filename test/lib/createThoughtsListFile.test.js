@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import createThoughtsListFile from '../../lib/createThoughtsListFile'
 
-function deleteIfExists(filename) {
+function deleteIfExists (filename) {
   try { fs.unlinkSync(expectedFilename) } catch (e) {}
 }
 
