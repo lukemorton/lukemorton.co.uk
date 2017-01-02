@@ -1,4 +1,4 @@
-# A title
+# A <span>title</span>
 
 An introduction
 cool.
