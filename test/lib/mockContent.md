@@ -1,6 +1,7 @@
 # A title
 
-An introduction.
+An introduction
+cool.
 
 ## More title
 

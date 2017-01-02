@@ -14,7 +14,7 @@ function thoughts() {
 test('includes attributes', t => {
   const [thought] = thoughtsList({ thoughts: thoughts() })
   t.is(thought.title, 'A title')
-  t.is(thought.intro, 'An introduction.')
+  t.is(thought.intro, 'An introduction\ncool.')
   t.is(thought.slug, '2016-01-01-cool-things.md')
   t.regex(thought.publishedAt, /[\d]{1,2}(?:st|nd|rd|th) [A-Za-z]+ [\d]{4}/)
 })
