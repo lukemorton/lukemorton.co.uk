@@ -3051,7 +3051,7 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
 
-next@^1.1.2:
+next:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/next/-/next-1.2.3.tgz#afa811144e02e899c5099c0db4aa32de9cf8b223"
   dependencies:
