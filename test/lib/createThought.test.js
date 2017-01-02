@@ -1,18 +1,13 @@
 import test from 'ava'
 import fs from 'fs'
-import thoughtsList from '../../lib/thoughtsList'
-
-function thoughts() {
-  return [
-    {
-      slug: '2016-01-01-cool-things.md',
-      content: fs.readFileSync(__dirname + '/mockContent.md', { encoding: 'utf8' })
-    }
-  ]
-}
+import createThought from '../../lib/createThought'
 
 test('includes attributes', t => {
-  const [thought] = thoughtsList({ thoughts: thoughts() })
+  const thought = createThought({
+    slug: '2016-01-01-cool-things.md',
+    content: fs.readFileSync(__dirname + '/mockContent.md', { encoding: 'utf8' })
+  })
+
   t.is(thought.title, 'A title')
   t.is(thought.intro, '<p>An introduction\ncool.</p>\n')
   t.is(thought.slug, '2016-01-01-cool-things.md')
