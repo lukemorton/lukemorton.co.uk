@@ -16,7 +16,7 @@ const chapters = [
 ]
 
 const Chapter = ({ label, url }, index) =>
-  <li>
+  <li key={index}>
     <a href={url} id={`nav_${index}`}>{label}</a>
   </li>
 
