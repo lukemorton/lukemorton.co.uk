@@ -23,7 +23,8 @@
     "start": "NODE_ENV=production node server.js",
     "test": "ava",
     "lint": "standard",
-    "build": "standard && ava -v && next build && babel-node bin/build.js"
+    "build": "standard && ava -v && next build && babel-node bin/build.js",
+    "heroku-postbuild": "yarn build"
   },
   "ava": {
     "require": [
