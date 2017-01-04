@@ -1,4 +1,6 @@
 const express = require('express')
+const favicon = require('serve-favicon')
+const path = require('path')
 const next = require('next')
 const thoughts = require('./data/thoughts')
 
@@ -9,6 +11,7 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
+  server.use(favicon('static/favicon.ico'))
   server.use('/poems', express.static('poems', { extensions: ['html'] }))
 
   server.get('/thoughts/:slug', (req, res, next) => {

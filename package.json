@@ -11,6 +11,7 @@
     "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.4.1",
+    "serve-favicon": "^2.3.2",
     "standard": "8.4.0",
     "striptags": "^2.1.1"
   },
