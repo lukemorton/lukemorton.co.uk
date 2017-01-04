@@ -13,6 +13,7 @@ app.prepare().then(() => {
 
   server.use(favicon('static/favicon.ico'))
   server.use('/poems', express.static('poems', { extensions: ['html'] }))
+  server.use('/moon-and-fate.html', express.static('static/moon-and-fate.html'))
 
   server.get('/thoughts/:slug', (req, res, next) => {
     if (thoughts[req.params.slug]) {
