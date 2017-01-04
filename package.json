@@ -17,6 +17,9 @@
     "standard": "8.4.0",
     "striptags": "^2.1.1"
   },
+  "engines": {
+    "node": "7.2.0"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon --watch server.js server.js",
