@@ -16,7 +16,7 @@ export default class extends React.Component {
 
   render () {
     return (
-      <Page title={this.props.plainTitle}>
+      <Page title={this.props.thought.plainTitle}>
         <main>
           <Thought {...this.props} />
         </main>
