@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const chapters = [
   {
@@ -17,7 +18,7 @@ const chapters = [
 
 const Chapter = ({ label, url }, index) =>
   <li key={index}>
-    <a href={url} id={`nav_${index}`}>{label}</a>
+    <Link href={url} id={`nav_${index}`}>{label}</Link>
   </li>
 
 export default () =>
