@@ -1,6 +1,5 @@
 const express = require('express')
 const favicon = require('serve-favicon')
-const path = require('path')
 const next = require('next')
 const thoughts = require('./data/thoughts')
 
