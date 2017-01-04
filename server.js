@@ -5,6 +5,7 @@ const next = require('next')
 const thoughts = require('./data/thoughts')
 
 const dev = process.env.NODE_ENV === 'development'
+const port = process.env.PORT || 3000
 const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
 
@@ -26,8 +27,8 @@ app.prepare().then(() => {
 
   server.get('*', handle)
 
-  server.listen(3000, (err) => {
+  server.listen(port, (err) => {
     if (err) throw err
-    console.log('> Ready on http://localhost:3000')
+    console.log(`> Ready on http://0.0.0.0:${port}`)
   })
 })
