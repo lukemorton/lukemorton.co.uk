@@ -1,7 +1,0 @@
-/vendor/*
-!/vendor/modules
-!/vendor/system
-/composer.phar
-.DS_Store
-/public/photos
-/photos

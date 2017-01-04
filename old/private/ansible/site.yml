@@ -1,6 +1,0 @@
----
-- hosts:
-    - production
-  user: root
-- include: production.yml
-- include: deploy.yml
