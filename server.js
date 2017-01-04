@@ -9,6 +9,8 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
+  server.use('/poems', express.static('poems', { extensions: ['html'] }))
+
   server.get('/thoughts/:slug', (req, res, next) => {
     if (thoughts[req.params.slug]) {
       return app.render(req, res, '/thoughts/show', { slug: req.params.slug })
