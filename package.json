@@ -1,21 +1,24 @@
 {
   "name": "cd",
   "dependencies": {
-    "ava": "^0.17.0",
     "babel-cli": "^6.18.0",
     "babel-eslint": "7.0.0",
     "date-fns": "^1.22.0",
-    "enzyme": "^2.6.0",
     "express": "^4.14.0",
     "marked": "^0.3.6",
     "morgan": "^1.7.0",
     "next": "2.0.0-beta.13",
-    "nodemon": "^1.11.0",
-    "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.4.1",
     "serve-favicon": "^2.3.2",
-    "standard": "8.4.0",
     "striptags": "^2.1.1"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "enzyme": "^2.6.0",
+    "nodemon": "^1.11.0",
+    "now": "^0.39.1",
+    "react-addons-test-utils": "^15.4.1",
+    "standard": "8.4.0"
   },
   "engines": {
     "node": "7.0.0"
