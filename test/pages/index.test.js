@@ -9,6 +9,6 @@ import Projects from '../../components/Projects'
 test('content renders', t => {
   const page = shallow(<Index />)
   t.is(page.find(Page).length, 1)
-  t.true(page.find(Thoughts).length > 0)
-  t.true(page.find(Projects).length > 0)
+  t.is(page.find(Thoughts).length, 1)
+  t.is(page.find(Projects).length, 1)
 })
