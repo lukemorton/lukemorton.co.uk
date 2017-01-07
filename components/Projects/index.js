@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Project = ({ name, description, url }) =>
+const Project = ({ name, description, url, after }) =>
   <li className="post">
     <h3>
       <a href={url}>{name}</a>
@@ -23,7 +23,5 @@ export default ({ title, projects, after, githubUrl }) =>
 
     ---
 
-    <p>
-      You can find even more of my open source work on my <a href={githubUrl}>GitHub profile</a>.
-    </p>
+    {after}
   </div>

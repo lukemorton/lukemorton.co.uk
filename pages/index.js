@@ -89,6 +89,7 @@ export default class extends React.Component {
           <Projects
             title={<h2>Open Source Projects</h2>}
             projects={this.props.projects}
+            after={<p>You can find even more of my open source work on my <a href={this.props.githubUrl}>GitHub profile</a>.</p>}
             />
         </aside>
       </Page>
