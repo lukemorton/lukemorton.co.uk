@@ -1,5 +1,8 @@
-const next = require('next')
-const createServer = require('./lib/createServer')
+#! /usr/bin/env node
+
+import next from 'next'
+import morgan from 'morgan'
+import createServer from '../lib/createServer'
 
 const dev = process.env.NODE_ENV === 'development'
 const port = process.env.PORT || 3000
