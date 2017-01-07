@@ -12,6 +12,14 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
+  server.use(function (req, res, next) {
+    if (req.headers.host === 'lukemorton.co.uk') {
+      res.redirect('https://www.lukemorton.co.uk')
+    } else {
+      next()
+    }
+  })
+
   server.use(morgan(dev ? 'dev' : 'combined'))
   server.use(favicon('static/favicon.ico'))
   server.use('/poems', express.static('poems', { extensions: ['html'] }))
