@@ -8,6 +8,12 @@
 yarn install
 ```
 
+**Compile data files:**
+
+```
+yarn build
+```
+
 **Run development server:**
 
 ```
