@@ -1,14 +1,17 @@
 import test from 'ava'
 import supertest from 'supertest'
+import path from 'path'
 import createServer from '../../lib/createServer'
-import thoughts from '../../data/thoughts'
+
+const dataDir = path.join(__dirname, '../../data')
 
 function server({ app, handle, logger } = {}) {
   handle = handle || ((req, res) => res.send())
-  return createServer({ app, handle, logger })
+  return createServer({ app, dataDir, handle, logger })
 }
 
 function firstThought() {
+  const thoughts = require(path.join(dataDir, 'thoughts'))
   const slug = Object.keys(thoughts)[0]
   return thoughts[slug]
 }
