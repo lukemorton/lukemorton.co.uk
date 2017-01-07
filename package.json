@@ -22,7 +22,8 @@
     "now": "^0.39.1",
     "now-no-alias": "^1.0.3",
     "react-addons-test-utils": "^15.4.1",
-    "standard": "8.4.0"
+    "standard": "8.4.0",
+    "supertest": "^2.0.1"
   },
   "engines": {
     "node": "7.0.0"
