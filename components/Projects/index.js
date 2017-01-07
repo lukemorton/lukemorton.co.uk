@@ -1,14 +1,14 @@
 import React from 'react'
 
-const Project = ({ name, desc, url }) =>
-  <li>
+const Project = ({ name, description, url }) =>
+  <li className="post">
     <h3>
       <a href={url}>{name}</a>
     </h3>
 
     <div className='content'>
       <p>
-        {desc}
+        {description}
       </p>
     </div>
   </li>

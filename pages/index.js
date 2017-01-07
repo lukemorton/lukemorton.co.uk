@@ -15,7 +15,28 @@ export default class extends React.Component {
       avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
       twitterHandle: '@LukeMorton',
       thoughts: latestThoughts,
-      projects: []
+      projects: [
+        {
+          name: 'MarketTown',
+          description: 'A collection of open source libraries for e-commerce.',
+          url: 'https://github.com/madetech/market_town',
+        },
+        {
+          name: 'cf-deploy',
+          description: 'cf-deploy is the tool you use to deploy your rails app to CloudFoundry providers like Pivotal.',
+          url: 'https://github.com/madetech/cf-deploy',
+        },
+        {
+          name: 'rui',
+          description: 'Very experimental ruby user interface library for HTML/CSS.',
+          url: 'https://github.com/lukemorton/rui',
+        },
+        {
+          name: 'Lily',
+          description: 'A lightweight web application library for PHP.',
+          url: 'https://github.com/lukemorton/lily',
+        },
+      ]
     }
   }
 
