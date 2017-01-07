@@ -32,9 +32,9 @@
   "scripts": {
     "lint": "standard",
     "test": "ava",
-    "build": "babel bin -d dist/bin && babel lib -d dist/lib && dist/bin/build.js && next build",
+    "build": "babel bin -d dist/bin && babel lib -d dist/lib && node dist/bin/build.js && next build",
     "dev": "NODE_ENV=development nodemon bin/serve.js --exec babel-node --watch bin/serve.js --watch lib/createServer.js",
-    "start": "NODE_ENV=production dist/bin/serve.js",
+    "start": "NODE_ENV=production node dist/bin/serve.js",
     "deploy": "standard && ava -v && now --alias www.lukemorton.co.uk --alias lukemorton.co.uk",
     "clean-deploys": "now rm $(now-no-alias lukemorton-co-uk | json -a uid)"
   },
