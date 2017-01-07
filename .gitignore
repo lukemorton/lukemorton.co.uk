@@ -1,7 +1,4 @@
-/vendor/*
-!/vendor/modules
-!/vendor/system
-/composer.phar
-.DS_Store
-/public/photos
-/photos
+.next
+node_modules
+yarn-error.log
+npm-debug.log

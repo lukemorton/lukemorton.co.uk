@@ -1,25 +1,38 @@
-# LukeMorton.co.uk
+# www.lukemorton.co.uk
 
-Adding ssh key:
+## Developing
 
-``` sh
-ssh-add private/keys/lukemorton
+**Install dependencies:**
+
+```
+yarn install
 ```
 
-Running dev server:
+**Run development server:**
 
-``` sh
-make dev
+```
+yarn run dev
 ```
 
-Provisioning (includes deploy):
+The app will be served on [http://localhost:3000](http://localhost:3000)
 
-``` sh
-make
+**Run tests and linting:**
+
+```
+yarn test
+yarn run lint
 ```
 
-Deploying:
+## Deploying
 
-``` sh
-make deploy
+**Deploy to now.sh:**
+
+```
+yarn run deploy
+```
+
+**Cleaning up old deploys:**
+
+```
+yarn run clean-deploys
 ```

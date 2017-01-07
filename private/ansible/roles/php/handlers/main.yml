@@ -1,8 +1,0 @@
-- name: php-fpm-start
-  service: name=php5-fpm start=started
-
-- name: php-fpm-restart
-  service: name=php5-fpm state=restarted
-
-- name: php-fpm-reload
-  service: name=php5-fpm state=reloaded
