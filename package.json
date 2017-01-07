@@ -16,8 +16,10 @@
   "devDependencies": {
     "ava": "^0.17.0",
     "enzyme": "^2.6.0",
+    "json": "^9.0.4",
     "nodemon": "^1.11.0",
     "now": "^0.39.1",
+    "now-no-alias": "^1.0.3",
     "react-addons-test-utils": "^15.4.1",
     "standard": "8.4.0"
   },
@@ -31,7 +33,8 @@
     "test": "ava",
     "lint": "standard",
     "build": "next build && babel-node bin/build.js",
-    "deploy": "standard && ava -v && now --alias www.lukemorton.co.uk --alias lukemorton.co.uk"
+    "deploy": "standard && ava -v && now --alias www.lukemorton.co.uk --alias lukemorton.co.uk",
+    "clean-deploys": "now rm $(now-no-alias lukemorton-co-uk | json -a uid)"
   },
   "ava": {
     "require": [

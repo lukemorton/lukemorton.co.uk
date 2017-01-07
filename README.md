@@ -30,3 +30,9 @@ yarn run lint
 ```
 yarn run deploy
 ```
+
+**Cleaning up old deploys:**
+
+```
+yarn run clean-deploys
+```
