@@ -13,7 +13,7 @@ app.prepare().then(() => {
   const server = express()
 
   server.use(function (req, res, next) {
-    if (req.headers.host === 'lukemorton.co.uk') {
+    if (req.hostname === 'lukemorton.co.uk') {
       res.redirect('https://www.lukemorton.co.uk')
     } else {
       next()
