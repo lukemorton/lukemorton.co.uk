@@ -3,15 +3,25 @@ import supertest from 'supertest'
 import createServer from '../../lib/createServer'
 import thoughts from '../../data/thoughts'
 
-function server({ app, handle } = {}) {
+function server({ app, handle, logger } = {}) {
   handle = handle || ((req, res) => res.send())
-  return createServer({ app, handle })
+  return createServer({ app, handle, logger })
 }
 
 function firstThought() {
   const slug = Object.keys(thoughts)[0]
   return thoughts[slug]
 }
+
+test('attaches logger when provided', async t => {
+  var hasLogged = false
+  const logger = (req, res, pass) => {
+    hasLogged = true
+    pass()
+  }
+  await supertest(server({ logger })).get('/').expect(200)
+  t.true(hasLogged)
+})
 
 test('redirects non-www to www', async t => {
   const { headers } = await supertest(server()).get('/').set('Host', 'lukemorton.co.uk').expect(302)

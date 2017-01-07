@@ -7,7 +7,8 @@ const app = next({ dir: '.', dev })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
-  const server = createServer({ app, dev, handle })
+  const logger = morgan(dev ? 'dev' : 'combined')
+  const server = createServer({ app, logger, handle })
 
   server.listen(port, (err) => {
     if (err) throw err
