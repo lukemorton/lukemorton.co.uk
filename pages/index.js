@@ -19,23 +19,23 @@ export default class extends React.Component {
         {
           name: 'MarketTown',
           description: 'A collection of open source libraries for e-commerce.',
-          url: 'https://github.com/madetech/market_town',
+          url: 'https://github.com/madetech/market_town'
         },
         {
           name: 'cf-deploy',
           description: 'cf-deploy is the tool you use to deploy your rails app to CloudFoundry providers like Pivotal.',
-          url: 'https://github.com/madetech/cf-deploy',
+          url: 'https://github.com/madetech/cf-deploy'
         },
         {
           name: 'rui',
           description: 'Very experimental ruby user interface library for HTML/CSS.',
-          url: 'https://github.com/lukemorton/rui',
+          url: 'https://github.com/lukemorton/rui'
         },
         {
           name: 'Lily',
           description: 'A lightweight web application library for PHP.',
-          url: 'https://github.com/lukemorton/lily',
-        },
+          url: 'https://github.com/lukemorton/lily'
+        }
       ]
     }
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Project = ({ name, description, url, after }) =>
-  <li className="post">
+  <li className='post'>
     <h3>
       <a href={url}>{name}</a>
     </h3>

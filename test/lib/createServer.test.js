@@ -5,12 +5,12 @@ import createServer from '../../lib/createServer'
 
 const dataDir = path.join(__dirname, '../../data')
 
-function server({ app, handle, logger } = {}) {
+function server ({ app, handle, logger } = {}) {
   handle = handle || ((req, res) => res.send())
   return createServer({ app, dataDir, handle, logger })
 }
 
-function firstThought() {
+function firstThought () {
   const thoughts = require(path.join(dataDir, 'thoughts'))
   const slug = Object.keys(thoughts)[0]
   return thoughts[slug]
@@ -32,17 +32,17 @@ test('redirects non-www to www', async t => {
 })
 
 test('serves favicon', async t => {
-   await supertest(server()).get('/favicon.ico').expect(200)
+  await supertest(server()).get('/favicon.ico').expect(200)
 })
 
 test('serves poems', async t => {
-   await supertest(server()).get('/poems/').expect(200)
-   await supertest(server()).get('/poems/a-soul').expect(200)
-   await supertest(server()).get('/poems/a-soul.html').expect(200)
+  await supertest(server()).get('/poems/').expect(200)
+  await supertest(server()).get('/poems/a-soul').expect(200)
+  await supertest(server()).get('/poems/a-soul.html').expect(200)
 })
 
 test('serves moon and fate', async t => {
-   await supertest(server()).get('/moon-and-fate.html').expect(200)
+  await supertest(server()).get('/moon-and-fate.html').expect(200)
 })
 
 test('serves thoughts', async t => {

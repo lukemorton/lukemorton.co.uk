@@ -1,11 +1,8 @@
 import test from 'ava'
-import fs from 'fs'
-import path from 'path'
 import format from 'date-fns/format'
 import createThoughtsList from '../../lib/createThoughtsList'
-import sortByDateOrderDesc from '../../lib/sortByDateOrderDesc'
 
-function thoughts() {
+function thoughts () {
   return {
     '2016-01-01-cool': '# Cool',
     '2016-01-04-cool': '# Cool',

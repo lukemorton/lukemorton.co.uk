@@ -1,10 +1,9 @@
 import test from 'ava'
-import path from 'path'
 import createThoughtsMap from '../../lib/createThoughtsMap'
 
-function thoughts() {
+function thoughts () {
   return {
-    '2016-01-01-cool': '# Cool',
+    '2016-01-01-cool': '# Cool'
   }
 }
 

@@ -6,7 +6,7 @@ import Page from '../../../components/Page'
 import Thought from '../../../components/Thought'
 import thoughts from '../../../data/thoughts'
 
-function firstThought() {
+function firstThought () {
   const slug = Object.keys(thoughts)[0]
   return thoughts[slug]
 }
