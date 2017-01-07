@@ -52,10 +52,7 @@
     ]
   },
   "standard": {
-    "parser": "babel-eslint",
-    "ignore": [
-      "old/**"
-    ]
+    "parser": "babel-eslint"
   },
   "license": "ISC"
 }
