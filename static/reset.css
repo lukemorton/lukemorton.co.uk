@@ -161,6 +161,7 @@ blockquote small {
   display: block;
   line-height: 20px;
   color: #999999;
+  padding-top: 1em;
 }
 blockquote small:before {
   content: '\2014 \00A0';
