@@ -1,5 +1,7 @@
 import React from 'react'
-import Link from 'next/link'
+import Nav from './Nav'
+import Toggle from './Toggle'
+import isLargerThanMobile from './isLargerThanMobile'
 
 const chapters = [
   {
@@ -16,16 +18,20 @@ const chapters = [
   }
 ]
 
-const Chapter = ({ label, url }, index) =>
-  <li key={index}>
-    <Link href={url} id={`nav_${index}`}>{label}</Link>
-  </li>
+export default class extends React.Component {
+  componentWillMount () {
+    this.state = { navShowing: isLargerThanMobile() }
+  }
 
-export default () =>
-  <nav className='navigation' id='navigation'>
-    <div className='h3'>Chapters</div>
+  handleToggle () {
+    this.setState({ navShowing: true })
+  }
 
-    <ol>
-      {chapters.map(Chapter)}
-    </ol>
-  </nav>
+  render () {
+    if (this.state.navShowing) {
+      return <Nav chapters={chapters} />
+    } else {
+      return <Toggle onToggle={this.handleToggle.bind(this)} />
+    }
+  }
+}

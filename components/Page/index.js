@@ -16,11 +16,6 @@ export default ({ title, backgroundImageSrc, children }) =>
       <link rel='stylesheet' href='/static/screen.css' />
     </Head>
 
-    <a href='#menu'
-      className='navigation_toggle'
-      id='navigation_toggle'
-      style={{ display: 'none' }}>menu</a>
-
     <Chapters />
 
     <div className='animated fadeIn'>
