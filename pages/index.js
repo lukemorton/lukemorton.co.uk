@@ -61,19 +61,11 @@ export default class extends React.Component {
 
           <div className='content'>
             <p>
-              Like both the atoms that make us and the systems that comprise the universe in which we live, the Internet is a complex organism that we explore daily.
+              You know what interests me? Writing code and delivering systems that solve real problems. Why? Because it's fun.
             </p>
 
             <p>
-              Here you will find a collection of <Link href={this.props.archiveUrl}>my thoughts</Link> on the Internet and the systems that make it so complex. You will also find some of those thoughts realised in the form of open source code. Hopefully the resources contained within these HTML walls will encourage you to explore for yourself this rich and interesting landscape.
-            </p>
-
-            <p>
-              If you want you can find a little more <Link href={this.props.aboutUrl}>about me</Link> and please do get in touch via twitter <a href={this.props.twitterUrl}>{this.props.twitterHandle}</a>.
-            </p>
-
-            <p>
-              Finally, everything you find here is yours to keep unless licensed otherwise.
+              Here you will find a collection of <Link href={this.props.archiveUrl}>my thoughts</Link> about software and people problems. If you want you can find a little more <Link href={this.props.aboutUrl}>about me</Link> and please do get in touch via twitter <a href={this.props.twitterUrl}>{this.props.twitterHandle}</a>.
             </p>
           </div>
         </main>
