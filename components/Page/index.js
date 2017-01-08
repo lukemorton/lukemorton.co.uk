@@ -11,10 +11,6 @@ export default ({ title, backgroundImageSrc, children }) =>
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       <link rel='stylesheet' href='/static/reset.css' />
       <link rel='stylesheet' href='/static/screen.css' />
-      <link rel='alternate'
-        type='application/atom+xml'
-        title='Latest Thoughts of Luke Morton'
-        href='/thoughts/latest.atom' />
     </Head>
 
     <a href='#menu'
