@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Chapters from '../Chapters'
+import Tracking from '../Tracking'
 
 export default ({ title, backgroundImageSrc, children }) =>
   <div className='page'>
@@ -26,4 +27,6 @@ export default ({ title, backgroundImageSrc, children }) =>
     <div className='animated fadeIn'>
       {children}
     </div>
+
+    <Tracking />
   </div>

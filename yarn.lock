@@ -4017,7 +4017,7 @@ now-no-alias:
     babel-runtime "^6.18.0"
     now-client "^0.3.0"
 
-now@1.0.0:
+now@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/now/-/now-1.0.0.tgz#5dd290538e61a3c2fdacf02025616bafe13b9a5f"
   dependencies:
@@ -4633,6 +4633,12 @@ react-dom@^15.4.1, react-dom@15.4.1:
     fbjs "^0.8.1"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
+
+react-ga:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-ga/-/react-ga-2.1.2.tgz#7af206c5e8761d7176e15773fe826acdb70ac653"
+  dependencies:
+    object-assign "^4.0.1"
 
 react-hot-loader@3.0.0-beta.6:
   version "3.0.0-beta.6"
