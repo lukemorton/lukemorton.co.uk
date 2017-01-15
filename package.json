@@ -33,6 +33,7 @@
   "scripts": {
     "lint": "standard",
     "test": "ava",
+    "blog": "nodemon dist/bin/build.js --watch thoughts --ext md",
     "build": "babel bin -d dist/bin && babel lib -d dist/lib && node dist/bin/build.js && next build",
     "dev": "NODE_ENV=development nodemon bin/serve.js --exec babel-node --watch bin/serve.js --watch lib/createServer.js",
     "start": "NODE_ENV=production node dist/bin/serve.js",
