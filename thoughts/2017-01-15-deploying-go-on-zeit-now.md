@@ -57,26 +57,19 @@ Visit your hello world in your browser [http://localhost:3000](http://localhost:
 
 ## Deploying with Docker
 
-Coooooool, so we've got our Go web app and now we want to deploy it. To do this we are going to compile our application into a portable binary that can run anywhere. We're then going to wrap it in the lightest type of Docker image possible, `scratch`. Once we have this we can deploy it to Now.
+Coooooool, so we've got our Go web app and now we want to deploy it. To do this we are going to create a Docker image that compiles and runs our Go app for us. Once we have this we can deploy it to Now.
 
-To compile the app in a portable way we need to ensure all the dependencies needed to run the app are compiled into the Go binary:
-
-```
-CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o hello .
-```
-
-This creates a file called `hello` in the same directory as `hello.go`. This is the binary that will run inside Docker. That's right, our Docker container doesn't even need to know about running a Go application because we created a portable binary.
-
-Okay, now for the `Dockerfile`:
+We then create our `Dockerfile` which uses golangs official alpine image. Alpine is a lightweight operating system ideal of creating small(er) docker images.
 
 ```
-FROM scratch
-ADD hello /
-CMD ["/hello"]
+FROM golang:alpine
+ADD . /go/src/github.com/lukemorton/hello-world
+RUN go install github.com/lukemorton/hello-world
+CMD ["/go/bin/hello-world"]
 EXPOSE 3000
 ```
 
-Not much to it is there. Make sure you save this as `Dockerfile` in the same directory as your `hello.go` and `hello` file. All it does is copy in the `hello` binary into the container, runs the binary and exposes the port 3000.
+Not much to it is there. Make sure you save this as `Dockerfile` in the same directory as your `hello.go` file. All it does is copy `hello.go` into the container, compiles it into a binary, runs that binary and exposes the port 3000.
 
 Now we are ready to deploy:
 
