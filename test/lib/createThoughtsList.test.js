@@ -12,7 +12,7 @@ function thoughts () {
 
 test('contains thoughts', t => {
   const thoughtsList = createThoughtsList({ thoughtFiles: thoughts() })
-  t.true(thoughtsList.length > 2, thoughts)
+  t.is(thoughtsList.length, 3)
 })
 
 test('can be limited', t => {
