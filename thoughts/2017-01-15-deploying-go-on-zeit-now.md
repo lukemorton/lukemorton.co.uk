@@ -69,7 +69,7 @@ CMD ["/go/bin/hello-world"]
 EXPOSE 3000
 ```
 
-Not much to it is there. Make sure you save this as `Dockerfile` in the same directory as your `hello.go` file. All it does is copy `hello.go` into the container, compiles it into a binary, runs that binary and exposes the port 3000.
+Not much to it is there. Make sure you save this as `Dockerfile` in the same directory as your `hello.go` file. All it does is copy `hello.go` into the container, compiles it into a binary, runs that binary and exposes the port 3000. Again you can replace `lukemorton` with your own GitHub username.
 
 Now we are ready to deploy:
 
