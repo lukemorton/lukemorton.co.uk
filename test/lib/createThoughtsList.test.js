@@ -19,6 +19,6 @@ test('can be limited', t => {
   const thoughtsList = createThoughtsList({ limit: 2, thoughtFiles: thoughts() })
   const firstDate = thoughtsList[0].publishedAtISO
 
-  t.is(firstDate, format(new Date('2016', '01', '04')))
-  t.is(thoughtsList.length, 2, thoughts)
+  t.is(firstDate, format(new Date(2016, 0, 4)))
+  t.is(thoughtsList.length, 2)
 })
