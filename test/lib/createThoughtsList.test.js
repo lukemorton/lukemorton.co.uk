@@ -22,3 +22,17 @@ test('can be limited', t => {
   t.is(firstDate, format(new Date(2016, 0, 4)))
   t.is(thoughtsList.length, 2)
 })
+
+test('excludes articles published in future by default', t => {
+  const thoughtFiles = thoughts()
+  thoughtFiles['2050-02-01-cool'] = '# Cool'
+  const thoughtsList = createThoughtsList({ thoughtFiles })
+  t.is(thoughtsList.length, 3)
+})
+
+test('excludes articles published in future in dev', t => {
+  const thoughtFiles = thoughts()
+  thoughtFiles['2050-02-01-cool'] = '# Cool'
+  const thoughtsList = createThoughtsList({ dev: true, thoughtFiles })
+  t.is(thoughtsList.length, 4)
+})

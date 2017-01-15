@@ -33,8 +33,8 @@
   "scripts": {
     "lint": "standard",
     "test": "ava",
-    "blog": "nodemon dist/bin/build.js --watch thoughts --ext md",
-    "build": "babel bin -d dist/bin && babel lib -d dist/lib && node dist/bin/build.js && next build",
+    "blog": "NODE_ENV=development nodemon dist/bin/build.js --watch thoughts --ext md",
+    "build": "NODE_ENV=production babel bin -d dist/bin && babel lib -d dist/lib && node dist/bin/build.js && next build",
     "dev": "NODE_ENV=development nodemon bin/serve.js --exec babel-node --watch bin/serve.js --watch lib/createServer.js",
     "start": "NODE_ENV=production node dist/bin/serve.js",
     "deploy": "standard && ava -v && now --alias www.lukemorton.co.uk --alias lukemorton.co.uk",
