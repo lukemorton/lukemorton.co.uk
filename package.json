@@ -20,7 +20,7 @@
     "enzyme": "^2.6.0",
     "json": "^9.0.4",
     "nodemon": "^1.11.0",
-    "now": "^1.0.0",
+    "now": "^2.0.3",
     "now-no-alias": "^1.0.3",
     "react-addons-test-utils": "^15.4.1",
     "standard": "8.4.0",
