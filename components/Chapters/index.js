@@ -20,7 +20,11 @@ const chapters = [
 
 export default class extends React.Component {
   componentWillMount () {
-    this.state = { navShowing: isLargerThanMobile() }
+    this.state = { navShowing: true }
+  }
+
+  componentDidMount () {
+    this.setState({ navShowing: isLargerThanMobile() })
   }
 
   handleToggle () {
