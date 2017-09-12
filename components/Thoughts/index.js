@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Thought = ({ plainTitle, thoughtTitleWrapper, url, slug, publishedAt, intro }) =>
   <li className='post'>
-    {thoughtTitleWrapper(<Link href={`/thoughts/show?slug=${slug}`} as={url}>{plainTitle}</Link>)}
+    {thoughtTitleWrapper(<Link href={`/thoughts/show?slug=${slug}`} as={`/thoughts/${slug}`}>{plainTitle}</Link>)}
 
     <p className='meta'>
       <em>{publishedAt}</em>
