@@ -1,16 +1,16 @@
 {
   "name": "lukemorton-co-uk",
   "version": "0.0.1",
+  "repository": "https://bitbucket.org/drpheltright/lukemorton",
   "dependencies": {
     "babel-cli": "^6.18.0",
     "babel-eslint": "7.0.0",
     "date-fns": "^1.22.0",
     "express": "^4.14.0",
-    "fs-promise": "^1.0.0",
-    "marked": "^0.3.6",
     "markedly": "0.0.2",
     "morgan": "^1.7.0",
     "next": "2.0.0-beta.13",
+    "react": "^15.6.1",
     "react-dom": "^15.4.1",
     "react-ga": "^2.1.2",
     "serve-favicon": "^2.3.2",
