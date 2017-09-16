@@ -3,15 +3,15 @@ import supertest from 'supertest'
 import path from 'path'
 import createServer from '../../lib/createServer'
 
-const dataDir = path.join(__dirname, '../../data')
+const distDir = path.join(__dirname, '../../dist')
 
 function server ({ app, handle, logger } = {}) {
   handle = handle || ((req, res) => res.send())
-  return createServer({ app, dataDir, handle, logger })
+  return createServer({ app, distDir, handle, logger })
 }
 
 function firstThought () {
-  const thoughts = require(path.join(dataDir, 'thoughts'))
+  const thoughts = require(path.join(distDir, 'thoughts'))
   const slug = Object.keys(thoughts)[0]
   return thoughts[slug]
 }
@@ -47,7 +47,8 @@ test('serves moon and fate', async t => {
 
 test('serves thoughts', async t => {
   const app = { render (req, res) { return res.send() } }
-  const { url } = firstThought()
+  const { slug } = firstThought()
+  const url = `/thoughts/${slug}`
   await supertest(server({ app })).get(url).expect(200)
 })
 

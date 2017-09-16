@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import ShowThought from '../../../pages/thoughts/show'
 import Page from '../../../components/Page'
 import Thought from '../../../components/Thought'
-import thoughts from '../../../data/thoughts'
+import thoughts from '../../../dist/thoughts'
 
 function firstThought () {
   const slug = Object.keys(thoughts)[0]
