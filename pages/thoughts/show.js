@@ -1,7 +1,7 @@
 import React from 'react'
 import Page from '../../components/Page'
 import Thought from '../../components/Thought'
-import thoughts from '../../data/thoughts'
+import thoughts from '../../dist/thoughts'
 
 export default class extends React.Component {
   static getInitialProps ({ query }) {

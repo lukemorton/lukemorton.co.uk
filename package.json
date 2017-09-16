@@ -2,12 +2,13 @@
   "name": "lukemorton-co-uk",
   "version": "0.0.1",
   "repository": "https://bitbucket.org/drpheltright/lukemorton",
+  "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.18.0",
     "babel-eslint": "7.0.0",
     "date-fns": "^1.22.0",
     "express": "^4.14.0",
-    "markedly": "0.0.2",
+    "markedly": "0.0.14",
     "morgan": "^1.7.0",
     "next": "2.0.0-beta.13",
     "react": "^15.6.1",
@@ -34,8 +35,8 @@
   "scripts": {
     "lint": "standard",
     "test": "ava",
-    "blog": "NODE_ENV=development nodemon dist/bin/build.js --watch thoughts --ext md",
-    "build": "NODE_ENV=production babel bin -d dist/bin && babel lib -d dist/lib && node dist/bin/build.js && next build",
+    "blog": "NODE_ENV=development nodemon --exec markedly --watch thoughts --ext md",
+    "build": "NODE_ENV=production babel bin -d dist/bin && babel lib -d dist/lib && markedly && next build",
     "dev": "NODE_ENV=development nodemon bin/serve.js --exec babel-node --watch bin/serve.js --watch lib/createServer.js",
     "start": "NODE_ENV=production node dist/bin/serve.js",
     "deploy": "standard && ava -v && now --alias www.lukemorton.co.uk --alias lukemorton.co.uk",
@@ -54,8 +55,19 @@
       "react"
     ]
   },
+  "markedly": {
+    "dir": "thoughts",
+    "lists": {
+      "latestThoughts": {
+        "limit": 10,
+        "reverse": true
+      },
+      "thoughtsArchive": {
+        "reverse": true
+      }
+    }
+  },
   "standard": {
     "parser": "babel-eslint"
-  },
-  "license": "ISC"
+  }
 }

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Page from '../components/Page'
 import Thoughts from '../components/Thoughts'
 import Projects from '../components/Projects'
-import latestThoughts from '../data/latestThoughts'
+import latestThoughts from '../dist/thoughts/latestThoughts'
 
 export default class extends React.Component {
   static getInitialProps () {
