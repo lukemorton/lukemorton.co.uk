@@ -30,15 +30,15 @@ export default class extends React.Component {
 
           <div className='content'>
             <p>
-              I guess I should start with code. I like writing it. I like writing it well. I like getting paid to code. I like learning from other coders. I like to share what I've learnt.
+              I've been developing commercial web applications as a software engineer since 2009 though I've been building on the web since 2004. Though I'm not coding day-to-day I'm very much coding in my spare time having recently been building open source deployment tools for Kubernetes in Golang as well as experimenting with Clean Architecture in Ruby on Rails applications.
             </p>
 
             <p>
-              My name is Luke Morton and I've been developing commercial web applications since 2009 though I've been building on the web since 2004. A modern day web generalist I practice and preach agile, encourage XP/CI/CD/TDD/BDD, architect things like APIs and delivery piplines, reorganise archaic code bases and generally bring order to the universe.
+              I'm currently a Director at <a href='https://madetech.com'>Made Tech</a> where I work as an advisor and CTO, having created and transformed software engineering departments, introduced best practices such as test-driven development, pair programming, and continuous delivery. I’ve lead efforts to create exciting engineering cultures that make hiring easy.
             </p>
 
             <p>
-              I work for <a href='https://madetech.com'>Made</a> with an awesome team of other generalist developers who love to <a href='https://madetech.com/news'>share their knowledge</a>. We build web applications and also consult teams to help them do the same consistently and constantly. That means we encourage continuously integrated code, automated testing, immutable deploys and all other crazy practices that make big businesses dizzy.
+              I'm a generalist software engineer at heart. I practice and preach agile, encourage XP/CI/CD/TDD/BDD, architect things like APIs and delivery piplines, reorganise archaic code bases and generally bring order to the universe.
             </p>
 
             <p>
@@ -132,7 +132,7 @@ export default class extends React.Component {
                 I worked for a startup, <a href='https://gignite.com'>Gignite</a> where I made some very good friends, some of whom I'm still working with today.
               </li>
 
-              <li>Present day, and working at <a href='https://madetech.com'>Made</a>.</li>
+              <li>Present day, and working at <a href='https://madetech.com'>Made Tech</a>.</li>
             </ul>
           </div>
 

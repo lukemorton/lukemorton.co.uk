@@ -61,7 +61,11 @@ export default class extends React.Component {
 
           <div className='content'>
             <p>
-              You know what interests me? Writing code and delivering systems that solve real problems. Why? Because it's fun.
+              I'm a Director at Made Tech where we build software delivery capabilities, deliver digital & technology, and run live services for ambitious organisations.
+            </p>
+
+            <p>
+               I work as an advisor and CTO, having created and transformed software engineering departments, introduced best practices such as test-driven development, pair programming, and continuous delivery. I’ve lead efforts to create exciting engineering cultures that make hiring easy.
             </p>
 
             <p>
