@@ -65,7 +65,7 @@ export default class extends React.Component {
             </p>
 
             <p>
-              I'm a champion of modern software engineering practices. I help transform private and public sector organisation's digital and technology delivery from the ground up. Whether it's coaching software teams or defining technology strategy my passion is big impact change.
+              I champion modern software engineering practices. I help transform private and public sector organisation's digital and technology delivery from the ground up. Whether it's coaching software teams or defining technology strategy my passion is big impact change.
             </p>
 
             <p>
