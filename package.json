@@ -39,7 +39,7 @@
     "build": "NODE_ENV=production babel bin -d dist/bin && babel lib -d dist/lib && markedly && next build",
     "dev": "NODE_ENV=development nodemon bin/serve.js --exec babel-node --watch bin/serve.js --watch lib/createServer.js",
     "start": "NODE_ENV=production node dist/bin/serve.js",
-    "deploy": "standard && ava -v && now --alias www.lukemorton.co.uk --alias lukemorton.co.uk",
+    "deploy": "standard && ava -v && now && now alias",
     "clean-deploys": "now rm $(now-no-alias lukemorton-co-uk | json -a uid)"
   },
   "ava": {
@@ -66,6 +66,12 @@
         "reverse": true
       }
     }
+  },
+  "now": {
+    "alias": [
+      "lukemorton.co.uk",
+      "www.lukemorton.co.uk"
+    ]
   },
   "standard": {
     "parser": "babel-eslint"
