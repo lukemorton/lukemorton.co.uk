@@ -30,11 +30,15 @@ export default class extends React.Component {
 
           <div className='content'>
             <p>
-              I've been developing commercial web applications as a software engineer since 2009 though I've been building on the web since 2004. Though I'm not coding day-to-day I'm very much coding in my spare time having recently been building open source deployment tools for Kubernetes in Golang as well as experimenting with Clean Architecture in Ruby on Rails applications.
+              I've developed commercial web applications as a software engineer since 2009 though I've been building on the web since 2004.
             </p>
 
             <p>
-              I'm currently a Director at <a href='https://madetech.com'>Made Tech</a> where I work as an advisor and CTO, having created and transformed software engineering departments, introduced best practices such as test-driven development, pair programming, and continuous delivery. I’ve lead efforts to create exciting engineering cultures that make hiring easy.
+              I'm currently a Director at <a href='https://madetech.com'>Made Tech</a> where I help our customers transform their approach to software delivery. I have created and transformed software engineering departments, introduced best practices such as test-driven development, pair programming and continuous delivery to software teams, and built technology roadmaps for business critical platforms. I’ve lead efforts to create exciting engineering cultures that make hiring easy.
+            </p>
+
+            <p>
+              Though I'm not coding day-to-day I'm very much coding in my spare time having recently been building <a href='https://github.com/lukemorton/web-deployer'>open source deployment tools</a> for Kubernetes in Golang as well as experimenting with Clean Architecture in Ruby on Rails applications.
             </p>
 
             <p>

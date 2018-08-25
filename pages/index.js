@@ -65,7 +65,7 @@ export default class extends React.Component {
             </p>
 
             <p>
-               I work as an advisor and CTO, having created and transformed software engineering departments, introduced best practices such as test-driven development, pair programming, and continuous delivery. I’ve lead efforts to create exciting engineering cultures that make hiring easy.
+              I'm a champion of modern software engineering practices. I help transform private and public sector organisation's digital and technology delivery from the ground up. Whether it's coaching software teams or defining technology strategy my passion is big impact change.
             </p>
 
             <p>
