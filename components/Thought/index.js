@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default ({ indexUrl, aboutUrl, archiveUrl, avatarSrc, thought }) =>
   <div>
-    <div dangerouslySetInnerHTML={{ __html: thought.title }} />
+    <div dangerouslySetInnerHTML={{ __html: thought.title.html }} />
 
     <p className='meta'>
       <Link href={aboutUrl}>
@@ -14,13 +14,13 @@ export default ({ indexUrl, aboutUrl, archiveUrl, avatarSrc, thought }) =>
       </Link>
 
       <em>
-        <span className='author'>Written by <Link href={aboutUrl}>Luke Morton</Link></span> <span className='published'>on {thought.publishedAt}</span>
+        <span className='author'>Written by <Link href={aboutUrl}>Luke Morton</Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
       </em>
     </p>
 
     <div
       className='content'
-      dangerouslySetInnerHTML={{ __html: thought.content }}
+      dangerouslySetInnerHTML={{ __html: thought.content.html }}
       />
 
     ---

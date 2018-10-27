@@ -1,16 +1,16 @@
 import React from 'react'
 
-const Thought = ({ plainTitle, thoughtTitleWrapper, url, slug, publishedAt, intro }) =>
+const Thought = ({ title, thoughtTitleWrapper, url, slug, publishedAt, excerpt }) =>
   <li className='post'>
-    {thoughtTitleWrapper(<a href={`/thoughts/${slug}`}>{plainTitle}</a>)}
+    {thoughtTitleWrapper(<a href={`/thoughts/${slug}`}>{title.plain}</a>)}
 
     <p className='meta'>
-      <em>{publishedAt}</em>
+      <em>{publishedAt.pretty}</em>
     </p>
 
     <div
       className='content'
-      dangerouslySetInnerHTML={{ __html: intro }}
+      dangerouslySetInnerHTML={{ __html: excerpt && excerpt.html }}
       />
   </li>
 
