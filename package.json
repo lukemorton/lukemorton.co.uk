@@ -13,8 +13,8 @@
     "markedly": "^0.3.0",
     "morgan": "^1.9.1",
     "next": "2.0.0-beta.13",
-    "react": "^15.6.1",
-    "react-dom": "^15.4.1",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
     "react-ga": "^2.1.2",
     "serve-favicon": "^2.5.0",
     "striptags": "^2.1.1"
@@ -23,7 +23,6 @@
     "ava": "^0.25.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-15": "^1.1.1",
-    "fsevents": "^1.2.4",
     "json": "^9.0.4",
     "nodemon": "^1.18.5",
     "now": "^11.4.6",
