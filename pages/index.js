@@ -17,9 +17,9 @@ export default class extends React.Component {
       thoughts: latestThoughts,
       projects: [
         {
-          name: 'MarketTown',
-          description: 'A collection of open source libraries for e-commerce.',
-          url: 'https://github.com/madetech/market_town'
+          name: 'markedly',
+          description: 'Turn a directory of Markdown into JSON for your blog',
+          url: 'https://github.com/lukemorton/markedly'
         },
         {
           name: 'cf-deploy',
