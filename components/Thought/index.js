@@ -13,9 +13,7 @@ export default ({ indexUrl, aboutUrl, archiveUrl, avatarSrc, thought }) =>
           />
       </Link>
 
-      <em>
-        <span className='author'>Written by <Link href={aboutUrl}>Luke Morton</Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
-      </em>
+      <span className='author'>Written by <Link href={aboutUrl}>Luke Morton</Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
     </p>
 
     <div
