@@ -32,32 +32,32 @@ test('redirects non-www to www', async t => {
 })
 
 test('serves favicon', async t => {
-  await supertest(server()).get('/favicon.ico').expect(200)
+  t.is((await supertest(server()).get('/favicon.ico')).status, 200)
 })
 
 test('serves poems', async t => {
-  await supertest(server()).get('/poems/').expect(200)
-  await supertest(server()).get('/poems/a-soul').expect(200)
-  await supertest(server()).get('/poems/a-soul.html').expect(200)
+  t.is((await supertest(server()).get('/poems/')).status, 200)
+  t.is((await supertest(server()).get('/poems/a-soul')).status, 200)
+  t.is((await supertest(server()).get('/poems/a-soul.html')).status, 200)
 })
 
 test('serves moon and fate', async t => {
-  await supertest(server()).get('/moon-and-fate.html').expect(200)
+  t.is((await supertest(server()).get('/moon-and-fate.html')).status, 200)
 })
 
 test('serves thoughts', async t => {
   const app = { render (req, res) { return res.send() } }
   const { slug } = firstThought()
   const url = `/thoughts/${slug}`
-  await supertest(server({ app })).get(url).expect(200)
+  t.is((await supertest(server({ app })).get(url)).status, 200)
 })
 
 test('serves 404 if thought does not exist', async t => {
   const handle = (req, res) => res.status(404).send()
-  await supertest(server({ handle })).get('/thoughts/doesnt-exist').expect(404)
+  t.is((await supertest(server({ handle })).get('/thoughts/doesnt-exist')).status, 404)
 })
 
 test('serves next.js by default', async t => {
   const handle = (req, res) => res.status(200).send()
-  await supertest(server({ handle })).get('/cool').expect(200)
+  t.is((await supertest(server({ handle })).get('/cool')).status, 200)
 })
