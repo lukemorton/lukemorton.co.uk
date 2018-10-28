@@ -21,13 +21,15 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
-    "enzyme": "^2.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-15": "^1.1.1",
     "fsevents": "^1.2.4",
     "json": "^9.0.4",
     "nodemon": "^1.18.5",
     "now": "^11.4.6",
     "now-no-alias": "^1.0.3",
-    "react-addons-test-utils": "^15.4.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^ 15.6.2",
     "standard": "8.4.0",
     "supertest": "^2.0.1"
   },
@@ -37,7 +39,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "test": "ava",
+    "test": "ava test/**/*.test.js",
     "blog": "NODE_ENV=development nodemon --exec markedly --watch thoughts --ext md",
     "build": "NODE_ENV=production babel bin -d dist/bin && babel lib -d dist/lib && markedly && next build",
     "dev": "NODE_ENV=development nodemon bin/serve.js --exec babel-node --watch bin/serve.js --watch lib/createServer.js",
@@ -47,7 +49,8 @@
   },
   "ava": {
     "require": [
-      "babel-register"
+      "babel-register",
+      "./test/testHelper.js"
     ],
     "babel": "inherit"
   },
