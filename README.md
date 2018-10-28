@@ -5,19 +5,19 @@
 **Install dependencies:**
 
 ```
-yarn install
+npm install
 ```
 
 **Compile data files:**
 
 ```
-yarn build
+npm build
 ```
 
 **Run development server:**
 
 ```
-yarn run dev
+npm run dev
 ```
 
 The app will be served on [http://localhost:3000](http://localhost:3000)
@@ -25,8 +25,8 @@ The app will be served on [http://localhost:3000](http://localhost:3000)
 **Run tests and linting:**
 
 ```
-yarn test
-yarn run lint
+npm test
+npm run lint
 ```
 
 ## Deploying
@@ -34,11 +34,11 @@ yarn run lint
 **Deploy to now.sh:**
 
 ```
-yarn run deploy
+npm run deploy
 ```
 
 **Cleaning up old deploys:**
 
 ```
-yarn run clean-deploys
+npm run clean-deploys
 ```
