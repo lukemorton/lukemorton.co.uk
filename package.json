@@ -25,9 +25,7 @@
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-15": "^1.1.1",
     "json": "^9.0.4",
-    "nodemon": "^1.18.5",
-    "now": "^16.7.0",
-    "now-no-alias": "^1.0.3",
+    "nodemon": "^2.0.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^ 15.6.2",
     "standard": "8.4.0",
@@ -44,8 +42,6 @@
     "build": "NODE_ENV=production babel bin -d dist/bin && babel lib -d dist/lib && markedly && next build",
     "dev": "NODE_ENV=development nodemon bin/serve.js --exec babel-node --watch bin/serve.js --watch lib/createServer.js",
     "start": "NODE_ENV=production node dist/bin/serve.js",
-    "deploy": "now -t ${NOW_TOKEN} && now alias -t ${NOW_TOKEN}",
-    "clean-deploys": "now rm $(now-no-alias lukemorton-co-uk | json -a uid)"
   },
   "ava": {
     "require": [
