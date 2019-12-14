@@ -72,12 +72,6 @@
       }
     }
   },
-  "now": {
-    "alias": [
-      "lukemorton.co.uk",
-      "www.lukemorton.co.uk"
-    ]
-  },
   "standard": {
     "parser": "babel-eslint"
   }
