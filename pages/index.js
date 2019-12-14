@@ -17,6 +17,21 @@ export default class extends React.Component {
       thoughts: latestThoughts,
       projects: [
         {
+          name: 'jvm-examples',
+          description: 'Various JVM examples across Clojure, Scala, Kotlin, Java, etc.',
+          url: 'https://github.com/lukemorton/jvm-examples'
+        },
+        {
+          name: 'Space',
+          description: 'An example of Clean Architecture in Rails.',
+          url: 'https://github.com/lukemorton/space'
+        },
+        {
+          name: 'TypeScript and CA',
+          description: 'An example of Clean Architecture in TypeScript.',
+          url: 'https://github.com/lukemorton/typescript-clean-architecture-example'
+        },
+        {
           name: 'markedly',
           description: 'Turn a directory of Markdown into JSON for your blog',
           url: 'https://github.com/lukemorton/markedly'
