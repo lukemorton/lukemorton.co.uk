@@ -4,23 +4,24 @@
   "repository": "https://bitbucket.org/drpheltright/lukemorton",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-eslint": "7.0.0",
-    "babel-preset-es2015-node4": "^2.1.1",
-    "babel-preset-stage-2": "^6.24.1",
     "date-fns": "^1.22.0",
     "express": "^4.16.4",
     "markedly": "^0.3.0",
     "morgan": "^1.9.1",
-    "next": "2.0.0-beta.13",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
+    "next": "^9.1.5",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-ga": "^2.1.2",
     "serve-favicon": "^2.5.0",
     "striptags": "^2.1.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
     "ava": "^0.25.0",
+    "babel-eslint": "10.0.3",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-15": "^1.1.1",
     "json": "^9.0.4",
@@ -55,9 +56,12 @@
   },
   "babel": {
     "presets": [
-      "es2015-node4",
-      "stage-2",
-      "react"
+      [
+        "@babel/preset-env"
+      ],
+      [
+        "@babel/preset-react"
+      ]
     ]
   },
   "markedly": {
