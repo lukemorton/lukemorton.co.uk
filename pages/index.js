@@ -76,7 +76,7 @@ export default class extends React.Component {
 
           <div className='content'>
             <p>
-              I'm a Director at Made Tech where we build software delivery capabilities, deliver digital & technology, and run live services for ambitious organisations.
+              I'm CTO at Made Tech where we help organisations transform into high performance software teams, through agile software delivery and on-site training.
             </p>
 
             <p>
