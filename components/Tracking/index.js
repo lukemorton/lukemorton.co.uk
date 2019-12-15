@@ -7,11 +7,13 @@ function logPageView (url) {
   ga.pageview(url)
 }
 
-if (typeof window !== 'undefined') {
-  ga.initialize('UA-9371957-1')
-  logPageView(window.location.pathname)
-}
+if (process.env.NODE_ENV === 'production') {
+  if (typeof window !== 'undefined') {
+    ga.initialize('UA-9371957-1')
+    logPageView(window.location.pathname)
+  }
 
-Router.onRouteChangeComplete = logPageView
+  Router.onRouteChangeComplete = logPageView  
+}
 
 export default () => <div />
