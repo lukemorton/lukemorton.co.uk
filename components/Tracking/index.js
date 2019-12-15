@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
     logPageView(window.location.pathname)
   }
 
-  Router.onRouteChangeComplete = logPageView  
+  Router.onRouteChangeComplete = logPageView
 }
 
 export default () => <div />
