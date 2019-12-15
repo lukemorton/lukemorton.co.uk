@@ -32,11 +32,11 @@ export default class extends React.Component {
 
           <div className='content'>
             <p>
-              I've developed commercial web applications as a software engineer since 2009 though I've been building on the web since 2004.
+              I've been a software engineer for 15 years, working in both the public and private sector developing critical infrastructure for government departments, building global e-commerce platforms, and helping organisations create strong engineering cultures so they can compete in an age of disruption.
             </p>
 
             <p>
-              I'm currently a Director at <a href='https://madetech.com'>Made Tech</a> where I help our customers transform their approach to software delivery. I have created and transformed software engineering departments, introduced best practices such as test-driven development, pair programming and continuous delivery to software teams, and built technology roadmaps for business critical platforms. I’ve lead efforts to create exciting engineering cultures that make hiring easy.
+              I'm currently CTO at <a href='https://madetech.com'>Made Tech</a> where I help our customers transform their approach to software delivery. I have created and transformed software engineering departments, introduced best practices such as test-driven development, pair programming and continuous delivery to software teams, and built technology roadmaps for business critical platforms. I’ve lead efforts to create exciting engineering cultures that make hiring easy.
             </p>
 
             <p>
