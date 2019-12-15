@@ -1,4 +1,3 @@
-import test from 'ava'
 import React from 'react'
 import { shallow } from 'enzyme'
 import Index from '../../pages/index'
@@ -6,9 +5,9 @@ import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
 import Projects from '../../components/Projects'
 
-test('content renders', t => {
+test('content renders', () => {
   const page = shallow(<Index />)
-  t.is(page.find(Page).length, 1)
-  t.is(page.find(Thoughts).length, 1)
-  t.is(page.find(Projects).length, 1)
+  expect(page.find(Page).length).toBe(1)
+  expect(page.find(Thoughts).length).toBe(1)
+  expect(page.find(Projects).length).toBe(1)
 })
