@@ -6,7 +6,7 @@ First you will want to install dependencies, create an initial build of data fil
 
 ```
 npm install
-npm build
+npm run build
 npm run dev
 ```
 
@@ -23,7 +23,7 @@ npm install
 **Compile data files:**
 
 ```
-npm build
+npm run build
 ```
 
 **Run development server:**
@@ -35,7 +35,7 @@ npm run dev
 Or run with `now dev` for a production-like environment. I recommend running the following command if you've experienced production not behaving like your development environment.
 
 ```
-now dev
+node_modules/.bin/now dev
 ```
 
 **When writing blog posts:**
