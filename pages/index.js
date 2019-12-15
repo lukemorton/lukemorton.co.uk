@@ -65,13 +65,15 @@ export default class extends React.Component {
 
           <p className='meta'>
             <Link href={this.props.indexUrl}>
-              <img
-                src={this.props.avatarSrc}
-                style={{ height: '3em', width: '3em' }}
-                />
+              <a>
+                <img
+                  src={this.props.avatarSrc}
+                  style={{ height: '3em', width: '3em' }}
+                  />
+              </a>
             </Link>
 
-            <em>By <Link href={this.props.aboutUrl}>Luke Morton</Link></em>
+            <em>By <Link href={this.props.aboutUrl}><a>Luke Morton</a></Link></em>
           </p>
 
           <div className='content'>
@@ -84,7 +86,7 @@ export default class extends React.Component {
             </p>
 
             <p>
-              Here you will find a collection of <Link href={this.props.archiveUrl}>my thoughts</Link> about software and people problems. If you want you can find a little more <Link href={this.props.aboutUrl}>about me</Link> and please do get in touch via twitter <a href={this.props.twitterUrl}>{this.props.twitterHandle}</a>.
+              Here you will find a collection of <Link href={this.props.archiveUrl}><a>my thoughts</a></Link> about software and people problems. If you want you can find a little more <Link href={this.props.aboutUrl}><a>about me</a></Link> and please do get in touch via twitter <a href={this.props.twitterUrl}>{this.props.twitterHandle}</a>.
             </p>
           </div>
         </main>
@@ -94,7 +96,7 @@ export default class extends React.Component {
             title={<h2>Thoughts</h2>}
             thoughtTitleWrapper={(title) => <h3>{title}</h3>}
             thoughts={this.props.thoughts}
-            after={<p>Please do read more from <a href={this.props.archiveUrl}>the archives</a>.</p>}
+            after={<p>Please do read more from <Link href={this.props.archiveUrl}><a>the archives</a></Link>.</p>}
             />
 
           <Projects

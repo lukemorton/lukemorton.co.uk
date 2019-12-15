@@ -21,10 +21,12 @@ export default class extends React.Component {
 
           <p className='meta'>
             <Link href={this.props.aboutUrl}>
-              <img
-                src={this.props.avatarSrc}
-                style={{ height: '6em', width: '6em' }}
-                />
+              <a>
+                <img
+                  src={this.props.avatarSrc}
+                  style={{ height: '6em', width: '6em' }}
+                  />
+              </a>
             </Link>
           </p>
 
@@ -143,7 +145,7 @@ export default class extends React.Component {
           ---
 
           <p>
-            You may head <Link href={this.props.indexUrl}>back home</Link> now.
+            You may head <Link href={this.props.indexUrl}><a>back home</a></Link> now.
           </p>
         </main>
       </Page>

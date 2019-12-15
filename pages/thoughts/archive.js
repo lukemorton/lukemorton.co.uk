@@ -24,19 +24,21 @@ export default class extends React.Component {
 
           <p className='meta'>
             <Link href={this.props.indexUrl}>
-              <img
-                src={this.props.avatarSrc}
-                style={{ height: '3em', width: '3em' }}
-                />
+              <a>
+                <img
+                  src={this.props.avatarSrc}
+                  style={{ height: '3em', width: '3em' }}
+                  />
+              </a>
             </Link>
 
-            <em>By <Link href={this.props.aboutUrl}>Luke Morton</Link></em>
+            <em>By <Link href={this.props.aboutUrl}><a>Luke Morton</a></Link></em>
           </p>
 
           <Thoughts
             thoughtTitleWrapper={(title) => <h2>{title}</h2>}
             thoughts={this.props.thoughts}
-            after={<p>Feel free to go home now <a href={this.props.indexUrl}>here</a>.</p>}
+            after={<p>Feel free to go home now <Link href={this.props.indexUrl}><a>here</a></Link>.</p>}
             />
         </main>
       </Page>

@@ -1,8 +1,9 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Thought = ({ title, thoughtTitleWrapper, url, slug, publishedAt, excerpt }) =>
   <li className='post'>
-    {thoughtTitleWrapper(<a href={`/thoughts/${slug}`}>{title.plain}</a>)}
+    {thoughtTitleWrapper(<Link href={`/thoughts/${slug}`}><a>{title.plain}</a></Link>)}
 
     <p className='meta'>
       Written on {publishedAt.pretty}
