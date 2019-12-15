@@ -41,7 +41,7 @@
     "test": "ava test/**/*.test.js",
     "blog": "NODE_ENV=development nodemon --exec markedly --watch thoughts --ext md",
     "build": "NODE_ENV=production babel bin -d dist/bin && babel lib -d dist/lib && markedly && next build",
-    "dev": "NODE_ENV=development nodemon bin/serve.js --exec babel-node --watch bin/serve.js --watch lib/createServer.js",
+    "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start"
   },
   "ava": {
