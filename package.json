@@ -29,7 +29,6 @@
   "engines": {
     "node": ">=11.0.0"
   },
-  "main": "index.js",
   "scripts": {
     "lint": "standard",
     "test": "ava test/**/*.test.js",
