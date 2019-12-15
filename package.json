@@ -12,7 +12,6 @@
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
-    "ava": "^2.4.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "enzyme": "^3.10.0",
@@ -32,7 +31,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "test": "ava test/**/*.test.js",
+    "test": "jest",
     "blog": "NODE_ENV=development mkdir -p dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
     "build": "NODE_ENV=production mkdir -p dist/thoughts && markedly && next build",
     "dev": "NODE_ENV=development next dev",
