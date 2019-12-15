@@ -10,16 +10,19 @@
     "react-ga": "^2.1.2"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "ava": "^2.4.0",
     "babel-eslint": "10.0.3",
-    "enzyme": "^3.7.0",
+    "babel-jest": "^24.9.0",
+    "enzyme": "^3.10.0",
     "enzyme-adapter-react-15": "^1.1.1",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "jest": "^24.9.0",
     "json": "^9.0.4",
     "markedly": "^0.3.0",
     "nodemon": "^2.0.2",
     "now": "^16.7.0",
-    "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^ 15.6.2",
     "standard": "8.4.0",
     "supertest": "^2.0.1"
   },
@@ -30,17 +33,28 @@
   "scripts": {
     "lint": "standard",
     "test": "ava test/**/*.test.js",
-    "blog": "NODE_ENV=development nodemon --exec markedly --watch thoughts --ext md",
-    "build": "NODE_ENV=production markedly && next build",
+    "blog": "NODE_ENV=development mkdir -p dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
+    "build": "NODE_ENV=production mkdir -p dist/thoughts && markedly && next build",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start"
   },
   "ava": {
     "require": [
-      "babel-register",
       "./test/testHelper.js"
     ],
-    "babel": "inherit"
+    "testOptions": {
+      "presets": [
+        "@babel/preset-react"
+      ]
+    }
+  },
+  "babel": {
+    "presets": ["@babel/preset-env", "@babel/preset-react"]
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/test/testHelper.js"
+    ]
   },
   "markedly": {
     "dir": "thoughts",

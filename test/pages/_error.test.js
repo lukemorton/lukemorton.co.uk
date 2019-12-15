@@ -1,26 +1,25 @@
-import test from 'ava'
 import React from 'react'
 import { shallow } from 'enzyme'
 import Error from '../../pages/_error'
 import Page from '../../components/Page'
 
-test('content renders', t => {
+test('content renders', () => {
   const page = shallow(<Error />)
-  t.is(page.find(Page).length, 1)
+  expect(page.find(Page).length).toBe(1)
 })
 
-test('.getInitialProps with req', t => {
-  const reqNotFoundProps = Error.getInitialProps({ req: { statusCode: 404 } })
-  t.is(reqNotFoundProps.error, 'Page not found')
+test('.getInitialProps with req', () => {
+  const reqNotFoundProps = Error.getInitialProps({ res: { statusCode: 404 } })
+  expect(reqNotFoundProps.error).toBe('Page not found')
 
-  const reqErrorProps = Error.getInitialProps({ req: { statusCode: 500 } })
-  t.is(reqErrorProps.error, 'An error occured')
+  const reqErrorProps = Error.getInitialProps({ res: { statusCode: 500 } })
+  expect(reqErrorProps.error).toBe('An error occured')
 })
 
-test('.getInitialProps with xhr', t => {
+test('.getInitialProps with xhr', () => {
   const reqNotFoundProps = Error.getInitialProps({ xhr: { status: 404 } })
-  t.is(reqNotFoundProps.error, 'Page not found')
+  expect(reqNotFoundProps.error).toBe('Page not found')
 
   const reqErrorProps = Error.getInitialProps({ xhr: { status: 500 } })
-  t.is(reqErrorProps.error, 'An error occured')
+  expect(reqErrorProps.error).toBe('An error occured')
 })
