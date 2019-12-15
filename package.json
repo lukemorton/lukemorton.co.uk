@@ -21,8 +21,7 @@
     "markedly": "^0.3.0",
     "nodemon": "^2.0.2",
     "now": "^16.7.0",
-    "standard": "8.4.0",
-    "supertest": "^2.0.1"
+    "standard": "8.4.0"
   },
   "engines": {
     "node": "12.x"
