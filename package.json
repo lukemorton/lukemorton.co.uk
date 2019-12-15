@@ -10,10 +10,6 @@
     "react-ga": "^2.1.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/node": "^7.7.4",
-    "@babel/preset-env": "^7.7.6",
     "ava": "^0.25.0",
     "babel-eslint": "10.0.3",
     "enzyme": "^3.7.0",
@@ -35,7 +31,7 @@
     "lint": "standard",
     "test": "ava test/**/*.test.js",
     "blog": "NODE_ENV=development nodemon --exec markedly --watch thoughts --ext md",
-    "build": "NODE_ENV=production babel bin -d dist/bin && babel lib -d dist/lib && markedly && next build",
+    "build": "NODE_ENV=production markedly && next build",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start"
   },
@@ -45,16 +41,6 @@
       "./test/testHelper.js"
     ],
     "babel": "inherit"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env"
-      ],
-      [
-        "@babel/preset-react"
-      ]
-    ]
   },
   "markedly": {
     "dir": "thoughts",
