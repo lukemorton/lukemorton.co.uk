@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from './Nav'
 import Toggle from './Toggle'
 import isLargerThanMobile from './isLargerThanMobile'
@@ -18,24 +18,20 @@ const chapters = [
   }
 ]
 
-export default class extends React.Component {
-  componentWillMount () {
-    this.state = { navShowing: true }
+export default () => {
+  const [navShowing, setNavShowing] = useState(null)
+
+  useEffect(() => {
+    if (navShowing === null) setNavShowing(isLargerThanMobile())
+  })
+
+  function handleToggle () {
+    setNavShowing(!navShowing)
   }
 
-  componentDidMount () {
-    this.setState({ navShowing: isLargerThanMobile() })
-  }
-
-  handleToggle () {
-    this.setState({ navShowing: true })
-  }
-
-  render () {
-    if (this.state.navShowing) {
-      return <Nav chapters={chapters} />
-    } else {
-      return <Toggle onToggle={this.handleToggle.bind(this)} />
-    }
+  if (navShowing) {
+    return <Nav chapters={chapters} />
+  } else {
+    return <Toggle onToggle={handleToggle} />
   }
 }
