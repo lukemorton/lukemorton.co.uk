@@ -3,10 +3,10 @@ import Link from 'next/link'
 import Page from '../components/Page'
 import Thoughts from '../components/Thoughts'
 import Projects from '../components/Projects'
-import latestThoughts from '../public/dist/thoughts/latestThoughts'
+import { recentThoughts } from '../src/listThoughts'
 
 export default class extends React.Component {
-  static getInitialProps () {
+  static async getInitialProps ({ req }) {
     return {
       indexUrl: '/',
       aboutUrl: '/about',
@@ -14,7 +14,7 @@ export default class extends React.Component {
       twitterUrl: 'https://twitter.com/lukemorton',
       avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
       twitterHandle: '@LukeMorton',
-      thoughts: latestThoughts,
+      thoughts: await recentThoughts(req),
       projects: [
         {
           name: 'jvm-examples',
