@@ -23,9 +23,8 @@ export default class extends React.Component {
               Articles
             </h1>
 
-
             <p>
-              Technology articles from code to teams to organisational transformation by Luke Morton
+              Technology articles from code to teams to organisational transformation by Luke Morton.
             </p>
           </div>
 

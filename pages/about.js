@@ -21,11 +21,15 @@ export default class extends React.Component {
             </h1>
 
             <p>
-              I've been a software engineer for 15 years, working in both the public and private sector developing critical infrastructure for government departments, building global e-commerce platforms, and helping organisations create strong engineering cultures so they can compete in an age of disruption.
+              I'm CTO at <a href='https://madetech.com'>Made Tech</a> where we help organisations transform into high performance software teams, through agile software delivery and on-site training.
             </p>
 
             <p>
-              I'm currently CTO at <a href='https://madetech.com'>Made Tech</a> where I help our customers transform their approach to software delivery. I have created and transformed software engineering departments, introduced best practices such as test-driven development, pair programming and continuous delivery to software teams, and built technology roadmaps for business critical platforms. I’ve lead efforts to create exciting engineering cultures that make hiring easy.
+              I champion modern software engineering practices. I help transform private and public sector organisation's digital and technology delivery from the ground up. Whether it's coaching software teams or defining technology strategy my passion is big impact change.
+            </p>
+
+            <p>
+              I've been a software engineer for 15 years, developing critical infrastructure for government departments, building global e-commerce platforms, and helping organisations create strong engineering cultures.
             </p>
 
             <p>
