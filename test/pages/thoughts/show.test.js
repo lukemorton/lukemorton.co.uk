@@ -1,9 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+import nock from 'nock'
 import ShowThought from '../../../pages/thoughts/[slug]'
 import Page from '../../../components/Page'
 import Thought from '../../../components/Thought'
-import thoughts from '../../../dist/thoughts'
+import thoughts from '../../../public/dist/thoughts'
 
 function firstThought () {
   const slug = Object.keys(thoughts)[0]
@@ -16,8 +17,11 @@ test('content renders', () => {
   expect(page.find(Thought).length).toBe(1)
 })
 
-test('loading thought by slug', () => {
-  const { slug } = firstThought()
-  const { thought } = ShowThought.getInitialProps({ query: { slug } })
-  expect(thought).toBe(thoughts[slug])
+test('loading thought by slug', async () => {
+  const expectedThought = firstThought()
+  nock('http://lvh.me:3000')
+    .get('/dist/thoughts/index.json')
+    .reply(200, thoughts)
+  const { thought } = await ShowThought.getInitialProps({ query: { slug: expectedThought.slug } })
+  expect(thought).toStrictEqual(expectedThought)
 })
