@@ -16,11 +16,11 @@ export default class extends React.Component {
 
   render () {
     return (
-      <Page title='An Exploration of the Web'>
+      <Page title='All articles'>
         <main>
           <div className='prose'>
             <h1>
-              Articles
+              All articles
             </h1>
 
             <p>
