@@ -59,34 +59,16 @@ export default class extends React.Component {
     return (
       <Page title='An exploration of the way we use technology'>
         <main>
-          <h1>
-            <span className='break--mobile'>An exploration</span> of the way we use technology
-          </h1>
-
-          <p className='meta'>
-            <Link href={this.props.indexUrl}>
-              <a className='meta__avatar'>
-                <img
-                  src={this.props.avatarSrc}
-                  style={{ height: '5rem', width: '5rem' }}
-                  />
-              </a>
-            </Link>
-
-            <em>Technology articles from code to teams to organisational transformation by Luke Morton</em>
-          </p>
-
-          <div className='content'>
-            <p>
-              I'm CTO at Made Tech where we help organisations transform into high performance software teams, through agile software delivery and on-site training.
-            </p>
+          <div className='prose'>
+            <h1>
+              <span className='break--mobile'>An exploration</span> of the way we use technology
+            </h1>
 
             <p>
-              I champion modern software engineering practices. I help transform private and public sector organisation's digital and technology delivery from the ground up. Whether it's coaching software teams or defining technology strategy my passion is big impact change.
-            </p>
+              Technology is consuming every aspect of society and yet in a rapidly changing landscape we struggle to keep up. Organisations are left with a decision: innovate or be disrupted.</p>
 
             <p>
-              Here you will find a collection of <Link href={this.props.archiveUrl}><a>articles</a></Link> about software, people and everything inbetween. If you want you can find out a little more <Link href={this.props.aboutUrl}><a>about me</a></Link> and please do get in touch via twitter <a href={this.props.twitterUrl}>{this.props.twitterHandle}</a>.
+              I've spent the last 15 years building software and technology teams and this website represents some of what I have learned so far. Here you will find a collection of <Link href={this.props.archiveUrl}><a>articles</a></Link> about software, people and everything inbetween.
             </p>
           </div>
         </main>

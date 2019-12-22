@@ -2,26 +2,15 @@ import React from 'react'
 import Link from 'next/link'
 
 export default ({ indexUrl, aboutUrl, archiveUrl, avatarSrc, thought }) =>
-  <div>
+  <div className='post'>
     <div dangerouslySetInnerHTML={{ __html: thought.title.html }} />
 
-    <p className='meta'>
-      <Link href={aboutUrl}>
-        <a className='meta__avatar'>
-          <img
-            src={avatarSrc}
-            style={{ height: '3em', width: '3em' }}
-            />
-        </a>
-      </Link>
-
-      <span>
-        <span className='author'>Written by <Link href={aboutUrl}><a>Luke Morton</a></Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
-      </span>
+    <p className='post__meta'>
+      <span className='author'>Written by <Link href={aboutUrl}><a>Luke Morton</a></Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
     </p>
 
     <div
-      className='content'
+      className='post__content'
       dangerouslySetInnerHTML={{ __html: thought.content.html }}
       />
 

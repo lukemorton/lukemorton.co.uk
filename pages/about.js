@@ -15,22 +15,11 @@ export default class extends React.Component {
     return (
       <Page title='About the Author'>
         <main>
-          <h1>
-            About the Author
-          </h1>
+          <div className='prose'>
+            <h1>
+              About the Author
+            </h1>
 
-          <p className='meta'>
-            <Link href={this.props.aboutUrl}>
-              <a className='meta__avatar'>
-                <img
-                  src={this.props.avatarSrc}
-                  style={{ height: '6em', width: '6em' }}
-                  />
-              </a>
-            </Link>
-          </p>
-
-          <div className='content'>
             <p>
               I've been a software engineer for 15 years, working in both the public and private sector developing critical infrastructure for government departments, building global e-commerce platforms, and helping organisations create strong engineering cultures so they can compete in an age of disruption.
             </p>

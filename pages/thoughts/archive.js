@@ -18,22 +18,16 @@ export default class extends React.Component {
     return (
       <Page title='An Exploration of the Web'>
         <main>
-          <h1>
-            Articles
-          </h1>
+          <div className='prose'>
+            <h1>
+              Articles
+            </h1>
 
-          <p className='meta'>
-            <Link href={this.props.indexUrl}>
-              <a className='meta__avatar'>
-                <img
-                  src={this.props.avatarSrc}
-                  style={{ height: '5rem', width: '5rem' }}
-                  />
-              </a>
-            </Link>
 
-            <em>Technology articles from code to teams to organisational transformation by Luke Morton</em>
-          </p>
+            <p>
+              Technology articles from code to teams to organisational transformation by Luke Morton
+            </p>
+          </div>
 
           <Thoughts
             thoughtTitleWrapper={(title) => <h2 className='h3'>{title}</h2>}
