@@ -6,7 +6,7 @@ const Project = ({ name, description, url, after }, index) =>
       <a href={url}>{name}</a>
     </h3>
 
-    <div className='content'>
+    <div className='post__content'>
       <p>
         {description}
       </p>

@@ -16,10 +16,30 @@ export default ({ title, backgroundImageSrc, children }) =>
       <link rel='stylesheet' href='/css/screen.css' />
     </Head>
 
-    <Chapters />
-
     <div className='animated fadeIn'>
-      {children}
+      <div className='content'>
+        <div className='content__primary'>
+          {children}
+        </div>
+
+        <div className='content__secondary'>
+          <div className='author'>
+            <p className='author__avatar'>
+              <img
+                src='https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180'
+                style={{ height: '5rem', width: '5rem' }}
+                />
+            </p>
+
+            <p className='author__description'>
+              <small>A website by</small><br />
+              Luke&nbsp;Morton
+            </p>
+          </div>
+
+          <Chapters />
+        </div>
+      </div>
     </div>
 
     <Tracking />
