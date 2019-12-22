@@ -6,7 +6,7 @@ export default ({ indexUrl, aboutUrl, archiveUrl, avatarSrc, thought }) =>
     <div dangerouslySetInnerHTML={{ __html: thought.title.html }} />
 
     <p className='post__meta'>
-      <span className='author'>Written by <Link href={aboutUrl}><a>Luke Morton</a></Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
+      <span className='post__author'>Written by <Link href={aboutUrl}><a>Luke Morton</a></Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
     </p>
 
     <div

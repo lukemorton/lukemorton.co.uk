@@ -1,3 +1,5 @@
+/* typography */
+
 body {
   margin: 1em;
 
@@ -9,11 +11,6 @@ body {
   background-color: #ffffff;
 }
 
-main,
-aside {
-  max-width: 36em;
-}
-
 h1,
 h2,
 h3,
@@ -21,7 +18,7 @@ h3,
 h4 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  line-height: 1.8em;
+  line-height: 1.5em;
   color: inherit;
   text-rendering: optimizelegibility;
 }
@@ -35,7 +32,7 @@ h3,
 
 h1 {
   font-size: 2.5em;
-  margin: 2em 0 1em 0;
+  margin: 0 0 1em 0;
 }
 
 h2 {
@@ -87,7 +84,81 @@ a:focus {
   color: #005580;
 }
 
+/* layout */
+
+.content {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  padding-top: 2em;
+}
+
+.content__primary {
+}
+
+.content__secondary {
+}
+
+/* utils */
+
+.break--mobile,
+.break--tablet,
+.break--always {
+  display: block;
+}
+
+/* components */
+
 .author {
+  color: #666;
+  float: left;
+  line-height: 1.2em;
+  margin: 0 0 1em 0;
+}
+
+.author__avatar {
+  margin-bottom: .5em;
+}
+
+.author__avatar img {
+  border-radius: 50%;
+  max-width: none;
+  vertical-align: bottom;
+}
+
+.navigation_toggle {
+  float: right;
+}
+
+.navigation {
+  margin: 0 0 1em 0;
+  text-align: right;
+}
+
+.navigation .h3 {
+  margin-top: 0;
+}
+
+.navigation ol {
+  display: inline-block;
+  margin: 0;
+  width: 8em;
+}
+
+.navigation li {
+  color: #666;
+  margin: 0;
+}
+
+.navigation a {
+  color: #999;
+}
+
+.navigation a:hover {
+  color: #333;
+}
+
+.post__author {
   display: block;
 }
 
@@ -130,49 +201,13 @@ li.post .post__meta {
   margin: 3em 0;
 }
 
-.break--mobile,
-.break--tablet,
-.break--always {
-  display: block;
-}
-
-.navigation_toggle {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-}
-
-.navigation {
-  text-align: right;
-  padding: 1em 0 0 0;
-}
-
-.navigation ol {
-  display: inline-block;
-  margin: 0;
-  width: 8em;
-}
-
-.navigation li {
-  color: #666;
-  margin: 0;
-}
-
-.navigation a {
-  color: #999;
-}
-
-.navigation a:hover {
-  color: #333;
-}
-
 @media only screen and (min-width: 540px) {
   body {
     margin: 2em;
   }
 
-  .navigation_toggle {
-    right: 2em;
+  .post__author {
+    display: inline;
   }
 
   .break--mobile {
@@ -184,14 +219,6 @@ li.post .post__meta {
   body {
     margin: 3em;
     font-size: 18px;
-  }
-
-  .navigation_toggle {
-    right: 3em;
-  }
-
-  .author {
-    display: inline;
   }
 
   .break--tablet {
@@ -206,17 +233,29 @@ li.post .post__meta {
 }
 
 @media only screen and (min-width: 60em) {
-  .page {
+  .content {
+    flex-direction: row;
     margin: 0 auto;
     width: 50em;
   }
 
+  .content__primary {
+    width: 36em;
+  }
+
+  .content__secondary {
+    width: 10em;
+  }
+
+  .author {
+    float: none;
+    margin-top: 1em;
+    text-align: right;
+  }
+
   .navigation {
-    position: fixed;
-    top: 3em;
-    left: 50%;
-    margin-left: 17em;
-    z-index: 1;
+    position: sticky;
+    top: 2em;
   }
 }
 
