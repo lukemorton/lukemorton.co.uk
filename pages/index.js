@@ -65,7 +65,8 @@ export default class extends React.Component {
             </h1>
 
             <p>
-              Technology is consuming every aspect of society and yet in a rapidly changing landscape we struggle to keep up. Organisations are left with a decision: innovate or be disrupted.</p>
+              Technology is consuming every aspect of society and yet in a rapidly changing landscape we struggle to keep up. Organisations are left with a decision: innovate or be disrupted.
+            </p>
 
             <p>
               I've spent the last 15 years building software and technology teams and this website represents some of what I have learned so far. Here you will find a collection of <Link href={this.props.archiveUrl}><a>articles</a></Link> about software, people and everything inbetween.
