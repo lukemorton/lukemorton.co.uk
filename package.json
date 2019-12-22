@@ -76,6 +76,10 @@
       "topics/cleanArchitecture": {
         "reverse": true,
         "tags": ["Clean Architecture"]
+      },
+      "topics/rails": {
+        "reverse": true,
+        "tags": ["Ruby on Rails"]
       }
     }
   },
