@@ -4,6 +4,7 @@
   "repository": "https://bitbucket.org/drpheltright/lukemorton",
   "license": "ISC",
   "dependencies": {
+    "cross-fetch": "^3.0.4",
     "next": "^9.1.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -11,6 +12,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
+    "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.7.6",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
@@ -29,8 +31,8 @@
   "scripts": {
     "lint": "standard",
     "test": "jest",
-    "blog": "NODE_ENV=development mkdir -p dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
-    "build": "NODE_ENV=production mkdir -p dist/thoughts && markedly && next build",
+    "blog": "NODE_ENV=development mkdir -p public/dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
+    "build": "NODE_ENV=production mkdir -p public/dist/thoughts && markedly && next build",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start"
   },
@@ -45,6 +47,9 @@
     }
   },
   "babel": {
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ],
     "presets": [
       "@babel/preset-env",
       "@babel/preset-react"
@@ -70,6 +75,8 @@
   },
   "standard": {
     "parser": "babel-eslint",
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   }
 }
