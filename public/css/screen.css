@@ -139,10 +139,14 @@ a:focus {
   margin-top: 0;
 }
 
-.navigation ol {
+.navigation ul {
   display: inline-block;
-  margin: 0;
-  width: 8em;
+  margin: 0 0 1em 0;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
 }
 
 .navigation li {
@@ -244,7 +248,7 @@ li.post .post__meta {
   }
 
   .content__secondary {
-    width: 10em;
+    width: 12em;
   }
 
   .author {
