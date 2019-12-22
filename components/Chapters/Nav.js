@@ -23,6 +23,14 @@ export default () =>
       </li>
 
       <li>
+        <Link href='/open-source'>
+          <a>
+            Open source
+          </a>
+        </Link>
+      </li>
+
+      <li>
         <Link href='/about'>
           <a>
             About Luke
