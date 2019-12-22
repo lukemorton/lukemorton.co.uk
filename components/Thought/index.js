@@ -9,10 +9,12 @@ export default ({ indexUrl, aboutUrl, archiveUrl, avatarSrc, thought }) =>
       <span className='post__author'>Written by <Link href={aboutUrl}><a>Luke Morton</a></Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
     </p>
 
-    <div
-      className='post__content'
-      dangerouslySetInnerHTML={{ __html: thought.content.html }}
-      />
+    <div className='prose'>
+      <div
+        className='post__content'
+        dangerouslySetInnerHTML={{ __html: thought.content.html }}
+        />
+    </div>
 
     ---
 
