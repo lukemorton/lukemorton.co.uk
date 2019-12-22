@@ -3,21 +3,6 @@ import Nav from './Nav'
 import Toggle from './Toggle'
 import isLargerThanMobile from './isLargerThanMobile'
 
-const chapters = [
-  {
-    label: 'Introduction',
-    url: '/'
-  },
-  {
-    label: 'Articles',
-    url: '/thoughts/archive'
-  },
-  {
-    label: 'About Author',
-    url: '/about'
-  }
-]
-
 export default () => {
   const [navShowing, setNavShowing] = useState(null)
 
@@ -30,7 +15,7 @@ export default () => {
   }
 
   if (navShowing) {
-    return <Nav chapters={chapters} />
+    return <Nav />
   } else {
     return <Toggle onToggle={handleToggle} />
   }
