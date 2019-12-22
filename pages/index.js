@@ -57,10 +57,10 @@ export default class extends React.Component {
 
   render () {
     return (
-      <Page title='An Exploration of the Web'>
+      <Page title='An exploration of the way we use technology'>
         <main>
           <h1>
-            <span className='break--mobile'>An Exploration</span> of the Web
+            <span className='break--mobile'>An exploration</span> of the way we use technology
           </h1>
 
           <p className='meta'>
