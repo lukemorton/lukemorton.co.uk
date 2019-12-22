@@ -9,7 +9,7 @@ export default () =>
       <li>
         <Link href='/'>
           <a>
-            Introduction
+            Home
           </a>
         </Link>
       </li>
