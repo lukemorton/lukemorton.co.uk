@@ -36,7 +36,7 @@ export default class extends React.Component {
           </p>
 
           <Thoughts
-            thoughtTitleWrapper={(title) => <h2>{title}</h2>}
+            thoughtTitleWrapper={(title) => <h2 className='h3'>{title}</h2>}
             thoughts={this.props.thoughts}
             after={<p>Feel free to go home now <Link href={this.props.indexUrl}><a>here</a></Link>.</p>}
             />
