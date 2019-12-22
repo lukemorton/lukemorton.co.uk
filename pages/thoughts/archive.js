@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
-import thoughtsArchive from '../../dist/thoughts/thoughtsArchive'
+import thoughtsArchive from '../../public/dist/thoughts/thoughtsArchive'
 
 export default class extends React.Component {
   static getInitialProps () {

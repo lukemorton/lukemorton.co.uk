@@ -57,6 +57,7 @@
   },
   "markedly": {
     "dir": "thoughts",
+    "outDir": "public/dist",
     "lists": {
       "latestThoughts": {
         "limit": 10,

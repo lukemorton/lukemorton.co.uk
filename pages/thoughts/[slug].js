@@ -3,8 +3,8 @@ import Page from '../../components/Page'
 import Thought from '../../components/Thought'
 
 function freshThoughts () {
-  delete require.cache[require.resolve('../../dist/thoughts')]
-  return require('../../dist/thoughts')
+  delete require.cache[require.resolve('../../public/dist/thoughts')]
+  return require('../../public/dist/thoughts')
 }
 
 function freshThought (slug) {
