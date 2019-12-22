@@ -1,5 +1,7 @@
 ---
 publishedAt: 2019-12-14
+tags:
+ - Clean Architecture
 ---
 
 # Nuances in Clean Architecture

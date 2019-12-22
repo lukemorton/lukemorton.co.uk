@@ -28,3 +28,9 @@ export async function thoughtsArchive (req) {
   const response = await fetch(url)
   return await response.json()
 }
+
+export async function topic (req, topic) {
+  const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic}.json`)
+  const response = await fetch(url)
+  return await response.json()
+}

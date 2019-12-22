@@ -72,6 +72,10 @@
       },
       "thoughtsArchive": {
         "reverse": true
+      },
+      "topics/cleanArchitecture": {
+        "reverse": true,
+        "tags": ["Clean Architecture"]
       }
     }
   },

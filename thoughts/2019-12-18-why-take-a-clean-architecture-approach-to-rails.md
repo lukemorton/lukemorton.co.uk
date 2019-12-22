@@ -1,5 +1,7 @@
 ---
 publishedAt: 2019-12-18
+tags:
+ - Clean Architecture
 ---
 
 # Why take a Clean Architecture approach to Rails?
