@@ -1,3 +1,9 @@
+---
+publishedAt: 2018-08-11
+tags:
+ - Clean Architecture
+---
+
 # Decoupling the delivery mechanism
 
 On the trouble you can encounter when trying to separate your domain logic from a framework like Rails.
