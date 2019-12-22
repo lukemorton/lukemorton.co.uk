@@ -9,7 +9,7 @@ const chapters = [
     url: '/'
   },
   {
-    label: 'Thoughts',
+    label: 'Articles',
     url: '/thoughts/archive'
   },
   {
