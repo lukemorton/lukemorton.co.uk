@@ -1,3 +1,9 @@
+---
+publishedAt: 2016-09-24
+tags:
+ - Ruby on Rails
+---
+
 # Business logic in Rails
 
 On structuring Rails apps for growth. Often a tricky area this article will walk you through a refactor and hopefully you'll walk away with a few more ideas for structuring your business logic.

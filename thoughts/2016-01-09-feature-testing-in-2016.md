@@ -1,3 +1,9 @@
+---
+publishedAt: 2016-01-09
+tags:
+ - Ruby on Rails
+---
+
 # Feature testing in 2016
 
 In which I outline a strategy for Feature testing with rspec and capybara.

@@ -1,3 +1,9 @@
+---
+publishedAt: 2015-09-12
+tags:
+ - Ruby on Rails
+---
+
 # Getting better mileage out of Active Record
 
 In which I provide a few links to help scale the M in MVC,
