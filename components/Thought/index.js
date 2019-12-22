@@ -7,7 +7,7 @@ export default ({ indexUrl, aboutUrl, archiveUrl, avatarSrc, thought }) =>
 
     <p className='meta'>
       <Link href={aboutUrl}>
-        <a>
+        <a className='meta__avatar'>
           <img
             src={avatarSrc}
             style={{ height: '3em', width: '3em' }}
@@ -15,7 +15,9 @@ export default ({ indexUrl, aboutUrl, archiveUrl, avatarSrc, thought }) =>
         </a>
       </Link>
 
-      <span className='author'>Written by <Link href={aboutUrl}><a>Luke Morton</a></Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
+      <div>
+        <span className='author'>Written by <Link href={aboutUrl}><a>Luke Morton</a></Link></span> <span className='published'>on {thought.publishedAt.pretty}</span>
+      </div>
     </p>
 
     <div

@@ -21,7 +21,7 @@ export default class extends React.Component {
 
           <p className='meta'>
             <Link href={this.props.aboutUrl}>
-              <a>
+              <a className='meta__avatar'>
                 <img
                   src={this.props.avatarSrc}
                   style={{ height: '6em', width: '6em' }}
