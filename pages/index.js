@@ -73,7 +73,7 @@ export default class extends React.Component {
               </a>
             </Link>
 
-            <em>By <Link href={this.props.aboutUrl}><a>Luke Morton</a></Link></em>
+            <em>Technology articles from code to teams to organisational transformation by Luke Morton</em>
           </p>
 
           <div className='content'>
@@ -86,21 +86,21 @@ export default class extends React.Component {
             </p>
 
             <p>
-              Here you will find a collection of <Link href={this.props.archiveUrl}><a>my thoughts</a></Link> about software and people problems. If you want you can find a little more <Link href={this.props.aboutUrl}><a>about me</a></Link> and please do get in touch via twitter <a href={this.props.twitterUrl}>{this.props.twitterHandle}</a>.
+              Here you will find a collection of <Link href={this.props.archiveUrl}><a>articles</a></Link> about software, people and everything inbetween. If you want you can find out a little more <Link href={this.props.aboutUrl}><a>about me</a></Link> and please do get in touch via twitter <a href={this.props.twitterUrl}>{this.props.twitterHandle}</a>.
             </p>
           </div>
         </main>
 
         <aside>
           <Thoughts
-            title={<h2>Thoughts</h2>}
+            title={<h2>Recent articles</h2>}
             thoughtTitleWrapper={(title) => <h3>{title}</h3>}
             thoughts={this.props.thoughts}
             after={<p>Please do read more from <Link href={this.props.archiveUrl}><a>the archives</a></Link>.</p>}
             />
 
           <Projects
-            title={<h2>Open Source Projects</h2>}
+            title={<h2>Open source projects</h2>}
             projects={this.props.projects}
             after={<p>You can find even more of my open source work on my <a href={this.props.githubUrl}>GitHub profile</a>.</p>}
             />

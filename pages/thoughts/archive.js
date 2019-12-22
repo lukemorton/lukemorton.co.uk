@@ -19,7 +19,7 @@ export default class extends React.Component {
       <Page title='An Exploration of the Web'>
         <main>
           <h1>
-            Thought Archive
+            Articles
           </h1>
 
           <p className='meta'>
@@ -32,7 +32,7 @@ export default class extends React.Component {
               </a>
             </Link>
 
-            <em>By <Link href={this.props.aboutUrl}><a>Luke Morton</a></Link></em>
+            <em>Technology articles from code to teams to organisational transformation by Luke Morton</em>
           </p>
 
           <Thoughts
