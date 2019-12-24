@@ -36,7 +36,8 @@
     "blog": "NODE_ENV=development mkdir -p public/dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
     "build": "NODE_ENV=production mkdir -p public/dist/thoughts && markedly && next build",
     "dev": "NODE_ENV=development next dev",
-    "start": "NODE_ENV=production next start"
+    "start": "NODE_ENV=production next start",
+    "smoke": "./bin/smoke.js"
   },
   "ava": {
     "require": [
