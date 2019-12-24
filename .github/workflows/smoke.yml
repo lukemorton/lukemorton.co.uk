@@ -8,4 +8,4 @@ jobs:
 
     steps:
     - name: CURL the URL
-      run: echo $GITHUB_EVENT_PATH
+      run: cat $GITHUB_EVENT_PATH
