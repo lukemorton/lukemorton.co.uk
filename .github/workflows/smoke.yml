@@ -1,0 +1,11 @@
+name: Smoke tests
+
+on: [deployment_status]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: CURL the URL
+      run: echo $GITHUB_EVENT_PATH
