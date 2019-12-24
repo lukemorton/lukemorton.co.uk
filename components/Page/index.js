@@ -16,9 +16,9 @@ export default ({ title, backgroundImageSrc, children }) =>
       <link rel='stylesheet' href='/css/screen.css' />
     </Head>
 
-    <div className='animated fadeIn'>
+    <div>
       <div className='content'>
-        <div className='content__primary'>
+        <div className='content__primary animated fadeIn'>
           {children}
         </div>
 
