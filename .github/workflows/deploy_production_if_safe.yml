@@ -1,9 +1,7 @@
 name: Deploy production if safe
 
 on:
-  deployment_status:
-    branches:
-      - master
+  deployment_status
 
 jobs:
   smoke_then_deploy:
