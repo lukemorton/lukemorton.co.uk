@@ -6,10 +6,14 @@ function buildUrlFromRequestAndPath (req, path) {
   return `${baseUrl}${path}`
 }
 
-async function allThoughts (req) {
-  const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/index.json')
+async function fetchJson (url) {
   const response = await fetch(url)
   return await response.json()
+}
+
+async function allThoughts (req) {
+  const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/index.json')
+  return await fetchJson(url)
 }
 
 export async function thought (req, slug) {
@@ -19,18 +23,15 @@ export async function thought (req, slug) {
 
 export async function recentThoughts (req) {
   const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/latestThoughts.json')
-  const response = await fetch(url)
-  return await response.json()
+  return await fetchJson(url)
 }
 
 export async function thoughtsArchive (req) {
   const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/thoughtsArchive.json')
-  const response = await fetch(url)
-  return await response.json()
+  return await fetchJson(url)
 }
 
 export async function topic (req, topic) {
   const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic}.json`)
-  const response = await fetch(url)
-  return await response.json()
+  return await fetchJson(url)
 }
