@@ -1,9 +1,12 @@
-name: Smoke tests
+name: Deploy production if safe
 
-on: [deployment_status]
+on:
+  deployment_status:
+    branches:
+      - master
 
 jobs:
-  build:
+  smoke_then_deploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,7 +19,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install and run smoke tests
+    - name: npm install, smoke tests and then production deploy
       run: |
         npm ci
         npm run smoke
+        cat $GITHUB_EVENT_PATH
+        node_modules/.bin/now -t ${{ secrets.NOW_TOKEN }} --prod
