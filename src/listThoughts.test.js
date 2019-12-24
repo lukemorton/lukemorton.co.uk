@@ -1,4 +1,3 @@
-import React from 'react'
 import fetch from 'cross-fetch'
 import { thought, recentThoughts, thoughtsArchive, topic } from './listThoughts'
 
@@ -101,7 +100,7 @@ describe('listThoughts', () => {
     const { location } = window
 
     beforeAll(() => {
-      delete window.location;
+      delete window.location
       window.location = { hostname: 'localhost' }
     })
 
