@@ -1,4 +1,4 @@
-name: Deploy production if safe
+name: Smoke and deploy
 
 on:
   deployment_status
@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install and smoke tests
+    - name: Install and run smoke tests
       if: github.event.deployment_status.state == 'success'
       run: |
         npm ci
         npm run smoke
-    - name: Deploy production
+    - name: Deploy production if safe
       if: github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'production'
       run: node_modules/.bin/now -t ${{ secrets.NOW_TOKEN }} --prod
