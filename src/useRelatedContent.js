@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import { fetchThoughtsByTopic } from './fetchThoughts'
 
+const TAG_MAP = {
+  'Clean Architecture': 'cleanArchitecture',
+  'Ruby on Rails': 'rails'
+}
+
 function excludeCurrentContent (currentSlug, thoughts) {
   return thoughts.filter((thought) => thought.slug !== currentSlug)
 }
@@ -25,31 +30,28 @@ export default function useRelatedContent () {
   const [relatedContent, setRelatedContent] = useState([])
 
   return [relatedContent, (currentSlug, tags) => {
-    setRelatedContent([])
+    (async () => {
+      const thoughtsForTags = await Promise.all(
+        tags.map((tag) => {
+          return fetchThoughtsByTopic(null, TAG_MAP[tag])
+        })
+      )
 
-    tags.forEach((tag) => {
-      (async () => {
-        const tagMap = {
-          'Clean Architecture': 'cleanArchitecture',
-          'Ruby on Rails': 'rails'
-        }
+      const thoughts = thoughtsForTags.reduce((thoughts, t) => thoughts.concat(t), [])
 
-        setRelatedContent(
-          take(
-            4,
-            unique(
-              sortByPublishedAt(
-                excludeCurrentContent(
-                  currentSlug,
-                  relatedContent.concat(
-                    await fetchThoughtsByTopic(null, tagMap[tag])
-                  )
-                )
+      setRelatedContent(
+        take(
+          4,
+          unique(
+            sortByPublishedAt(
+              excludeCurrentContent(
+                currentSlug,
+                thoughts
               )
             )
           )
         )
-      })()
-    })
+      )
+    })()
   }]
 }
