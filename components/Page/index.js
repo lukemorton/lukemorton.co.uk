@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
-import Chapters from '../Chapters'
 import Tracking from '../Tracking'
+import Menu from './Menu'
 
 export default ({ title, backgroundImageSrc, children }) =>
   <div className='page'>
@@ -37,7 +37,7 @@ export default ({ title, backgroundImageSrc, children }) =>
             </p>
           </div>
 
-          <Chapters />
+          <Menu />
         </div>
       </div>
     </div>
