@@ -205,6 +205,24 @@ li.post .post__meta {
   margin: 3em 0;
 }
 
+.related_content {
+  margin-top: 2em;
+  border-top: 3px solid #eee;
+}
+
+.related_content ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.related_content .post {
+  display: block;
+  font-size: .7em;
+  line-height: 1.8em;
+  width: 48%;
+}
+
 @media only screen and (min-width: 540px) {
   body {
     margin: 2em;
