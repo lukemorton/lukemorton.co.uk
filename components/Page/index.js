@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
-import Tracking from '../Tracking'
 import Menu from './Menu'
+import Tracking from './Tracking'
 
 export default ({ title, backgroundImageSrc, children }) =>
   <div className='page'>
