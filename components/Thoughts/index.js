@@ -30,7 +30,5 @@ export default ({ title, thoughtTitleWrapper, thoughts, after }) =>
       {thoughts.map(thoughtMapper(thoughtTitleWrapper))}
     </ul>
 
-    ---
-
-    {after}
+    {after && [<hr />, after]}
   </div>

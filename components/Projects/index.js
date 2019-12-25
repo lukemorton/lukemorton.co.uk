@@ -21,7 +21,5 @@ export default ({ title, projects, after, githubUrl }) =>
       {projects.map(Project)}
     </ul>
 
-    ---
-
-    {after}
+    {after && [<hr />, after]}
   </div>

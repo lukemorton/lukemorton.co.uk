@@ -135,7 +135,7 @@ export default class extends React.Component {
             </ul>
           </div>
 
-          ---
+          <hr />
 
           <p>
             You may head <Link href={this.props.indexUrl}><a>back home</a></Link> now.
