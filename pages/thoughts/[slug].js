@@ -35,6 +35,8 @@ export default function ThoughtPage (props) {
 
         <RelatedContent thoughts={relatedContent} />
 
+        <hr />
+
         <p>
           Feel free to read some <Link href={props.archiveUrl}><a>more thoughts</a></Link> or go back to <Link href={props.indexUrl}><a>the introduction</a></Link>.
         </p>
