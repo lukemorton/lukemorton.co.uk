@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../components/Page'
 import Thoughts from '../components/Thoughts'
-import { recentThoughts } from '../src/listThoughts'
+import { fetchRecentThoughts } from '../src/fetchThoughts'
 
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
@@ -13,7 +13,7 @@ export default class extends React.Component {
       twitterUrl: 'https://twitter.com/lukemorton',
       avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
       twitterHandle: '@LukeMorton',
-      thoughts: await recentThoughts(req),
+      thoughts: await fetchRecentThoughts(req),
       projects: [
         {
           name: 'jvm-examples',

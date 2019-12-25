@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import useInterval from '@use-it/interval'
 import Page from '../../components/Page'
 import Thought from '../../components/Thought'
-import { thought as loadThought } from '../../src/listThoughts'
+import { fetchOneThoughtBySlug } from '../../src/fetchThoughts'
 
 const INTERVAL = process.env.NODE_ENV === 'development' ? 1000 : null
 
@@ -11,7 +11,7 @@ export default function ThoughtPage (props) {
 
   useInterval(() => {
     (async () => {
-      setThought(await loadThought(null, props.slug))
+      setThought(await fetchOneThoughtBySlug(null, props.slug))
     })()
   }, INTERVAL)
 
@@ -31,6 +31,6 @@ ThoughtPage.getInitialProps = async ({ req, query }) => {
     archiveUrl: '/thoughts/archive',
     avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
     slug: query.slug,
-    thought: await loadThought(req, query.slug)
+    thought: await fetchOneThoughtBySlug(req, query.slug)
   }
 }

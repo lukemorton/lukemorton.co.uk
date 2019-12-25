@@ -14,7 +14,7 @@ test('content renders', () => {
 test('loading thoughts', async () => {
   const expectedThoughts = [{ slug: 'cool' }, { slug: 'bob' }]
   nock('http://lvh.me:3000')
-    .get('/dist/thoughts/latestThoughts.json')
+    .get('/dist/thoughts/recent.json')
     .reply(200, expectedThoughts)
   const { thoughts } = await Index.getInitialProps({})
   expect(thoughts).toStrictEqual(expectedThoughts)

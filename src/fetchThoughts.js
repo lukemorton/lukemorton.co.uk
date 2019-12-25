@@ -11,27 +11,27 @@ async function fetchJson (url) {
   return await response.json()
 }
 
-async function allThoughts (req) {
+async function fetchThoughtMap (req) {
   const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/index.json')
   return await fetchJson(url)
 }
 
-export async function thought (req, slug) {
-  const thoughts = await allThoughts(req)
+export async function fetchOneThoughtBySlug (req, slug) {
+  const thoughts = await fetchThoughtMap(req)
   return thoughts[slug]
 }
 
-export async function recentThoughts (req) {
-  const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/latestThoughts.json')
+export async function fetchRecentThoughts (req) {
+  const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/recent.json')
   return await fetchJson(url)
 }
 
-export async function thoughtsArchive (req) {
-  const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/thoughtsArchive.json')
+export async function fetchAllThoughts (req) {
+  const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/archive.json')
   return await fetchJson(url)
 }
 
-export async function topic (req, topic) {
+export async function fetchThoughtsByTopic (req, topic) {
   const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic}.json`)
   return await fetchJson(url)
 }

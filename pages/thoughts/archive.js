@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
-import { thoughtsArchive } from '../../src/listThoughts'
+import { fetchAllThoughts } from '../../src/fetchThoughts'
 
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
@@ -10,7 +10,7 @@ export default class extends React.Component {
       indexUrl: '/',
       aboutUrl: '/about',
       avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
-      thoughts: await thoughtsArchive(req)
+      thoughts: await fetchAllThoughts(req)
     }
   }
 

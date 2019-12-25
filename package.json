@@ -67,11 +67,11 @@
     "dir": "thoughts",
     "outDir": "public/dist",
     "lists": {
-      "latestThoughts": {
+      "recent": {
         "limit": 10,
         "reverse": true
       },
-      "thoughtsArchive": {
+      "archive": {
         "reverse": true
       },
       "topics/cleanArchitecture": {

@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch'
-import { thought, recentThoughts, thoughtsArchive, topic } from './listThoughts'
+import { fetchOneThoughtBySlug, fetchRecentThoughts, fetchAllThoughts, fetchThoughtsByTopic } from './fetchThoughts'
 
 jest.mock('cross-fetch')
 
@@ -16,13 +16,13 @@ describe('listThoughts', () => {
     jest.clearAllMocks()
   })
 
-  describe('.thought()', () => {
+  describe('.fetchOneThoughtBySlug()', () => {
     beforeEach(() => {
       jsonResponse = {} // thought returns object rather than array
     })
 
     test('it uses fetch', async () => {
-      await thought(null, '2017-01-17-lightweight-docker-images-for-go')
+      await fetchOneThoughtBySlug(null, '2017-01-17-lightweight-docker-images-for-go')
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/thoughts/index.json')
       )
@@ -35,49 +35,49 @@ describe('listThoughts', () => {
         [expectedThought.slug]: expectedThought
       }
 
-      const t = await thought(null, expectedThought.slug)
+      const t = await fetchOneThoughtBySlug(null, expectedThought.slug)
       expect(t).toBe(expectedThought)
     })
   })
 
-  describe('.recentThoughts()', () => {
+  describe('.fetchRecentThoughts()', () => {
     test('it uses fetch', async () => {
-      await recentThoughts(null)
+      await fetchRecentThoughts(null)
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/latestThoughts.json')
+        expect.stringContaining('/dist/thoughts/recent.json')
       )
     })
 
     test('it returns JSON response', async () => {
-      const response = await recentThoughts(null)
+      const response = await fetchRecentThoughts(null)
       expect(response).toBe(jsonResponse)
     })
   })
 
-  describe('.thoughtsArchive()', () => {
+  describe('.fetchAllThoughts()', () => {
     test('it uses fetch', async () => {
-      await thoughtsArchive(null)
+      await fetchAllThoughts(null)
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/thoughtsArchive.json')
+        expect.stringContaining('/dist/thoughts/archive.json')
       )
     })
 
     test('it returns JSON response', async () => {
-      const response = await thoughtsArchive(null)
+      const response = await fetchAllThoughts(null)
       expect(response).toBe(jsonResponse)
     })
   })
 
-  describe('.topic()', () => {
+  describe('.fetchThoughtsByTopic()', () => {
     test('it uses fetch', async () => {
-      await topic(null, 'rails')
+      await fetchThoughtsByTopic(null, 'rails')
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/thoughts/topics/rails.json')
       )
     })
 
     test('it returns JSON response', async () => {
-      const response = await topic(null, 'rails')
+      const response = await fetchThoughtsByTopic(null, 'rails')
       expect(response).toBe(jsonResponse)
     })
   })
@@ -89,7 +89,7 @@ describe('listThoughts', () => {
           host: 'lukemorton.co.uk'
         }
       }
-      await topic(response, 'rails')
+      await fetchThoughtsByTopic(response, 'rails')
       expect(fetch).toHaveBeenCalledWith(
         'https://lukemorton.co.uk/dist/thoughts/topics/rails.json'
       )
@@ -109,7 +109,7 @@ describe('listThoughts', () => {
     })
 
     test('it uses request object to build URL', async () => {
-      await topic(null, 'rails')
+      await fetchThoughtsByTopic(null, 'rails')
       expect(fetch).toHaveBeenCalledWith(
         'http://lvh.me:3000/dist/thoughts/topics/rails.json'
       )
