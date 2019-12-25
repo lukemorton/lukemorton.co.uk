@@ -8,7 +8,7 @@ export default ({ title, backgroundImageSrc, children }) =>
     <Head>
       <title>{title} – Luke Morton</title>
 
-      <meta charset='utf-8' />
+      <meta charSet='utf-8' />
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       <meta name='google-site-verification' content='lzxFltmFH5mp8y-5rFiNDfH9qQN8rHw_1zcwFVWQl7A' />
 
