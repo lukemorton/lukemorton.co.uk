@@ -11,6 +11,12 @@ function sortByPublishedAt (thoughts) {
   })
 }
 
+function unique (thoughts) {
+  return thoughts.filter((thought, i, self) => {
+    return self.findIndex((t) => t.slug === thought.slug) === i
+  })
+}
+
 function take (count, arr) {
   return arr.slice(0, count)
 }
@@ -19,6 +25,8 @@ export default function useRelatedContent () {
   const [relatedContent, setRelatedContent] = useState([])
 
   return [relatedContent, (currentSlug, tags) => {
+    setRelatedContent([])
+
     tags.forEach((tag) => {
       (async () => {
         const tagMap = {
@@ -29,11 +37,13 @@ export default function useRelatedContent () {
         setRelatedContent(
           take(
             4,
-            sortByPublishedAt(
-              excludeCurrentContent(
-                currentSlug,
-                relatedContent.concat(
-                  await fetchThoughtsByTopic(null, tagMap[tag])
+            unique(
+              sortByPublishedAt(
+                excludeCurrentContent(
+                  currentSlug,
+                  relatedContent.concat(
+                    await fetchThoughtsByTopic(null, tagMap[tag])
+                  )
                 )
               )
             )
