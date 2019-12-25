@@ -29,7 +29,7 @@ export default class extends React.Component {
           </h1>
 
           <p>
-            Sorry, <Link href={this.props.indexUrl}>back to home</Link>?
+            Sorry, <Link href={this.props.indexUrl}><a>back to home</a></Link>?
           </p>
         </main>
       </Page>
