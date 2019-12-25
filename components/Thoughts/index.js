@@ -6,7 +6,7 @@ const Thought = ({ title, thoughtTitleWrapper, url, slug, publishedAt, excerpt }
     {thoughtTitleWrapper(<Link href='/thoughts/[slug]' as={`/thoughts/${slug}`}><a>{title.plain}</a></Link>)}
 
     <p className='post__meta'>
-      Written on {publishedAt.pretty}
+      {publishedAt.pretty}
     </p>
 
     <div
