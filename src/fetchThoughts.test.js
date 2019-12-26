@@ -4,7 +4,7 @@ import { fetchOneThoughtBySlug, fetchRecentThoughts, fetchAllThoughts, fetchThou
 jest.mock('cross-fetch')
 
 describe('listThoughts', () => {
-  let jsonResponse = []
+  let jsonResponse
 
   beforeEach(() => {
     fetch.mockResolvedValue({
@@ -41,6 +41,10 @@ describe('listThoughts', () => {
   })
 
   describe('.fetchRecentThoughts()', () => {
+    beforeEach(() => {
+      jsonResponse = []
+    })
+
     test('it uses fetch', async () => {
       await fetchRecentThoughts(null)
       expect(fetch).toHaveBeenCalledWith(
@@ -52,9 +56,19 @@ describe('listThoughts', () => {
       const response = await fetchRecentThoughts(null)
       expect(response).toBe(jsonResponse)
     })
+
+    test('it returns empty array when json response is null', async () => {
+      jsonResponse = null
+      const response = await fetchRecentThoughts(null)
+      expect(response).toEqual([])
+    })
   })
 
   describe('.fetchAllThoughts()', () => {
+    beforeEach(() => {
+      jsonResponse = []
+    })
+
     test('it uses fetch', async () => {
       await fetchAllThoughts(null)
       expect(fetch).toHaveBeenCalledWith(
@@ -66,9 +80,19 @@ describe('listThoughts', () => {
       const response = await fetchAllThoughts(null)
       expect(response).toBe(jsonResponse)
     })
+
+    test('it returns empty array when json response is null', async () => {
+      jsonResponse = null
+      const response = await fetchAllThoughts(null)
+      expect(response).toEqual([])
+    })
   })
 
   describe('.fetchThoughtsByTopic()', () => {
+    beforeEach(() => {
+      jsonResponse = []
+    })
+
     test('it uses fetch', async () => {
       await fetchThoughtsByTopic(null, 'rails')
       expect(fetch).toHaveBeenCalledWith(
@@ -79,6 +103,12 @@ describe('listThoughts', () => {
     test('it returns JSON response', async () => {
       const response = await fetchThoughtsByTopic(null, 'rails')
       expect(response).toBe(jsonResponse)
+    })
+
+    test('it returns empty array when json response is null', async () => {
+      jsonResponse = null
+      const response = await fetchThoughtsByTopic(null, 'rails')
+      expect(response).toEqual([])
     })
   })
 
