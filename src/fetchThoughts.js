@@ -23,15 +23,15 @@ export async function fetchOneThoughtBySlug (req, slug) {
 
 export async function fetchRecentThoughts (req) {
   const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/recent.json')
-  return await fetchJson(url)
+  return await fetchJson(url) || []
 }
 
 export async function fetchAllThoughts (req) {
   const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/archive.json')
-  return await fetchJson(url)
+  return await fetchJson(url) || []
 }
 
 export async function fetchThoughtsByTopic (req, topic) {
   const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic}.json`)
-  return await fetchJson(url)
+  return await fetchJson(url) || []
 }
