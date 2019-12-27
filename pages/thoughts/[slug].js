@@ -18,7 +18,7 @@ export default function ThoughtPage (props) {
   }
 
   useEffect(
-    () => setTags(thought.slug, thought.tags),
+    () => { setTags(thought.slug, thought.tags) },
     [thought.slug, thought.tags.join(',')]
   )
 
