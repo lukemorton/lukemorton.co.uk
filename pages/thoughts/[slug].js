@@ -11,11 +11,9 @@ const INTERVAL = process.env.NODE_ENV === 'development' ? 1000 : null
 
 export default function ThoughtPage (props) {
   const [thought, setThought] = useState(props.thought)
-  const [relatedContent, setTags] = useRelatedContent()
+  if (props.thought !== thought) setThought(props.thought)
 
-  if (props.thought !== thought) {
-    setThought(props.thought)
-  }
+  const [relatedContent, setTags] = useRelatedContent()
 
   useEffect(
     () => { setTags(thought.slug, thought.tags) },
