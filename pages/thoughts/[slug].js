@@ -1,30 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import useInterval from '@use-it/interval'
 import Page from '../../components/Page'
 import Thought from '../../components/Thought'
 import RelatedContent from '../../components/RelatedContent'
-import useRelatedContent from '../../src/useRelatedContent'
+import useDelayedRelatedContent from '../../src/useDelayedRelatedContent'
+import useLiveBlog from '../../src/useLiveBlog'
 import { fetchOneThoughtBySlug } from '../../src/fetchThoughts'
 
-const INTERVAL = process.env.NODE_ENV === 'development' ? 1000 : null
-
 export default function ThoughtPage (props) {
-  const [thought, setThought] = useState(props.thought)
-  if (props.thought !== thought) setThought(props.thought)
-
-  const [relatedContent, setTags] = useRelatedContent()
-
-  useEffect(
-    () => { setTags(thought.slug, thought.tags) },
-    [thought.slug, thought.tags.join(',')]
-  )
-
-  useInterval(() => {
-    (async () => {
-      setThought(await fetchOneThoughtBySlug(null, props.slug))
-    })()
-  }, INTERVAL)
+  const [thought] = useLiveBlog(props.thought, () => fetchOneThoughtBySlug(null, props.slug))
+  const [relatedContent] = useDelayedRelatedContent(thought)
 
   return (
     <Page title={thought.title.plain}>
