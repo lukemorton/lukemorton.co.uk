@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchThoughtsByTopic } from './fetchThoughts'
 
 const TAG_MAP = {
@@ -21,10 +21,10 @@ const uniqueThoughts = (thought, i, self) => {
   return self.findIndex((t) => t.slug === thought.slug) === i
 }
 
-export default function useRelatedContent () {
+export default function useRelatedContent (slug, tags) {
   const [relatedContent, setRelatedContent] = useState([])
 
-  return [relatedContent, async (currentSlug, tags) => {
+  const setTags = async (currentSlug, tags) => {
     setRelatedContent(
       (await fetchThoughtsForEachTag(tags))
         .reduce(concatInto, [])
@@ -33,5 +33,7 @@ export default function useRelatedContent () {
         .sort(byPublishedAtDesc)
         .slice(0, 4)
     )
-  }]
+  }
+
+  return [relatedContent, setTags]
 }
