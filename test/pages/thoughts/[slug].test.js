@@ -11,6 +11,11 @@ function firstThought () {
   return thoughts[slug]
 }
 
+function secondThought () {
+  const slug = Object.keys(thoughts)[1]
+  return thoughts[slug]
+}
+
 test('content renders', () => {
   const page = shallow(<ShowThought thought={firstThought()} />)
   expect(page.find(Page).length).toBe(1)
@@ -24,4 +29,10 @@ test('loading thought by slug', async () => {
     .reply(200, thoughts)
   const { thought } = await ShowThought.getInitialProps({ query: { slug: expectedThought.slug } })
   expect(thought).toStrictEqual(expectedThought)
+})
+
+test('derives state from prop sensibly', () => {
+  const page = shallow(<ShowThought thought={firstThought()} />)
+  page.setProps({ thought: secondThought() })
+  expect(page.find({ title: secondThought().title.plain }).length).toBe(1)
 })
