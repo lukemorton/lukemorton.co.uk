@@ -3,17 +3,23 @@ export const TOPICS = [
   { name: 'Ruby on Rails', slug: 'rails', file: 'rails' },
 ]
 
-export const TOPIC_SLUG_TO_FILE_MAP = {
-  'clean-architecture': 'cleanArchitecture',
-  'rails': 'rails'
-}
+export const TOPIC_SLUG_TO_FILE_MAP = TOPICS.reduce(
+  (map, topic) => {
+    return { ...map, [topic.slug]: topic.file }
+  },
+  {}
+)
 
-export const TOPIC_SLUG_TO_NAME_MAP = {
-  'clean-architecture': 'Clean Architecture',
-  'rails': 'Ruby on Rails'
-}
+export const TOPIC_SLUG_TO_NAME_MAP = TOPICS.reduce(
+  (map, topic) => {
+    return { ...map, [topic.slug]: topic.name }
+  },
+  {}
+)
 
-export const TOPIC_NAME_TO_FILE_MAP = {
-  'Clean Architecture': 'cleanArchitecture',
-  'Ruby on Rails': 'rails'
-}
+export const TOPIC_NAME_TO_FILE_MAP = TOPICS.reduce(
+  (map, topic) => {
+    return { ...map, [topic.name]: topic.file }
+  },
+  {}
+)
