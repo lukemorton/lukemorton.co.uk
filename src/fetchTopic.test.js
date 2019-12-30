@@ -1,14 +1,14 @@
-import { fetchTopicByName } from './fetchTopic'
+import { fetchTopicBySlug } from './fetchTopic'
 import { allTopics } from './topicGateway'
 
-describe('fetchTopicByName()', () => {
+describe('fetchTopicBySlug()', () => {
   allTopics().forEach((topic) => {
-    test(`returns topic for ${topic.name}`, () => {
-      expect(fetchTopicByName(topic.name)).toBeDefined()
+    test(`returns topic for ${topic.slug}`, () => {
+      expect(fetchTopicBySlug(topic.slug)).toBeDefined()
     })
   })
 
   test(`throws when topic does not exist`, () => {
-    expect(() => findTopicByName('doesnt-exist')).toThrow()
+    expect(() => fetchTopicBySlug('doesnt-exist')).toThrow()
   })
 })
