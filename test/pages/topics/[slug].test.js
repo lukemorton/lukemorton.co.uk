@@ -4,7 +4,7 @@ import nock from 'nock'
 import Topic from '../../../pages/topics/[slug]'
 import Page from '../../../components/Page'
 import Thoughts from '../../../components/Thoughts'
-import { TOPICS } from '../../../src/topics'
+import { allTopics } from '../../../src/topicGateway'
 
 test('content renders', () => {
   const page = shallow(<Topic />)
@@ -12,7 +12,7 @@ test('content renders', () => {
   expect(page.find(Thoughts).length).toBe(1)
 })
 
-TOPICS.forEach((topic) => {
+allTopics().forEach((topic) => {
   test(`loading ${topic.name} thoughts`, async () => {
     const expectedThoughts = [{ slug: 'cool' }, { slug: 'bob' }]
     nock(TEST_ORIGIN).get(topic.path).reply(200, expectedThoughts)
