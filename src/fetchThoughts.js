@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch'
+import { topicSlugExists } from './topics'
 
 function buildUrlFromRequestAndPath (req, path) {
   const host = req ? req.headers.host : window.location.hostname
@@ -32,6 +33,7 @@ export async function fetchAllThoughts (req) {
 }
 
 export async function fetchThoughtsByTopic (req, topic) {
+  if (!topicSlugExists(topic)) throw new Exception('Invalid topic slug')
   const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic}.json`)
   return await fetchJson(url) || []
 }
