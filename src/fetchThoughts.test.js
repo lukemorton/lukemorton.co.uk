@@ -3,7 +3,8 @@ import {
   fetchOneThoughtBySlug,
   fetchRecentThoughts,
   fetchAllThoughts,
-  fetchThoughtsByTopicSlug
+  fetchThoughtsByTopicSlug,
+  fetchThoughtsByTopicName
 } from './fetchThoughts'
 
 jest.mock('cross-fetch')
@@ -118,6 +119,34 @@ describe('listThoughts', () => {
 
     test('it raises exception if topic doesnt exist', async () => {
       expect(fetchThoughtsByTopicSlug(null, 'jimbob')).rejects.toThrow()
+    })
+  })
+
+  describe('.fetchThoughtsByTopicName()', () => {
+    beforeEach(() => {
+      jsonResponse = []
+    })
+
+    test('it uses fetch', async () => {
+      await fetchThoughtsByTopicName(null, 'Ruby on Rails')
+      expect(fetch).toHaveBeenCalledWith(
+        expect.stringContaining('/dist/thoughts/topics/rails.json')
+      )
+    })
+
+    test('it returns JSON response', async () => {
+      const response = await fetchThoughtsByTopicName(null, 'Ruby on Rails')
+      expect(response).toBe(jsonResponse)
+    })
+
+    test('it returns empty array when json response is null', async () => {
+      jsonResponse = null
+      const response = await fetchThoughtsByTopicName(null, 'Ruby on Rails')
+      expect(response).toEqual([])
+    })
+
+    test('it raises exception if topic doesnt exist', async () => {
+      expect(fetchThoughtsByTopicName(null, 'Jim Bob')).rejects.toThrow()
     })
   })
 
