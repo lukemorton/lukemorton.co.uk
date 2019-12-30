@@ -7,7 +7,7 @@ import Thoughts from '../../../components/Thoughts'
 import { allTopics } from '../../../src/topicGateway'
 
 test('content renders', () => {
-  const page = shallow(<Topic />)
+  const page = shallow(<Topic topic={allTopics()[0]} thoughts={[]} />)
   expect(page.find(Page).length).toBe(1)
   expect(page.find(Thoughts).length).toBe(1)
 })
