@@ -3,7 +3,7 @@ import {
   fetchOneThoughtBySlug,
   fetchRecentThoughts,
   fetchAllThoughts,
-  fetchThoughtsByTopic
+  fetchThoughtsByTopicSlug
 } from './fetchThoughts'
 
 jest.mock('cross-fetch')
@@ -93,31 +93,31 @@ describe('listThoughts', () => {
     })
   })
 
-  describe('.fetchThoughtsByTopic()', () => {
+  describe('.fetchThoughtsByTopicSlug()', () => {
     beforeEach(() => {
       jsonResponse = []
     })
 
     test('it uses fetch', async () => {
-      await fetchThoughtsByTopic(null, 'rails')
+      await fetchThoughtsByTopicSlug(null, 'rails')
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/thoughts/topics/rails.json')
       )
     })
 
     test('it returns JSON response', async () => {
-      const response = await fetchThoughtsByTopic(null, 'rails')
+      const response = await fetchThoughtsByTopicSlug(null, 'rails')
       expect(response).toBe(jsonResponse)
     })
 
     test('it returns empty array when json response is null', async () => {
       jsonResponse = null
-      const response = await fetchThoughtsByTopic(null, 'rails')
+      const response = await fetchThoughtsByTopicSlug(null, 'rails')
       expect(response).toEqual([])
     })
 
     test('it raises exception if topic doesnt exist', async () => {
-      expect(fetchThoughtsByTopic(null, 'jimbob')).rejects.toThrow()
+      expect(fetchThoughtsByTopicSlug(null, 'jimbob')).rejects.toThrow()
     })
   })
 
@@ -128,7 +128,7 @@ describe('listThoughts', () => {
           host: 'lukemorton.co.uk'
         }
       }
-      await fetchThoughtsByTopic(response, 'rails')
+      await fetchThoughtsByTopicSlug(response, 'rails')
       expect(fetch).toHaveBeenCalledWith(
         'https://lukemorton.co.uk/dist/thoughts/topics/rails.json'
       )
@@ -148,7 +148,7 @@ describe('listThoughts', () => {
     })
 
     test('it uses request object to build URL', async () => {
-      await fetchThoughtsByTopic(null, 'rails')
+      await fetchThoughtsByTopicSlug(null, 'rails')
       expect(fetch).toHaveBeenCalledWith(
         'http://lvh.me:3000/dist/thoughts/topics/rails.json'
       )
