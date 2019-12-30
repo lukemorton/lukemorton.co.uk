@@ -1,8 +1,7 @@
 import { act } from 'react-dom/test-utils'
 import useRelatedContent from './useRelatedContent'
 import testHook from '../test/support/testHook'
-import { fetchThoughtsByTopicSlug } from './fetchThoughts'
-import { TOPIC_NAME_TO_FILE_MAP } from './topics'
+import { fetchThoughtsByTopicName } from './fetchThoughts'
 
 jest.mock('./fetchThoughts')
 
@@ -24,7 +23,7 @@ describe('useRelatedContent()', () => {
       [relatedContent, setTags] = useRelatedContent()
     })
 
-    fetchThoughtsByTopicSlug.mockResolvedValue([])
+    fetchThoughtsByTopicName.mockResolvedValue([])
   })
 
   afterEach(() => {
@@ -43,18 +42,18 @@ describe('useRelatedContent()', () => {
   test('fetches related content by tag', async () => {
     const expectedTags = ['Clean Architecture']
     await act(async () => await setTags('a-slug', expectedTags))
-    expect(fetchThoughtsByTopicSlug).toHaveBeenCalledWith(null, TOPIC_NAME_TO_FILE_MAP[expectedTags[0]])
+    expect(fetchThoughtsByTopicName).toHaveBeenCalledWith(null, expectedTags[0])
   })
 
   test('fetches related content for multiple tags', async () => {
     const expectedTags = ['Clean Architecture', 'Ruby on Rails']
     await act(async () => await setTags('a-slug', expectedTags))
-    expect(fetchThoughtsByTopicSlug).toHaveBeenCalledWith(null, TOPIC_NAME_TO_FILE_MAP[expectedTags[0]])
-    expect(fetchThoughtsByTopicSlug).toHaveBeenCalledWith(null, TOPIC_NAME_TO_FILE_MAP[expectedTags[1]])
+    expect(fetchThoughtsByTopicName).toHaveBeenCalledWith(null, expectedTags[0])
+    expect(fetchThoughtsByTopicName).toHaveBeenCalledWith(null, expectedTags[1])
   })
 
   test('adds related content for tag', async () => {
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([
+    fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-ca-slug')
     ])
     await act(async () => await setTags('a-slug', ['Clean Architecture']))
@@ -62,10 +61,10 @@ describe('useRelatedContent()', () => {
   })
 
   test('adds related content for tag', async () => {
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([
+    fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-ca-slug')
     ])
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([
+    fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-rails-slug')
     ])
     await act(async () => await setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
@@ -73,11 +72,11 @@ describe('useRelatedContent()', () => {
   })
 
   test('excludes current slug from related content', async () => {
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([
+    fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-slug'),
       buildThought('a-ca-slug')
     ])
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([
+    fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-rails-slug')
     ])
     await act(async () => await setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
@@ -87,8 +86,8 @@ describe('useRelatedContent()', () => {
   test('sorts by publishedAt desc', async () => {
     const expectedFirst = buildThought('a-rails-slug', '2019-12-20T00:00:00.000+00:00')
     const expectedSecond = buildThought('a-ca-slug', '2018-12-20T00:00:00.000+00:00')
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([expectedSecond])
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([expectedFirst])
+    fetchThoughtsByTopicName.mockResolvedValueOnce([expectedSecond])
+    fetchThoughtsByTopicName.mockResolvedValueOnce([expectedFirst])
 
     await act(async () => await setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
 
@@ -96,11 +95,11 @@ describe('useRelatedContent()', () => {
   })
 
   test('excludes duplicates from related content', async () => {
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([
+    fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-slug'),
       buildThought('a-ca-slug')
     ])
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([
+    fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-ca-slug'),
       buildThought('a-rails-slug')
     ])
@@ -109,7 +108,7 @@ describe('useRelatedContent()', () => {
   })
 
   test('relatedContent max of 4', async () => {
-    fetchThoughtsByTopicSlug.mockResolvedValueOnce([
+    fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-cool-slug'),
       buildThought('a-ca-slug'),
       buildThought('a-rails-slug'),
