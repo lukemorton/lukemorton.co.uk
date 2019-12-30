@@ -6,6 +6,7 @@ import RelatedContent from '../../components/RelatedContent'
 import useDelayedRelatedContent from '../../src/useDelayedRelatedContent'
 import useLiveBlog from '../../src/useLiveBlog'
 import { fetchOneThoughtBySlug } from '../../src/fetchThoughts'
+import handleExceptions from '../../src/handleExceptions'
 import withCommonProps from '../../src/withCommonProps'
 
 export default function ThoughtPage (props) {
@@ -29,9 +30,9 @@ export default function ThoughtPage (props) {
   )
 }
 
-ThoughtPage.getInitialProps = async ({ req, query }) => {
+ThoughtPage.getInitialProps = handleExceptions(async ({ req, query }) => {
   return withCommonProps({
     slug: query.slug,
     thought: await fetchOneThoughtBySlug(req, query.slug)
   })
-}
+})
