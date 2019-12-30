@@ -51,6 +51,10 @@ export function all () {
   return TOPICS
 }
 
+export function findTopicByName (name) {
+  return TOPICS.find(t => t.name === name)
+}
+
 export function topicSlugExists (slug) {
   return !!TOPIC_BY_SLUG_MAP[slug]
 }
