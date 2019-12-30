@@ -19,34 +19,6 @@ const TOPICS = [
   Topic('Ruby on Rails', 'rails')
 ]
 
-const TOPIC_BY_SLUG_MAP = TOPICS.reduce(
-  (map, topic) => {
-    return { ...map, [topic.slug]: topic }
-  },
-  {}
-)
-
-const TOPIC_SLUG_TO_FILE_MAP = TOPICS.reduce(
-  (map, topic) => {
-    return { ...map, [topic.slug]: topic.slug }
-  },
-  {}
-)
-
-const TOPIC_SLUG_TO_NAME_MAP = TOPICS.reduce(
-  (map, topic) => {
-    return { ...map, [topic.slug]: topic.name }
-  },
-  {}
-)
-
-const TOPIC_NAME_TO_FILE_MAP = TOPICS.reduce(
-  (map, topic) => {
-    return { ...map, [topic.name]: topic.slug }
-  },
-  {}
-)
-
 export function allTopics () {
   return TOPICS
 }
