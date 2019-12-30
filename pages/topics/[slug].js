@@ -3,24 +3,26 @@ import Link from 'next/link'
 import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
 import { fetchThoughtsByTopic } from '../../src/fetchThoughts'
+import { TOPIC_SLUG_TO_FILE_MAP, TOPIC_SLUG_TO_NAME_MAP } from '../../src/topics'
 
 export default class extends React.Component {
-  static async getInitialProps ({ req }) {
+  static async getInitialProps ({ req, query }) {
     return {
       indexUrl: '/',
       aboutUrl: '/about',
       avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
-      thoughts: await fetchThoughtsByTopic(req, 'cleanArchitecture')
+      topicName: TOPIC_SLUG_TO_NAME_MAP[query.slug],
+      thoughts: await fetchThoughtsByTopic(req, TOPIC_SLUG_TO_FILE_MAP[query.slug])
     }
   }
 
   render () {
     return (
-      <Page title='Articles on Clean Architecture'>
+      <Page title={`Articles on ${this.props.topicName}`}>
         <main>
           <div className='prose'>
             <h1>
-              Clean Architecture
+              {this.props.topicName}
             </h1>
 
             <p>

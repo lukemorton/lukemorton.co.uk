@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react'
 import { fetchThoughtsByTopic } from './fetchThoughts'
-
-const TAG_MAP = {
-  'Clean Architecture': 'cleanArchitecture',
-  'Ruby on Rails': 'rails'
-}
+import { TOPIC_NAME_TO_FILE_MAP } from './topics'
 
 async function fetchThoughtsForEachTag (tags) {
   return await Promise.all(
     tags.map((tag) => {
-      return fetchThoughtsByTopic(null, TAG_MAP[tag])
+      return fetchThoughtsByTopic(null, TOPIC_NAME_TO_FILE_MAP[tag])
     })
   )
 }
