@@ -3,14 +3,14 @@ import Link from 'next/link'
 import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
 import { fetchThoughtsByTopicSlug } from '../../src/fetchThoughts'
-import { TOPIC_SLUG_TO_FILE_MAP, TOPIC_SLUG_TO_NAME_MAP } from '../../src/topics'
+import { TOPIC_SLUG_TO_NAME_MAP } from '../../src/topics'
 import withCommonProps from '../../src/withCommonProps'
 
 export default class extends React.Component {
   static async getInitialProps ({ req, query }) {
     return withCommonProps({
       topicName: TOPIC_SLUG_TO_NAME_MAP[query.slug],
-      thoughts: await fetchThoughtsByTopicSlug(req, TOPIC_SLUG_TO_FILE_MAP[query.slug])
+      thoughts: await fetchThoughtsByTopicSlug(req, query.slug)
     })
   }
 
