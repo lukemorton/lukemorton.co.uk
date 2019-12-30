@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch'
-import { topicSlugExists } from './topics'
+import { topicSlugExists } from './topicGateway'
 
 function buildUrlFromRequestAndPath (req, path) {
   const host = req ? req.headers.host : window.location.hostname
