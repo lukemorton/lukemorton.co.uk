@@ -1,6 +1,6 @@
 export const TOPICS = [
   { name: 'Clean Architecture', slug: 'clean-architecture', file: 'clean-architecture' },
-  { name: 'Ruby on Rails', slug: 'rails', file: 'rails' },
+  { name: 'Ruby on Rails', slug: 'rails', file: 'rails' }
 ]
 
 export const TOPIC_SLUG_TO_FILE_MAP = TOPICS.reduce(

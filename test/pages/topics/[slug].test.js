@@ -18,7 +18,7 @@ TOPICS.forEach((topic) => {
     nock('http://lvh.me:3000')
       .get(`/dist/thoughts/topics/${topic.file}.json`)
       .reply(200, expectedThoughts)
-    const { thoughts } = await Topic.getInitialProps({ query: { slug: topic.slug }})
+    const { thoughts } = await Topic.getInitialProps({ query: { slug: topic.slug } })
     expect(thoughts).toStrictEqual(expectedThoughts)
   })
 })
