@@ -17,9 +17,9 @@ test('.getInitialProps with req', () => {
 })
 
 test('.getInitialProps with xhr', () => {
-  const reqNotFoundProps = Error.getInitialProps({ xhr: { status: 404 } })
+  const reqNotFoundProps = Error.getInitialProps({ err: { statusCode: 404 } })
   expect(reqNotFoundProps.error).toBe('Page not found')
 
-  const reqErrorProps = Error.getInitialProps({ xhr: { status: 500 } })
+  const reqErrorProps = Error.getInitialProps({ err: { statusCode: 500 } })
   expect(reqErrorProps.error).toBe('An error occured')
 })
