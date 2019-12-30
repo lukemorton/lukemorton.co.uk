@@ -1,14 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import Page from '../components/Page'
+import withCommonProps from '../src/withCommonProps'
 
 export default class extends React.Component {
   static getInitialProps () {
-    return {
-      indexUrl: '/',
-      aboutUrl: '/about',
-      avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180'
-    }
+    return withCommonProps({})
   }
 
   render () {

@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Page from '../components/Page'
+import withCommonProps from '../src/withCommonProps'
 
 function errorMessage (res, xhr) {
   const statusCode = res ? res.statusCode : (xhr ? xhr.status : null)
@@ -14,10 +15,9 @@ function errorMessage (res, xhr) {
 
 export default class extends React.Component {
   static getInitialProps ({ res, xhr }) {
-    return {
-      error: errorMessage(res, xhr),
-      indexUrl: '/'
-    }
+    return withCommonProps({
+      error: errorMessage(res, xhr)
+    })
   }
 
   render () {
