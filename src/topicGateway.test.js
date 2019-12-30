@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { allTopics, findTopicByName, topicSlugExists } from './topicGateway'
+import { allTopics, findTopicByName, findTopicBySlug, topicSlugExists } from './topicGateway'
 
 describe('topicGateway.all()', () => {
   allTopics().forEach((topic) => {
@@ -38,5 +38,17 @@ describe('topicGateway.findTopicByName()', () => {
 
   test(`returns false when topic does not exist`, () => {
     expect(findTopicByName('doesnt-exist')).toBeUndefined()
+  })
+})
+
+describe('topicGateway.findTopicBySlug()', () => {
+  allTopics().forEach((topic) => {
+    test(`returns topic for ${topic.slug}`, () => {
+      expect(findTopicBySlug(topic.slug)).toBeDefined()
+    })
+  })
+
+  test(`returns false when topic does not exist`, () => {
+    expect(findTopicBySlug('doesnt-exist')).toBeUndefined()
   })
 })
