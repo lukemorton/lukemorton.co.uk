@@ -1,5 +1,10 @@
 import fetch from 'cross-fetch'
-import { fetchOneThoughtBySlug, fetchRecentThoughts, fetchAllThoughts, fetchThoughtsByTopic } from './fetchThoughts'
+import {
+  fetchOneThoughtBySlug,
+  fetchRecentThoughts,
+  fetchAllThoughts,
+  fetchThoughtsByTopic
+} from './fetchThoughts'
 
 jest.mock('cross-fetch')
 
