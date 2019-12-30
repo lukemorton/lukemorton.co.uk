@@ -13,7 +13,7 @@ test('content renders', () => {
 
 test('loading thoughts', async () => {
   const expectedThoughts = [{ slug: 'cool' }, { slug: 'bob' }]
-  nock('http://lvh.me:3000')
+  nock(TEST_ORIGIN)
     .get('/dist/thoughts/recent.json')
     .reply(200, expectedThoughts)
   const { thoughts } = await Index.getInitialProps({})
