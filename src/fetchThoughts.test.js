@@ -4,7 +4,8 @@ import {
   fetchRecentThoughts,
   fetchAllThoughts,
   fetchThoughtsByTopicSlug,
-  fetchThoughtsByTopicName
+  fetchThoughtsByTopicName,
+  NoThoughtFoundBySlugError
 } from './fetchThoughts'
 
 jest.mock('cross-fetch')
@@ -28,7 +29,13 @@ describe('listThoughts', () => {
     })
 
     test('it uses fetch', async () => {
-      await fetchOneThoughtBySlug(null, '2017-01-17-lightweight-docker-images-for-go')
+      const expectedThought = { slug: '2017-01-17-lightweight-docker-images-for-go' }
+
+      jsonResponse = {
+        [expectedThought.slug]: expectedThought
+      }
+
+      await fetchOneThoughtBySlug(null, expectedThought.slug)
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/thoughts/index.json')
       )
@@ -43,6 +50,10 @@ describe('listThoughts', () => {
 
       const t = await fetchOneThoughtBySlug(null, expectedThought.slug)
       expect(t).toBe(expectedThought)
+    })
+
+    test('it raises exception if thought doesnt exist', async () => {
+      expect(fetchOneThoughtBySlug(null, 'doesnt-exist')).rejects.toThrow(NoThoughtFoundBySlugError)
     })
   })
 
