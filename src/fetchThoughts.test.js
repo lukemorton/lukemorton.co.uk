@@ -5,7 +5,9 @@ import {
   fetchAllThoughts,
   fetchThoughtsByTopicSlug,
   fetchThoughtsByTopicName,
-  NoThoughtFoundBySlugError
+  NoThoughtFoundBySlugError,
+  NoThoughtsFoundByTopicNameError,
+  NoThoughtsFoundByTopicSlugError
 } from './fetchThoughts'
 
 jest.mock('cross-fetch')
@@ -105,34 +107,6 @@ describe('listThoughts', () => {
     })
   })
 
-  describe('.fetchThoughtsByTopicSlug()', () => {
-    beforeEach(() => {
-      jsonResponse = []
-    })
-
-    test('it uses fetch', async () => {
-      await fetchThoughtsByTopicSlug(null, 'rails')
-      expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/topics/rails.json')
-      )
-    })
-
-    test('it returns JSON response', async () => {
-      const response = await fetchThoughtsByTopicSlug(null, 'rails')
-      expect(response).toBe(jsonResponse)
-    })
-
-    test('it returns empty array when json response is null', async () => {
-      jsonResponse = null
-      const response = await fetchThoughtsByTopicSlug(null, 'rails')
-      expect(response).toEqual([])
-    })
-
-    test('it raises exception if topic doesnt exist', async () => {
-      expect(fetchThoughtsByTopicSlug(null, 'jimbob')).rejects.toThrow()
-    })
-  })
-
   describe('.fetchThoughtsByTopicName()', () => {
     beforeEach(() => {
       jsonResponse = []
@@ -157,7 +131,35 @@ describe('listThoughts', () => {
     })
 
     test('it raises exception if topic doesnt exist', async () => {
-      expect(fetchThoughtsByTopicName(null, 'Jim Bob')).rejects.toThrow()
+      expect(fetchThoughtsByTopicName(null, 'Jim Bob')).rejects.toThrow(NoThoughtsFoundByTopicNameError)
+    })
+  })
+
+  describe('.fetchThoughtsByTopicSlug()', () => {
+    beforeEach(() => {
+      jsonResponse = []
+    })
+
+    test('it uses fetch', async () => {
+      await fetchThoughtsByTopicSlug(null, 'rails')
+      expect(fetch).toHaveBeenCalledWith(
+        expect.stringContaining('/dist/thoughts/topics/rails.json')
+      )
+    })
+
+    test('it returns JSON response', async () => {
+      const response = await fetchThoughtsByTopicSlug(null, 'rails')
+      expect(response).toBe(jsonResponse)
+    })
+
+    test('it returns empty array when json response is null', async () => {
+      jsonResponse = null
+      const response = await fetchThoughtsByTopicSlug(null, 'rails')
+      expect(response).toEqual([])
+    })
+
+    test('it raises exception if topic doesnt exist', async () => {
+      expect(fetchThoughtsByTopicSlug(null, 'jimbob')).rejects.toThrow(NoThoughtsFoundByTopicSlugError)
     })
   })
 

@@ -9,6 +9,22 @@ export class NoThoughtFoundBySlugError extends Error {
   }
 }
 
+export class NoThoughtsFoundByTopicNameError extends Error {
+  constructor (name) {
+    super()
+    this.name = 'NoThoughtsFoundByTopicNameError'
+    this.message = `Could not find thought by topic name ${name}`
+  }
+}
+
+export class NoThoughtsFoundByTopicSlugError extends Error {
+  constructor (slug) {
+    super()
+    this.name = 'NoThoughtsFoundByTopicSlugError'
+    this.message = `Could not find thought by topic slug ${slug}`
+  }
+}
+
 function buildUrlFromRequestAndPath (req, path) {
   const host = req ? req.headers.host : window.location.hostname
   const baseUrl = host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
@@ -41,15 +57,15 @@ export async function fetchAllThoughts (req) {
   return await fetchJson(url) || []
 }
 
-export async function fetchThoughtsByTopicSlug (req, slug) {
-  if (!topicSlugExists(slug)) throw new Error('Invalid topic slug')
-  const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${slug}.json`)
+export async function fetchThoughtsByTopicName (req, name) {
+  const topic = findTopicByName(name)
+  if (!topic) throw new NoThoughtsFoundByTopicNameError(name)
+  const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic.slug}.json`)
   return await fetchJson(url) || []
 }
 
-export async function fetchThoughtsByTopicName (req, name) {
-  const topic = findTopicByName(name)
-  if (!topic) throw new Error('Invalid topic name')
-  const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic.slug}.json`)
+export async function fetchThoughtsByTopicSlug (req, slug) {
+  if (!topicSlugExists(slug)) throw new NoThoughtsFoundByTopicSlugError(slug)
+  const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${slug}.json`)
   return await fetchJson(url) || []
 }
