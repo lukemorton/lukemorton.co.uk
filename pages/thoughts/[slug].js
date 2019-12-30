@@ -6,6 +6,7 @@ import RelatedContent from '../../components/RelatedContent'
 import useDelayedRelatedContent from '../../src/useDelayedRelatedContent'
 import useLiveBlog from '../../src/useLiveBlog'
 import { fetchOneThoughtBySlug } from '../../src/fetchThoughts'
+import withCommonProps from '../../src/withCommonProps'
 
 export default function ThoughtPage (props) {
   const [thought] = useLiveBlog(props.thought, () => fetchOneThoughtBySlug(null, props.slug))
@@ -29,12 +30,8 @@ export default function ThoughtPage (props) {
 }
 
 ThoughtPage.getInitialProps = async ({ req, query }) => {
-  return {
-    indexUrl: '/',
-    aboutUrl: '/about',
-    archiveUrl: '/thoughts/archive',
-    avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
+  return withCommonProps({
     slug: query.slug,
     thought: await fetchOneThoughtBySlug(req, query.slug)
-  }
+  })
 }

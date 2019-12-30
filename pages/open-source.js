@@ -1,15 +1,11 @@
 import React from 'react'
 import Page from '../components/Page'
 import Projects from '../components/Projects'
+import withCommonProps from '../src/withCommonProps'
 
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
-    return {
-      indexUrl: '/',
-      aboutUrl: '/about',
-      archiveUrl: '/thoughts/archive',
-      twitterUrl: 'https://twitter.com/lukemorton',
-      twitterHandle: '@LukeMorton',
+    return withCommonProps({
       projects: [
         {
           name: 'jvm-examples',
@@ -47,7 +43,7 @@ export default class extends React.Component {
           url: 'https://github.com/lukemorton/lily'
         }
       ]
-    }
+    })
   }
 
   render () {
