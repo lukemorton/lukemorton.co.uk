@@ -1,12 +1,9 @@
 import { useState } from 'react'
-import { fetchThoughtsByTopicSlug } from './fetchThoughts'
-import { TOPIC_NAME_TO_FILE_MAP } from './topics'
+import { fetchThoughtsByTopicName } from './fetchThoughts'
 
-async function fetchThoughtsForEachTag (tags) {
+async function fetchThoughtsForEachTag (topics) {
   return await Promise.all(
-    tags.map((tag) => {
-      return fetchThoughtsByTopicSlug(null, TOPIC_NAME_TO_FILE_MAP[tag])
-    })
+    topics.map(t => fetchThoughtsByTopicName(null, t))
   )
 }
 
