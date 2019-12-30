@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Router from 'next/router'
 import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
 import { fetchTopicBySlug } from '../../src/fetchTopic'

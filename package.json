@@ -92,6 +92,7 @@
     "parser": "babel-eslint",
     "env": [
       "jest"
-    ]
+    ],
+    "globals": ["TEST_ORIGIN"]
   }
 }

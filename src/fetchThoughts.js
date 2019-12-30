@@ -36,14 +36,14 @@ export async function fetchAllThoughts (req) {
 }
 
 export async function fetchThoughtsByTopicSlug (req, slug) {
-  if (!topicSlugExists(slug)) throw new Exception('Invalid topic slug')
+  if (!topicSlugExists(slug)) throw new Error('Invalid topic slug')
   const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${slug}.json`)
   return await fetchJson(url) || []
 }
 
 export async function fetchThoughtsByTopicName (req, name) {
   const topic = findTopicByName(name)
-  if (!topic) throw new Exception('Invalid topic name')
+  if (!topic) throw new Error('Invalid topic name')
   const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic.slug}.json`)
   return await fetchJson(url) || []
 }
