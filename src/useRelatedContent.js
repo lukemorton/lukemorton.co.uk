@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { fetchThoughtsByTopic } from './fetchThoughts'
 import { TOPIC_NAME_TO_FILE_MAP } from './topics'
 
