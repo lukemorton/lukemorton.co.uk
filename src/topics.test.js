@@ -8,14 +8,16 @@ import {
 
 describe('TOPICS', () => {
   TOPICS.forEach((topic) => {
+    const fullFilePath = `${__dirname}/../public${topic.path}`
+
     test(`${topic.name} params`, () => {
       expect(topic.name).toBeDefined()
       expect(topic.slug).toBeDefined()
-      expect(topic.file).toBeDefined()
+      expect(topic.path).toBeDefined()
     })
 
-    test(`${topic.name} file exists (${topic.file}.json)`, () => {
-      expect(fs.existsSync(`${__dirname}/../public/dist/thoughts/topics/${topic.file}.json`)).toBe(true)
+    test(`${topic.name} file exists (${fullFilePath})`, () => {
+      expect(fs.existsSync(fullFilePath)).toBe(true)
     })
   })
 })
@@ -24,7 +26,7 @@ describe('TOPIC_SLUG_TO_FILE_MAP', () => {
   TOPICS.forEach((topic) => {
     test(`${topic.name}`, () => {
       expect(TOPIC_SLUG_TO_FILE_MAP[topic.slug]).toBeDefined()
-      expect(TOPIC_SLUG_TO_FILE_MAP[topic.slug]).toEqual(topic.file)
+      expect(TOPIC_SLUG_TO_FILE_MAP[topic.slug]).toEqual(topic.slug)
     })
   })
 })
@@ -42,7 +44,7 @@ describe('TOPIC_NAME_TO_FILE_MAP', () => {
   TOPICS.forEach((topic) => {
     test(`${topic.name}`, () => {
       expect(TOPIC_NAME_TO_FILE_MAP[topic.name]).toBeDefined()
-      expect(TOPIC_NAME_TO_FILE_MAP[topic.name]).toEqual(topic.file)
+      expect(TOPIC_NAME_TO_FILE_MAP[topic.name]).toEqual(topic.slug)
     })
   })
 })
