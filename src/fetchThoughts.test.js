@@ -110,6 +110,10 @@ describe('listThoughts', () => {
       const response = await fetchThoughtsByTopic(null, 'rails')
       expect(response).toEqual([])
     })
+
+    test('it raises exception if topic doesnt exist', async () => {
+      expect(fetchThoughtsByTopic(null, 'jimbob')).rejects.toThrow()
+    })
   })
 
   describe('passing request object to fetch methods', () => {
