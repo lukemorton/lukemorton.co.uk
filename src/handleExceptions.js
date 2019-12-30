@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import { NoThoughtFoundBySlugError } from './fetchThoughts'
 import { NoTopicFoundBySlugError } from './fetchTopic'
 
