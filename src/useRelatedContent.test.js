@@ -2,6 +2,7 @@ import { act } from 'react-dom/test-utils'
 import useRelatedContent from './useRelatedContent'
 import testHook from '../test/support/testHook'
 import { fetchThoughtsByTopic } from './fetchThoughts'
+import { TOPIC_NAME_TO_FILE_MAP } from './topics'
 
 jest.mock('./fetchThoughts')
 
@@ -40,14 +41,16 @@ describe('useRelatedContent()', () => {
   })
 
   test('fetches related content by tag', async () => {
-    await act(async () => await setTags('a-slug', ['Clean Architecture']))
-    expect(fetchThoughtsByTopic).toHaveBeenCalledWith(null, 'cleanArchitecture')
+    const expectedTags = ['Clean Architecture']
+    await act(async () => await setTags('a-slug', expectedTags))
+    expect(fetchThoughtsByTopic).toHaveBeenCalledWith(null, TOPIC_NAME_TO_FILE_MAP[expectedTags[0]])
   })
 
   test('fetches related content for multiple tags', async () => {
-    await act(async () => await setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
-    expect(fetchThoughtsByTopic).toHaveBeenCalledWith(null, 'cleanArchitecture')
-    expect(fetchThoughtsByTopic).toHaveBeenCalledWith(null, 'rails')
+    const expectedTags = ['Clean Architecture', 'Ruby on Rails']
+    await act(async () => await setTags('a-slug', expectedTags))
+    expect(fetchThoughtsByTopic).toHaveBeenCalledWith(null, TOPIC_NAME_TO_FILE_MAP[expectedTags[0]])
+    expect(fetchThoughtsByTopic).toHaveBeenCalledWith(null, TOPIC_NAME_TO_FILE_MAP[expectedTags[1]])
   })
 
   test('adds related content for tag', async () => {
