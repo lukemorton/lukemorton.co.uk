@@ -76,11 +76,15 @@
       },
       "topics/clean-architecture": {
         "reverse": true,
-        "tags": ["Clean Architecture"]
+        "tags": [
+          "Clean Architecture"
+        ]
       },
       "topics/rails": {
         "reverse": true,
-        "tags": ["Ruby on Rails"]
+        "tags": [
+          "Ruby on Rails"
+        ]
       }
     }
   },
