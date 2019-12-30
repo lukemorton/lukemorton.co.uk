@@ -1,4 +1,4 @@
-import { fetchTopicBySlug } from './fetchTopic'
+import { fetchTopicBySlug, NoTopicFoundBySlugError } from './fetchTopic'
 import { allTopics } from './topicGateway'
 
 describe('fetchTopicBySlug()', () => {
@@ -9,6 +9,6 @@ describe('fetchTopicBySlug()', () => {
   })
 
   test(`throws when topic does not exist`, () => {
-    expect(() => fetchTopicBySlug('doesnt-exist')).toThrow()
+    expect(() => fetchTopicBySlug('doesnt-exist')).toThrow(NoTopicFoundBySlugError)
   })
 })
