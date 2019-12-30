@@ -3,7 +3,8 @@ import {
   TOPICS,
   TOPIC_SLUG_TO_FILE_MAP,
   TOPIC_SLUG_TO_NAME_MAP,
-  TOPIC_NAME_TO_FILE_MAP
+  TOPIC_NAME_TO_FILE_MAP,
+  topicSlugExists
 } from './topics'
 
 describe('TOPICS', () => {
@@ -19,6 +20,18 @@ describe('TOPICS', () => {
     test(`${topic.name} file exists (${fullFilePath})`, () => {
       expect(fs.existsSync(fullFilePath)).toBe(true)
     })
+  })
+})
+
+describe('topicSlugExists', () => {
+  TOPICS.forEach((topic) => {
+    test(`returns true for ${topic.slug}`, () => {
+      expect(topicSlugExists(topic.slug)).toBe(true)
+    })
+  })
+
+  test(`returns false when topic does not exist`, () => {
+    expect(topicSlugExists('doesnt-exist')).toBe(false)
   })
 })
 

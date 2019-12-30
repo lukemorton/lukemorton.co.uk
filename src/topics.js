@@ -19,6 +19,13 @@ export const TOPICS = [
   Topic('Ruby on Rails', 'rails')
 ]
 
+export const TOPIC_BY_SLUG_MAP = TOPICS.reduce(
+  (map, topic) => {
+    return { ...map, [topic.slug]: topic }
+  },
+  {}
+)
+
 export const TOPIC_SLUG_TO_FILE_MAP = TOPICS.reduce(
   (map, topic) => {
     return { ...map, [topic.slug]: topic.slug }
@@ -39,3 +46,7 @@ export const TOPIC_NAME_TO_FILE_MAP = TOPICS.reduce(
   },
   {}
 )
+
+export function topicSlugExists (slug) {
+  return !!TOPIC_BY_SLUG_MAP[slug]
+}
