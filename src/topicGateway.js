@@ -47,7 +47,7 @@ const TOPIC_NAME_TO_FILE_MAP = TOPICS.reduce(
   {}
 )
 
-export function all () {
+export function allTopics () {
   return TOPICS
 }
 
