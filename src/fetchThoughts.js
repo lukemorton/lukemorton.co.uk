@@ -1,6 +1,8 @@
 import fetch from 'cross-fetch'
 import { findTopicByName, topicSlugExists } from './topicGateway'
 
+export class NoThoughtFoundBySlugError extends Error {}
+
 function buildUrlFromRequestAndPath (req, path) {
   const host = req ? req.headers.host : window.location.hostname
   const baseUrl = host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
@@ -19,6 +21,7 @@ async function fetchThoughtMap (req) {
 
 export async function fetchOneThoughtBySlug (req, slug) {
   const thoughts = await fetchThoughtMap(req)
+  if (!thoughts[slug]) throw new NoThoughtFoundBySlugError()
   return thoughts[slug]
 }
 
