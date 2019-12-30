@@ -32,8 +32,8 @@ export async function fetchAllThoughts (req) {
   return await fetchJson(url) || []
 }
 
-export async function fetchThoughtsByTopic (req, topic) {
-  if (!topicSlugExists(topic)) throw new Exception('Invalid topic slug')
-  const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic}.json`)
+export async function fetchThoughtsByTopicSlug (req, slug) {
+  if (!topicSlugExists(slug)) throw new Exception('Invalid topic slug')
+  const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${slug}.json`)
   return await fetchJson(url) || []
 }
