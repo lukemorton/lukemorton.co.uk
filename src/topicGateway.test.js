@@ -1,8 +1,8 @@
 import fs from 'fs'
-import { all, findTopicByName, topicSlugExists } from './topicGateway'
+import { allTopics, findTopicByName, topicSlugExists } from './topicGateway'
 
 describe('topicGateway.all()', () => {
-  all().forEach((topic) => {
+  allTopics().forEach((topic) => {
     const fullFilePath = `${__dirname}/../public${topic.path}`
 
     test(`${topic.name} params`, () => {
@@ -18,7 +18,7 @@ describe('topicGateway.all()', () => {
 })
 
 describe('topicGateway.topicSlugExists()', () => {
-  all().forEach((topic) => {
+  allTopics().forEach((topic) => {
     test(`returns true for ${topic.slug}`, () => {
       expect(topicSlugExists(topic.slug)).toBe(true)
     })
@@ -30,7 +30,7 @@ describe('topicGateway.topicSlugExists()', () => {
 })
 
 describe('topicGateway.findTopicByName()', () => {
-  all().forEach((topic) => {
+  allTopics().forEach((topic) => {
     test(`returns topic for ${topic.name}`, () => {
       expect(findTopicByName(topic.name)).toBeDefined()
     })
