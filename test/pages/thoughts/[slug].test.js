@@ -24,7 +24,7 @@ test('content renders', () => {
 
 test('loading thought by slug', async () => {
   const expectedThought = firstThought()
-  nock('http://lvh.me:3000')
+  nock(TEST_ORIGIN)
     .get('/dist/thoughts/index.json')
     .reply(200, thoughts)
   const { thought } = await ShowThought.getInitialProps({ query: { slug: expectedThought.slug } })
