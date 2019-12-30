@@ -45,7 +45,7 @@ export default () =>
 
     <ul>
       <li>
-        <Link href='/topics/clean-architecture'>
+        <Link href='/topics/[slug]' as='/topics/clean-architecture'>
           <a>
             Clean Architecture
           </a>
@@ -53,7 +53,7 @@ export default () =>
       </li>
 
       <li>
-        <Link href='/topics/rails'>
+        <Link href='/topics/[slug]' as='/topics/rails'>
           <a>
             Ruby on Rails
           </a>
