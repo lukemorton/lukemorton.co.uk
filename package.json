@@ -74,7 +74,7 @@
       "archive": {
         "reverse": true
       },
-      "topics/cleanArchitecture": {
+      "topics/clean-architecture": {
         "reverse": true,
         "tags": ["Clean Architecture"]
       },

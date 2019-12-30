@@ -1,5 +1,5 @@
 export const TOPICS = [
-  { name: 'Clean Architecture', slug: 'clean-architecture', file: 'cleanArchitecture' },
+  { name: 'Clean Architecture', slug: 'clean-architecture', file: 'clean-architecture' },
   { name: 'Ruby on Rails', slug: 'rails', file: 'rails' },
 ]
 
