@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Page from '../components/Page'
 import withCommonProps from '../src/withCommonProps'
 
-function errorMessage (res, xhr) {
-  const statusCode = res ? res.statusCode : (xhr ? xhr.status : null)
+function errorMessage (res, err) {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404
 
   if (statusCode === 404) {
     return 'Page not found'
@@ -13,26 +13,24 @@ function errorMessage (res, xhr) {
   }
 }
 
-export default class extends React.Component {
-  static getInitialProps ({ res, xhr }) {
-    return withCommonProps({
-      error: errorMessage(res, xhr)
-    })
-  }
+export default function Error ({ error, indexUrl }) {
+  return (
+    <Page title={error}>
+      <main>
+        <h1>
+          {error}
+        </h1>
 
-  render () {
-    return (
-      <Page title={this.props.error}>
-        <main>
-          <h1>
-            {this.props.error}
-          </h1>
+        <p>
+          Sorry, <Link href={indexUrl}><a>back to home</a></Link>?
+        </p>
+      </main>
+    </Page>
+  )
+}
 
-          <p>
-            Sorry, <Link href={this.props.indexUrl}><a>back to home</a></Link>?
-          </p>
-        </main>
-      </Page>
-    )
-  }
+Error.getInitialProps = ({ res, err }) => {
+  return withCommonProps({
+    error: errorMessage(res, err)
+  })
 }
