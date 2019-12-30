@@ -1,9 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
+import Router from 'next/router'
 import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
 import { fetchTopicBySlug } from '../../src/fetchTopic'
 import { fetchThoughtsByTopicSlug } from '../../src/fetchThoughts'
+import handleExceptions from '../../src/handleExceptions'
 import withCommonProps from '../../src/withCommonProps'
 
 export default function Topic ({ indexUrl, topic, thoughts }) {
@@ -30,9 +32,9 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
   )
 }
 
-Topic.getInitialProps = async ({ req, query }) => {
+Topic.getInitialProps = handleExceptions(async ({ req, res, query }) => {
   return withCommonProps({
     topic: fetchTopicBySlug(query.slug),
     thoughts: await fetchThoughtsByTopicSlug(req, query.slug)
   })
-}
+})
