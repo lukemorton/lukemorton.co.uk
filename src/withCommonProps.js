@@ -16,9 +16,8 @@ function buildOriginFromRequest (req) {
 export default function (callback) {
   return async (props) => {
     let nextProps = props
-    nextProps = { ...nextProps, ...COMMON_PROPS }
     nextProps = { ...nextProps, origin: buildOriginFromRequest(nextProps.req) }
-    nextProps = await callback(nextProps)
+    nextProps = { ...COMMON_PROPS, ...await callback(nextProps) }
     return nextProps
   }
 }
