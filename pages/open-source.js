@@ -17,8 +17,8 @@ export default function OpenSource ({ githubUrl, projects }) {
   )
 }
 
-OpenSource.getInitialProps = async ({ req }) => {
-  return withCommonProps({
+OpenSource.getInitialProps = withCommonProps(async ({ req }) => {
+  return {
     projects: [
       {
         name: 'jvm-examples',
@@ -56,5 +56,5 @@ OpenSource.getInitialProps = async ({ req }) => {
         url: 'https://github.com/lukemorton/lily'
       }
     ]
-  })
-}
+  }
+})
