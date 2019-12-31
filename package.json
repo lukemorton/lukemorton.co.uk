@@ -4,6 +4,7 @@
   "repository": "https://bitbucket.org/drpheltright/lukemorton",
   "license": "ISC",
   "dependencies": {
+    "@babel/node": "^7.7.7",
     "@use-it/interval": "^0.1.3",
     "cross-fetch": "^3.0.4",
     "next": "^9.1.5",
@@ -38,7 +39,7 @@
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start",
     "type": "module",
-    "smoke": "node --experimental-modules bin/smoke.js"
+    "smoke": "babel-node bin/smoke.js"
   },
   "ava": {
     "require": [
@@ -94,6 +95,8 @@
     "env": [
       "jest"
     ],
-    "globals": ["TEST_ORIGIN"]
+    "globals": [
+      "TEST_ORIGIN"
+    ]
   }
 }
