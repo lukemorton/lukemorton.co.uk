@@ -5,11 +5,6 @@ import Thoughts from '../components/Thoughts'
 import { fetchRecentThoughts } from '../src/fetchThoughts'
 import withCommonProps from '../src/withCommonProps'
 
-function buildOriginFromRequest (req) {
-  const host = req ? req.headers.host : window.location.hostname
-  return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
-}
-
 export default function Index ({ archiveUrl, thoughts }) {
   return (
     <Page title='An exploration of the way we use technology'>
@@ -42,8 +37,8 @@ export default function Index ({ archiveUrl, thoughts }) {
 }
 
 
-Index.getInitialProps = withCommonProps(async ({ req }) => {
+Index.getInitialProps = withCommonProps(async ({ origin }) => {
   return {
-    thoughts: await fetchRecentThoughts(buildOriginFromRequest(req))
+    thoughts: await fetchRecentThoughts(origin)
   }
 })
