@@ -11,7 +11,13 @@ function testUrl (origin, path) {
   fetch(url)
     .then(res => {
       console.log(`URL: ${url}`)
-      console.log('Status:', res.status)
+
+      if (res.status === 200) {
+        console.log('Status:', res.status)
+      } else {
+        console.error('Status:', res.status)
+        process.exit(1)
+      }
     })
     .catch(err => {
       console.log(`URL: ${url}`)
