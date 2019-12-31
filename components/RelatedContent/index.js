@@ -2,7 +2,7 @@ import React from 'react'
 import Thoughts from '../Thoughts'
 
 export default ({ thoughts }) => {
-  if (!thoughts) return null
+  if (!thoughts || thoughts.length === 0) return null
 
   return (
     <aside className='related_content'>
