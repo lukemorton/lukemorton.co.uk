@@ -42,8 +42,8 @@ export default function Index ({ archiveUrl, thoughts }) {
 }
 
 
-Index.getInitialProps = async ({ req }) => {
-  return withCommonProps({
+Index.getInitialProps = withCommonProps(async ({ req }) => {
+  return {
     thoughts: await fetchRecentThoughts(buildOriginFromRequest(req))
-  })
-}
+  }
+})

@@ -137,6 +137,4 @@ export default function About ({ indexUrl }) {
   )
 }
 
-About.getInitialProps = () => {
-  return withCommonProps({})
-}
+About.getInitialProps = withCommonProps(_ => {})

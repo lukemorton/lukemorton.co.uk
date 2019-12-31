@@ -8,6 +8,11 @@ const COMMON_PROPS = {
   twitterHandle: '@LukeMorton'
 }
 
-export default function (props) {
-  return { ...COMMON_PROPS, ...props }
+export default function (callback) {
+  return async (props) => {
+    let nextProps = props
+    nextProps = { ...nextProps, ...COMMON_PROPS }
+    nextProps = { ...nextProps, ...(await callback(nextProps)) }
+    return nextProps
+  }
 }

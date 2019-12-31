@@ -36,9 +36,9 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
   )
 }
 
-Topic.getInitialProps = withErrorHandling(async ({ req, res, query }) => {
-  return withCommonProps({
+Topic.getInitialProps = withErrorHandling(withCommonProps(async ({ req, res, query }) => {
+  return {
     topic: fetchTopicBySlug(query.slug),
     thoughts: await fetchThoughtsByTopicSlug(buildOriginFromRequest(req), query.slug)
-  })
-})
+  }
+}))

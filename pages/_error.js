@@ -29,8 +29,8 @@ function errorMessage (res, err) {
   }
 }
 
-Error.getInitialProps = ({ res, err }) => {
-  return withCommonProps({
+Error.getInitialProps = withCommonProps(({ res, err }) => {
+  return {
     error: errorMessage(res, err)
-  })
-}
+  }
+})

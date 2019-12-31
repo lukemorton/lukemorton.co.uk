@@ -34,8 +34,8 @@ export default function ThoughtArchive ({ indexUrl, thoughts }) {
   )
 }
 
-ThoughtArchive.getInitialProps = async ({ req }) => {
-  return withCommonProps({
+ThoughtArchive.getInitialProps = withCommonProps(async ({ req }) => {
+  return {
     thoughts: await fetchAllThoughts(buildOriginFromRequest(req))
-  })
-}
+  }
+})
