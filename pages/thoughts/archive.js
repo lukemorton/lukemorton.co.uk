@@ -5,11 +5,6 @@ import Thoughts from '../../components/Thoughts'
 import { fetchAllThoughts } from '../../src/fetchThoughts'
 import withCommonProps from '../../src/withCommonProps'
 
-function buildOriginFromRequest (req) {
-  const host = req ? req.headers.host : window.location.hostname
-  return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
-}
-
 export default function ThoughtArchive ({ indexUrl, thoughts }) {
   return (
     <Page title='All articles'>
@@ -34,8 +29,8 @@ export default function ThoughtArchive ({ indexUrl, thoughts }) {
   )
 }
 
-ThoughtArchive.getInitialProps = withCommonProps(async ({ req }) => {
+ThoughtArchive.getInitialProps = withCommonProps(async ({ origin }) => {
   return {
-    thoughts: await fetchAllThoughts(buildOriginFromRequest(req))
+    thoughts: await fetchAllThoughts(origin)
   }
 })

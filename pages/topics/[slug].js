@@ -7,10 +7,6 @@ import { fetchThoughtsByTopicSlug } from '../../src/fetchThoughts'
 import withErrorHandling from '../../src/withErrorHandling'
 import withCommonProps from '../../src/withCommonProps'
 
-function buildOriginFromRequest (req) {
-  const host = req ? req.headers.host : window.location.hostname
-  return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
-}
 
 export default function Topic ({ indexUrl, topic, thoughts }) {
   return (
@@ -36,9 +32,9 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
   )
 }
 
-Topic.getInitialProps = withErrorHandling(withCommonProps(async ({ req, res, query }) => {
+Topic.getInitialProps = withErrorHandling(withCommonProps(async ({ origin, query }) => {
   return {
     topic: fetchTopicBySlug(query.slug),
-    thoughts: await fetchThoughtsByTopicSlug(buildOriginFromRequest(req), query.slug)
+    thoughts: await fetchThoughtsByTopicSlug(origin, query.slug)
   }
 }))
