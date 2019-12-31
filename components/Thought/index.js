@@ -13,6 +13,6 @@ export default ({ aboutUrl, avatarSrc, thought }) =>
       <div
         className='post__content'
         dangerouslySetInnerHTML={{ __html: thought.content.html }}
-        />
+      />
     </div>
   </div>

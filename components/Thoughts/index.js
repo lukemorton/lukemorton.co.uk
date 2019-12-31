@@ -12,7 +12,7 @@ const Thought = ({ title, thoughtTitleWrapper, url, slug, publishedAt, excerpt }
     <div
       className='post__content'
       dangerouslySetInnerHTML={{ __html: excerpt && excerpt.html }}
-      />
+    />
   </li>
 
 const thoughtMapper = (thoughtTitleWrapper) => (props, i) =>
@@ -20,7 +20,7 @@ const thoughtMapper = (thoughtTitleWrapper) => (props, i) =>
     {...props}
     key={i}
     thoughtTitleWrapper={thoughtTitleWrapper}
-    />
+  />
 
 export default ({ title, thoughtTitleWrapper, thoughts, after }) =>
   <div className='thoughts'>

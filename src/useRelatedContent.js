@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { fetchThoughtsByTopicName } from './fetchThoughts'
 
 async function fetchThoughtsForEachTag (topics) {
-  return await Promise.all(
+  return Promise.all(
     topics.map(t => fetchThoughtsByTopicName(null, t))
   )
 }

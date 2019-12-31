@@ -35,19 +35,19 @@ describe('useRelatedContent()', () => {
   })
 
   test('setTags receives currentSlug and tags', async () => {
-    await act(async () => await setTags('a-slug', ['Clean Architecture']))
+    await act(async () => setTags('a-slug', ['Clean Architecture']))
     expect(relatedContent).toEqual([])
   })
 
   test('fetches related content by tag', async () => {
     const expectedTags = ['Clean Architecture']
-    await act(async () => await setTags('a-slug', expectedTags))
+    await act(async () => setTags('a-slug', expectedTags))
     expect(fetchThoughtsByTopicName).toHaveBeenCalledWith(null, expectedTags[0])
   })
 
   test('fetches related content for multiple tags', async () => {
     const expectedTags = ['Clean Architecture', 'Ruby on Rails']
-    await act(async () => await setTags('a-slug', expectedTags))
+    await act(async () => setTags('a-slug', expectedTags))
     expect(fetchThoughtsByTopicName).toHaveBeenCalledWith(null, expectedTags[0])
     expect(fetchThoughtsByTopicName).toHaveBeenCalledWith(null, expectedTags[1])
   })
@@ -56,7 +56,7 @@ describe('useRelatedContent()', () => {
     fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-ca-slug')
     ])
-    await act(async () => await setTags('a-slug', ['Clean Architecture']))
+    await act(async () => setTags('a-slug', ['Clean Architecture']))
     expect(relatedContent.length).toBe(1)
   })
 
@@ -67,7 +67,7 @@ describe('useRelatedContent()', () => {
     fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-rails-slug')
     ])
-    await act(async () => await setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
+    await act(async () => setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
     expect(relatedContent.length).toBe(2)
   })
 
@@ -79,7 +79,7 @@ describe('useRelatedContent()', () => {
     fetchThoughtsByTopicName.mockResolvedValueOnce([
       buildThought('a-rails-slug')
     ])
-    await act(async () => await setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
+    await act(async () => setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
     expect(relatedContent.length).toBe(2)
   })
 
@@ -89,7 +89,7 @@ describe('useRelatedContent()', () => {
     fetchThoughtsByTopicName.mockResolvedValueOnce([expectedSecond])
     fetchThoughtsByTopicName.mockResolvedValueOnce([expectedFirst])
 
-    await act(async () => await setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
+    await act(async () => setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
 
     expect(relatedContent).toEqual([expectedFirst, expectedSecond])
   })
@@ -103,7 +103,7 @@ describe('useRelatedContent()', () => {
       buildThought('a-ca-slug'),
       buildThought('a-rails-slug')
     ])
-    await act(async () => await setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
+    await act(async () => setTags('a-slug', ['Clean Architecture', 'Ruby on Rails']))
     expect(relatedContent.length).toBe(2)
   })
 
@@ -115,7 +115,7 @@ describe('useRelatedContent()', () => {
       buildThought('a-another-slug'),
       buildThought('a-sweet-slug')
     ])
-    await act(async () => await setTags('a-slug', ['Clean Architecture']))
+    await act(async () => setTags('a-slug', ['Clean Architecture']))
     expect(relatedContent.length).toEqual(4)
   })
 })

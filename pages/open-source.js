@@ -11,7 +11,7 @@ export default function OpenSource ({ githubUrl, projects }) {
           title={<h1>Open source projects</h1>}
           projects={projects}
           after={<p>You can find even more of my open source work on my <a href={githubUrl}>GitHub profile</a>.</p>}
-          />
+        />
       </main>
     </Page>
   )
