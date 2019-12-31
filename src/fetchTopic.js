@@ -1,4 +1,4 @@
-import { findTopicBySlug } from './topicGateway'
+import { allTopics, findTopicBySlug } from './topicGateway'
 
 export class NoTopicFoundBySlugError extends Error {
   constructor (slug) {
@@ -6,6 +6,10 @@ export class NoTopicFoundBySlugError extends Error {
     this.name = 'NoTopicFoundBySlugError'
     this.message = `Could not find topic by slug ${slug}`
   }
+}
+
+export function fetchAllTopics (slug) {
+  return allTopics()
 }
 
 export function fetchTopicBySlug (slug) {

@@ -1,5 +1,11 @@
-import { fetchTopicBySlug, NoTopicFoundBySlugError } from './fetchTopic'
+import { fetchAllTopics, fetchTopicBySlug, NoTopicFoundBySlugError } from './fetchTopic'
 import { allTopics } from './topicGateway'
+
+describe('fetchAllTopics()', () => {
+  test(`returns all topics`, () => {
+    expect(fetchAllTopics()).toEqual(allTopics())
+  })
+})
 
 describe('fetchTopicBySlug()', () => {
   allTopics().forEach((topic) => {
