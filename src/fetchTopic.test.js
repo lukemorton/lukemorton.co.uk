@@ -8,7 +8,7 @@ describe('fetchTopicBySlug()', () => {
     })
   })
 
-  test(`throws when topic does not exist`, () => {
+  test('throws when topic does not exist', () => {
     expect(() => fetchTopicBySlug('doesnt-exist')).toThrow(NoTopicFoundBySlugError)
   })
 })

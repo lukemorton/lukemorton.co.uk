@@ -12,4 +12,6 @@ export default ({ onToggle }) =>
     href='#menu'
     className='navigation_toggle'
     id='navigation_toggle'
-    onClick={onClick(onToggle)}>Menu</a>
+    onClick={onClick(onToggle)}
+  >Menu
+  </a>

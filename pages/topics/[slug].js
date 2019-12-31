@@ -25,7 +25,7 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
           thoughtTitleWrapper={(title) => <h2 className='h3'>{title}</h2>}
           thoughts={thoughts}
           after={<p>Feel free to go home now <Link href={indexUrl}><a>here</a></Link>.</p>}
-          />
+        />
       </main>
     </Page>
   )

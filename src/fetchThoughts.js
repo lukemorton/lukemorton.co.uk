@@ -33,12 +33,12 @@ function buildUrlFromRequestAndPath (origin, path) {
 
 async function fetchJson (url) {
   const response = await fetch(url)
-  return await response.json()
+  return response.json()
 }
 
 async function fetchThoughtMap (origin) {
   const url = buildUrlFromRequestAndPath(origin, '/dist/thoughts/index.json')
-  return await fetchJson(url)
+  return fetchJson(url)
 }
 
 export async function fetchOneThoughtBySlug (origin, slug) {
@@ -49,23 +49,23 @@ export async function fetchOneThoughtBySlug (origin, slug) {
 
 export async function fetchRecentThoughts (origin) {
   const url = buildUrlFromRequestAndPath(origin, '/dist/thoughts/recent.json')
-  return await fetchJson(url) || []
+  return (await fetchJson(url)) || []
 }
 
 export async function fetchAllThoughts (origin) {
   const url = buildUrlFromRequestAndPath(origin, '/dist/thoughts/archive.json')
-  return await fetchJson(url) || []
+  return (await fetchJson(url)) || []
 }
 
 export async function fetchThoughtsByTopicName (origin, name) {
   const topic = findTopicByName(name)
   if (!topic) throw new NoThoughtsFoundByTopicNameError(name)
   const url = buildUrlFromRequestAndPath(origin, `/dist/thoughts/topics/${topic.slug}.json`)
-  return await fetchJson(url) || []
+  return (await fetchJson(url)) || []
 }
 
 export async function fetchThoughtsByTopicSlug (origin, slug) {
   if (!topicSlugExists(slug)) throw new NoThoughtsFoundByTopicSlugError(slug)
   const url = buildUrlFromRequestAndPath(origin, `/dist/thoughts/topics/${slug}.json`)
-  return await fetchJson(url) || []
+  return (await fetchJson(url)) || []
 }

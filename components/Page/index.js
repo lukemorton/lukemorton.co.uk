@@ -28,7 +28,7 @@ export default ({ title, backgroundImageSrc, children }) =>
               <img
                 src='https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180'
                 style={{ height: '5rem', width: '5rem' }}
-                />
+              />
             </p>
 
             <p className='author__description'>

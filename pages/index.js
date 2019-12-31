@@ -30,12 +30,11 @@ export default function Index ({ archiveUrl, thoughts }) {
           thoughtTitleWrapper={(title) => <h3>{title}</h3>}
           thoughts={thoughts}
           after={<p>Please do read more from <Link href={archiveUrl}><a>the archives</a></Link>.</p>}
-          />
+        />
       </aside>
     </Page>
   )
 }
-
 
 Index.getInitialProps = withCommonProps(async ({ origin }) => {
   return {

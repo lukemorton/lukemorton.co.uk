@@ -10,7 +10,7 @@ export default ({ thoughts }) => {
         title={<h2>Related content</h2>}
         thoughtTitleWrapper={(title) => <h3>{title}</h3>}
         thoughts={thoughts}
-        />
+      />
     </aside>
   )
 }

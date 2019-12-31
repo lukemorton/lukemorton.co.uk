@@ -24,7 +24,7 @@ describe('topicGateway.topicSlugExists()', () => {
     })
   })
 
-  test(`returns false when topic does not exist`, () => {
+  test('returns false when topic does not exist', () => {
     expect(topicSlugExists('doesnt-exist')).toBe(false)
   })
 })
@@ -36,7 +36,7 @@ describe('topicGateway.findTopicByName()', () => {
     })
   })
 
-  test(`returns false when topic does not exist`, () => {
+  test('returns false when topic does not exist', () => {
     expect(findTopicByName('doesnt-exist')).toBeUndefined()
   })
 })
@@ -48,7 +48,7 @@ describe('topicGateway.findTopicBySlug()', () => {
     })
   })
 
-  test(`returns false when topic does not exist`, () => {
+  test('returns false when topic does not exist', () => {
     expect(findTopicBySlug('doesnt-exist')).toBeUndefined()
   })
 })
