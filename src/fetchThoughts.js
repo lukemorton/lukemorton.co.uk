@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch'
-import { findTopicByName, topicSlugExists } from './topicGateway'
+import { findTopicByName, topicSlugExists } from './topicGateway.js'
 
 export class NoThoughtFoundBySlugError extends Error {
   constructor (slug) {
