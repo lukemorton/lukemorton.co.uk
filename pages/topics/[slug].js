@@ -7,6 +7,11 @@ import { fetchThoughtsByTopicSlug } from '../../src/fetchThoughts'
 import handleExceptions from '../../src/handleExceptions'
 import withCommonProps from '../../src/withCommonProps'
 
+function buildOriginFromRequest (req) {
+  const host = req ? req.headers.host : window.location.hostname
+  return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
+}
+
 export default function Topic ({ indexUrl, topic, thoughts }) {
   return (
     <Page title={`Articles on ${topic.name}`}>
@@ -34,6 +39,6 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
 Topic.getInitialProps = handleExceptions(async ({ req, res, query }) => {
   return withCommonProps({
     topic: fetchTopicBySlug(query.slug),
-    thoughts: await fetchThoughtsByTopicSlug(req, query.slug)
+    thoughts: await fetchThoughtsByTopicSlug(buildOriginFromRequest(req), query.slug)
   })
 })

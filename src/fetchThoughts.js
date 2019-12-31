@@ -25,10 +25,10 @@ export class NoThoughtsFoundByTopicSlugError extends Error {
   }
 }
 
-function buildUrlFromRequestAndPath (req, path) {
-  const host = req ? req.headers.host : window.location.hostname
-  const baseUrl = host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
-  return `${baseUrl}${path}`
+function buildUrlFromRequestAndPath (origin, path) {
+  // const host = req ? req.headers.host : window.location.hostname
+  // const baseUrl = host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
+  return `${origin}${path}`
 }
 
 async function fetchJson (url) {
@@ -36,36 +36,36 @@ async function fetchJson (url) {
   return await response.json()
 }
 
-async function fetchThoughtMap (req) {
-  const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/index.json')
+async function fetchThoughtMap (origin) {
+  const url = buildUrlFromRequestAndPath(origin, '/dist/thoughts/index.json')
   return await fetchJson(url)
 }
 
-export async function fetchOneThoughtBySlug (req, slug) {
-  const thoughts = await fetchThoughtMap(req)
+export async function fetchOneThoughtBySlug (origin, slug) {
+  const thoughts = await fetchThoughtMap(origin)
   if (!thoughts[slug]) throw new NoThoughtFoundBySlugError(slug)
   return thoughts[slug]
 }
 
-export async function fetchRecentThoughts (req) {
-  const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/recent.json')
+export async function fetchRecentThoughts (origin) {
+  const url = buildUrlFromRequestAndPath(origin, '/dist/thoughts/recent.json')
   return await fetchJson(url) || []
 }
 
-export async function fetchAllThoughts (req) {
-  const url = buildUrlFromRequestAndPath(req, '/dist/thoughts/archive.json')
+export async function fetchAllThoughts (origin) {
+  const url = buildUrlFromRequestAndPath(origin, '/dist/thoughts/archive.json')
   return await fetchJson(url) || []
 }
 
-export async function fetchThoughtsByTopicName (req, name) {
+export async function fetchThoughtsByTopicName (origin, name) {
   const topic = findTopicByName(name)
   if (!topic) throw new NoThoughtsFoundByTopicNameError(name)
-  const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${topic.slug}.json`)
+  const url = buildUrlFromRequestAndPath(origin, `/dist/thoughts/topics/${topic.slug}.json`)
   return await fetchJson(url) || []
 }
 
-export async function fetchThoughtsByTopicSlug (req, slug) {
+export async function fetchThoughtsByTopicSlug (origin, slug) {
   if (!topicSlugExists(slug)) throw new NoThoughtsFoundByTopicSlugError(slug)
-  const url = buildUrlFromRequestAndPath(req, `/dist/thoughts/topics/${slug}.json`)
+  const url = buildUrlFromRequestAndPath(origin, `/dist/thoughts/topics/${slug}.json`)
   return await fetchJson(url) || []
 }
