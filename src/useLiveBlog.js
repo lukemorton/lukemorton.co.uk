@@ -6,7 +6,7 @@ const INTERVAL = process.env.NODE_ENV === 'development' ? 1000 : null
 export default function (propThought, loadThought) {
   const [thought, setThought] = useState(propThought)
 
-  if (propThought !== thought) setThought(propThought)
+  if (propThought.slug !== thought.slug) setThought(propThought)
 
   useInterval(() => {
     (async () => { setThought(await loadThought()) })()
