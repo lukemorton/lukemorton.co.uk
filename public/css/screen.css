@@ -65,12 +65,21 @@ li {
 
 blockquote {
   padding: 0 0 0 1em;
-  margin: 0 0 1.5em 0;
+  margin: 0 0 2em 0;
   font-style: italic;
 }
 
 blockquote p {
   font-size: 1.2em;
+}
+
+blockquote p cite {
+  font-size: .8em;
+  color: #999;
+}
+
+h2 + blockquote {
+  margin-top: 2em;
 }
 
 a,
