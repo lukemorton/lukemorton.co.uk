@@ -171,24 +171,4 @@ describe('listThoughts', () => {
       )
     })
   })
-
-  describe.skip('passing window.location object to fetch methods', () => {
-    const { location } = window
-
-    beforeAll(() => {
-      delete window.location
-      window.location = { hostname: 'localhost' }
-    })
-
-    afterAll(() => {
-      window.location = location
-    })
-
-    test('it uses request object to build URL', async () => {
-      await fetchThoughtsByTopicSlug(null, 'rails')
-      expect(fetch).toHaveBeenCalledWith(
-        'http://lvh.me:3000/dist/thoughts/topics/rails.json'
-      )
-    })
-  })
 })
