@@ -7,7 +7,6 @@ import { fetchThoughtsByTopicSlug } from '../../src/fetchThoughts'
 import withErrorHandling from '../../src/withErrorHandling'
 import withCommonProps from '../../src/withCommonProps'
 
-
 export default function Topic ({ indexUrl, topic, thoughts }) {
   return (
     <Page title={`Articles on ${topic.name}`}>
