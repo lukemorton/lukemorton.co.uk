@@ -4,7 +4,7 @@ import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
 import { fetchTopicBySlug } from '../../src/fetchTopic'
 import { fetchThoughtsByTopicSlug } from '../../src/fetchThoughts'
-import withExceptionHandling from '../../src/withExceptionHandling'
+import withErrorHandling from '../../src/withErrorHandling'
 import withCommonProps from '../../src/withCommonProps'
 
 function buildOriginFromRequest (req) {
@@ -36,7 +36,7 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
   )
 }
 
-Topic.getInitialProps = withExceptionHandling(async ({ req, res, query }) => {
+Topic.getInitialProps = withErrorHandling(async ({ req, res, query }) => {
   return withCommonProps({
     topic: fetchTopicBySlug(query.slug),
     thoughts: await fetchThoughtsByTopicSlug(buildOriginFromRequest(req), query.slug)
