@@ -34,6 +34,7 @@ export default function ThoughtPage (props) {
 
 ThoughtPage.getInitialProps = withErrorHandling(withCommonProps(async ({ origin, query }) => {
   return {
+    origin,
     slug: query.slug,
     thought: await fetchOneThoughtBySlug(origin, query.slug)
   }

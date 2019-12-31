@@ -39,6 +39,7 @@ export default function Index ({ archiveUrl, thoughts }) {
 
 Index.getInitialProps = withCommonProps(async ({ origin }) => {
   return {
+    origin,
     thoughts: await fetchRecentThoughts(origin)
   }
 })

@@ -33,6 +33,7 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
 
 Topic.getInitialProps = withErrorHandling(withCommonProps(async ({ origin, query }) => {
   return {
+    origin,
     topic: fetchTopicBySlug(query.slug),
     thoughts: await fetchThoughtsByTopicSlug(origin, query.slug)
   }

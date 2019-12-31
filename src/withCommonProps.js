@@ -18,7 +18,7 @@ export default function (callback) {
     let nextProps = props
     nextProps = { ...nextProps, ...COMMON_PROPS }
     nextProps = { ...nextProps, origin: buildOriginFromRequest(nextProps.req) }
-    nextProps = { ...nextProps, ...(await callback(nextProps)) }
+    nextProps = await callback(nextProps)
     return nextProps
   }
 }
