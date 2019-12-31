@@ -10,34 +10,32 @@ function buildOriginFromRequest (req) {
   return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
 }
 
-export default class extends React.Component {
-  static async getInitialProps ({ req }) {
-    return withCommonProps({
-      thoughts: await fetchAllThoughts(buildOriginFromRequest(req))
-    })
-  }
+export default function ThoughtArchive ({ indexUrl, thoughts }) {
+  return (
+    <Page title='All articles'>
+      <main>
+        <div className='prose'>
+          <h1>
+            All articles
+          </h1>
 
-  render () {
-    return (
-      <Page title='All articles'>
-        <main>
-          <div className='prose'>
-            <h1>
-              All articles
-            </h1>
+          <p>
+            Technology articles from code to teams to organisational transformation by Luke Morton.
+          </p>
+        </div>
 
-            <p>
-              Technology articles from code to teams to organisational transformation by Luke Morton.
-            </p>
-          </div>
+        <Thoughts
+          thoughtTitleWrapper={(title) => <h2 className='h3'>{title}</h2>}
+          thoughts={thoughts}
+          after={<p>Feel free to go home now <Link href={indexUrl}><a>here</a></Link>.</p>}
+          />
+      </main>
+    </Page>
+  )
+}
 
-          <Thoughts
-            thoughtTitleWrapper={(title) => <h2 className='h3'>{title}</h2>}
-            thoughts={this.props.thoughts}
-            after={<p>Feel free to go home now <Link href={this.props.indexUrl}><a>here</a></Link>.</p>}
-            />
-        </main>
-      </Page>
-    )
-  }
+ThoughtArchive.getInitialProps = async ({ req }) => {
+  return withCommonProps({
+    thoughts: await fetchAllThoughts(buildOriginFromRequest(req))
+  })
 }
