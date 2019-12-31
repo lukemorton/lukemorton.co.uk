@@ -6,7 +6,7 @@ import RelatedContent from '../../components/RelatedContent'
 import useDelayedRelatedContent from '../../src/useDelayedRelatedContent'
 import useLiveBlog from '../../src/useLiveBlog'
 import { fetchOneThoughtBySlug } from '../../src/fetchThoughts'
-import handleExceptions from '../../src/handleExceptions'
+import withExceptionHandling from '../../src/withExceptionHandling'
 import withCommonProps from '../../src/withCommonProps'
 
 function buildOriginFromRequest (req) {
@@ -37,7 +37,7 @@ export default function ThoughtPage (props) {
   )
 }
 
-ThoughtPage.getInitialProps = handleExceptions(async ({ req, query }) => {
+ThoughtPage.getInitialProps = withExceptionHandling(async ({ req, query }) => {
   return withCommonProps({
     slug: query.slug,
     thought: await fetchOneThoughtBySlug(buildOriginFromRequest(req), query.slug)
