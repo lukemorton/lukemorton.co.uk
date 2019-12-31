@@ -9,8 +9,15 @@ import { fetchOneThoughtBySlug } from '../../src/fetchThoughts'
 import handleExceptions from '../../src/handleExceptions'
 import withCommonProps from '../../src/withCommonProps'
 
+function buildOriginFromRequest (req) {
+  const host = req ? req.headers.host : window.location.hostname
+  return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
+}
+
 export default function ThoughtPage (props) {
-  const [thought] = useLiveBlog(props.thought, () => fetchOneThoughtBySlug(null, props.slug))
+  const [thought] = useLiveBlog(props.thought, () => {
+    return fetchOneThoughtBySlug(buildOriginFromRequest(null), props.slug)
+  })
   const [relatedContent] = useDelayedRelatedContent(thought)
 
   return (
@@ -33,6 +40,6 @@ export default function ThoughtPage (props) {
 ThoughtPage.getInitialProps = handleExceptions(async ({ req, query }) => {
   return withCommonProps({
     slug: query.slug,
-    thought: await fetchOneThoughtBySlug(req, query.slug)
+    thought: await fetchOneThoughtBySlug(buildOriginFromRequest(req), query.slug)
   })
 })

@@ -32,9 +32,7 @@ function testUrl (origin, path) {
     testUrl(targetUrl, '/open-source')
     testUrl(targetUrl, '/thoughts/archive')
 
-    const { host } = new URL(targetUrl)
-    const thoughts = await fetchAllThoughts({ headers: { host } })
-
+    const thoughts = await fetchAllThoughts(targetUrl)
     thoughts.forEach(t => {
       testUrl(targetUrl, `/thoughts/${t.slug}`)
     })

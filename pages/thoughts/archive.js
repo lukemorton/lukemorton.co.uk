@@ -5,10 +5,15 @@ import Thoughts from '../../components/Thoughts'
 import { fetchAllThoughts } from '../../src/fetchThoughts'
 import withCommonProps from '../../src/withCommonProps'
 
+function buildOriginFromRequest (req) {
+  const host = req ? req.headers.host : window.location.hostname
+  return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
+}
+
 export default class extends React.Component {
   static async getInitialProps ({ req }) {
     return withCommonProps({
-      thoughts: await fetchAllThoughts(req)
+      thoughts: await fetchAllThoughts(buildOriginFromRequest(req))
     })
   }
 
