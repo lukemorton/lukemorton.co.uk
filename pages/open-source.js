@@ -1,7 +1,7 @@
 import React from 'react'
 import Page from '../components/Page'
 import Projects from '../components/Projects'
-import withCommonProps from '../src/withCommonProps'
+import withCommonProps from '../src/app/propMiddleware/withCommonProps'
 
 export default function OpenSource ({ githubUrl, projects }) {
   return (

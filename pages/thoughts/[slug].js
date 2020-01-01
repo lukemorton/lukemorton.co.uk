@@ -6,8 +6,8 @@ import RelatedContent from '../../components/RelatedContent'
 import useDelayedRelatedContent from '../../src/app/hooks/useDelayedRelatedContent'
 import useLiveBlog from '../../src/app/hooks/useLiveBlog'
 import { fetchOneThoughtBySlug } from '../../src/app/factory'
-import withErrorHandling from '../../src/withErrorHandling'
-import withCommonProps from '../../src/withCommonProps'
+import withErrorHandling from '../../src/app/propMiddleware/withErrorHandling'
+import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
 
 export default function ThoughtPage (props) {
   const [thought] = useLiveBlog(props.thought, () => {

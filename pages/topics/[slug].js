@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
 import { fetchThoughtsByTopicSlug, fetchTopicBySlug } from '../../src/app/factory'
-import withErrorHandling from '../../src/withErrorHandling'
-import withCommonProps from '../../src/withCommonProps'
+import withErrorHandling from '../../src/app/propMiddleware/withErrorHandling'
+import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
 
 export default function Topic ({ indexUrl, topic, thoughts }) {
   return (
