@@ -1,5 +1,3 @@
-import { allTopics, findTopicBySlug } from './topicGateway'
-
 export class NoTopicFoundBySlugError extends Error {
   constructor (slug) {
     super()
@@ -8,11 +6,11 @@ export class NoTopicFoundBySlugError extends Error {
   }
 }
 
-export function fetchAllTopics (slug) {
+export function fetchAllTopics (allTopics) {
   return allTopics()
 }
 
-export function fetchTopicBySlug (slug) {
+export function fetchTopicBySlug (findTopicBySlug, slug) {
   const topic = findTopicBySlug(slug)
   if (!topic) throw new NoTopicFoundBySlugError(slug)
   return topic
