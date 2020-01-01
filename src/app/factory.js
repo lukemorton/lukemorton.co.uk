@@ -6,7 +6,7 @@ import {
   fetchThoughtsByTopicName as _fetchThoughtsByTopicName,
   fetchThoughtsByTopicSlug as _fetchThoughtsByTopicSlug
 } from '../blog/fetchThoughts'
-import { loadJsonPath } from '../blog/thoughtGateway'
+import { loadJsonPath } from '../blog/httpThoughtGateway'
 
 export {
   fetchAllTopics,
