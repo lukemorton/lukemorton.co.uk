@@ -2,8 +2,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import nock from 'nock'
 import ThoughtArchive from '../../../pages/thoughts/archive'
-import Page from '../../../components/Page'
-import Thoughts from '../../../components/Thoughts'
+import Page from '../../../src/app/components/Page'
+import Thoughts from '../../../src/app/components/Thoughts'
 
 test('content renders', () => {
   const page = shallow(<ThoughtArchive />)

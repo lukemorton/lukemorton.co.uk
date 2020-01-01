@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import Page from '../components/Page'
-import Thoughts from '../components/Thoughts'
+import Page from '../src/app/components/Page'
+import Thoughts from '../src/app/components/Thoughts'
 import { fetchRecentThoughts } from '../src/app/factory'
 import withCommonProps from '../src/app/propMiddleware/withCommonProps'
 

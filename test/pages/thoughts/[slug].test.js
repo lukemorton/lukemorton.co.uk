@@ -2,8 +2,8 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import nock from 'nock'
 import ShowThought from '../../../pages/thoughts/[slug]'
-import Page from '../../../components/Page'
-import Thought from '../../../components/Thought'
+import Page from '../../../src/app/components/Page'
+import Thought from '../../../src/app/components/Thought'
 import thoughts from '../../../public/dist/thoughts'
 
 function firstThought () {

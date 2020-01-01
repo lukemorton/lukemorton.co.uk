@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Page from '../components/Page'
+import Page from '../src/app/components/Page'
 import withCommonProps from '../src/app/propMiddleware/withCommonProps'
 
 export default function About ({ indexUrl }) {
