@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../../components/Page'
 import Thoughts from '../../components/Thoughts'
-import { fetchAllThoughts } from '../../src/fetchThoughts'
+import { fetchAllThoughts } from '../../src/app/factory'
 import withCommonProps from '../../src/withCommonProps'
 
 export default function ThoughtArchive ({ indexUrl, thoughts }) {

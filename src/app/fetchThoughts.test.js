@@ -8,7 +8,7 @@ import {
   NoThoughtFoundBySlugError,
   NoThoughtsFoundByTopicNameError,
   NoThoughtsFoundByTopicSlugError
-} from './fetchThoughts'
+} from './factory'
 
 jest.mock('cross-fetch')
 

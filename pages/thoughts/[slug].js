@@ -5,7 +5,7 @@ import Thought from '../../components/Thought'
 import RelatedContent from '../../components/RelatedContent'
 import useDelayedRelatedContent from '../../src/useDelayedRelatedContent'
 import useLiveBlog from '../../src/useLiveBlog'
-import { fetchOneThoughtBySlug } from '../../src/fetchThoughts'
+import { fetchOneThoughtBySlug } from '../../src/app/factory'
 import withErrorHandling from '../../src/withErrorHandling'
 import withCommonProps from '../../src/withCommonProps'
 
