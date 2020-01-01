@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../src/app/components/Page'
 import Thoughts from '../src/app/components/Thoughts'
-import { fetchRecentThoughts } from '../src/app/factory'
 import withCommonProps from '../src/app/propMiddleware/withCommonProps'
 
 export default function Index ({ archiveUrl, thoughts }) {
@@ -36,7 +35,9 @@ export default function Index ({ archiveUrl, thoughts }) {
   )
 }
 
-Index.getInitialProps = withCommonProps(async ({ origin }) => {
+Index.getInitialProps = withCommonProps(async ({ dependencyContainer, origin }) => {
+  const { fetchRecentThoughts } = await dependencyContainer()
+
   return {
     origin,
     thoughts: await fetchRecentThoughts(origin)

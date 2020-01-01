@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../../src/app/components/Page'
 import Thoughts from '../../src/app/components/Thoughts'
-import { fetchThoughtsByTopicSlug, fetchTopicBySlug } from '../../src/app/factory'
 import withErrorHandling from '../../src/app/propMiddleware/withErrorHandling'
 import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
 
@@ -30,7 +29,9 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
   )
 }
 
-Topic.getInitialProps = withErrorHandling(withCommonProps(async ({ origin, query }) => {
+Topic.getInitialProps = withErrorHandling(withCommonProps(async ({ dependencyContainer, origin, query }) => {
+  const { fetchThoughtsByTopicSlug, fetchTopicBySlug } = await dependencyContainer()
+
   return {
     origin,
     topic: fetchTopicBySlug(query.slug),
