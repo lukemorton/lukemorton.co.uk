@@ -23,5 +23,13 @@ module.exports = {
     // })
 
     return routes
+  },
+
+  webpack (config) {
+    config.node = {
+      __dirname: false,
+      fs: 'empty'
+    }
+    return config
   }
 }
