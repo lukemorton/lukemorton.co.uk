@@ -9,9 +9,7 @@ import withErrorHandling from '../../src/app/propMiddleware/withErrorHandling'
 import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
 
 export default function ThoughtPage (props) {
-  const [thought] = useLiveBlog(props.thought, () => {
-    return props.fetchOneThoughtBySlug(props.origin, props.slug)
-  })
+  const [thought] = useLiveBlog(props.thought, props.origin)
   const [relatedContent] = useDelayedRelatedContent(thought)
 
   return (
