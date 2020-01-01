@@ -4,7 +4,7 @@ import nock from 'nock'
 import Topic from '../../../pages/topics/[slug]'
 import Page from '../../../components/Page'
 import Thoughts from '../../../components/Thoughts'
-import { allTopics } from '../../../src/topicGateway'
+import { allTopics } from '../../../src/blog/topicGateway'
 
 test('content renders', () => {
   const page = shallow(<Topic topic={allTopics()[0]} thoughts={[]} />)

@@ -3,7 +3,7 @@ import { allTopics, findTopicByName, findTopicBySlug, topicSlugExists } from './
 
 describe('topicGateway.all()', () => {
   allTopics().forEach((topic) => {
-    const fullFilePath = `${__dirname}/../public${topic.path}`
+    const fullFilePath = `${__dirname}/../../public${topic.path}`
 
     test(`${topic.name} params`, () => {
       expect(topic.name).toBeDefined()

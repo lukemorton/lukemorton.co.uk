@@ -1,6 +1,5 @@
 import Router from 'next/router'
-import { NoThoughtFoundBySlugError } from './fetchThoughts'
-import { NoTopicFoundBySlugError } from './fetchTopic'
+import { NoThoughtFoundBySlugError, NoTopicFoundBySlugError } from './app/factory'
 
 function handleNotFound (props) {
   if (props.res) {
