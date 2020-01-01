@@ -37,14 +37,15 @@
     "lint": "standard --fix",
     "test": "jest",
     "blog": "NODE_ENV=development mkdir -p public/dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
-    "build:src": "rm -rf lib && babel src -d lib --ignore 'src/*.test.js'",
+    "build:lib": "rm -rf lib && babel src -d lib --ignore 'src/*.test.js'",
     "build:blog": "mkdir -p public/dist/thoughts && markedly",
     "build:static": "next build && next export",
     "build:next": "next build",
     "build": "NODE_ENV=production npm run build:src && npm run build:blog && npm run build:next",
+    "build": "npm run build:lib && npm run build:blog && npm run build:next",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start",
-    "smoke": "babel-node bin/smoke.js"
+    "smoke": "npm run build:lib && ./lib/app/bin/smoke.js"
   },
   "ava": {
     "require": [

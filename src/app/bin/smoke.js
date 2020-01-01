@@ -2,8 +2,7 @@
 
 import fetch from 'cross-fetch'
 import fs from 'fs'
-import { fetchAllThoughts } from '../src/fetchThoughts'
-import { fetchAllTopics } from '../src/fetchTopic'
+import { fetchAllThoughts, fetchAllTopics } from '../factory'
 
 function testUrl (origin, path) {
   const url = `${origin}${path || ''}`
@@ -24,6 +23,11 @@ function testUrl (origin, path) {
       console.error(err)
       process.exit(1)
     })
+}
+
+if (!process.env.GITHUB_EVENT_PATH) {
+  console.error('Please define GITHUB_EVENT_PATH')
+  process.exit(1)
 }
 
 const eventJson = fs.readFileSync(process.env.GITHUB_EVENT_PATH)
@@ -52,6 +56,6 @@ if (state === 'success') {
     })
   })()
 } else {
-  console.log('NOOP: Ignoring non-success event')
+  console.error('Should not be run unless success')
   process.exit(1)
 }
