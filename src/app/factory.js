@@ -6,13 +6,12 @@ import {
   fetchThoughtsByTopicName as _fetchThoughtsByTopicName,
   fetchThoughtsByTopicSlug as _fetchThoughtsByTopicSlug
 } from '../blog/fetchThoughts'
-import { loadJsonPath } from '../blog/httpThoughtGateway'
-
-export {
-  fetchAllTopics,
-  fetchTopicBySlug,
-  NoTopicFoundBySlugError
+import {
+  fetchAllTopics as _fetchAllTopics,
+  fetchTopicBySlug as _fetchTopicBySlug
 } from '../blog/fetchTopic'
+import { loadJsonPath } from '../blog/httpThoughtGateway'
+import { allTopics, findTopicBySlug } from '../blog/topicGateway'
 
 export {
   NoThoughtFoundBySlugError,
@@ -38,4 +37,16 @@ export function fetchThoughtsByTopicName (origin, topicName) {
 
 export function fetchThoughtsByTopicSlug (origin, topicSlug) {
   return _fetchThoughtsByTopicSlug(partial(loadJsonPath, origin), topicSlug)
+}
+
+export {
+  NoTopicFoundBySlugError
+} from '../blog/fetchTopic'
+
+export function fetchAllTopics () {
+  return _fetchAllTopics(allTopics)
+}
+
+export function fetchTopicBySlug (slug) {
+  return _fetchTopicBySlug(findTopicBySlug, slug)
 }
