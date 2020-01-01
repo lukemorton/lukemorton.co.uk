@@ -11,7 +11,12 @@ import {
   fetchTopicBySlug as _fetchTopicBySlug
 } from '../blog/fetchTopic'
 import { loadJsonPath } from '../blog/httpThoughtGateway'
-import { allTopics, findTopicBySlug } from '../blog/staticTopicGateway'
+import {
+  allTopics,
+  findTopicByName,
+  findTopicBySlug,
+  topicSlugExists
+} from '../blog/staticTopicGateway'
 
 export {
   NoThoughtFoundBySlugError,
@@ -32,11 +37,11 @@ export function fetchAllThoughts (origin) {
 }
 
 export function fetchThoughtsByTopicName (origin, topicName) {
-  return _fetchThoughtsByTopicName(partial(loadJsonPath, origin), topicName)
+  return _fetchThoughtsByTopicName(partial(loadJsonPath, origin), findTopicByName, topicName)
 }
 
 export function fetchThoughtsByTopicSlug (origin, topicSlug) {
-  return _fetchThoughtsByTopicSlug(partial(loadJsonPath, origin), topicSlug)
+  return _fetchThoughtsByTopicSlug(partial(loadJsonPath, origin), topicSlugExists, topicSlug)
 }
 
 export {

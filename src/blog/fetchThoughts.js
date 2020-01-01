@@ -1,5 +1,3 @@
-import { findTopicByName, topicSlugExists } from './topicGateway'
-
 export class NoThoughtFoundBySlugError extends Error {
   constructor (slug) {
     super()
@@ -42,13 +40,13 @@ export async function fetchAllThoughts (loadJsonPath) {
   return (await loadJsonPath('/dist/thoughts/archive.json')) || []
 }
 
-export async function fetchThoughtsByTopicName (loadJsonPath, name) {
+export async function fetchThoughtsByTopicName (loadJsonPath, findTopicByName, name) {
   const topic = findTopicByName(name)
   if (!topic) throw new NoThoughtsFoundByTopicNameError(name)
   return (await loadJsonPath(`/dist/thoughts/topics/${topic.slug}.json`)) || []
 }
 
-export async function fetchThoughtsByTopicSlug (loadJsonPath, slug) {
+export async function fetchThoughtsByTopicSlug (loadJsonPath, topicSlugExists, slug) {
   if (!topicSlugExists(slug)) throw new NoThoughtsFoundByTopicSlugError(slug)
   return (await loadJsonPath(`/dist/thoughts/topics/${slug}.json`)) || []
 }
