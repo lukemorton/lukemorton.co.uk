@@ -36,7 +36,7 @@
     "lint": "standard --fix",
     "test": "jest",
     "blog": "NODE_ENV=development mkdir -p public/dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
-    "build:lib": "rm -rf lib && babel src -d lib --ignore 'src/*.test.js'",
+    "build:lib": "rm -rf lib && babel src -d lib --ignore 'src/**/*.test.js','src/setupTests.js'",
     "build:blog": "mkdir -p public/dist/thoughts && markedly",
     "build:static": "next build && next export",
     "build:next": "next build",
