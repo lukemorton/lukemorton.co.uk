@@ -25,13 +25,15 @@ export class NoThoughtsFoundByTopicSlugError extends Error {
   }
 }
 
-function buildUrlFromRequestAndPath (origin, path) {
+function buildUrlFromOriginAndPath (origin, path) {
   // const host = req ? req.headers.host : window.location.hostname
   // const baseUrl = host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
   return `${origin}${path}`
 }
 
-async function fetchJson (url) {
+async function loadJsonPath (origin, path) {
+  const url = buildUrlFromOriginAndPath(origin, path)
+
   try {
     const response = await fetch(url)
     return response.json()
@@ -42,8 +44,7 @@ async function fetchJson (url) {
 }
 
 async function fetchThoughtMap (origin) {
-  const url = buildUrlFromRequestAndPath(origin, '/dist/thoughts/index.json')
-  return fetchJson(url)
+  return loadJsonPath(origin, '/dist/thoughts/index.json')
 }
 
 export async function fetchOneThoughtBySlug (origin, slug) {
@@ -53,24 +54,20 @@ export async function fetchOneThoughtBySlug (origin, slug) {
 }
 
 export async function fetchRecentThoughts (origin) {
-  const url = buildUrlFromRequestAndPath(origin, '/dist/thoughts/recent.json')
-  return (await fetchJson(url)) || []
+  return (await loadJsonPath(origin, '/dist/thoughts/recent.json')) || []
 }
 
 export async function fetchAllThoughts (origin) {
-  const url = buildUrlFromRequestAndPath(origin, '/dist/thoughts/archive.json')
-  return (await fetchJson(url)) || []
+  return (await loadJsonPath(origin, '/dist/thoughts/archive.json')) || []
 }
 
 export async function fetchThoughtsByTopicName (origin, name) {
   const topic = findTopicByName(name)
   if (!topic) throw new NoThoughtsFoundByTopicNameError(name)
-  const url = buildUrlFromRequestAndPath(origin, `/dist/thoughts/topics/${topic.slug}.json`)
-  return (await fetchJson(url)) || []
+  return (await loadJsonPath(origin, `/dist/thoughts/topics/${topic.slug}.json`)) || []
 }
 
 export async function fetchThoughtsByTopicSlug (origin, slug) {
   if (!topicSlugExists(slug)) throw new NoThoughtsFoundByTopicSlugError(slug)
-  const url = buildUrlFromRequestAndPath(origin, `/dist/thoughts/topics/${slug}.json`)
-  return (await fetchJson(url)) || []
+  return (await loadJsonPath(origin, `/dist/thoughts/topics/${slug}.json`)) || []
 }
