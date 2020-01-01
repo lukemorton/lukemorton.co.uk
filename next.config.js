@@ -1,10 +1,10 @@
 module.exports = {
   exportPathMap: async function () {
-    const { fetchAllThoughts } = require('./lib/fetchThoughts')
-    const thoughts = await fetchAllThoughts(process.env.ORIGIN)
-
-    const { fetchAllTopics } = require('./lib/fetchTopic')
-    const topics = await fetchAllTopics()
+    // const { fetchAllThoughts } = require('./lib/fetchThoughts')
+    // const thoughts = await fetchAllThoughts(process.env.ORIGIN)
+    //
+    // const { fetchAllTopics } = require('./lib/fetchTopic')
+    // const topics = await fetchAllTopics()
 
     const routes = {
       '/about': { page: '/about' },
@@ -14,14 +14,14 @@ module.exports = {
       '/': { page: '/' }
     }
 
-    thoughts.forEach(({ slug }) => {
-      routes[`/thoughts/${slug}`] = { page: '/thoughts/[slug]', query: { slug } }
-    })
-
-    topics.forEach(({ slug }) => {
-      routes[`/topics/${slug}`] = { page: '/topics/[slug]', query: { slug } }
-    })
+    // thoughts.forEach(({ slug }) => {
+    //   routes[`/thoughts/${slug}`] = { page: '/thoughts/[slug]', query: { slug } }
+    // })
+    //
+    // topics.forEach(({ slug }) => {
+    //   routes[`/topics/${slug}`] = { page: '/topics/[slug]', query: { slug } }
+    // })
 
     return routes
-  },
+  }
 }

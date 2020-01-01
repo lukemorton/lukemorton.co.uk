@@ -39,7 +39,8 @@
     "build:src": "rm -rf lib && babel src -d lib --ignore 'src/*.test.js'",
     "build:blog": "mkdir -p public/dist/thoughts && markedly",
     "build:static": "next build && next export",
-    "build": "NODE_ENV=production npm run build:src && npm run build:blog && npm run build:static",
+    "build:next": "next build",
+    "build": "NODE_ENV=production npm run build:src && npm run build:blog && npm run build:next",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start",
     "smoke": "babel-node bin/smoke.js"
