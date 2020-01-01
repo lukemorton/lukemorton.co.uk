@@ -13,6 +13,7 @@
     "react-ga": "^2.7.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
     "@babel/node": "^7.7.7",
     "@babel/plugin-transform-runtime": "^7.7.6",
@@ -35,10 +36,12 @@
     "lint": "standard --fix",
     "test": "jest",
     "blog": "NODE_ENV=development mkdir -p public/dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
-    "build": "NODE_ENV=production mkdir -p public/dist/thoughts && markedly && next build",
+    "build:src": "rm -rf lib && babel src -d lib --ignore 'src/*.test.js'",
+    "build:blog": "mkdir -p public/dist/thoughts && markedly",
+    "build:static": "next build && next export",
+    "build": "NODE_ENV=production npm run build:src && npm run build:blog && npm run build:static",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start",
-    "type": "module",
     "smoke": "babel-node bin/smoke.js"
   },
   "ava": {

@@ -1,6 +1,9 @@
-.next
-node_modules
+/.next
+/lib
+/node_modules
+/out
+/public/dist
+
 yarn-error.log
 npm-debug.log
-dist
 .DS_Store
