@@ -67,7 +67,7 @@
   },
   "jest": {
     "setupFiles": [
-      "<rootDir>/test/testHelper.js"
+      "<rootDir>/src/setupTests.js"
     ]
   },
   "markedly": {
