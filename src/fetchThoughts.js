@@ -32,8 +32,13 @@ function buildUrlFromRequestAndPath (origin, path) {
 }
 
 async function fetchJson (url) {
-  const response = await fetch(url)
-  return response.json()
+  try {
+    const response = await fetch(url)
+    return response.json()
+  } catch (e) {
+    console.error('Error occurred fetching', url)
+    throw e
+  }
 }
 
 async function fetchThoughtMap (origin) {
