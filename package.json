@@ -38,10 +38,8 @@
     "blog": "NODE_ENV=development mkdir -p public/dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
     "build:lib": "rm -rf lib && babel src -d lib --ignore 'src/**/*.test.js','src/setupTests.js'",
     "build:blog": "mkdir -p public/dist/thoughts && markedly",
-    "build:static": "next build && next export",
-    "build:next": "next build",
-    "build": "NODE_ENV=production npm run build:src && npm run build:blog && npm run build:next",
-    "build": "npm run build:lib && npm run build:blog && npm run build:next",
+    "build:static": "NODE_ENV=production FACTORY=build next build && NODE_ENV=production FACTORY=build next export",
+    "build": "npm run build:lib && npm run build:blog && npm run build:static",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start",
     "smoke": "npm run build:lib && ./lib/app/bin/smoke.js"
