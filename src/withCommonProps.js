@@ -8,7 +8,8 @@ const COMMON_PROPS = {
   twitterHandle: '@LukeMorton'
 }
 
-function buildOriginFromRequest (req) {
+function buildOrigin (req) {
+  if (process.env.ORIGIN) return process.env.ORIGIN
   const host = req ? req.headers.host : window.location.hostname
   return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
 }
@@ -16,7 +17,7 @@ function buildOriginFromRequest (req) {
 export default function (callback) {
   return async (props) => {
     let nextProps = props
-    nextProps = { ...nextProps, origin: buildOriginFromRequest(nextProps.req) }
+    nextProps = { ...nextProps, origin: buildOrigin(nextProps.req) }
     nextProps = { ...COMMON_PROPS, ...await callback(nextProps) }
     return nextProps
   }
