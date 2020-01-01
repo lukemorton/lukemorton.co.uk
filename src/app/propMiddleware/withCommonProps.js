@@ -7,8 +7,7 @@ const COMMON_PROPS = {
   twitterUrl: 'https://twitter.com/lukemorton',
   githubUrl: 'https://github.com/lukemorton',
   avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
-  twitterHandle: '@LukeMorton',
-  dependencyContainer
+  twitterHandle: '@LukeMorton'
 }
 
 function buildOrigin (req) {
@@ -19,9 +18,21 @@ function buildOrigin (req) {
 
 export default function (callback) {
   return async (props) => {
-    let nextProps = props
-    nextProps = { ...nextProps, ...COMMON_PROPS, origin: buildOrigin(nextProps.req) }
-    nextProps = { ...COMMON_PROPS, ...await callback(nextProps) }
+    let nextProps
+
+    nextProps = {
+      ...props,
+      ...COMMON_PROPS,
+      dependencyContainer,
+      origin: buildOrigin(props.req)
+
+    }
+
+    nextProps = {
+      ...COMMON_PROPS,
+      ...await callback(nextProps)
+    }
+
     return nextProps
   }
 }
