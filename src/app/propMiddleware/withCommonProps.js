@@ -1,14 +1,5 @@
 import dependencyContainer from '../dependencyContainer'
-
-const COMMON_PROPS = {
-  indexUrl: '/',
-  aboutUrl: '/about',
-  archiveUrl: '/thoughts/archive',
-  twitterUrl: 'https://twitter.com/lukemorton',
-  githubUrl: 'https://github.com/lukemorton',
-  avatarSrc: 'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180',
-  twitterHandle: '@LukeMorton'
-}
+import COMMON_PROPS from './commonProps'
 
 function buildOrigin (req) {
   if (process.env.FACTORY === 'build') return null
@@ -25,7 +16,6 @@ export default function (callback) {
       ...COMMON_PROPS,
       dependencyContainer,
       origin: buildOrigin(props.req)
-
     }
 
     nextProps = {
