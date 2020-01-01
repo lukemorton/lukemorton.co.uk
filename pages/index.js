@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../src/app/components/Page'
 import Thoughts from '../src/app/components/Thoughts'
-import withCommonProps from '../src/app/propMiddleware/withCommonProps'
+import withCommonStaticProps from '../src/app/propMiddleware/withCommonStaticProps'
 
 export default function Index ({ archiveUrl, thoughts }) {
   return (
@@ -35,11 +35,13 @@ export default function Index ({ archiveUrl, thoughts }) {
   )
 }
 
-Index.getInitialProps = withCommonProps(async ({ dependencyContainer, origin }) => {
+export const unstable_getStaticProps = withCommonStaticProps(async ({ dependencyContainer, origin }) => { // eslint-disable-line camelcase
   const { fetchRecentThoughts } = await dependencyContainer()
 
   return {
-    origin,
-    thoughts: await fetchRecentThoughts(origin)
+    props: {
+      origin,
+      thoughts: await fetchRecentThoughts(origin)
+    }
   }
 })

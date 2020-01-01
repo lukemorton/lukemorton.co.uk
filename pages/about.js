@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Page from '../src/app/components/Page'
-import withCommonProps from '../src/app/propMiddleware/withCommonProps'
+import withCommonStaticProps from '../src/app/propMiddleware/withCommonStaticProps'
 
 export default function About ({ indexUrl }) {
   return (
@@ -137,4 +137,4 @@ export default function About ({ indexUrl }) {
   )
 }
 
-About.getInitialProps = withCommonProps(_ => {})
+export const unstable_getStaticProps = withCommonStaticProps() // eslint-disable-line camelcase
