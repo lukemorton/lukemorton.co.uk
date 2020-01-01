@@ -10,7 +10,7 @@ import {
 } from './fetchThoughts'
 
 describe('fetchThoughts', () => {
-  let loadJsonPath = jest.fn()
+  const loadJsonPath = jest.fn()
 
   afterEach(() => {
     jest.clearAllMocks()
