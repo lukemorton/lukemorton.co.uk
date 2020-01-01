@@ -1,5 +1,5 @@
 import { fetchAllTopics, fetchTopicBySlug, NoTopicFoundBySlugError } from './fetchTopic'
-import { allTopics, findTopicBySlug } from './topicGateway'
+import { allTopics, findTopicBySlug } from './staticTopicGateway'
 
 describe('fetchAllTopics()', () => {
   test('returns all topics', () => {

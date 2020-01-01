@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { allTopics, findTopicByName, findTopicBySlug, topicSlugExists } from './topicGateway'
+import { allTopics, findTopicByName, findTopicBySlug, topicSlugExists } from './staticTopicGateway'
 
 describe('topicGateway.all()', () => {
   allTopics().forEach((topic) => {

@@ -11,7 +11,7 @@ import {
   fetchTopicBySlug as _fetchTopicBySlug
 } from '../blog/fetchTopic'
 import { loadJsonPath } from '../blog/httpThoughtGateway'
-import { allTopics, findTopicBySlug } from '../blog/topicGateway'
+import { allTopics, findTopicBySlug } from '../blog/staticTopicGateway'
 
 export {
   NoThoughtFoundBySlugError,
