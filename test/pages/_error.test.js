@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import Error from '../../pages/_error'
-import Page from '../../components/Page'
+import Page from '../../src/app/components/Page'
 
 test('content renders', () => {
   const page = shallow(<Error />)
