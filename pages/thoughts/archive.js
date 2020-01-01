@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import Page from '../../src/app/components/Page'
 import Thoughts from '../../src/app/components/Thoughts'
-import { fetchAllThoughts } from '../../src/app/factory'
 import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
 
 export default function ThoughtArchive ({ indexUrl, thoughts }) {
@@ -29,7 +28,9 @@ export default function ThoughtArchive ({ indexUrl, thoughts }) {
   )
 }
 
-ThoughtArchive.getInitialProps = withCommonProps(async ({ origin }) => {
+ThoughtArchive.getInitialProps = withCommonProps(async ({ dependencyContainer, origin }) => {
+  const { fetchAllThoughts } = await dependencyContainer()
+
   return {
     origin,
     thoughts: await fetchAllThoughts(origin)

@@ -5,13 +5,12 @@ import Thought from '../../src/app/components/Thought'
 import RelatedContent from '../../src/app/components/RelatedContent'
 import useDelayedRelatedContent from '../../src/app/hooks/useDelayedRelatedContent'
 import useLiveBlog from '../../src/app/hooks/useLiveBlog'
-import { fetchOneThoughtBySlug } from '../../src/app/factory'
 import withErrorHandling from '../../src/app/propMiddleware/withErrorHandling'
 import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
 
 export default function ThoughtPage (props) {
   const [thought] = useLiveBlog(props.thought, () => {
-    return fetchOneThoughtBySlug(props.origin, props.slug)
+    return props.fetchOneThoughtBySlug(props.origin, props.slug)
   })
   const [relatedContent] = useDelayedRelatedContent(thought)
 
@@ -32,8 +31,11 @@ export default function ThoughtPage (props) {
   )
 }
 
-ThoughtPage.getInitialProps = withErrorHandling(withCommonProps(async ({ origin, query }) => {
+ThoughtPage.getInitialProps = withErrorHandling(withCommonProps(async ({ dependencyContainer, origin, query }) => {
+  const { fetchOneThoughtBySlug } = await dependencyContainer()
+
   return {
+    fetchOneThoughtBySlug,
     origin,
     slug: query.slug,
     thought: await fetchOneThoughtBySlug(origin, query.slug)
