@@ -5,11 +5,11 @@ module.exports = {
     const topics = await fetchAllTopics()
 
     const routes = {
+      '/': { page: '/' },
       '/about': { page: '/about' },
-      '/index': { page: '/index' },
       '/open-source': { page: '/open-source' },
       '/thoughts/archive': { page: '/thoughts/archive' },
-      '/': { page: '/' }
+      '/404': { page: '/404' }
     }
 
     thoughts.forEach(({ slug }) => {
