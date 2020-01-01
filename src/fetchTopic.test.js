@@ -2,7 +2,7 @@ import { fetchAllTopics, fetchTopicBySlug, NoTopicFoundBySlugError } from './fet
 import { allTopics } from './topicGateway'
 
 describe('fetchAllTopics()', () => {
-  test(`returns all topics`, () => {
+  test('returns all topics', () => {
     expect(fetchAllTopics()).toEqual(allTopics())
   })
 })
