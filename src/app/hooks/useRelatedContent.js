@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { fetchThoughtsByTopicName } from './app/factory'
+import { fetchThoughtsByTopicName } from '../factory'
 
 async function fetchThoughtsForEachTag (topics) {
   return Promise.all(
