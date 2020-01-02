@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import nock from 'nock'
-import Index, { unstable_getStaticProps } from '../../pages/index' // eslint-disable-line camelcase
+import Index from '../../pages/index'
 import Page from '../../src/app/components/Page'
 import Thoughts from '../../src/app/components/Thoughts'
 
@@ -16,6 +16,6 @@ test('loading thoughts', async () => {
   nock(TEST_ORIGIN)
     .get('/dist/thoughts/recent.json')
     .reply(200, expectedThoughts)
-  const { props: { thoughts } } = await unstable_getStaticProps({ origin: TEST_ORIGIN }) // eslint-disable-line camelcase
+  const { thoughts } = await Index.getInitialProps({})
   expect(thoughts).toStrictEqual(expectedThoughts)
 })
