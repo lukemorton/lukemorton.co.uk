@@ -1,5 +1,5 @@
 import React from 'react'
-import { fromDesktop } from '../../../settings/breakpoints'
+import columnLayoutBreakpoint from '../columnLayoutBreakpoint'
 
 const Content = ({ children }) =>
   <div className='content'>
@@ -8,14 +8,13 @@ const Content = ({ children }) =>
         display: flex;
         flex-direction: column-reverse;
         justify-content: space-between;
-        padding-top: 2em;
+        max-width: 992px;
       }
 
-      @media ${fromDesktop} {
+      @media ${columnLayoutBreakpoint} {
         .content {
           flex-direction: row;
           margin: 0 auto;
-          width: 50em;
         }
       }
     `}</style>
@@ -26,9 +25,10 @@ const Content = ({ children }) =>
 Content.Primary = ({ children }) =>
   <div className='primary animated fadeIn'>
     <style jsx>{`
-      @media ${fromDesktop} {
+      @media ${columnLayoutBreakpoint} {
         .primary {
-          width: 36em;
+          flex: 1;
+          max-width: 700px;
         }
       }
     `}</style>
@@ -39,9 +39,9 @@ Content.Primary = ({ children }) =>
 Content.Secondary = ({ children }) =>
   <div className='secondary'>
     <style jsx>{`
-      @media ${fromDesktop} {
+      @media ${columnLayoutBreakpoint} {
         .secondary {
-          width: 12em;
+          width: 160px;
         }
       }
     `}</style>

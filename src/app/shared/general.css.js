@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { fromMobile, fromTablet } from '../settings/breakpoints'
+import { fromMedium, fromExtraLarge } from '../settings/breakpoints'
 
 export default css.global`
 body {
@@ -8,16 +8,15 @@ body {
   margin: 1em;
 }
 
-@media ${fromMobile} {
+@media ${fromMedium} {
   body {
     margin: 2em;
   }
 }
 
-@media ${fromTablet} {
+@media ${fromExtraLarge} {
   body {
-    margin: 3em;
-    font-size: 18px;
+    margin: 5em 3em;
   }
 }
 
