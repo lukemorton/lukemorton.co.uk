@@ -5,6 +5,7 @@ import Menu from './Menu'
 import Content from './Content'
 import Tracking from './Tracking'
 import reset from '../../shared/reset.css'
+import general from '../../shared/general.css'
 import typography from '../../shared/typography.css'
 import utils from '../../shared/utils.css'
 
@@ -19,6 +20,7 @@ export default ({ title, children }) =>
     </Head>
 
     <style jsx global>{reset}</style>
+    <style jsx global>{general}</style>
     <style jsx global>{typography}</style>
     <style jsx global>{utils}</style>
 
