@@ -8,6 +8,9 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+import css from 'styled-jsx/css'
+
+export default css.global`
 article,
 aside,
 details,
@@ -243,3 +246,4 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
+`
