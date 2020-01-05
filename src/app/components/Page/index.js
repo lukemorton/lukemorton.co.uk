@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Menu from './Menu'
+import Content from './Content'
 import Tracking from './Tracking'
 import reset from '../../shared/reset.css'
 import typography from '../../shared/typography.css'
@@ -22,31 +23,29 @@ export default ({ title, backgroundImageSrc, children }) =>
     <style jsx global>{utils}</style>
     <style jsx global>{toBeMigrated}</style>
 
-    <div>
-      <div className='content'>
-        <div className='content__primary animated fadeIn'>
-          {children}
+    <Content>
+      <Content.Primary>
+        {children}
+      </Content.Primary>
+
+      <Content.Secondary>
+        <div className='author'>
+          <p className='author__avatar'>
+            <img
+              src='https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180'
+              style={{ height: '5rem', width: '5rem' }}
+            />
+          </p>
+
+          <p className='author__description'>
+            <small>A website by</small><br />
+            Luke&nbsp;Morton
+          </p>
         </div>
 
-        <div className='content__secondary'>
-          <div className='author'>
-            <p className='author__avatar'>
-              <img
-                src='https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180'
-                style={{ height: '5rem', width: '5rem' }}
-              />
-            </p>
-
-            <p className='author__description'>
-              <small>A website by</small><br />
-              Luke&nbsp;Morton
-            </p>
-          </div>
-
-          <Menu />
-        </div>
-      </div>
-    </div>
+        <Menu />
+      </Content.Secondary>
+    </Content>
 
     <Tracking />
   </div>

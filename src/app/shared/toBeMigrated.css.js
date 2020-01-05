@@ -1,19 +1,6 @@
 import css from 'styled-jsx/css'
 
 export default css.global`
-.content {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  padding-top: 2em;
-}
-
-.content__primary {
-}
-
-.content__secondary {
-}
-
 .author {
   color: #666;
   float: left;
@@ -133,20 +120,6 @@ hr {
 }
 
 @media only screen and (min-width: 60em) {
-  .content {
-    flex-direction: row;
-    margin: 0 auto;
-    width: 50em;
-  }
-
-  .content__primary {
-    width: 36em;
-  }
-
-  .content__secondary {
-    width: 12em;
-  }
-
   .author {
     float: none;
     margin-top: 1em;
