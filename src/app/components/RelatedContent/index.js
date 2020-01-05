@@ -15,7 +15,7 @@ export default ({ thoughts }) => {
 
       <Thoughts
         small
-        title={<h2>Related content</h2>}
+        title={<h2 className='h3'>Related content</h2>}
         thoughtTitleWrapper={(title) => <h3>{title}</h3>}
         thoughts={thoughts}
       />
