@@ -8,3 +8,4 @@ export default breakpoints
 
 export const fromMobile = `only screen and (min-width: ${breakpoints.mobile})`
 export const fromTablet = `only screen and (min-width: ${breakpoints.tablet})`
+export const fromDesktop = `only screen and (min-width: ${breakpoints.desktop})`
