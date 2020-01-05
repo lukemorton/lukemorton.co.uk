@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Prose from '../Prose'
 
 export default ({ aboutUrl, avatarSrc, thought }) =>
-  <div className='post'>
+  <div>
     <style jsx>{`
       .meta {
         color: #999;
@@ -11,7 +11,9 @@ export default ({ aboutUrl, avatarSrc, thought }) =>
       }
     `}</style>
 
-    <div dangerouslySetInnerHTML={{ __html: thought.title.html }} />
+    <Prose>
+      <div dangerouslySetInnerHTML={{ __html: thought.title.html }} />
+    </Prose>
 
     <p className='meta'>
       {thought.publishedAt.pretty} by <Link href={aboutUrl}><a>Luke Morton</a></Link>

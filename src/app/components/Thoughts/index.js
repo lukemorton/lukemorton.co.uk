@@ -1,9 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import Prose from '../Prose'
 
 const Thought = ({ title, thoughtTitleWrapper, url, slug, publishedAt, excerpt }) =>
   <li className='post'>
     <style jsx>{`
+      .post {
+        margin-bottom: 1.6em;
+      }
+
       h2, h3 {
         margin-bottom: 0;
       }
@@ -39,6 +44,7 @@ export default ({ small, title, thoughtTitleWrapper, thoughts, after }) =>
       ul {
         list-style: none;
         margin: 0;
+        padding: 0;
       }
 
       .thoughts.small ul {
@@ -59,7 +65,9 @@ export default ({ small, title, thoughtTitleWrapper, thoughts, after }) =>
       }
     `}</style>
 
-    {title}
+    <Prose>
+      {title}
+    </Prose>
 
     <ul>
       {thoughts.map(thoughtMapper(small, thoughtTitleWrapper))}
