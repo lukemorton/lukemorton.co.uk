@@ -80,12 +80,6 @@ export default css.global`
   margin: 1.6em 0;
 }
 
-.gist {
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0 0 1.6em 0;
-}
-
 .projects ul,
 .thoughts ul {
   list-style: none;
@@ -135,12 +129,6 @@ hr {
 @media only screen and (min-width: 540px) {
   .post__author {
     display: inline;
-  }
-}
-
-@media only screen and (min-width: 45em) {
-  .gist {
-    width: 40em;
   }
 }
 
