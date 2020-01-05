@@ -1,10 +1,10 @@
-import { useEffect } from 'react'
+import React from 'react'
 import useRelatedContent from './useRelatedContent'
 
 export default function ({ slug, tags }) {
   const [relatedContent, setTags] = useRelatedContent()
 
-  useEffect(
+  React.useEffect(
     () => { setTags(slug, tags) },
     [slug, tags.join(',')]
   )
