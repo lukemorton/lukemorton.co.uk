@@ -16,7 +16,8 @@ function Topic (name, slug) {
 
 const TOPICS = [
   Topic('Clean Architecture', 'clean-architecture'),
-  Topic('Ruby on Rails', 'rails')
+  Topic('Ruby on Rails', 'rails'),
+  Topic('Trunk-based development', 'trunk-based-development')
 ]
 
 export function allTopics () {

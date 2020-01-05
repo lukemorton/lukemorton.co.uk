@@ -90,6 +90,12 @@
         "tags": [
           "Ruby on Rails"
         ]
+      },
+      "topics/trunk-based-development": {
+        "reverse": true,
+        "tags": [
+          "Trunk-based development"
+        ]
       }
     }
   },

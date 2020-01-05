@@ -1,5 +1,7 @@
 ---
 publishedAt: 2019-12-31
+tags:
+ - Trunk-based development
 ---
 
 # An introduction to trunk-based development
