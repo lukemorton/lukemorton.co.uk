@@ -22,6 +22,14 @@ export default css.global`
   }
 }
 
+/* Styling GitHub gists */
+
+.gist {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 1.6em 0;
+}
+
 /* Animations via animate.css */
 
 .animated {
