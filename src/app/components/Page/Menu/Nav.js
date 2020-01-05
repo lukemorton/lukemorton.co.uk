@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import columnLayoutBreakpoint from '../columnLayoutBreakpoint'
 
 export default () =>
   <nav className='navigation' id='navigation'>
@@ -14,7 +15,6 @@ export default () =>
       }
 
       .navigation ul {
-        display: inline-block;
         margin: 0 0 1em 0;
       }
 
@@ -36,7 +36,7 @@ export default () =>
         color: #333;
       }
 
-      @media only screen and (min-width: 60em) {
+      @media ${columnLayoutBreakpoint} {
         .navigation {
           position: sticky;
           top: 2em;

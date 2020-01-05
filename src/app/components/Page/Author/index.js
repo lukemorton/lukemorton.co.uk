@@ -1,5 +1,5 @@
 import React from 'react'
-import { fromDesktop } from '../../../settings/breakpoints'
+import columnLayoutBreakpoint from '../columnLayoutBreakpoint'
 
 export default () =>
   <div className='author'>
@@ -21,7 +21,7 @@ export default () =>
         vertical-align: bottom;
       }
 
-      @media ${fromDesktop} {
+      @media ${columnLayoutBreakpoint} {
         .author {
           float: none;
           margin-top: 1em;

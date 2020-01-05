@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { fromMobile, fromTablet } from '../settings/breakpoints'
+import { fromSmall, fromMedium } from '../settings/breakpoints'
 
 export default css.global`
 /* hr style */
@@ -16,13 +16,13 @@ hr {
   display: block;
 }
 
-@media ${fromMobile} {
+@media ${fromSmall} {
   .break--mobile {
     display: inline;
   }
 }
 
-@media ${fromTablet} {
+@media ${fromMedium} {
   .break--tablet {
     display: inline;
   }
