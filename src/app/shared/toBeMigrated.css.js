@@ -1,23 +1,6 @@
 import css from 'styled-jsx/css'
 
 export default css.global`
-.author {
-  color: #666;
-  float: left;
-  line-height: 1.2em;
-  margin: 0 0 1em 0;
-}
-
-.author__avatar {
-  margin-bottom: .5em;
-}
-
-.author__avatar img {
-  border-radius: 50%;
-  max-width: none;
-  vertical-align: bottom;
-}
-
 .navigation_toggle {
   float: right;
 }
@@ -120,12 +103,6 @@ hr {
 }
 
 @media only screen and (min-width: 60em) {
-  .author {
-    float: none;
-    margin-top: 1em;
-    text-align: right;
-  }
-
   .navigation {
     position: sticky;
     top: 2em;
