@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Page from '../src/app/components/Page'
+import Prose from '../src/app/components/Prose'
 import Thoughts from '../src/app/components/Thoughts'
 import withCommonProps from '../src/app/propMiddleware/withCommonProps'
 
@@ -8,7 +9,7 @@ export default function Index ({ archiveUrl, thoughts }) {
   return (
     <Page title='An exploration of the way we use technology'>
       <main>
-        <div className='prose'>
+        <Prose>
           <h1>
             <span className='break--mobile'>An exploration</span> of the way we use technology
           </h1>
@@ -20,7 +21,7 @@ export default function Index ({ archiveUrl, thoughts }) {
           <p>
             I've spent the last 15 years building software and technology teams and this website represents some of what I have learned so far. Here you will find a collection of <Link href={archiveUrl}><a>articles</a></Link> about software, people and everything inbetween.
           </p>
-        </div>
+        </Prose>
       </main>
 
       <aside>

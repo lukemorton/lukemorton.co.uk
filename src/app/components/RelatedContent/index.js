@@ -6,7 +6,15 @@ export default ({ thoughts }) => {
 
   return (
     <aside className='related_content'>
+      <style jsx>{`
+        .related_content {
+          margin-top: 2em;
+          border-top: 3px solid #eee;
+        }
+      `}</style>
+
       <Thoughts
+        small
         title={<h2>Related content</h2>}
         thoughtTitleWrapper={(title) => <h3>{title}</h3>}
         thoughts={thoughts}
