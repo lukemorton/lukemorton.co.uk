@@ -14,7 +14,6 @@ export default css.global`
   margin: 1.6em 0;
 }
 
-.projects ul,
 .thoughts ul {
   list-style: none;
   margin: 0;
