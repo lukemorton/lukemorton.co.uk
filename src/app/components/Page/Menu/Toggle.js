@@ -13,5 +13,12 @@ export default ({ onToggle }) =>
     className='navigation_toggle'
     id='navigation_toggle'
     onClick={onClick(onToggle)}
-  >Menu
+  >
+    <style jsx>{`
+      .navigation_toggle {
+        float: right;
+      }
+    `}</style>
+
+    Menu
   </a>

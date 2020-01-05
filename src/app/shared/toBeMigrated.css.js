@@ -1,42 +1,6 @@
 import css from 'styled-jsx/css'
 
 export default css.global`
-.navigation_toggle {
-  float: right;
-}
-
-.navigation {
-  margin: 0 0 1em 0;
-  text-align: right;
-}
-
-.navigation .h3 {
-  margin-top: 0;
-}
-
-.navigation ul {
-  display: inline-block;
-  margin: 0 0 1em 0;
-}
-
-.navigation ul {
-  list-style: none;
-  padding: 0;
-}
-
-.navigation li {
-  color: #666;
-  margin: 0;
-}
-
-.navigation a {
-  color: #999;
-}
-
-.navigation a:hover {
-  color: #333;
-}
-
 .post__author {
   display: block;
 }
@@ -99,13 +63,6 @@ hr {
 @media only screen and (min-width: 540px) {
   .post__author {
     display: inline;
-  }
-}
-
-@media only screen and (min-width: 60em) {
-  .navigation {
-    position: sticky;
-    top: 2em;
   }
 }
 `
