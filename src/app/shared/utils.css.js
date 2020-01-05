@@ -1,19 +1,22 @@
 import css from 'styled-jsx/css'
+import { fromMobile, fromTablet } from '../settings/breakpoints'
 
 export default css.global`
+/* Breakpoint utilities for titles in blog posts */
+
 .break--mobile,
 .break--tablet,
 .break--always {
   display: block;
 }
 
-@media only screen and (min-width: 540px) {
+@media ${fromMobile} {
   .break--mobile {
     display: inline;
   }
 }
 
-@media only screen and (min-width: 680px) {
+@media ${fromTablet} {
   .break--tablet {
     display: inline;
   }
