@@ -4,6 +4,7 @@ import Menu from './Menu'
 import Tracking from './Tracking'
 import reset from '../../shared/reset.css'
 import typography from '../../shared/typography.css'
+import utils from '../../shared/utils.css'
 import toBeMigrated from '../../shared/toBeMigrated.css'
 
 export default ({ title, backgroundImageSrc, children }) =>
@@ -18,6 +19,7 @@ export default ({ title, backgroundImageSrc, children }) =>
 
     <style jsx global>{reset}</style>
     <style jsx global>{typography}</style>
+    <style jsx global>{utils}</style>
     <style jsx global>{toBeMigrated}</style>
 
     <div>
