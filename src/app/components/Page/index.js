@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Author from './Author'
 import Menu from './Menu'
 import Content from './Content'
 import Tracking from './Tracking'
@@ -8,7 +9,7 @@ import typography from '../../shared/typography.css'
 import utils from '../../shared/utils.css'
 import toBeMigrated from '../../shared/toBeMigrated.css'
 
-export default ({ title, backgroundImageSrc, children }) =>
+export default ({ title, children }) =>
   <div className='page'>
     <Head>
       <title>{title} – Luke Morton</title>
@@ -29,19 +30,7 @@ export default ({ title, backgroundImageSrc, children }) =>
       </Content.Primary>
 
       <Content.Secondary>
-        <div className='author'>
-          <p className='author__avatar'>
-            <img
-              src='https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=180'
-              style={{ height: '5rem', width: '5rem' }}
-            />
-          </p>
-
-          <p className='author__description'>
-            <small>A website by</small><br />
-            Luke&nbsp;Morton
-          </p>
-        </div>
+        <Author />
 
         <Menu />
       </Content.Secondary>
