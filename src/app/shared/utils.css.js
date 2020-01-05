@@ -2,6 +2,12 @@ import css from 'styled-jsx/css'
 import { fromMobile, fromTablet } from '../settings/breakpoints'
 
 export default css.global`
+/* hr style */
+
+hr {
+  border-top: 3px solid #eee;
+}
+
 /* Breakpoint utilities for titles in blog posts */
 
 .break--mobile,
