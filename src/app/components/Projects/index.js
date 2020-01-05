@@ -2,19 +2,24 @@ import React from 'react'
 
 const Project = ({ name, description, url, after }, index) =>
   <li className='post' key={index}>
-    <h3>
+    <h2 className='h3'>
       <a href={url}>{name}</a>
-    </h3>
+    </h2>
 
-    <div className='post__content'>
-      <p>
-        {description}
-      </p>
-    </div>
+    <p>
+      {description}
+    </p>
   </li>
 
 export default ({ title, projects, after, githubUrl }) =>
   <div className='projects'>
+    <style jsx>{`
+      ul {
+        list-style: none;
+        margin: 0;
+      }
+    `}</style>
+
     {title}
 
     <ul>
