@@ -38,10 +38,6 @@ li.post .post__meta {
   margin: 2em 0;
 }
 
-hr {
-  border-top: 3px solid #eee;
-}
-
 .related_content {
   margin-top: 2em;
   border-top: 3px solid #eee;
