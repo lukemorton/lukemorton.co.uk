@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Page from '../../src/app/components/Page'
+import Prose from '../../src/app/components/Prose'
 import Thoughts from '../../src/app/components/Thoughts'
 import withErrorHandling from '../../src/app/propMiddleware/withErrorHandling'
 import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
@@ -9,7 +10,7 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
   return (
     <Page title={`Articles on ${topic.name}`}>
       <main>
-        <div className='prose'>
+        <Prose>
           <h1>
             {topic.name}
           </h1>
@@ -17,7 +18,7 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
           <p>
             How cool!
           </p>
-        </div>
+        </Prose>
 
         <Thoughts
           thoughtTitleWrapper={(title) => <h2 className='h3'>{title}</h2>}

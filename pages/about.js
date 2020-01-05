@@ -1,13 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import Page from '../src/app/components/Page'
+import Prose from '../src/app/components/Prose'
 import withCommonStaticProps from '../src/app/propMiddleware/withCommonStaticProps'
 
 export default function About ({ indexUrl }) {
   return (
     <Page title='About the Author'>
       <main>
-        <div className='prose'>
+        <Prose>
           <h1>
             About the Author
           </h1>
@@ -125,7 +126,7 @@ export default function About ({ indexUrl }) {
 
             <li>Present day, and working at <a href='https://madetech.com'>Made Tech</a>.</li>
           </ul>
-        </div>
+        </Prose>
 
         <hr />
 

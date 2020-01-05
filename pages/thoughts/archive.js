@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Page from '../../src/app/components/Page'
+import Prose from '../../src/app/components/Prose'
 import Thoughts from '../../src/app/components/Thoughts'
 import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
 
@@ -8,7 +9,7 @@ export default function ThoughtArchive ({ indexUrl, thoughts }) {
   return (
     <Page title='All articles'>
       <main>
-        <div className='prose'>
+        <Prose>
           <h1>
             All articles
           </h1>
@@ -16,7 +17,7 @@ export default function ThoughtArchive ({ indexUrl, thoughts }) {
           <p>
             Technology articles from code to teams to organisational transformation by Luke Morton.
           </p>
-        </div>
+        </Prose>
 
         <Thoughts
           thoughtTitleWrapper={(title) => <h2 className='h3'>{title}</h2>}
