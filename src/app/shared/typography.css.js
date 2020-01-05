@@ -1,4 +1,5 @@
 import css from 'styled-jsx/css'
+import { fromMobile, fromTablet } from '../settings/breakpoints'
 
 export default css.global`
 body {
@@ -10,6 +11,19 @@ body {
 
   color: #333333;
   background-color: #ffffff;
+}
+
+@media ${fromMobile} {
+  body {
+    margin: 2em;
+  }
+}
+
+@media ${fromTablet} {
+  body {
+    margin: 3em;
+    font-size: 18px;
+  }
 }
 
 h1,

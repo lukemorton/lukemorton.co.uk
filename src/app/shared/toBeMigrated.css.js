@@ -133,18 +133,8 @@ hr {
 }
 
 @media only screen and (min-width: 540px) {
-  body {
-    margin: 2em;
-  }
-
   .post__author {
     display: inline;
-  }
-
-@media only screen and (min-width: 680px) {
-  body {
-    margin: 3em;
-    font-size: 18px;
   }
 }
 
