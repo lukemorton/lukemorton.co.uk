@@ -22,12 +22,12 @@ body {
 
 a,
 a code {
-  color: #0088cc;
+  color: #0056B3;
   text-decoration: underline;
 }
 
 a:hover,
 a:focus {
-  color: #005580;
+  color: #004A99;
 }
 `
