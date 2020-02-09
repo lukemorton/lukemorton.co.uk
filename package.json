@@ -45,16 +45,6 @@
     "start": "NODE_ENV=production next start",
     "smoke": "npm run build:lib && ./lib/app/bin/smoke.js"
   },
-  "ava": {
-    "require": [
-      "./test/testHelper.js"
-    ],
-    "testOptions": {
-      "presets": [
-        "@babel/preset-react"
-      ]
-    }
-  },
   "jest": {
     "setupFiles": [
       "<rootDir>/src/setupTests.js"
