@@ -33,7 +33,7 @@ export default () =>
       }
 
       .navigation a:hover {
-        color: #333;
+        color: #222;
       }
 
       @media ${columnLayoutBreakpoint} {
