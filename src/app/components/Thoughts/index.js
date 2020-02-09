@@ -21,7 +21,7 @@ const Thought = ({ small, title, thoughtTitleWrapper, url, slug, publishedAt, ex
       }
 
       .meta {
-        color: #999;
+        color: #595959;
         margin: 0.5em 0;
       }
 

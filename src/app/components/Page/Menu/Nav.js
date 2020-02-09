@@ -29,7 +29,7 @@ export default () =>
       }
 
       .navigation a {
-        color: #999;
+        color: #595959;
       }
 
       .navigation a:hover {

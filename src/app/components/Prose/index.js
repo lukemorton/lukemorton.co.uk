@@ -54,7 +54,7 @@ export default ({ children }) =>
 
       .prose :global(blockquote) :global(p) :global(cite) {
         font-size: .8em;
-        color: #999;
+        color: #595959;
       }
 
       .prose :global(h2) + :global(blockquote) {
