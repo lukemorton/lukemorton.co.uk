@@ -24,7 +24,7 @@ export default () =>
       }
 
       .navigation li {
-        color: #666;
+        color: #595959;
         margin: 0;
       }
 

@@ -5,7 +5,7 @@ export default () =>
   <div className='author'>
     <style jsx>{`
       .author {
-        color: #666;
+        color: #595959;
         float: left;
         line-height: 1.2em;
         margin: 0 0 1em 0;
