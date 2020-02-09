@@ -2,7 +2,7 @@
   "name": "lukemorton-co-uk",
   "version": "0.0.2",
   "repository": "https://github.com/lukemorton/lukemorton.co.uk",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
     "@use-it/interval": "^0.1.3",
     "cross-fetch": "^3.0.4",
