@@ -13,7 +13,7 @@ const Content = ({ children }) =>
 
       @media ${columnLayoutBreakpoint} {
         .content {
-          flex-direction: row;
+          flex-direction: row-reverse;
           margin: 0 auto;
         }
       }
@@ -38,11 +38,11 @@ Content.Primary = ({ children }) =>
     {children}
   </div>
 
-Content.Secondary = ({ children }) =>
-  <div className='secondary'>
+Content.Navigation = ({ children }) =>
+  <div className='navigation'>
     <style jsx>{`
       @media ${columnLayoutBreakpoint} {
-        .secondary {
+        .navigation {
           width: 160px;
         }
       }
