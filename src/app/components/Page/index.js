@@ -25,15 +25,15 @@ export default ({ title, children }) =>
     <style jsx global>{utils}</style>
 
     <Content>
-      <Content.Primary>
-        {children}
-      </Content.Primary>
-
-      <Content.Secondary>
+      <Content.Navigation>
         <Author />
 
         <Menu />
-      </Content.Secondary>
+      </Content.Navigation>
+
+      <Content.Primary>
+        {children}
+      </Content.Primary>
     </Content>
 
     <Tracking />
