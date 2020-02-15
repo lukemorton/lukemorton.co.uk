@@ -25,7 +25,8 @@ const Thought = ({ small, title, thoughtTitleWrapper, url, slug, publishedAt, ex
         margin: 0.5em 0;
       }
 
-    `}</style>
+    `}
+    </style>
 
     {thoughtTitleWrapper(<Link href='/thoughts/[slug]' as={`/thoughts/${slug}`}><a>{title.plain}</a></Link>)}
 
@@ -58,7 +59,8 @@ export default ({ small, title, thoughtTitleWrapper, thoughts, after }) =>
         flex-wrap: wrap;
         justify-content: space-between;
       }
-    `}</style>
+    `}
+    </style>
 
     <Prose>
       {title}

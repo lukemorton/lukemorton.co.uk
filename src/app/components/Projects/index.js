@@ -7,7 +7,8 @@ const Project = ({ name, description, url, after }, index) =>
       .post {
         margin-bottom: 1.6em;
       }
-    `}</style>
+    `}
+    </style>
 
     <h2 className='h3'>
       <a href={url}>{name}</a>
@@ -26,7 +27,8 @@ export default ({ title, projects, after, githubUrl }) =>
         margin: 0;
         padding: 0;
       }
-    `}</style>
+    `}
+    </style>
 
     <Prose>
       {title}

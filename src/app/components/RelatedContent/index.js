@@ -11,7 +11,8 @@ export default ({ thoughts }) => {
           margin-top: 2em;
           border-top: 3px solid #eee;
         }
-      `}</style>
+      `}
+      </style>
 
       <Thoughts
         small

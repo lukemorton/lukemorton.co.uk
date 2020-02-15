@@ -18,7 +18,8 @@ export default ({ onToggle }) =>
       .navigation_toggle {
         float: right;
       }
-    `}</style>
+    `}
+    </style>
 
     Menu
   </a>

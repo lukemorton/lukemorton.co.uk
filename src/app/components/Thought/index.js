@@ -9,7 +9,8 @@ export default ({ aboutUrl, avatarSrc, thought }) =>
         color: #595959;
         margin: 2em 0;
       }
-    `}</style>
+    `}
+    </style>
 
     <Prose>
       <div dangerouslySetInnerHTML={{ __html: thought.title.html }} />

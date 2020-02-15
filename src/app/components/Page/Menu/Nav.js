@@ -42,7 +42,8 @@ export default () =>
           top: 2em;
         }
       }
-    `}</style>
+    `}
+    </style>
     <div className='h3'>Menu</div>
 
     <ul>
