@@ -34,24 +34,21 @@ a:focus {
 h1 a,
 h2 a,
 h3 a,
-.h1 a,
-.h2 a,
-.h3 a {
-  color: #0071EB;
+.h3 a,
+h4 a {
+  color: #0063cc;
 }
 
 h1 a:hover,
 h2 a:hover,
 h3 a:hover,
-.h1 a:hover,
-.h2 a:hover,
 .h3 a:hover,
+h4 a:hover,
 h1 a:focus,
 h2 a:focus,
 h3 a:focus,
-.h1 a:focus,
-.h2 a:focus,
-.h3 a:focus {
+.h3 a:focus,
+h4 a:focus {
   color: #004C9E;
 }
 `
