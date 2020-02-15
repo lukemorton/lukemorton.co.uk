@@ -17,7 +17,8 @@ const Content = ({ children }) =>
           margin: 0 auto;
         }
       }
-    `}</style>
+    `}
+    </style>
 
     {children}
   </div>
@@ -31,7 +32,8 @@ Content.Primary = ({ children }) =>
           max-width: 700px;
         }
       }
-    `}</style>
+    `}
+    </style>
 
     {children}
   </div>
@@ -44,7 +46,8 @@ Content.Secondary = ({ children }) =>
           width: 160px;
         }
       }
-    `}</style>
+    `}
+    </style>
 
     {children}
   </div>

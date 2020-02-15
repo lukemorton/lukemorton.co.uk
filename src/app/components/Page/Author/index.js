@@ -28,7 +28,8 @@ export default () =>
           text-align: right;
         }
       }
-    `}</style>
+    `}
+    </style>
 
     <p className='avatar'>
       <img

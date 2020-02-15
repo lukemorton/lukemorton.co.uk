@@ -60,6 +60,7 @@ export default ({ children }) =>
       .prose :global(h2) + :global(blockquote) {
         margin-top: 2em;
       }
-    `}</style>
+    `}
+    </style>
     {children}
   </div>
