@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Author from './Author'
 import Menu from './Menu'
+import { SkipToMainContentLink, MainContentMarker } from './SkipToMainContent'
 import Content from './Content'
 import Tracking from './Tracking'
 import reset from '../../shared/reset.css'
@@ -11,6 +12,8 @@ import utils from '../../shared/utils.css'
 
 export default ({ title, children }) =>
   <div className='page'>
+    <SkipToMainContentLink />
+
     <Head>
       <title>{title} – Luke Morton</title>
 
@@ -32,6 +35,8 @@ export default ({ title, children }) =>
       </Content.Navigation>
 
       <Content.Primary>
+        <MainContentMarker />
+
         {children}
       </Content.Primary>
     </Content>
