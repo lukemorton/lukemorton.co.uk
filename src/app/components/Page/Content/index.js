@@ -6,7 +6,7 @@ const Content = ({ children }) =>
     <style jsx>{`
       .content {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: space-between;
         max-width: 992px;
       }
