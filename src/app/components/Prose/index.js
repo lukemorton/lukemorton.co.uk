@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 export default ({ children }) => (
-  <div className="prose">
+  <div className='prose'>
     <style jsx>
       {`
         .prose :global(h1),
@@ -69,4 +69,4 @@ export default ({ children }) => (
     </style>
     {children}
   </div>
-);
+)
