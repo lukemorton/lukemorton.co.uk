@@ -4,7 +4,7 @@ publishedAt: 2020-03-22
 
 # Moving slow
 
-On slowing the pace of life – we all face it whether you like the idea or not. I've been facing up to this reality and have found the time and space to share them here.
+On slowing the pace of life – we all face it whether you like the idea or not. I've been facing up to this reality and have found the time and space to share my thoughts here.
 
 ![](https://www.dropbox.com/s/64ztj6bdsad3gjs/moving-slow.jpg?raw=1)
 
