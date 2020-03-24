@@ -1,5 +1,10 @@
 import css from 'styled-jsx/css'
-import { fromSmall, fromLarge, maxWidth } from '../settings/breakpoints'
+import {
+  fromSmall,
+  fromMedium,
+  fromLarge,
+  maxWidth
+} from '../settings/breakpoints'
 
 export default css.global`
   body {
@@ -32,14 +37,21 @@ export default css.global`
   }
 
   h1 {
-    font-size: 4em;
+    font-size: 3em;
     line-height: 1.1;
+  }
+
+  @media ${fromMedium} {
+    h1 {
+      font-size: 4em;
+      line-height: 1.1;
+    }
   }
 
   /* Special case media query for keeping h1 size small on tiny screens */
   @media ${maxWidth('568px')} and (max-height: 568px) {
     h1 {
-      font-size: 2.25em;
+      font-size: 2.5em;
     }
   }
 
