@@ -32,7 +32,7 @@ export default css.global`
   h4 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
-    line-height: 1.5em;
+    line-height: 1.25;
     text-rendering: optimizelegibility;
   }
 
@@ -44,7 +44,6 @@ export default css.global`
   @media ${fromMedium} {
     h1 {
       font-size: 4em;
-      line-height: 1.1;
     }
   }
 
