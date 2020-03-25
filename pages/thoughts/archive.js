@@ -10,30 +10,39 @@ export default function ThoughtArchive ({ indexUrl, thoughts }) {
     <Page title='All articles'>
       <main>
         <Prose>
-          <h1>
-            All articles
-          </h1>
+          <h1 className='larger'>All articles</h1>
 
           <p>
-            Technology articles from code to teams to organisational transformation by Luke Morton.
+            Technology articles from code to teams to organisational
+            transformation by Luke Morton.
           </p>
         </Prose>
 
         <Thoughts
-          thoughtTitleWrapper={(title) => <h2 className='h3'>{title}</h2>}
+          thoughtTitleWrapper={title => <h2 className='h3'>{title}</h2>}
           thoughts={thoughts}
-          after={<p>Feel free to go home now <Link href={indexUrl}><a>here</a></Link>.</p>}
+          after={
+            <p>
+              Feel free to go home now{' '}
+              <Link href={indexUrl}>
+                <a>here</a>
+              </Link>
+              .
+            </p>
+          }
         />
       </main>
     </Page>
   )
 }
 
-ThoughtArchive.getInitialProps = withCommonProps(async ({ dependencyContainer, origin }) => {
-  const { fetchAllThoughts } = await dependencyContainer()
+ThoughtArchive.getInitialProps = withCommonProps(
+  async ({ dependencyContainer, origin }) => {
+    const { fetchAllThoughts } = await dependencyContainer()
 
-  return {
-    origin,
-    thoughts: await fetchAllThoughts(origin)
+    return {
+      origin,
+      thoughts: await fetchAllThoughts(origin)
+    }
   }
-})
+)

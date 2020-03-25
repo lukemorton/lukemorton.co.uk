@@ -41,6 +41,10 @@ export default css.global`
     line-height: 1.1;
   }
 
+  h1.larger {
+    font-size: 3.5em;
+  }
+
   @media ${fromMedium} {
     h1 {
       font-size: 4em;
@@ -51,6 +55,10 @@ export default css.global`
   @media ${maxWidth('568px')} and (max-height: 568px) {
     h1 {
       font-size: 2.5em;
+    }
+
+    h1.larger {
+      font-size: 3em;
     }
   }
 
