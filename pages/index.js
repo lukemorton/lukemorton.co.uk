@@ -7,12 +7,10 @@ import withCommonProps from '../src/app/propMiddleware/withCommonProps'
 
 export default function Index ({ archiveUrl, thoughts }) {
   return (
-    <Page title='An exploration of the way we use technology'>
+    <Page title='Exploring technology & teams'>
       <main>
         <Prose>
-          <h1>
-            <span className='break--mobile'>An exploration</span> of the way we use technology
-          </h1>
+          <h1 className='larger'>Exploring technology &&nbsp;teams</h1>
 
           <p>
             Technology is consuming every aspect of society and yet in a rapidly
