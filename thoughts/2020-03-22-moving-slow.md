@@ -2,7 +2,7 @@
 publishedAt: 2020-03-22
 ---
 
-# Moving slow
+# <span class="larger">Moving slow</span>
 
 On slowing the pace of life – we all face it whether you like the idea or not. I've been facing up to this reality and have found the time and space to share my thoughts here.
 

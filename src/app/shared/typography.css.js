@@ -45,9 +45,17 @@ export default css.global`
     font-size: 3.5em;
   }
 
+  h1 span.larger {
+    font-size: 1.16667em;
+  }
+
   @media ${fromMedium} {
     h1 {
       font-size: 4em;
+    }
+
+    h1 span.larger {
+      font-size: 1em;
     }
   }
 
@@ -59,6 +67,10 @@ export default css.global`
 
     h1.larger {
       font-size: 3em;
+    }
+
+    h1 span.larger {
+      font-size: 1.2em;
     }
   }
 
