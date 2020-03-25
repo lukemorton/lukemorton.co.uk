@@ -6,7 +6,7 @@ publishedAt: 2020-03-22
 
 On slowing the pace of life – we all face it whether you like the idea or not. I've been facing up to this reality and have found the time and space to share my thoughts here.
 
-![](https://www.dropbox.com/s/64ztj6bdsad3gjs/moving-slow.jpg?raw=1)
+<p><img src="https://www.dropbox.com/s/64ztj6bdsad3gjs/moving-slow.jpg?raw=1" alt="Laptop open on a desk in front of a window, out that window a blue sky and Manchester skyline" width="3000" height="2000" class="ratio-3-2" /></p>
 
 Strange times, aren't they? As I sit here reflecting on a Sunday morning, looking out over Manchester city centre from my flat window, I can't help but think about the lyric "easy like Sunday morning". It's not just Sunday that's moving slow though, right? It's as if time itself has slowed.
 
