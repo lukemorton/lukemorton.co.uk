@@ -11,31 +11,38 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
     <Page title={`Articles on ${topic.name}`}>
       <main>
         <Prose>
-          <h1>
-            {topic.name}
-          </h1>
-
-          <p>
-            How cool!
-          </p>
+          <h1 className='larger'>{topic.name}</h1>
         </Prose>
 
         <Thoughts
-          thoughtTitleWrapper={(title) => <h2 className='h3'>{title}</h2>}
+          thoughtTitleWrapper={title => <h2 className='h3'>{title}</h2>}
           thoughts={thoughts}
-          after={<p>Feel free to go home now <Link href={indexUrl}><a>here</a></Link>.</p>}
+          after={
+            <p>
+              Feel free to go home now{' '}
+              <Link href={indexUrl}>
+                <a>here</a>
+              </Link>
+              .
+            </p>
+          }
         />
       </main>
     </Page>
   )
 }
 
-Topic.getInitialProps = withErrorHandling(withCommonProps(async ({ dependencyContainer, origin, query }) => {
-  const { fetchThoughtsByTopicSlug, fetchTopicBySlug } = await dependencyContainer()
+Topic.getInitialProps = withErrorHandling(
+  withCommonProps(async ({ dependencyContainer, origin, query }) => {
+    const {
+      fetchThoughtsByTopicSlug,
+      fetchTopicBySlug
+    } = await dependencyContainer()
 
-  return {
-    origin,
-    topic: fetchTopicBySlug(query.slug),
-    thoughts: await fetchThoughtsByTopicSlug(origin, query.slug)
-  }
-}))
+    return {
+      origin,
+      topic: fetchTopicBySlug(query.slug),
+      thoughts: await fetchThoughtsByTopicSlug(origin, query.slug)
+    }
+  })
+)
