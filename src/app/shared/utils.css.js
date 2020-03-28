@@ -39,9 +39,7 @@ hr {
 /* Animations via animate.css */
 
 .animated {
-  -webkit-animation-duration: 1s;
   animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
@@ -66,7 +64,6 @@ hr {
 }
 
 .fadeIn {
-  -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
 `
