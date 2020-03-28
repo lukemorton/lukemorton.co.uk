@@ -20,18 +20,6 @@ test('content renders', () => {
   expect(page.find(Thought).length).toBe(1)
 })
 
-test('loading thought by slug', async () => {
-  const expectedThought = firstThought()
-  nock(TEST_ORIGIN)
-    .get('/dist/thoughts/index.json')
-    .reply(200, {
-      '2019-12-20-ways-of-approaching-clean-architecture': firstThought(),
-      '2019-12-18-why-take-a-clean-architecture-approach-to-rails': secondThought()
-    })
-  const { thought } = await ShowThought.getInitialProps({ query: { slug: expectedThought.slug } })
-  expect(thought).toStrictEqual(expectedThought)
-})
-
 test('derives state from prop sensibly', () => {
   const page = shallow(<ShowThought thought={firstThought()} />)
   page.setProps({ thought: secondThought() })

@@ -4,6 +4,11 @@ import dependencyContainer from '../dependencyContainer'
 
 const INTERVAL = process.env.NODE_ENV === 'development' ? 1000 : null
 
+function buildOrigin () {
+  const host = window.location.hostname
+  return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
+}
+
 export default function (propThought, origin) {
   const [thought, setThought] = useState(propThought)
 
@@ -11,8 +16,8 @@ export default function (propThought, origin) {
 
   useInterval(() => {
     (async () => {
-      const { fetchOneThoughtBySlug } = await dependencyContainer()
-      setThought(await fetchOneThoughtBySlug(origin, propThought.slug))
+      const { fetchOneThoughtBySlug } = await dependencyContainer('app')
+      setThought(await fetchOneThoughtBySlug(buildOrigin(), propThought.slug))
     })()
   }, INTERVAL)
 

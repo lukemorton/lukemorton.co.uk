@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Page from '../../src/app/components/Page'
 import Prose from '../../src/app/components/Prose'
 import Thoughts from '../../src/app/components/Thoughts'
-import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
+import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
+import dependencyContainer from '../../src/app/dependencyContainer'
 
 export default function ThoughtArchive ({ indexUrl, thoughts }) {
   return (
@@ -36,13 +37,14 @@ export default function ThoughtArchive ({ indexUrl, thoughts }) {
   )
 }
 
-ThoughtArchive.getInitialProps = withCommonProps(
-  async ({ dependencyContainer, origin }) => {
-    const { fetchAllThoughts } = await dependencyContainer()
+export const getStaticProps = withCommonStaticProps(
+  async () => {
+    const { fetchAllThoughts } = await dependencyContainer('build')
 
     return {
-      origin,
-      thoughts: await fetchAllThoughts(origin)
+      props: {
+        thoughts: await fetchAllThoughts()
+      }
     }
   }
 )

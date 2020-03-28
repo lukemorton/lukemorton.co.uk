@@ -10,7 +10,7 @@ export default function (callback) {
     nextProps = {
       ...props,
       ...COMMON_PROPS,
-      dependencyContainer
+      dependencyContainer: () => dependencyContainer('build')
     }
 
     nextProps = {

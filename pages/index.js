@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Page from '../src/app/components/Page'
 import Prose from '../src/app/components/Prose'
 import Thoughts from '../src/app/components/Thoughts'
-import withCommonProps from '../src/app/propMiddleware/withCommonProps'
+import withCommonStaticProps from '../src/app/propMiddleware/withCommonStaticProps'
+import dependencyContainer from '../src/app/dependencyContainer'
 
 export default function Index ({ archiveUrl, thoughts }) {
   return (
@@ -50,13 +51,14 @@ export default function Index ({ archiveUrl, thoughts }) {
   )
 }
 
-Index.getInitialProps = withCommonProps(
-  async ({ dependencyContainer, origin }) => {
-    const { fetchRecentThoughts } = await dependencyContainer()
+export const getStaticProps = withCommonStaticProps(
+  async () => {
+    const { fetchRecentThoughts } = await dependencyContainer('build')
 
     return {
-      origin,
-      thoughts: await fetchRecentThoughts(origin)
+      props: {
+        thoughts: await fetchRecentThoughts()
+      }
     }
   }
 )

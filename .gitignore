@@ -7,3 +7,5 @@
 yarn-error.log
 npm-debug.log
 .DS_Store
+
+.now
