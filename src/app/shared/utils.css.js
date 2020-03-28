@@ -8,13 +8,6 @@ hr {
   border-top: 3px solid #eee;
 }
 
-/* ratio: 3:2 */
-.ratio-3-2 {
-  background: #eee;
-  height: auto;
-  max-width: 100%;
-}
-
 /* Breakpoint utilities for titles in blog posts */
 
 .break--mobile,
