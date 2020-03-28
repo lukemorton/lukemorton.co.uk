@@ -22,7 +22,7 @@ export default function OpenSource ({ githubUrl, projects }) {
   )
 }
 
-export const unstable_getStaticProps = withCommonStaticProps(async () => { // eslint-disable-line camelcase
+export const getStaticProps = withCommonStaticProps(async () => {
   return {
     props: {
       projects: [
