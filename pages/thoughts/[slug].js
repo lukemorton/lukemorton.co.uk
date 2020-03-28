@@ -3,13 +3,13 @@ import Link from 'next/link'
 import Page from '../../src/app/components/Page'
 import Thought from '../../src/app/components/Thought'
 import RelatedContent from '../../src/app/components/RelatedContent'
-import useDelayedRelatedContent from '../../src/app/hooks/useDelayedRelatedContent'
 import useLiveBlog from '../../src/app/hooks/useLiveBlog'
-import withErrorHandling from '../../src/app/propMiddleware/withErrorHandling'
-import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
+import useDelayedRelatedContent from '../../src/app/hooks/useDelayedRelatedContent'
+import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
+import dependencyContainer from '../../src/app/dependencyContainer'
 
 export default function ThoughtPage (props) {
-  const [thought] = useLiveBlog(props.thought, props.origin)
+  const [thought] = useLiveBlog(props.thought)
   const [relatedContent] = useDelayedRelatedContent(thought)
 
   return (
@@ -29,13 +29,26 @@ export default function ThoughtPage (props) {
   )
 }
 
-ThoughtPage.getInitialProps = withErrorHandling(withCommonProps(async ({ dependencyContainer, origin, query }) => {
-  const { fetchOneThoughtBySlug } = await dependencyContainer()
+export const getStaticPaths = async () => {
+  const { fetchAllThoughts } = await dependencyContainer('build')
+  const thoughts = await fetchAllThoughts()
 
-  return {
-    fetchOneThoughtBySlug,
-    origin,
-    slug: query.slug,
-    thought: await fetchOneThoughtBySlug(origin, query.slug)
+  const paths = thoughts.map(({ slug }) => {
+    return { params: { slug } }
+  })
+
+  return { paths, fallback: false }
+}
+
+export const getStaticProps = withCommonStaticProps(
+  async ({ params }) => {
+    const { fetchOneThoughtBySlug } = await dependencyContainer('build')
+
+    return {
+      props: {
+        slug: params.slug,
+        thought: await fetchOneThoughtBySlug(null, params.slug)
+      }
+    }
   }
-}))
+)

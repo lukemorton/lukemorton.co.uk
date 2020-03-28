@@ -1,7 +1,5 @@
-export default function () {
-  const factory = process.env.FACTORY
-
-  switch (factory) {
+export default function (factory) {
+  switch (factory || process.env.FACTORY) {
     case 'build':
       return import('../build/factory')
 

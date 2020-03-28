@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Page from '../../src/app/components/Page'
 import Prose from '../../src/app/components/Prose'
 import Thoughts from '../../src/app/components/Thoughts'
-import withErrorHandling from '../../src/app/propMiddleware/withErrorHandling'
-import withCommonProps from '../../src/app/propMiddleware/withCommonProps'
+import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
+import dependencyContainer from '../../src/app/dependencyContainer'
 
 export default function Topic ({ indexUrl, topic, thoughts }) {
   return (
@@ -32,17 +32,29 @@ export default function Topic ({ indexUrl, topic, thoughts }) {
   )
 }
 
-Topic.getInitialProps = withErrorHandling(
-  withCommonProps(async ({ dependencyContainer, origin, query }) => {
+export const getStaticPaths = async () => {
+  const { fetchAllTopics } = await dependencyContainer('build')
+  const topics = await fetchAllTopics()
+
+  const paths = topics.map(({ slug }) => {
+    return { params: { slug } }
+  })
+
+  return { paths, fallback: false }
+}
+
+export const getStaticProps = withCommonStaticProps(
+  async ({ params }) => {
     const {
       fetchThoughtsByTopicSlug,
       fetchTopicBySlug
-    } = await dependencyContainer()
+    } = await dependencyContainer('build')
 
     return {
-      origin,
-      topic: fetchTopicBySlug(query.slug),
-      thoughts: await fetchThoughtsByTopicSlug(origin, query.slug)
+      props: {
+        topic: fetchTopicBySlug(params.slug),
+        thoughts: await fetchThoughtsByTopicSlug(null, params.slug)
+      }
     }
-  })
+  }
 )
