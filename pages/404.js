@@ -19,4 +19,4 @@ export default function Error ({ indexUrl }) {
   )
 }
 
-export const unstable_getStaticProps = withCommonStaticProps() // eslint-disable-line camelcase
+export const getStaticProps = withCommonStaticProps()
