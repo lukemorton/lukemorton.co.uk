@@ -63,6 +63,8 @@ export default ({ children }) => (
         }
 
         .prose :global(img) {
+          background: #eee;
+          height: auto;
           max-width: 100%;
         }
       `}
