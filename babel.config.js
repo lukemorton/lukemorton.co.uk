@@ -4,6 +4,7 @@ module.exports = api => {
   const presets = ['next/babel']
 
   const ignoreTests = [
+    'pageTests/**/*.test.js',
     'src/**/*.test.js',
     'src/setupTests.js'
   ]

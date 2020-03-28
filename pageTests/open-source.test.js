@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import OpenSource from '../../pages/open-source'
-import Page from '../../src/app/components/Page'
-import Projects from '../../src/app/components/Projects'
+import OpenSource from '../pages/open-source'
+import Page from '../src/app/components/Page'
+import Projects from '../src/app/components/Projects'
 
 test('content renders', () => {
   const page = shallow(<OpenSource />)

@@ -2,13 +2,13 @@ import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount, shallow } from 'enzyme'
 import nock from 'nock'
-import ShowThought from '../../../pages/thoughts/[slug]'
-import Page from '../../../src/app/components/Page'
-import Thought from '../../../src/app/components/Thought'
-import RelatedContent from '../../../src/app/components/RelatedContent'
-import useLiveBlog from '../../../src/app/hooks/useLiveBlog'
+import ShowThought from '../../pages/thoughts/[slug]'
+import Page from '../../src/app/components/Page'
+import Thought from '../../src/app/components/Thought'
+import RelatedContent from '../../src/app/components/RelatedContent'
+import useLiveBlog from '../../src/app/hooks/useLiveBlog'
 
-jest.mock('../../../src/app/hooks/useLiveBlog')
+jest.mock('../../src/app/hooks/useLiveBlog')
 
 beforeEach(() => {
   useLiveBlog.mockImplementation((thought) => [thought])
