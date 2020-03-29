@@ -20,17 +20,21 @@
     "babel-jest": "^25.2.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "husky": "^4.2.3",
     "jest": "^25.2.3",
+    "lint-staged": "^10.0.9",
     "markedly": "^0.5.0",
     "nodemon": "^2.0.2",
-    "now": "^16.7.0"
+    "now": "^16.7.0",
+    "prettier": "^2.0.2"
   },
   "engines": {
     "node": "12.x"
   },
   "scripts": {
+    "format": "prettier --write '{.github,page*,src,thoughts}/**/*.{js,css,md,yml}'",
     "test": "jest",
-    "ci": "jest",
+    "ci": "prettier --check '{.github,page*,src,thoughts}/**/*.{js,css,md,yml}' && jest",
     "blog": "NODE_ENV=development mkdir -p public/dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
     "build:lib": "rm -rf lib && NODE_ENV=build:lib babel src -d lib",
     "build:blog": "mkdir -p public/dist/thoughts && markedly",
@@ -43,6 +47,19 @@
   "jest": {
     "setupFiles": [
       "<rootDir>/src/setupTests.js"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md,yml}": [
+      "prettier --write"
     ]
   },
   "markedly": {
