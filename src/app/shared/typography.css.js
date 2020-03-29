@@ -50,13 +50,16 @@ export default css.global`
   }
 
   @media ${fromMedium} {
-    h1,
-    h1.larger {
+    h1 {
       font-size: 4em;
     }
 
+    h1.larger {
+      font-size: 4.5em;
+    }
+
     h1 span.larger {
-      font-size: 1em;
+      font-size: 1.125em;
     }
   }
 
