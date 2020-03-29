@@ -10,12 +10,12 @@ export default function (callback) {
     nextProps = {
       ...props,
       ...COMMON_PROPS,
-      dependencyContainer: () => dependencyContainer('build')
+      dependencyContainer: () => dependencyContainer('build'),
     }
 
     nextProps = {
       ...COMMON_PROPS,
-      ...(await callback(nextProps)).props
+      ...(await callback(nextProps)).props,
     }
 
     return { props: nextProps }

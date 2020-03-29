@@ -6,12 +6,12 @@ import Thoughts from '../src/app/components/Thoughts'
 import withCommonStaticProps from '../src/app/propMiddleware/withCommonStaticProps'
 import dependencyContainer from '../src/app/dependencyContainer'
 
-export default function Index ({ archiveUrl, thoughts }) {
+export default function Index({ archiveUrl, thoughts }) {
   return (
-    <Page title='Exploring teams & technology'>
+    <Page title="Exploring teams & technology">
       <main>
         <Prose>
-          <h1 className='larger'>Exploring teams &&nbsp;technology</h1>
+          <h1 className="larger">Exploring teams &&nbsp;technology</h1>
 
           <p>
             Technology is consuming every aspect of society and yet in a rapidly
@@ -34,7 +34,7 @@ export default function Index ({ archiveUrl, thoughts }) {
       <aside>
         <Thoughts
           title={<h2>Recent articles</h2>}
-          thoughtTitleWrapper={title => <h3>{title}</h3>}
+          thoughtTitleWrapper={(title) => <h3>{title}</h3>}
           thoughts={thoughts}
           after={
             <p>
@@ -51,14 +51,12 @@ export default function Index ({ archiveUrl, thoughts }) {
   )
 }
 
-export const getStaticProps = withCommonStaticProps(
-  async () => {
-    const { fetchRecentThoughts } = await dependencyContainer('build')
+export const getStaticProps = withCommonStaticProps(async () => {
+  const { fetchRecentThoughts } = await dependencyContainer('build')
 
-    return {
-      props: {
-        thoughts: await fetchRecentThoughts()
-      }
-    }
+  return {
+    props: {
+      thoughts: await fetchRecentThoughts(),
+    },
   }
-)
+})

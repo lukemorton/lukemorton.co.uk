@@ -35,8 +35,8 @@ routing, and our business logic execution.
 
 Let's go over two points:
 
- - applications serve your business logic to users
- - controllers provide business logic to applications
+- applications serve your business logic to users
+- controllers provide business logic to applications
 
 Ahhh, separations of concerns.
 
@@ -86,4 +86,3 @@ I've written about [@LukeMorton][3].
 [1]: /thoughts/2013-09-25-data
 [2]: /thoughts/2013-09-24-views
 [3]: https://twitter.com/LukeMorton
-

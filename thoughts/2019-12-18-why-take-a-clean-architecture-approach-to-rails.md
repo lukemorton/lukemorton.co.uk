@@ -1,8 +1,8 @@
 ---
 publishedAt: 2019-12-18
 tags:
- - Clean Architecture
- - Ruby on Rails
+  - Clean Architecture
+  - Ruby on Rails
 ---
 
 # Why take a Clean Architecture approach to Rails?
@@ -17,7 +17,7 @@ The POROs were usually placed into a directory like `app/services` and called Se
 
 After having a little google I found references going as far back as 2012 including a blog post on ["the service layer \[that\] lies between controllers and models"](https://blog.carbonfive.com/2012/01/10/does-my-rails-app-need-a-service-layer/) and a RailsCasts video on [using Service Objects in Rails](http://railscasts.com/episodes/398-service-objects).
 
-This pattern is probably the most common Rails pattern for keeping controllers and models skinny though it remains decidedly *non-standard* by [Rails creator DHH](https://twitter.com/dhh/status/280717161029328896).
+This pattern is probably the most common Rails pattern for keeping controllers and models skinny though it remains decidedly _non-standard_ by [Rails creator DHH](https://twitter.com/dhh/status/280717161029328896).
 
 > It's like we have a J2EE renaissance fair going on at the moment. Digging up every discredited pattern of complexity to do a reunion tour.
 

@@ -1,7 +1,7 @@
 ---
 publishedAt: 2015-09-12
 tags:
- - Ruby on Rails
+  - Ruby on Rails
 ---
 
 # Getting better mileage out of Active Record
@@ -84,8 +84,8 @@ programming practices to scale our models further.
 Rather than leaning on complex models we can instead lean on hashes or hash
 like objects to transfer data around our applications.
 
- - [http://brewhouse.io/2015/07/31/be-nice-to-others-and-your-future-self-use-data-objects.html](http://brewhouse.io/2015/07/31/be-nice-to-others-and-your-future-self-use-data-objects.html)
- - [http://lukemorton.co.uk/thoughts/2013-09-23-hashes-for-data](http://lukemorton.co.uk/thoughts/2013-09-23-hashes-for-data)
+- [http://brewhouse.io/2015/07/31/be-nice-to-others-and-your-future-self-use-data-objects.html](http://brewhouse.io/2015/07/31/be-nice-to-others-and-your-future-self-use-data-objects.html)
+- [http://lukemorton.co.uk/thoughts/2013-09-23-hashes-for-data](http://lukemorton.co.uk/thoughts/2013-09-23-hashes-for-data)
 
 ### Moar patterns
 

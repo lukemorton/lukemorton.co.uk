@@ -1,7 +1,7 @@
 ---
 publishedAt: 2016-09-24
 tags:
- - Ruby on Rails
+  - Ruby on Rails
 ---
 
 # Business logic in Rails
@@ -16,9 +16,9 @@ Tom discusses moving the business logic into what he calls functionally pure met
 
 Revisiting the `Billing` module we can observe a few things:
 
- - `.billable_accounts` performs an SQL query using an ActiveRecord object
- - `.monthly_bill` returns an initialised ActiveRecord object
- - `.discounts` is functionally pure business logic
+- `.billable_accounts` performs an SQL query using an ActiveRecord object
+- `.monthly_bill` returns an initialised ActiveRecord object
+- `.discounts` is functionally pure business logic
 
 ## Testing business logic
 
@@ -27,7 +27,6 @@ The first two methods aren't really functionally pure but how does this affect t
 <script src="https://gist.github.com/lukemorton/260cc1535e67cd2a76c8463beaa64596.js?file=02.rb"></script>
 
 Unfortunately this test hit the DB. The fact the method hits the DB will to some mean the method isn't functionally pure or business logic at all. The method isn't functionally pure because even though you do not pass any parameters, the values it change can vary depending on what is in the DB. [Pure functions](https://en.wikipedia.org/wiki/Pure_function) should return the same results every time they are called with the same arguments. It's not business logic either as it deals with implmentation specific details such as it is use of ActiveRecord methods.
-
 
 For now, I suppose we could do some mocking to get around this.
 

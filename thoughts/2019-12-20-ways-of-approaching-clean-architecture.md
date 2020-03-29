@@ -1,7 +1,7 @@
 ---
 publishedAt: 2019-12-20
 tags:
- - Clean Architecture
+  - Clean Architecture
 ---
 
 # Ways of approaching Clean Architecture

@@ -1,7 +1,7 @@
 ---
 publishedAt: 2019-12-14
 tags:
- - Clean Architecture
+  - Clean Architecture
 ---
 
 # Nuances in Clean Architecture
@@ -46,7 +46,7 @@ My introduction to Clean Architecture was not from reading a book or an "officia
 
 It seems many others have also overlooked this detail, blissfully unaware of the unorthodoxy of their approach. I suppose "what they don't know about won't hurt them" too?
 
-In a [C# introduction of Clean Architecture](https://fullstackmark.com/post/11/better-software-design-with-clean-architecture) the author happily introduces their readers to the concept of a [use case receiving a request and returning a response](https://github.com/mmacneil/CleanArchitecture/blob/master/CleanArchitecture.Core/UseCases/RequestCourseRegistrationInteractor.cs#L22).  What filth. Their example also included a presenter, however it was quite separate from the use case, they passed the [response from the use case into the presenter within the console runner](https://github.com/mmacneil/CleanArchitecture/blob/master/CleanArchitecture.ConsoleApp/Program.cs#L57). Scandal!
+In a [C# introduction of Clean Architecture](https://fullstackmark.com/post/11/better-software-design-with-clean-architecture) the author happily introduces their readers to the concept of a [use case receiving a request and returning a response](https://github.com/mmacneil/CleanArchitecture/blob/master/CleanArchitecture.Core/UseCases/RequestCourseRegistrationInteractor.cs#L22). What filth. Their example also included a presenter, however it was quite separate from the use case, they passed the [response from the use case into the presenter within the console runner](https://github.com/mmacneil/CleanArchitecture/blob/master/CleanArchitecture.ConsoleApp/Program.cs#L57). Scandal!
 
 To be honest, going back to the StackExchange response on this topic, I like the summary at the end of the lengthy answer:
 
@@ -84,7 +84,7 @@ In the [Slalom post](https://medium.com/slalom-engineering/clean-architecture-wi
 
 In [another example](https://medium.com/@hatajoe/clean-architecture-in-go-4030f11ec1b1), this time in golang, I found the use cases provided a number of public methods that interact on the concept of a user object. For me, this means you end up defining use cases around nouns rather than verbs, which means they can end up doing too much. The issue with use cases doing too much is that they are harder to maintain because they are harder to understand. It also means that your directory of use cases no longer describe the things a user can do with the application, which for me was one of the selling points of Clean Architecture over MVC.
 
-You certainly do find the command pattern in use for use cases though. The [C# article]( https://fullstackmark.com/post/11/better-software-design-with-clean-architecture) uses a `Response Handle(Request)` method.
+You certainly do find the command pattern in use for use cases though. The [C# article](https://fullstackmark.com/post/11/better-software-design-with-clean-architecture) uses a `Response Handle(Request)` method.
 
 At Made Tech we certainly recommend the command pattern and [you can see it in use](https://github.com/alphagov/govwifi-admin/tree/master/lib/use_cases/administrator) in many of our public sector work streams.
 

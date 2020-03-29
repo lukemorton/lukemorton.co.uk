@@ -6,12 +6,12 @@ import Thoughts from '../../src/app/components/Thoughts'
 import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
 import dependencyContainer from '../../src/app/dependencyContainer'
 
-export default function ThoughtArchive ({ indexUrl, thoughts }) {
+export default function ThoughtArchive({ indexUrl, thoughts }) {
   return (
-    <Page title='All articles'>
+    <Page title="All articles">
       <main>
         <Prose>
-          <h1 className='larger'>All articles</h1>
+          <h1 className="larger">All articles</h1>
 
           <p>
             Technology articles from code to teams to organisational
@@ -20,7 +20,7 @@ export default function ThoughtArchive ({ indexUrl, thoughts }) {
         </Prose>
 
         <Thoughts
-          thoughtTitleWrapper={title => <h2 className='h3'>{title}</h2>}
+          thoughtTitleWrapper={(title) => <h2 className="h3">{title}</h2>}
           thoughts={thoughts}
           after={
             <p>
@@ -37,14 +37,12 @@ export default function ThoughtArchive ({ indexUrl, thoughts }) {
   )
 }
 
-export const getStaticProps = withCommonStaticProps(
-  async () => {
-    const { fetchAllThoughts } = await dependencyContainer('build')
+export const getStaticProps = withCommonStaticProps(async () => {
+  const { fetchAllThoughts } = await dependencyContainer('build')
 
-    return {
-      props: {
-        thoughts: await fetchAllThoughts()
-      }
-    }
+  return {
+    props: {
+      thoughts: await fetchAllThoughts(),
+    },
   }
-)
+})

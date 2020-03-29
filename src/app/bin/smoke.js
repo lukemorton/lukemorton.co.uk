@@ -4,11 +4,11 @@ import fetch from 'cross-fetch'
 import fs from 'fs'
 import { fetchAllThoughts, fetchAllTopics } from '../factory'
 
-function testUrl (origin, path) {
+function testUrl(origin, path) {
   const url = `${origin}${path || ''}`
 
   fetch(url)
-    .then(res => {
+    .then((res) => {
       console.log(`URL: ${url}`)
 
       if (res.status === 200) {
@@ -18,7 +18,7 @@ function testUrl (origin, path) {
         process.exit(1)
       }
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(`URL: ${url}`)
       console.error(err)
       process.exit(1)
@@ -41,17 +41,15 @@ if (state === 'success') {
   testUrl(targetUrl, '/about')
   testUrl(targetUrl, '/open-source')
   testUrl(targetUrl, '/thoughts/archive')
-
   ;(async () => {
     const thoughts = await fetchAllThoughts(targetUrl)
-    thoughts.forEach(t => {
+    thoughts.forEach((t) => {
       testUrl(targetUrl, `/thoughts/${t.slug}`)
     })
   })()
-
   ;(async () => {
     const topics = await fetchAllTopics()
-    topics.forEach(t => {
+    topics.forEach((t) => {
       testUrl(targetUrl, `/topics/${t.slug}`)
     })
   })()

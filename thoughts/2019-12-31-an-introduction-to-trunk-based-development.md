@@ -1,12 +1,12 @@
 ---
 publishedAt: 2019-12-31
 tags:
- - Trunk-based development
+  - Trunk-based development
 ---
 
 # An introduction to trunk-based development
 
-Introducing trunk-based development and it's relationship to the widely used practice continuous integration. If you do continuous integration, you should  be doing trunk-based development.
+Introducing trunk-based development and it's relationship to the widely used practice continuous integration. If you do continuous integration, you should be doing trunk-based development.
 
 While you may not have heard of trunk-based development, you most likely have heard of continuous integration. Trunk-based development builds on continuous integration and brings even more benefits to your development teams.
 
@@ -22,7 +22,7 @@ By having automated checks and encouraging teams to integrate their changes mult
 
 ## Trunk-based development
 
-Trunk-based development is effectively the same as continuous integration with  the additional proviso that you merge your code into a single branch on a regular basis. The branch nowadays is called master trunk or mainline were popular in the past before the days of git hence the phrase trunk-based development.
+Trunk-based development is effectively the same as continuous integration with the additional proviso that you merge your code into a single branch on a regular basis. The branch nowadays is called master trunk or mainline were popular in the past before the days of git hence the phrase trunk-based development.
 
 You can see that trunk-based development and continuous integration go hand in hand. The only difference is that your team have committed to continuously integrating into a trunk branch, rather than say into a series of branches, like an alternative to trunk-based development such as GitFlow might suggest.
 
@@ -35,11 +35,11 @@ You can see that trunk-based development and continuous integration go hand in h
 
 If you don't currently practice trunk-based development you will likely be suffering from a number of problems:
 
- - Long-lived branches mean your developers will have a greatly increased chance of introducing bugs due to diverging code
- - Bureaucracy of multi-branch strategies, of which GitFlow is the worst, will likely be hindering your teams ability to deliver fast
- - Multi-branch strategies often come with hierarchy or gatekeepers which means your organisation doesn't trust their developers to deploy their own code
- - Peer reviews are tedious as change sets are often hundreds if not thousands of lines of code long which either means reviews are rushed or take forever
- - Your developers likely experience a crunch time at the end of iterations or whenever they eventually merge their branches together for a release which likely means long hours and more bugs
+- Long-lived branches mean your developers will have a greatly increased chance of introducing bugs due to diverging code
+- Bureaucracy of multi-branch strategies, of which GitFlow is the worst, will likely be hindering your teams ability to deliver fast
+- Multi-branch strategies often come with hierarchy or gatekeepers which means your organisation doesn't trust their developers to deploy their own code
+- Peer reviews are tedious as change sets are often hundreds if not thousands of lines of code long which either means reviews are rushed or take forever
+- Your developers likely experience a crunch time at the end of iterations or whenever they eventually merge their branches together for a release which likely means long hours and more bugs
 
 By adopting trunk-based development, you will begin to break down these problems, reduce bugs in your systems and begin your journey towards more frequent and less risky releases. The aim should be that your teams eventually get to a point that they can release multiple times a day into production.
 

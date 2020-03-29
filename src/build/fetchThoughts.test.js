@@ -7,7 +7,7 @@ import {
   fetchThoughtsByTopicName,
   NoThoughtFoundBySlugError,
   NoThoughtsFoundByTopicNameError,
-  NoThoughtsFoundByTopicSlugError
+  NoThoughtsFoundByTopicSlugError,
 } from './factory'
 
 jest.mock('fs')
@@ -16,7 +16,7 @@ describe('listThoughts', () => {
   let jsonResponse
 
   beforeEach(() => {
-    fs.readFileSync.mockImplementation(_ => JSON.stringify(jsonResponse))
+    fs.readFileSync.mockImplementation((_) => JSON.stringify(jsonResponse))
   })
 
   afterEach(() => {
@@ -29,10 +29,12 @@ describe('listThoughts', () => {
     })
 
     test('it uses fs.readFileSync', async () => {
-      const expectedThought = { slug: '2017-01-17-lightweight-docker-images-for-go' }
+      const expectedThought = {
+        slug: '2017-01-17-lightweight-docker-images-for-go',
+      }
 
       jsonResponse = {
-        [expectedThought.slug]: expectedThought
+        [expectedThought.slug]: expectedThought,
       }
 
       await fetchOneThoughtBySlug(null, expectedThought.slug)
@@ -45,7 +47,7 @@ describe('listThoughts', () => {
       const expectedThought = { slug: 'a-slug' }
 
       jsonResponse = {
-        [expectedThought.slug]: expectedThought
+        [expectedThought.slug]: expectedThought,
       }
 
       const t = await fetchOneThoughtBySlug(null, expectedThought.slug)
@@ -53,7 +55,9 @@ describe('listThoughts', () => {
     })
 
     test('it raises exception if thought doesnt exist', async () => {
-      expect(fetchOneThoughtBySlug(null, 'doesnt-exist')).rejects.toThrow(NoThoughtFoundBySlugError)
+      expect(fetchOneThoughtBySlug(null, 'doesnt-exist')).rejects.toThrow(
+        NoThoughtFoundBySlugError
+      )
     })
   })
 
@@ -129,7 +133,9 @@ describe('listThoughts', () => {
     })
 
     test('it raises exception if topic doesnt exist', async () => {
-      expect(fetchThoughtsByTopicName(null, 'Jim Bob')).rejects.toThrow(NoThoughtsFoundByTopicNameError)
+      expect(fetchThoughtsByTopicName(null, 'Jim Bob')).rejects.toThrow(
+        NoThoughtsFoundByTopicNameError
+      )
     })
   })
 
@@ -157,7 +163,9 @@ describe('listThoughts', () => {
     })
 
     test('it raises exception if topic doesnt exist', async () => {
-      expect(fetchThoughtsByTopicSlug(null, 'jimbob')).rejects.toThrow(NoThoughtsFoundByTopicSlugError)
+      expect(fetchThoughtsByTopicSlug(null, 'jimbob')).rejects.toThrow(
+        NoThoughtsFoundByTopicSlugError
+      )
     })
   })
 })

@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch'
 
-function buildOriginFromWindowIfNull (origin) {
+function buildOriginFromWindowIfNull(origin) {
   if (origin) return origin
 
   if (typeof window !== 'undefined') {
@@ -14,7 +14,7 @@ function buildOriginFromWindowIfNull (origin) {
   }
 }
 
-export async function loadJsonPath (origin, path) {
+export async function loadJsonPath(origin, path) {
   origin = buildOriginFromWindowIfNull(origin)
 
   const url = `${origin}${path}`
