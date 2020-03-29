@@ -36,7 +36,7 @@ export default () => (
     <p className="avatar">
       <img
         alt="A photograph of Luke smiling in a smart white shirt"
-        src="https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=500"
+        src="https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=200"
         style={{ height: '6rem', width: '6rem' }}
       />
     </p>
