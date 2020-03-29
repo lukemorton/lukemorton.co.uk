@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import useInterval from '@use-it/interval'
-import dependencyContainer from '../dependencyContainer'
+import { fetchOneThoughtBySlug } from '../factory'
 
 const INTERVAL = process.env.NODE_ENV === 'development' ? 1000 : null
 
@@ -16,7 +16,6 @@ export default function (propThought, origin) {
 
   useInterval(() => {
     (async () => {
-      const { fetchOneThoughtBySlug } = await dependencyContainer('app')
       setThought(await fetchOneThoughtBySlug(buildOrigin(), propThought.slug))
     })()
   }, INTERVAL)
