@@ -79,6 +79,12 @@
         "tags": [
           "Trunk-based development"
         ]
+      },
+      "topics/covid-19": {
+        "reverse": true,
+        "tags": [
+          "COVID19"
+        ]
       }
     }
   },
