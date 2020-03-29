@@ -24,16 +24,14 @@
     "json": "^9.0.4",
     "markedly": "^0.5.0",
     "nodemon": "^2.0.2",
-    "now": "^16.7.0",
-    "standard": "^14.3.1"
+    "now": "^16.7.0"
   },
   "engines": {
     "node": "12.x"
   },
   "scripts": {
-    "lint": "standard --fix",
     "test": "jest",
-    "ci": "standard && jest",
+    "ci": "jest",
     "blog": "NODE_ENV=development mkdir -p public/dist/thoughts && nodemon --exec markedly --watch thoughts --ext md",
     "build:lib": "rm -rf lib && NODE_ENV=build:lib babel src -d lib",
     "build:blog": "mkdir -p public/dist/thoughts && markedly",
@@ -84,14 +82,5 @@
         ]
       }
     }
-  },
-  "standard": {
-    "parser": "babel-eslint",
-    "env": [
-      "jest"
-    ],
-    "globals": [
-      "TEST_ORIGIN"
-    ]
   }
 }
