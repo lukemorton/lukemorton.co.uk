@@ -4,15 +4,15 @@ import Page from '../src/app/components/Page'
 import Prose from '../src/app/components/Prose'
 import withCommonStaticProps from '../src/app/propMiddleware/withCommonStaticProps'
 
-export default function About ({ indexUrl }) {
+export default function About({ indexUrl }) {
   return (
-    <Page title='About the Author'>
+    <Page title="About the Author">
       <main>
         <Prose>
-          <h1 className='larger'>About the Author</h1>
+          <h1 className="larger">About the Author</h1>
 
           <p>
-            I'm CTO at <a href='https://madetech.com'>Made Tech</a> where we
+            I'm CTO at <a href="https://madetech.com">Made Tech</a> where we
             help organisations transform into high performance software teams,
             through agile software delivery and on-site training.
           </p>
@@ -34,7 +34,7 @@ export default function About ({ indexUrl }) {
           <p>
             Though I'm not coding day-to-day I'm very much coding in my spare
             time having recently been building{' '}
-            <a href='https://github.com/lukemorton/web-deployer'>
+            <a href="https://github.com/lukemorton/web-deployer">
               open source deployment tools
             </a>{' '}
             for Kubernetes in Golang as well as experimenting with Clean
@@ -51,7 +51,7 @@ export default function About ({ indexUrl }) {
           <p>
             I acknowledge the universe is intersectional and do my best to share
             and uncover information from all walks of life, mostly{' '}
-            <a href='https://twitter.com/LukeMorton'>via Twitter</a>. Basically
+            <a href="https://twitter.com/LukeMorton">via Twitter</a>. Basically
             I do my utmost to be a good human and be kind to the world and me.
           </p>
 
@@ -120,7 +120,7 @@ export default function About ({ indexUrl }) {
 
             <li>
               Got tired of sacking potatoes and went back to college. Also got
-              an IT support job at <a href='http://freeola.com'>Freeola</a>.
+              an IT support job at <a href="http://freeola.com">Freeola</a>.
             </li>
 
             <li>
@@ -146,14 +146,14 @@ export default function About ({ indexUrl }) {
             <li>Tried leaving. Got my own office. Eventually left.</li>
 
             <li>
-              I worked for a startup, <a href='https://gignite.com'>Gignite</a>{' '}
+              I worked for a startup, <a href="https://gignite.com">Gignite</a>{' '}
               where I made some very good friends, some of whom I'm still
               working with today.
             </li>
 
             <li>
               Present day, and working at{' '}
-              <a href='https://madetech.com'>Made Tech</a>.
+              <a href="https://madetech.com">Made Tech</a>.
             </li>
           </ul>
         </Prose>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default ({ children }) => (
-  <div className='prose'>
+  <div className="prose">
     <style jsx>
       {`
         .prose :global(h1),

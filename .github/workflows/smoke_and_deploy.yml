@@ -1,7 +1,6 @@
 name: Smoke and deploy
 
-on:
-  deployment_status
+on: deployment_status
 
 jobs:
   smoke_then_deploy:
@@ -12,16 +11,16 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install and run smoke tests
-      if: github.event.deployment_status.state == 'success'
-      run: |
-        npm ci
-        npm run smoke
-    - name: Deploy production if safe
-      if: github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'production'
-      run: node_modules/.bin/now -t ${{ secrets.NOW_TOKEN }} --prod
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install and run smoke tests
+        if: github.event.deployment_status.state == 'success'
+        run: |
+          npm ci
+          npm run smoke
+      - name: Deploy production if safe
+        if: github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'production'
+        run: node_modules/.bin/now -t ${{ secrets.NOW_TOKEN }} --prod

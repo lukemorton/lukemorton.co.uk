@@ -57,18 +57,18 @@ How is this a mess? Put simply it's because data is tied to
 behaviour. And behaviour happens at a later stage to the data
 being passed into it. The setbacks include:
 
- - Dependencies on multiple method names per object. Bigger
-   exposure means more potential breaking points when methods
-   are renamed or behaviour altered but not updated in
-   implementation. Not to mention the added code bloat of
-   multiple call sites which also leads to debugging
-   complexity.
- - Delayed behaviour means side effects can happen at anytime
-   when called throughout your application. Database calls
-   might error in the view part of your application when
-   triggered by a method call to a model.
- - Data is tied within the implementation of the model rather
-   than being a more common data type like a hash.
+- Dependencies on multiple method names per object. Bigger
+  exposure means more potential breaking points when methods
+  are renamed or behaviour altered but not updated in
+  implementation. Not to mention the added code bloat of
+  multiple call sites which also leads to debugging
+  complexity.
+- Delayed behaviour means side effects can happen at anytime
+  when called throughout your application. Database calls
+  might error in the view part of your application when
+  triggered by a method call to a model.
+- Data is tied within the implementation of the model rather
+  than being a more common data type like a hash.
 
 Let's solve each of these bug bears.
 

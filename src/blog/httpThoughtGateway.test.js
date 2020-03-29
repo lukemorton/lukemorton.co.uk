@@ -11,7 +11,9 @@ describe('httpThoughtGateway', () => {
       jest.spyOn(console, 'error').mockImplementation()
 
       fetch.mockResolvedValue({
-        json () { return {} }
+        json() {
+          return {}
+        },
       })
     })
 
@@ -29,9 +31,7 @@ describe('httpThoughtGateway', () => {
 
     test('it uses prepends origin', async () => {
       await loadJsonPath(origin, '/dist/thoughts/index.json')
-      expect(fetch).toHaveBeenCalledWith(
-        `${origin}/dist/thoughts/index.json`
-      )
+      expect(fetch).toHaveBeenCalledWith(`${origin}/dist/thoughts/index.json`)
     })
 
     describe('using window.location object to fetch methods', () => {
@@ -66,13 +66,17 @@ describe('httpThoughtGateway', () => {
     test('it throws exception', async () => {
       const err = new Error('Uh oh')
       fetch.mockRejectedValueOnce(err)
-      await expect(loadJsonPath(origin, '/dist/thoughts/index.json')).rejects.toThrow(err)
+      await expect(
+        loadJsonPath(origin, '/dist/thoughts/index.json')
+      ).rejects.toThrow(err)
     })
 
     test('it logs exception', async () => {
       const err = new Error('Uh oh')
       fetch.mockRejectedValueOnce(err)
-      try { await loadJsonPath(origin, '/dist/thoughts/index.json') } catch {}
+      try {
+        await loadJsonPath(origin, '/dist/thoughts/index.json')
+      } catch {}
       expect(console.error).toHaveBeenCalled()
     })
   })

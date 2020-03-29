@@ -5,18 +5,19 @@ export default ({ thoughts }) => {
   if (!thoughts || thoughts.length === 0) return null
 
   return (
-    <aside className='related_content'>
-      <style jsx>{`
-        .related_content {
-          margin-top: 2em;
-          border-top: 3px solid #eee;
-        }
-      `}
+    <aside className="related_content">
+      <style jsx>
+        {`
+          .related_content {
+            margin-top: 2em;
+            border-top: 3px solid #eee;
+          }
+        `}
       </style>
 
       <Thoughts
         small
-        title={<h2 className='h3'>Related content</h2>}
+        title={<h2 className="h3">Related content</h2>}
         thoughtTitleWrapper={(title) => <h3>{title}</h3>}
         thoughts={thoughts}
       />

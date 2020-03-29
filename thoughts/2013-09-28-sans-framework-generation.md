@@ -44,4 +44,3 @@ Comments to [@LukeMorton][4] please.
 [2]: http://www.allaboutagile.com/lean-principles-4-defer-commitment/
 [3]: http://www.codinghorror.com/blog/2006/10/the-last-responsible-moment.html
 [4]: https://twitter.com/LukeMorton
-

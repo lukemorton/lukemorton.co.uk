@@ -6,7 +6,7 @@ import {
   fetchThoughtsByTopicName,
   NoThoughtFoundBySlugError,
   NoThoughtsFoundByTopicNameError,
-  NoThoughtsFoundByTopicSlugError
+  NoThoughtsFoundByTopicSlugError,
 } from './fetchThoughts'
 
 describe('fetchThoughts', () => {
@@ -18,10 +18,12 @@ describe('fetchThoughts', () => {
 
   describe('.fetchOneThoughtBySlug()', () => {
     test('it uses loadJsonPath', async () => {
-      const expectedThought = { slug: '2017-01-17-lightweight-docker-images-for-go' }
+      const expectedThought = {
+        slug: '2017-01-17-lightweight-docker-images-for-go',
+      }
 
       loadJsonPath.mockReturnValue({
-        [expectedThought.slug]: expectedThought
+        [expectedThought.slug]: expectedThought,
       })
 
       await fetchOneThoughtBySlug(loadJsonPath, expectedThought.slug)
@@ -34,7 +36,7 @@ describe('fetchThoughts', () => {
       const expectedThought = { slug: 'a-slug' }
 
       loadJsonPath.mockReturnValue({
-        [expectedThought.slug]: expectedThought
+        [expectedThought.slug]: expectedThought,
       })
 
       const t = await fetchOneThoughtBySlug(loadJsonPath, expectedThought.slug)
@@ -43,7 +45,9 @@ describe('fetchThoughts', () => {
 
     test('it raises exception if thought doesnt exist', async () => {
       loadJsonPath.mockReturnValue({})
-      expect(fetchOneThoughtBySlug(loadJsonPath, 'doesnt-exist')).rejects.toThrow(NoThoughtFoundBySlugError)
+      expect(
+        fetchOneThoughtBySlug(loadJsonPath, 'doesnt-exist')
+      ).rejects.toThrow(NoThoughtFoundBySlugError)
     })
   })
 
@@ -95,13 +99,17 @@ describe('fetchThoughts', () => {
     let findTopicByName = () => {
       return {
         name: 'Ruby on Rails',
-        slug: 'rails'
+        slug: 'rails',
       }
     }
 
     test('it uses loadJsonPath', async () => {
       loadJsonPath.mockReturnValue([])
-      await fetchThoughtsByTopicName(loadJsonPath, findTopicByName, 'Ruby on Rails')
+      await fetchThoughtsByTopicName(
+        loadJsonPath,
+        findTopicByName,
+        'Ruby on Rails'
+      )
       expect(loadJsonPath).toHaveBeenCalledWith(
         expect.stringContaining('/dist/thoughts/topics/rails.json')
       )
@@ -109,20 +117,30 @@ describe('fetchThoughts', () => {
 
     test('it returns JSON response', async () => {
       loadJsonPath.mockReturnValue([])
-      const response = await fetchThoughtsByTopicName(loadJsonPath, findTopicByName, 'Ruby on Rails')
+      const response = await fetchThoughtsByTopicName(
+        loadJsonPath,
+        findTopicByName,
+        'Ruby on Rails'
+      )
       expect(response).toEqual([])
     })
 
     test('it returns empty array when json response is null', async () => {
       loadJsonPath.mockReturnValue(null)
-      const response = await fetchThoughtsByTopicName(loadJsonPath, findTopicByName, 'Ruby on Rails')
+      const response = await fetchThoughtsByTopicName(
+        loadJsonPath,
+        findTopicByName,
+        'Ruby on Rails'
+      )
       expect(response).toEqual([])
     })
 
     test('it raises exception if topic doesnt exist', async () => {
       loadJsonPath.mockReturnValue([])
       findTopicByName = () => null
-      expect(fetchThoughtsByTopicName(loadJsonPath, findTopicByName, 'Jim Bob')).rejects.toThrow(NoThoughtsFoundByTopicNameError)
+      expect(
+        fetchThoughtsByTopicName(loadJsonPath, findTopicByName, 'Jim Bob')
+      ).rejects.toThrow(NoThoughtsFoundByTopicNameError)
     })
   })
 
@@ -139,20 +157,30 @@ describe('fetchThoughts', () => {
 
     test('it returns JSON response', async () => {
       loadJsonPath.mockReturnValue([])
-      const response = await fetchThoughtsByTopicSlug(loadJsonPath, topicSlugExists, 'rails')
+      const response = await fetchThoughtsByTopicSlug(
+        loadJsonPath,
+        topicSlugExists,
+        'rails'
+      )
       expect(response).toEqual([])
     })
 
     test('it returns empty array when json response is null', async () => {
       loadJsonPath.mockReturnValue(null)
-      const response = await fetchThoughtsByTopicSlug(loadJsonPath, topicSlugExists, 'rails')
+      const response = await fetchThoughtsByTopicSlug(
+        loadJsonPath,
+        topicSlugExists,
+        'rails'
+      )
       expect(response).toEqual([])
     })
 
     test('it raises exception if topic doesnt exist', async () => {
       loadJsonPath.mockReturnValue([])
       topicSlugExists = () => false
-      expect(fetchThoughtsByTopicSlug(loadJsonPath, topicSlugExists, 'jimbob')).rejects.toThrow(NoThoughtsFoundByTopicSlugError)
+      expect(
+        fetchThoughtsByTopicSlug(loadJsonPath, topicSlugExists, 'jimbob')
+      ).rejects.toThrow(NoThoughtsFoundByTopicSlugError)
     })
   })
 })

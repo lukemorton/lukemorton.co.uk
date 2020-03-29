@@ -26,7 +26,7 @@ You can replace `lukemorton` with your own GitHub username.
 
 Now we need some code, below is my quick Go hello world. It's a very simple hello world web app that runs on port 3000. There's some logging in the to let you know when it starts and if something goes wrong.
 
-``` go
+```go
 package main
 
 import (

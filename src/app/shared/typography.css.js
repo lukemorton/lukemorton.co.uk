@@ -3,12 +3,12 @@ import {
   fromSmall,
   fromMedium,
   fromLarge,
-  maxWidth
+  maxWidth,
 } from '../settings/breakpoints'
 
 export default css.global`
   body {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
     line-height: 1.8em;
   }
@@ -30,7 +30,7 @@ export default css.global`
   h3,
   .h3,
   h4 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: bold;
     line-height: 1.25;
     text-rendering: optimizelegibility;

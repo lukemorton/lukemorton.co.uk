@@ -1,4 +1,8 @@
-import { fetchAllTopics, fetchTopicBySlug, NoTopicFoundBySlugError } from './factory'
+import {
+  fetchAllTopics,
+  fetchTopicBySlug,
+  NoTopicFoundBySlugError,
+} from './factory'
 
 describe('fetchAllTopics()', () => {
   test('returns all topics', () => {
@@ -14,6 +18,8 @@ describe('fetchTopicBySlug()', () => {
   })
 
   test('throws when topic does not exist', () => {
-    expect(() => fetchTopicBySlug('doesnt-exist')).toThrow(NoTopicFoundBySlugError)
+    expect(() => fetchTopicBySlug('doesnt-exist')).toThrow(
+      NoTopicFoundBySlugError
+    )
   })
 })

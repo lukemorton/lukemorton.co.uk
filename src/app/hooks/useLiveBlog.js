@@ -4,9 +4,11 @@ import { fetchOneThoughtBySlug } from '../factory'
 
 const INTERVAL = process.env.NODE_ENV === 'development' ? 1000 : null
 
-function buildOrigin () {
+function buildOrigin() {
   const host = window.location.hostname
-  return host.indexOf('localhost') > -1 ? 'http://lvh.me:3000' : `https://${host}`
+  return host.indexOf('localhost') > -1
+    ? 'http://lvh.me:3000'
+    : `https://${host}`
 }
 
 export default function (propThought, origin) {
@@ -15,7 +17,7 @@ export default function (propThought, origin) {
   if (propThought.slug !== thought.slug) setThought(propThought)
 
   useInterval(() => {
-    (async () => {
+    ;(async () => {
       setThought(await fetchOneThoughtBySlug(buildOrigin(), propThought.slug))
     })()
   }, INTERVAL)

@@ -1,7 +1,7 @@
 ---
 publishedAt: 2020-03-22
 tags:
- - COVID19
+  - COVID19
 ---
 
 # <span class="larger">Moving slow</span>

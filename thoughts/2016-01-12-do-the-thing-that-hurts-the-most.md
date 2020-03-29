@@ -55,9 +55,9 @@ continues the harder change becomes.
 
 Change gets harder because of two factors:
 
-  1. As the process is slow and cumbersome so too is change to the application
-  2. As the team gets battered by process the less energy they have fighting it
-     to make changes
+1. As the process is slow and cumbersome so too is change to the application
+2. As the team gets battered by process the less energy they have fighting it
+   to make changes
 
 So the more the team fears the deploys, the more process they put in place, the
 slower things get and the worse things become. Fear of pain in this case has

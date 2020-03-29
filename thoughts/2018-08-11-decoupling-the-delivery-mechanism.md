@@ -1,8 +1,8 @@
 ---
 publishedAt: 2018-08-11
 tags:
- - Clean Architecture
- - Ruby on Rails
+  - Clean Architecture
+  - Ruby on Rails
 ---
 
 # Decoupling the delivery mechanism

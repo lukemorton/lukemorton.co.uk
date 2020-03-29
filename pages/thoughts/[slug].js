@@ -8,7 +8,7 @@ import useDelayedRelatedContent from '../../src/app/hooks/useDelayedRelatedConte
 import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
 import dependencyContainer from '../../src/app/dependencyContainer'
 
-export default function ThoughtPage (props) {
+export default function ThoughtPage(props) {
   const [thought] = useLiveBlog(props.thought)
   const [relatedContent] = useDelayedRelatedContent(thought)
 
@@ -22,7 +22,15 @@ export default function ThoughtPage (props) {
         <hr />
 
         <p>
-          Feel free to read some <Link href={props.archiveUrl}><a>more thoughts</a></Link> or go back to <Link href={props.indexUrl}><a>the introduction</a></Link>.
+          Feel free to read some{' '}
+          <Link href={props.archiveUrl}>
+            <a>more thoughts</a>
+          </Link>{' '}
+          or go back to{' '}
+          <Link href={props.indexUrl}>
+            <a>the introduction</a>
+          </Link>
+          .
         </p>
       </main>
     </Page>
@@ -40,15 +48,13 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-export const getStaticProps = withCommonStaticProps(
-  async ({ params }) => {
-    const { fetchOneThoughtBySlug } = await dependencyContainer('build')
+export const getStaticProps = withCommonStaticProps(async ({ params }) => {
+  const { fetchOneThoughtBySlug } = await dependencyContainer('build')
 
-    return {
-      props: {
-        slug: params.slug,
-        thought: await fetchOneThoughtBySlug(null, params.slug)
-      }
-    }
+  return {
+    props: {
+      slug: params.slug,
+      thought: await fetchOneThoughtBySlug(null, params.slug),
+    },
   }
-)
+})

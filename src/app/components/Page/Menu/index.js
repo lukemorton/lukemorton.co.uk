@@ -10,7 +10,7 @@ export default () => {
     if (navShowing === null) setNavShowing(isLargerThanMobile())
   })
 
-  function handleToggle () {
+  function handleToggle() {
     setNavShowing(!navShowing)
   }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Router from 'next/router'
 import ga from 'react-ga'
 
-function logPageView (url) {
+function logPageView(url) {
   ga.set({ page: url })
   ga.pageview(url)
 }

@@ -108,18 +108,18 @@ I'm going to quickly summarise the points I've made so you can
 argue in favour of the statement "more methods, more
 problems".
 
- - Methods have a single responsibility, having multiple
-   methods per class means the class does not have a single
-   responsibility
- - Methods may share logic with related methods but they will
-   also have independent logic – coupling related methods is
-   a messy way to share logic between components –
-   try injecting logic instead
- - Methods should be atomic operations, if they aren't then
-   you'll be introducing hidden coupling (think method call
-   order) and subtle bugs into your application
- - The more methods you write, the more code your application
-   will have, the more the code, the more the bugs
+- Methods have a single responsibility, having multiple
+  methods per class means the class does not have a single
+  responsibility
+- Methods may share logic with related methods but they will
+  also have independent logic – coupling related methods is
+  a messy way to share logic between components –
+  try injecting logic instead
+- Methods should be atomic operations, if they aren't then
+  you'll be introducing hidden coupling (think method call
+  order) and subtle bugs into your application
+- The more methods you write, the more code your application
+  will have, the more the code, the more the bugs
 
 The OOP lot like to hide complexity in pretty looking
 chainable fluid interfaces. That's an ironically complex
