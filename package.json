@@ -9,16 +9,13 @@
     "lodash.partial": "^4.2.1",
     "next": "^9.3.2",
     "nock": "^11.7.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-ga": "^2.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
-    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/preset-env": "^7.8.4",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "enzyme": "^3.11.0",
