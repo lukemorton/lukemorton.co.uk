@@ -8,7 +8,10 @@ import dependencyContainer from '../src/app/dependencyContainer'
 
 export default function Index({ archiveUrl, thoughts }) {
   return (
-    <Page title="Exploring teams & technology">
+    <Page
+      title="Exploring teams & technology"
+      description="I've spent the last 15 years building software and technology teams and this website represents some of what I have learned so far."
+    >
       <main>
         <Prose>
           <h1 className="larger">Exploring teams & technology</h1>
