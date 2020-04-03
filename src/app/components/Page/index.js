@@ -11,6 +11,9 @@ import typography from '../../shared/typography.css'
 import utils from '../../shared/utils.css'
 import prefixUrl from '../../helpers/prefixUrl'
 
+const DEFAULT_IMAGE =
+  'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=200'
+
 export default ({ article, title, description, url, image, children }) => (
   <div className="page">
     <SkipToMainContentLink />
@@ -25,16 +28,24 @@ export default ({ article, title, description, url, image, children }) => (
       <meta property="og:type" content={article ? 'article' : 'website'} />
       <meta property="og:title" content={title} />
       {description && <meta property="og:description" content={description} />}
-      {url && <meta property="og:url" content={prefixUrl(url)} />}
       {image && <meta property="og:image" content={prefixUrl(image)} />}
+      {url && <meta property="og:url" content={prefixUrl(url)} />}
 
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:card"
+        content={image ? 'summary_large_image' : 'summary'}
+      />
       <meta property="twitter:title" content={title} />
+      <meta property="twitter:site" content="@lukemorton" />
+      <meta property="twitter:creator" content="@lukemorton" />
+      <meta
+        property="twitter:image"
+        content={prefixUrl(image || DEFAULT_IMAGE)}
+      />
       {description && (
         <meta property="twitter:description" content={description} />
       )}
       {url && <meta property="twitter:url" content={prefixUrl(url)} />}
-      {image && <meta property="twitter:image" content={prefixUrl(image)} />}
 
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
