@@ -1,5 +1,6 @@
 ---
 publishedAt: 2020-03-22
+featuredImage: /thoughts/media/moving-slow.jpg
 tags:
   - COVID19
 ---

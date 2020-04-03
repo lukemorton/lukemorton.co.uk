@@ -13,7 +13,13 @@ export default function ThoughtPage(props) {
   const [relatedContent] = useDelayedRelatedContent(thought)
 
   return (
-    <Page title={thought.title.plain}>
+    <Page
+      article
+      title={thought.title.plain}
+      description={thought.excerpt.plain}
+      image={thought.featuredImage}
+      url={`/thoughts/${thought.slug}`}
+    >
       <main>
         <Thought {...props} thought={thought} />
 
