@@ -1,5 +1,6 @@
 ---
 publishedAt: 2020-04-02
+featuredImage: /thoughts/media/social-digital-distancing.jpg
 tags:
   - COVID19
 ---
