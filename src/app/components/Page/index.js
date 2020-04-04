@@ -25,6 +25,8 @@ export default ({ article, title, description, url, image, children }) => (
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 
+      <link rel="manifest" href="/manifest.json" />
+
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link
         rel="icon"
