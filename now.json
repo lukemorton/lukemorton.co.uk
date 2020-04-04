@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "alias": [
-    "lukemorton.co.uk",
-    "www.lukemorton.co.uk"
-  ],
+  "alias": ["lukemorton.co.uk", "www.lukemorton.co.uk"],
   "github": {
     "autoAlias": false
   },
   "routes": [
+    {
+      "src": "/thoughts/(?<slug>[^/]*)",
+      "dest": "api/redirectThoughts?slug=$slug"
+    },
     { "handle": "filesystem" },
     { "src": "/(.*)", "status": 404, "dest": "/404" }
   ]
