@@ -41,11 +41,9 @@ export default function Index({ archiveUrl, thoughts }) {
           thoughts={thoughts}
           after={
             <p>
-              Please do read more from{' '}
               <Link href={archiveUrl}>
-                <a>the archives</a>
+                <a>Read more articles by Luke</a>
               </Link>
-              .
             </p>
           }
         />
