@@ -8,7 +8,7 @@ export default (req, res) => {
     location = `/articles/${slug}`
   }
 
-  res.status(302)
+  res.status(301)
   res.setHeader('Location', location)
   res.end()
 }
