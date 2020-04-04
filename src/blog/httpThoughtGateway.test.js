@@ -49,10 +49,10 @@ describe('httpThoughtGateway', () => {
       })
 
       test('it uses window.location for origin if null', async () => {
-        window.location = { hostname: 'lukemorton.co.uk' }
+        window.location = { hostname: 'lukemorton.tech' }
         await loadJsonPath(null, '/dist/content/articles/index.json')
         expect(fetch).toHaveBeenCalledWith(
-          'https://lukemorton.co.uk/dist/content/articles/index.json'
+          'https://lukemorton.tech/dist/content/articles/index.json'
         )
       })
 

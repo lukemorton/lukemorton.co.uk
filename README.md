@@ -1,4 +1,4 @@
-# www.lukemorton.co.uk
+# lukemorton.tech
 
 ## Getting started
 
