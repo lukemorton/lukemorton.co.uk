@@ -1,7 +1,7 @@
 const COMMON_PROPS = {
   indexUrl: '/',
   aboutUrl: '/about',
-  archiveUrl: '/thoughts/archive',
+  archiveUrl: '/articles',
   twitterUrl: 'https://twitter.com/lukemorton',
   githubUrl: 'https://github.com/lukemorton',
   avatarSrc:

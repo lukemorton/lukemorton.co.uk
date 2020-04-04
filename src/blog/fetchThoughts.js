@@ -23,7 +23,7 @@ export class NoThoughtsFoundByTopicSlugError extends Error {
 }
 
 async function fetchThoughtMap(loadJsonPath) {
-  return loadJsonPath('/dist/thoughts/index.json')
+  return loadJsonPath('/dist/content/articles/index.json')
 }
 
 export async function fetchOneThoughtBySlug(loadJsonPath, slug) {
@@ -33,11 +33,11 @@ export async function fetchOneThoughtBySlug(loadJsonPath, slug) {
 }
 
 export async function fetchRecentThoughts(loadJsonPath) {
-  return (await loadJsonPath('/dist/thoughts/recent.json')) || []
+  return (await loadJsonPath('/dist/content/articles/recent.json')) || []
 }
 
 export async function fetchAllThoughts(loadJsonPath) {
-  return (await loadJsonPath('/dist/thoughts/archive.json')) || []
+  return (await loadJsonPath('/dist/content/articles/archive.json')) || []
 }
 
 export async function fetchThoughtsByTopicName(
@@ -47,7 +47,10 @@ export async function fetchThoughtsByTopicName(
 ) {
   const topic = findTopicByName(name)
   if (!topic) throw new NoThoughtsFoundByTopicNameError(name)
-  return (await loadJsonPath(`/dist/thoughts/topics/${topic.slug}.json`)) || []
+  return (
+    (await loadJsonPath(`/dist/content/articles/topics/${topic.slug}.json`)) ||
+    []
+  )
 }
 
 export async function fetchThoughtsByTopicSlug(
@@ -56,5 +59,7 @@ export async function fetchThoughtsByTopicSlug(
   slug
 ) {
   if (!topicSlugExists(slug)) throw new NoThoughtsFoundByTopicSlugError(slug)
-  return (await loadJsonPath(`/dist/thoughts/topics/${slug}.json`)) || []
+  return (
+    (await loadJsonPath(`/dist/content/articles/topics/${slug}.json`)) || []
+  )
 }

@@ -28,7 +28,7 @@ describe('fetchThoughts', () => {
 
       await fetchOneThoughtBySlug(loadJsonPath, expectedThought.slug)
       expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/index.json')
+        expect.stringContaining('/dist/content/articles/index.json')
       )
     })
 
@@ -56,7 +56,7 @@ describe('fetchThoughts', () => {
       loadJsonPath.mockReturnValue([])
       await fetchRecentThoughts(loadJsonPath)
       expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/recent.json')
+        expect.stringContaining('/dist/content/articles/recent.json')
       )
     })
 
@@ -78,7 +78,7 @@ describe('fetchThoughts', () => {
       loadJsonPath.mockReturnValue([])
       await fetchAllThoughts(loadJsonPath)
       expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/archive.json')
+        expect.stringContaining('/dist/content/articles/archive.json')
       )
     })
 
@@ -111,7 +111,7 @@ describe('fetchThoughts', () => {
         'Ruby on Rails'
       )
       expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/topics/rails.json')
+        expect.stringContaining('/dist/content/articles/topics/rails.json')
       )
     })
 
@@ -151,7 +151,7 @@ describe('fetchThoughts', () => {
       loadJsonPath.mockReturnValue([])
       await fetchThoughtsByTopicSlug(loadJsonPath, topicSlugExists, 'rails')
       expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/topics/rails.json')
+        expect.stringContaining('/dist/content/articles/topics/rails.json')
       )
     })
 

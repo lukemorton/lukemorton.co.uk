@@ -1,6 +1,6 @@
 ---
 publishedAt: 2020-04-02
-featuredImage: /thoughts/media/social-digital-distancing.jpg
+featuredImage: /media/social-digital-distancing.jpg
 tags:
   - COVID19
 ---
@@ -9,7 +9,7 @@ tags:
 
 On the irony that social distancing has brought us all together more frequently. I think I'm going to need to create some digital social distancing for myself too.
 
-<p><img src="/thoughts/media/social-digital-distancing.jpg" alt="Sign in Manchester city centre displaying 'Stay Home'" width="3000" height="2000" /></p>
+<p><img src="/media/social-digital-distancing.jpg" alt="Sign in Manchester city centre displaying 'Stay Home'" width="3000" height="2000" /></p>
 
 Is this how fully remote companies always feel?
 

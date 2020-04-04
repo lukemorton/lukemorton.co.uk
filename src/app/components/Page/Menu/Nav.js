@@ -55,7 +55,7 @@ export default () => (
       </li>
 
       <li>
-        <Link href="/thoughts/archive">
+        <Link href="/articles">
           <a>All articles</a>
         </Link>
       </li>

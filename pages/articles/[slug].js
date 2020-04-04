@@ -18,7 +18,7 @@ export default function ThoughtPage(props) {
       title={thought.title.plain}
       description={thought.excerpt.plain}
       image={thought.featuredImage}
-      url={`/thoughts/${thought.slug}`}
+      url={`/articles/${thought.slug}`}
     >
       <main>
         <Thought {...props} thought={thought} />

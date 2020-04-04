@@ -40,11 +40,11 @@ if (state === 'success') {
   testUrl(targetUrl)
   testUrl(targetUrl, '/about')
   testUrl(targetUrl, '/open-source')
-  testUrl(targetUrl, '/thoughts/archive')
+  testUrl(targetUrl, '/articles')
   ;(async () => {
     const thoughts = await fetchAllThoughts(targetUrl)
     thoughts.forEach((t) => {
-      testUrl(targetUrl, `/thoughts/${t.slug}`)
+      testUrl(targetUrl, `/articles/${t.slug}`)
     })
   })()
   ;(async () => {
