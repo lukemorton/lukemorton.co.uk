@@ -177,9 +177,9 @@ describe('listThoughts', () => {
 
   describe('passing origin to fetch methods', () => {
     test('it uses requst object to build URL', async () => {
-      await fetchThoughtsByTopicSlug('https://lukemorton.co.uk', 'rails')
+      await fetchThoughtsByTopicSlug('https://lukemorton.tech', 'rails')
       expect(fetch).toHaveBeenCalledWith(
-        'https://lukemorton.co.uk/dist/content/articles/topics/rails.json'
+        'https://lukemorton.tech/dist/content/articles/topics/rails.json'
       )
     })
   })
