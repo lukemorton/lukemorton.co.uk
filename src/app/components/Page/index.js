@@ -24,6 +24,7 @@ export default ({ article, title, description, url, image, children }) => (
       <title>{title} – Luke Morton</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
+      <meta name="theme-color" content="#ffffff" />
 
       <link rel="manifest" href="/manifest.json" />
 
