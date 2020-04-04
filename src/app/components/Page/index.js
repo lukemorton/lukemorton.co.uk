@@ -25,6 +25,25 @@ export default ({ article, title, description, url, image, children }) => (
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/icons/icon-16x16.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/icons/icon-32x32.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+
       <meta property="og:type" content={article ? 'article' : 'website'} />
       <meta property="og:title" content={title} />
       {description && <meta property="og:description" content={description} />}
