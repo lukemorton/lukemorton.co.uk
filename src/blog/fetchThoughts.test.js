@@ -19,11 +19,13 @@ describe('fetchThoughts', () => {
   describe('.fetchOneThoughtBySlug()', () => {
     test('it uses loadJsonPath', async () => {
       const expectedThought = {
-        slug: '2017-01-17-lightweight-docker-images-for-go',
+        slug: 'lightweight-docker-images-for-go',
       }
 
       loadJsonPath.mockReturnValue({
-        [expectedThought.slug]: expectedThought,
+        '2017-01-17-lightweight-docker-images-for-go': {
+          slug: '2017-01-17-lightweight-docker-images-for-go',
+        },
       })
 
       await fetchOneThoughtBySlug(loadJsonPath, expectedThought.slug)
@@ -36,11 +38,11 @@ describe('fetchThoughts', () => {
       const expectedThought = { slug: 'a-slug' }
 
       loadJsonPath.mockReturnValue({
-        [expectedThought.slug]: expectedThought,
+        '2017-01-17-a-slug': { slug: '2017-01-17-a-slug' },
       })
 
       const t = await fetchOneThoughtBySlug(loadJsonPath, expectedThought.slug)
-      expect(t).toBe(expectedThought)
+      expect(t).toEqual(expectedThought)
     })
 
     test('it raises exception if thought doesnt exist', async () => {

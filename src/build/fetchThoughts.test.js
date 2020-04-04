@@ -30,11 +30,13 @@ describe('listThoughts', () => {
 
     test('it uses fs.readFileSync', async () => {
       const expectedThought = {
-        slug: '2017-01-17-lightweight-docker-images-for-go',
+        slug: 'lightweight-docker-images-for-go',
       }
 
       jsonResponse = {
-        [expectedThought.slug]: expectedThought,
+        '2017-01-17-lightweight-docker-images-for-go': {
+          slug: '2017-01-17-lightweight-docker-images-for-go',
+        },
       }
 
       await fetchOneThoughtBySlug(null, expectedThought.slug)
@@ -44,10 +46,14 @@ describe('listThoughts', () => {
     })
 
     test('it returns thought with matching slug', async () => {
-      const expectedThought = { slug: 'a-slug' }
+      const expectedThought = {
+        slug: 'lightweight-docker-images-for-go',
+      }
 
       jsonResponse = {
-        [expectedThought.slug]: expectedThought,
+        '2017-01-17-lightweight-docker-images-for-go': {
+          slug: '2017-01-17-lightweight-docker-images-for-go',
+        },
       }
 
       const t = await fetchOneThoughtBySlug(null, expectedThought.slug)

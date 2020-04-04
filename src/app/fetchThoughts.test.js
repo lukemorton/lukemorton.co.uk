@@ -34,11 +34,13 @@ describe('listThoughts', () => {
 
     test('it uses fetch', async () => {
       const expectedThought = {
-        slug: '2017-01-17-lightweight-docker-images-for-go',
+        slug: 'lightweight-docker-images-for-go',
       }
 
       jsonResponse = {
-        [expectedThought.slug]: expectedThought,
+        '2017-01-17-lightweight-docker-images-for-go': {
+          slug: '2017-01-17-lightweight-docker-images-for-go',
+        },
       }
 
       await fetchOneThoughtBySlug(null, expectedThought.slug)
@@ -51,11 +53,11 @@ describe('listThoughts', () => {
       const expectedThought = { slug: 'a-slug' }
 
       jsonResponse = {
-        [expectedThought.slug]: expectedThought,
+        '2012-01-01-a-slug': { slug: '2012-01-01-a-slug' },
       }
 
       const t = await fetchOneThoughtBySlug(null, expectedThought.slug)
-      expect(t).toBe(expectedThought)
+      expect(t).toEqual(expectedThought)
     })
 
     test('it raises exception if thought doesnt exist', async () => {
@@ -79,7 +81,7 @@ describe('listThoughts', () => {
 
     test('it returns JSON response', async () => {
       const response = await fetchRecentThoughts(null)
-      expect(response).toBe(jsonResponse)
+      expect(response).toEqual(jsonResponse)
     })
 
     test('it returns empty array when json response is null', async () => {
@@ -103,7 +105,7 @@ describe('listThoughts', () => {
 
     test('it returns JSON response', async () => {
       const response = await fetchAllThoughts(null)
-      expect(response).toBe(jsonResponse)
+      expect(response).toEqual(jsonResponse)
     })
 
     test('it returns empty array when json response is null', async () => {
@@ -127,7 +129,7 @@ describe('listThoughts', () => {
 
     test('it returns JSON response', async () => {
       const response = await fetchThoughtsByTopicName(null, 'Ruby on Rails')
-      expect(response).toBe(jsonResponse)
+      expect(response).toEqual(jsonResponse)
     })
 
     test('it returns empty array when json response is null', async () => {
@@ -157,7 +159,7 @@ describe('listThoughts', () => {
 
     test('it returns JSON response', async () => {
       const response = await fetchThoughtsByTopicSlug(null, 'rails')
-      expect(response).toBe(jsonResponse)
+      expect(response).toEqual(jsonResponse)
     })
 
     test('it returns empty array when json response is null', async () => {

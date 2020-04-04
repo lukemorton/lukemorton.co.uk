@@ -26,18 +26,41 @@ async function fetchThoughtMap(loadJsonPath) {
   return loadJsonPath('/dist/content/articles/index.json')
 }
 
+const datelessSlug = (slug) => slug.slice('0000-00-00-'.length)
+
+const withDatelessSlug = (article) => ({
+  ...article,
+  slug: datelessSlug(article.slug),
+})
+
+const mapWithDatelessSlugReducer = (map) => (newMap, slug) => {
+  return {
+    ...newMap,
+    [datelessSlug(slug)]: withDatelessSlug(map[slug]),
+  }
+}
+
+const arrayWithDatelessSlug = (array) => array.map(withDatelessSlug)
+
+const mapWithDatelessSlug = (map) =>
+  Object.keys(map).reduce(mapWithDatelessSlugReducer(map), {})
+
 export async function fetchOneThoughtBySlug(loadJsonPath, slug) {
-  const thoughts = await fetchThoughtMap(loadJsonPath)
+  const thoughts = mapWithDatelessSlug(await fetchThoughtMap(loadJsonPath))
   if (!thoughts[slug]) throw new NoThoughtFoundBySlugError(slug)
   return thoughts[slug]
 }
 
 export async function fetchRecentThoughts(loadJsonPath) {
-  return (await loadJsonPath('/dist/content/articles/recent.json')) || []
+  return arrayWithDatelessSlug(
+    (await loadJsonPath('/dist/content/articles/recent.json')) || []
+  )
 }
 
 export async function fetchAllThoughts(loadJsonPath) {
-  return (await loadJsonPath('/dist/content/articles/archive.json')) || []
+  return arrayWithDatelessSlug(
+    (await loadJsonPath('/dist/content/articles/archive.json')) || []
+  )
 }
 
 export async function fetchThoughtsByTopicName(
@@ -47,9 +70,9 @@ export async function fetchThoughtsByTopicName(
 ) {
   const topic = findTopicByName(name)
   if (!topic) throw new NoThoughtsFoundByTopicNameError(name)
-  return (
+  return arrayWithDatelessSlug(
     (await loadJsonPath(`/dist/content/articles/topics/${topic.slug}.json`)) ||
-    []
+      []
   )
 }
 
@@ -59,7 +82,7 @@ export async function fetchThoughtsByTopicSlug(
   slug
 ) {
   if (!topicSlugExists(slug)) throw new NoThoughtsFoundByTopicSlugError(slug)
-  return (
+  return arrayWithDatelessSlug(
     (await loadJsonPath(`/dist/content/articles/topics/${slug}.json`)) || []
   )
 }
