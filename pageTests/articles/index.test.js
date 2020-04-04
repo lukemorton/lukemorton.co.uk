@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ThoughtArchive from '../../pages/thoughts/archive'
+import ThoughtArchive from '../../pages/articles'
 import Page from '../../src/app/components/Page'
 import Thoughts from '../../src/app/components/Thoughts'
 

@@ -37,7 +37,7 @@ const Thought = ({
     </style>
 
     {thoughtTitleWrapper(
-      <Link href="/thoughts/[slug]" as={`/thoughts/${slug}`}>
+      <Link href="/articles/[slug]" as={`/articles/${slug}`}>
         <a>{title.plain}</a>
       </Link>
     )}

@@ -9,7 +9,7 @@ function Topic(name, slug) {
     },
 
     get path() {
-      return `/dist/thoughts/topics/${slug}.json`
+      return `/dist/content/articles/topics/${slug}.json`
     },
   }
 }

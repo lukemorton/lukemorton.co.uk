@@ -43,7 +43,7 @@ describe('listThoughts', () => {
 
       await fetchOneThoughtBySlug(null, expectedThought.slug)
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/index.json')
+        expect.stringContaining('/dist/content/articles/index.json')
       )
     })
 
@@ -73,7 +73,7 @@ describe('listThoughts', () => {
     test('it uses fetch', async () => {
       await fetchRecentThoughts(null)
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/recent.json')
+        expect.stringContaining('/dist/content/articles/recent.json')
       )
     })
 
@@ -97,7 +97,7 @@ describe('listThoughts', () => {
     test('it uses fetch', async () => {
       await fetchAllThoughts(null)
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/archive.json')
+        expect.stringContaining('/dist/content/articles/archive.json')
       )
     })
 
@@ -121,7 +121,7 @@ describe('listThoughts', () => {
     test('it uses fetch', async () => {
       await fetchThoughtsByTopicName(null, 'Ruby on Rails')
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/topics/rails.json')
+        expect.stringContaining('/dist/content/articles/topics/rails.json')
       )
     })
 
@@ -151,7 +151,7 @@ describe('listThoughts', () => {
     test('it uses fetch', async () => {
       await fetchThoughtsByTopicSlug(null, 'rails')
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/thoughts/topics/rails.json')
+        expect.stringContaining('/dist/content/articles/topics/rails.json')
       )
     })
 
@@ -177,7 +177,7 @@ describe('listThoughts', () => {
     test('it uses requst object to build URL', async () => {
       await fetchThoughtsByTopicSlug('https://lukemorton.co.uk', 'rails')
       expect(fetch).toHaveBeenCalledWith(
-        'https://lukemorton.co.uk/dist/thoughts/topics/rails.json'
+        'https://lukemorton.co.uk/dist/content/articles/topics/rails.json'
       )
     })
   })
