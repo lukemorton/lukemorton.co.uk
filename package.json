@@ -8,7 +8,6 @@
     "cross-fetch": "^3.0.4",
     "lodash.partial": "^4.2.1",
     "next": "^9.3.2",
-    "nock": "^12.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0"
@@ -25,6 +24,7 @@
     "lint-staged": "^10.0.9",
     "markedly": "^0.6.0",
     "next-offline": "^5.0.0",
+    "nock": "^12.0.3",
     "nodemon": "^2.0.2",
     "now": "^16.7.0",
     "prettier": "^2.0.2"
