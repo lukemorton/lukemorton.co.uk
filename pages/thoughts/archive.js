@@ -22,15 +22,7 @@ export default function ThoughtArchive({ indexUrl, thoughts }) {
         <Thoughts
           thoughtTitleWrapper={(title) => <h2 className="h3">{title}</h2>}
           thoughts={thoughts}
-          after={
-            <p>
-              Feel free to go home now{' '}
-              <Link href={indexUrl}>
-                <a>here</a>
-              </Link>
-              .
-            </p>
-          }
+          after={<p>Thanks for checking out my articles!</p>}
         />
       </main>
     </Page>

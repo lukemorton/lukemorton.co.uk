@@ -8,6 +8,10 @@ export default css.global`
     border-top: 3px solid #eee;
   }
 
+  hr + p {
+    margin-top: 1.5rem;
+  }
+
   /* Breakpoint utilities for titles in blog posts */
 
   .break--mobile,

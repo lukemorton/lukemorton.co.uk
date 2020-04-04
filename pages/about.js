@@ -157,16 +157,6 @@ export default function About({ indexUrl }) {
             </li>
           </ul>
         </Prose>
-
-        <hr />
-
-        <p>
-          You may head{' '}
-          <Link href={indexUrl}>
-            <a>back home</a>
-          </Link>{' '}
-          now.
-        </p>
       </main>
     </Page>
   )

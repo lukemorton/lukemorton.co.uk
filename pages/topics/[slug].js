@@ -6,7 +6,7 @@ import Thoughts from '../../src/app/components/Thoughts'
 import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
 import dependencyContainer from '../../src/app/dependencyContainer'
 
-export default function Topic({ indexUrl, topic, thoughts }) {
+export default function Topic({ archiveUrl, topic, thoughts }) {
   return (
     <Page title={`Articles on ${topic.name}`}>
       <main>
@@ -19,11 +19,9 @@ export default function Topic({ indexUrl, topic, thoughts }) {
           thoughts={thoughts}
           after={
             <p>
-              Feel free to go home now{' '}
-              <Link href={indexUrl}>
-                <a>here</a>
+              <Link href={archiveUrl}>
+                <a>Read more articles by Luke</a>
               </Link>
-              .
             </p>
           }
         />
