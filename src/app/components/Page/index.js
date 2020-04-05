@@ -14,7 +14,15 @@ import prefixUrl from '../../helpers/prefixUrl'
 const DEFAULT_IMAGE =
   'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=200'
 
-export default ({ article, title, description, url, image, children }) => (
+export default ({
+  article,
+  title,
+  description,
+  url,
+  canonical,
+  image,
+  children,
+}) => (
   <div className="page">
     <SkipToMainContentLink />
 
@@ -25,6 +33,8 @@ export default ({ article, title, description, url, image, children }) => (
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="theme-color" content="#ffffff" />
+
+      {canonical && <link rel="canonical" href={canonical} />}
 
       <link rel="manifest" href="/manifest.json" />
 
