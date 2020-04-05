@@ -1,3 +1,7 @@
+---
+publishedAt: 2013-09-28
+---
+
 # Sans framework generation
 
 That's right. It's time to leave your **frameworks** behind

@@ -1,3 +1,7 @@
+---
+publishedAt: 2013-09-22
+---
+
 # Data and Behaviour
 
 This is my take on **data** and **behaviour**. The two

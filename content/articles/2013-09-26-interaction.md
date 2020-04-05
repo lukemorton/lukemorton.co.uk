@@ -1,3 +1,7 @@
+---
+publishedAt: 2013-09-26
+---
+
 # Interaction
 
 Some thoughts on application interaction. This is your
