@@ -1,3 +1,7 @@
+---
+publishedAt: 2016-01-12
+---
+
 # <span class="break--always">Do the thing</span> that hurts the most
 
 A story of fight over flight. Or how doing the things you're uncomfortable with

@@ -1,3 +1,7 @@
+---
+publishedAt: 2013-09-21
+---
+
 # Taking SRP further
 
 This is my take on the **single responsibility** principle and

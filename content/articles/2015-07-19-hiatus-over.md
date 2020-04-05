@@ -1,3 +1,7 @@
+---
+publishedAt: 2015-07-19
+---
+
 # Hiatus Over
 
 Where I explain what I've been up to.

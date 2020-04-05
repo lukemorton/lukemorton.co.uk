@@ -1,3 +1,7 @@
+---
+publishedAt: 2017-01-17
+---
+
 # Lightweight docker images for Go
 
 On building lightweight Docker images for Go applications.

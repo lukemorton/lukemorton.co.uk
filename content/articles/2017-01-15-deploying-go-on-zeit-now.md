@@ -1,3 +1,7 @@
+---
+publishedAt: 2017-01-15
+---
+
 # Deploying a Go app on Now
 
 A walkthrough on how to use Docker to deploy a Go app on Zeit's Now realtime global deployment platform.

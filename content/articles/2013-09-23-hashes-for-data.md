@@ -1,3 +1,7 @@
+---
+publishedAt: 2013-09-23
+---
+
 # Hashes for Data
 
 This is my take on using **hashes** to transfer data between
