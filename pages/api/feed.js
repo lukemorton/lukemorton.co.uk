@@ -13,7 +13,7 @@ const buildFeed = async () => {
   }
 
   const feed = new Feed({
-    title: 'Exploring teams & technology - Luke Morton',
+    title: 'Exploring teams & technology',
     description:
       "I've spent the last 15 years building software and technology teams and this website represents some of what I have learned so far.",
     id: prefixUrl('/'),
