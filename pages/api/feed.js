@@ -22,11 +22,6 @@ const buildFeed = async () => {
     image: prefixUrl('/icons/512x512.png'),
     favicon: prefixUrl('/favicon.ico'),
     copyright: 'Copyright Luke Morton',
-    feedLinks: {
-      rss: prefixUrl('/feed.rss'),
-      atom: prefixUrl('/feed.atom'),
-      json: prefixUrl('/feed.json'),
-    },
     author,
   })
 
@@ -51,14 +46,17 @@ export default async (req, res) => {
   switch (req.query.type) {
     case 'rss':
       res.setHeader('Content-Type', 'application/rss+xml')
+      feed.options.feed = prefixUrl('/feed.rss')
       res.end(feed.rss2())
       return
     case 'atom':
       res.setHeader('Content-Type', 'application/atom+xml')
+      feed.options.feed = prefixUrl('/feed.atom')
       res.end(feed.atom1())
       return
     case 'json':
       res.setHeader('Content-Type', 'application/feed+json')
+      feed.options.feed = prefixUrl('/feed.json')
       res.end(feed.json1())
       return
     default:
