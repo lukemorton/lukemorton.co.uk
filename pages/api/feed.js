@@ -1,5 +1,6 @@
 import { Feed } from 'feed'
 import dependencyContainer from '../../src/app/dependencyContainer'
+import prefixUrl from '../../src/app/helpers/prefixUrl'
 
 const buildFeed = async () => {
   const { fetchAllThoughts } = await dependencyContainer('build')
@@ -7,23 +8,23 @@ const buildFeed = async () => {
 
   const author = {
     name: 'Luke Morton',
-    link: 'https://lukemorton.tech',
+    link: prefixUrl('/'),
   }
 
   const feed = new Feed({
     title: 'Exploring teams & technology – Luke Morton',
     description:
       "I've spent the last 15 years building software and technology teams and this website represents some of what I have learned so far.",
-    id: 'https://lukemorton.tech',
-    link: 'https://lukemorton.tech',
+    id: prefixUrl('/'),
+    link: prefixUrl('/'),
     language: 'en', // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
-    image: 'https://lukemorton.tech/icons/512x512.png',
-    favicon: 'https://lukemorton.tech/favicon.ico',
+    image: prefixUrl('/icons/512x512.png'),
+    favicon: prefixUrl('/favicon.ico'),
     copyright: 'Copyright Luke Morton',
     feedLinks: {
-      rss: 'https://lukemorton.tech/feed.rss',
-      json: 'https://lukemorton.tech/feed.json',
-      atom: 'https://lukemorton.tech/feed.atom',
+      rss: prefixUrl('/feed.rss'),
+      json: prefixUrl('/feed.json'),
+      atom: prefixUrl('/feed.atom'),
     },
     author,
   })
@@ -34,12 +35,12 @@ const buildFeed = async () => {
 
     feed.addItem({
       title: title.plain,
-      id: `https://lukemorton.tech/articles/${slug}`,
-      link: `https://lukemorton.tech/articles/${slug}`,
+      id: prefixUrl(`/articles/${slug}`),
+      link: prefixUrl(`/articles/${slug}`),
       description: excerpt.html,
       author: [author],
       date: new Date(publishedAt.iso),
-      image: featuredImage,
+      image: featuredImage ? prefixUrl(featuredImage) : undefined,
     })
   })
 
