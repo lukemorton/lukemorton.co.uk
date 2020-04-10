@@ -34,7 +34,7 @@ export default ({
       <meta name="description" content={description} />
       <meta name="theme-color" content="#ffffff" />
 
-      {canonical && <link rel="canonical" href={canonical} />}
+      {canonical && <link rel="canonical" href={prefixUrl(canonical)} />}
 
       <link rel="manifest" href="/manifest.json" />
 
