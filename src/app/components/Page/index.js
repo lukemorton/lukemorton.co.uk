@@ -79,6 +79,25 @@ export default ({
       )}
       {url && <meta property="twitter:url" content={prefixUrl(url)} />}
 
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        title="RSS 2"
+        href={prefixUrl('/feed.rss')}
+      />
+      <link
+        rel="alternate"
+        type="application/atom+xml"
+        title="Atom 1"
+        href={prefixUrl('/feed.atom')}
+      />
+      <link
+        rel="alternate"
+        type="application/feed+json"
+        title="JSON Feed 1"
+        href={prefixUrl('/feed.json')}
+      />
+
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
       <meta
