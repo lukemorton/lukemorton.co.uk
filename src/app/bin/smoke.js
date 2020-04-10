@@ -41,6 +41,10 @@ if (state === 'success') {
   testUrl(targetUrl, '/about')
   testUrl(targetUrl, '/open-source')
   testUrl(targetUrl, '/articles')
+  testUrl(targetUrl, '/sitemap.xml')
+  testUrl(targetUrl, '/feed.rss')
+  testUrl(targetUrl, '/feed.atom')
+  testUrl(targetUrl, '/feed.json')
   ;(async () => {
     const thoughts = await fetchAllThoughts(targetUrl)
     thoughts.forEach((t) => {
