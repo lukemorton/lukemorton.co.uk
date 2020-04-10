@@ -24,16 +24,13 @@ const buildFeed = async () => {
     copyright: 'Copyright Luke Morton',
     feedLinks: {
       rss: prefixUrl('/feed.rss'),
-      json: prefixUrl('/feed.json'),
       atom: prefixUrl('/feed.atom'),
+      json: prefixUrl('/feed.json'),
     },
     author,
   })
 
   thoughts.forEach(({ title, publishedAt, featuredImage, excerpt, slug }) => {
-    console.log(title)
-    console.log(Date.parse(publishedAt.iso))
-
     feed.addItem({
       title: title.plain,
       id: prefixUrl(`/articles/${slug}`),
