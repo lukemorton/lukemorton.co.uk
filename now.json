@@ -8,6 +8,7 @@
       "src": "/thoughts/(?<slug>[^/]*)",
       "dest": "api/redirectThoughts?slug=$slug"
     },
+    { "src": "/sitemap.xml", "dest": "api/sitemap" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "status": 404, "dest": "/404" }
   ]
