@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import Topic from '../../pages/topics/[slug]'
 import Page from '../../src/app/components/Page'
 import Thoughts from '../../src/app/components/Thoughts'
-import { fetchAllTopics } from '../../src/app/factory'
+import { fetchAllTopics } from '../../src/app/factories/nodeFactory'
 
 test('content renders', () => {
   const page = shallow(<Topic topic={fetchAllTopics()[0]} thoughts={[]} />)

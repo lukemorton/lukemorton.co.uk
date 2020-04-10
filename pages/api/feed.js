@@ -1,9 +1,8 @@
 import { Feed } from 'feed'
-import dependencyContainer from '../../src/app/dependencyContainer'
+import { fetchAllThoughts } from '../../src/app/factories/nodeFactory'
 import prefixUrl from '../../src/app/helpers/prefixUrl'
 
 const buildFeed = async () => {
-  const { fetchAllThoughts } = await dependencyContainer('build')
   const thoughts = await fetchAllThoughts()
 
   const author = {

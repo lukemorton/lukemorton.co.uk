@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import useInterval from '@use-it/interval'
-import { fetchOneThoughtBySlug } from '../factory'
+import { fetchOneThoughtBySlug } from '../factories/browserFactory'
 
 const INTERVAL = process.env.NODE_ENV === 'development' ? 1000 : null
 

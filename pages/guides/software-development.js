@@ -1,20 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
-import Page from '../src/app/components/Page'
-import Prose from '../src/app/components/Prose'
-import Thoughts from '../src/app/components/Thoughts'
-import withCommonStaticProps from '../src/app/propMiddleware/withCommonStaticProps'
-import { fetchRecentThoughts } from '../src/app/factories/nodeFactory'
+import Page from '../../src/app/components/Page'
+import Prose from '../../src/app/components/Prose'
+import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
 
 export default function Index({ archiveUrl, thoughts }) {
   return (
     <Page
-      title="Exploring teams & technology"
+      title="A team guide to software development"
       description="I've spent the last 15 years building software and technology teams and this website represents some of what I have learned so far."
     >
       <main>
         <Prose>
-          <h1 className="larger">Exploring teams & technology</h1>
+          <h1 className="larger">Team guide to software development</h1>
 
           <p>
             Technology is consuming every aspect of society and yet in a rapidly
@@ -33,29 +31,8 @@ export default function Index({ archiveUrl, thoughts }) {
           </p>
         </Prose>
       </main>
-
-      <aside>
-        <Thoughts
-          title={<h2>Recent articles</h2>}
-          thoughtTitleWrapper={(title) => <h3>{title}</h3>}
-          thoughts={thoughts}
-          after={
-            <p>
-              <Link href={archiveUrl}>
-                <a>Read more articles by Luke</a>
-              </Link>
-            </p>
-          }
-        />
-      </aside>
     </Page>
   )
 }
 
-export const getStaticProps = withCommonStaticProps(async () => {
-  return {
-    props: {
-      thoughts: await fetchRecentThoughts(),
-    },
-  }
-})
+export const getStaticProps = withCommonStaticProps()

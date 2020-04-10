@@ -2,24 +2,23 @@ import {
   fetchAllTopics,
   fetchTopicBySlug,
   NoTopicFoundBySlugError,
-} from './fetchTopic'
-import { allTopics, findTopicBySlug } from './staticTopicGateway'
+} from '../browserFactory'
 
 describe('fetchAllTopics()', () => {
   test('returns all topics', () => {
-    expect(fetchAllTopics(allTopics)).toEqual(allTopics())
+    expect(fetchAllTopics().length).toBeGreaterThan(0)
   })
 })
 
 describe('fetchTopicBySlug()', () => {
-  allTopics().forEach((topic) => {
+  fetchAllTopics().forEach((topic) => {
     test(`returns topic for ${topic.slug}`, () => {
-      expect(fetchTopicBySlug(findTopicBySlug, topic.slug)).toBeDefined()
+      expect(fetchTopicBySlug(topic.slug)).toBeDefined()
     })
   })
 
   test('throws when topic does not exist', () => {
-    expect(() => fetchTopicBySlug(findTopicBySlug, 'doesnt-exist')).toThrow(
+    expect(() => fetchTopicBySlug('doesnt-exist')).toThrow(
       NoTopicFoundBySlugError
     )
   })

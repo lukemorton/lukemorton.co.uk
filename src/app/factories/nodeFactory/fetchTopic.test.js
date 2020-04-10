@@ -2,7 +2,7 @@ import {
   fetchAllTopics,
   fetchTopicBySlug,
   NoTopicFoundBySlugError,
-} from './factory'
+} from '../nodeFactory'
 
 describe('fetchAllTopics()', () => {
   test('returns all topics', () => {

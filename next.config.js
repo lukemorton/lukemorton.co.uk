@@ -3,7 +3,7 @@ const withOffline = require('next-offline')
 const nextConfig = {
   webpack(config) {
     config.node = {
-      __dirname: false,
+      __dirname: true,
       fs: 'empty',
     }
     return config

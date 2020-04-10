@@ -1,11 +1,10 @@
 import { SitemapStream, streamToPromise } from 'sitemap'
-import dependencyContainer from '../../src/app/dependencyContainer'
+import {
+  fetchAllThoughts,
+  fetchAllTopics,
+} from '../../src/app/factories/nodeFactory'
 
 const buildPages = async () => {
-  const { fetchAllThoughts, fetchAllTopics } = await dependencyContainer(
-    'build'
-  )
-
   const staticPages = [
     { url: '/', changefreq: 'weekly' },
     { url: '/about', changefreq: 'weekly' },

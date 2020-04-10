@@ -4,7 +4,11 @@ import Page from '../../src/app/components/Page'
 import Prose from '../../src/app/components/Prose'
 import Thoughts from '../../src/app/components/Thoughts'
 import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
-import dependencyContainer from '../../src/app/dependencyContainer'
+import {
+  fetchAllTopics,
+  fetchThoughtsByTopicSlug,
+  fetchTopicBySlug,
+} from '../../src/app/factories/nodeFactory'
 
 export default function Topic({ archiveUrl, topic, thoughts }) {
   return (
@@ -31,7 +35,6 @@ export default function Topic({ archiveUrl, topic, thoughts }) {
 }
 
 export const getStaticPaths = async () => {
-  const { fetchAllTopics } = await dependencyContainer('build')
   const topics = await fetchAllTopics()
 
   const paths = topics.map(({ slug }) => {
@@ -42,11 +45,6 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = withCommonStaticProps(async ({ params }) => {
-  const {
-    fetchThoughtsByTopicSlug,
-    fetchTopicBySlug,
-  } = await dependencyContainer('build')
-
   return {
     props: {
       topic: fetchTopicBySlug(params.slug),

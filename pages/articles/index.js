@@ -4,7 +4,7 @@ import Page from '../../src/app/components/Page'
 import Prose from '../../src/app/components/Prose'
 import Thoughts from '../../src/app/components/Thoughts'
 import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
-import dependencyContainer from '../../src/app/dependencyContainer'
+import { fetchAllThoughts } from '../../src/app/factories/nodeFactory'
 
 export default function ThoughtArchive({ indexUrl, thoughts }) {
   return (
@@ -30,8 +30,6 @@ export default function ThoughtArchive({ indexUrl, thoughts }) {
 }
 
 export const getStaticProps = withCommonStaticProps(async () => {
-  const { fetchAllThoughts } = await dependencyContainer('build')
-
   return {
     props: {
       thoughts: await fetchAllThoughts(),

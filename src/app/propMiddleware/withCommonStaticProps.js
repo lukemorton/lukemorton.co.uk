@@ -1,4 +1,3 @@
-import dependencyContainer from '../dependencyContainer'
 import COMMON_PROPS from './commonProps'
 
 export default function (callback) {
@@ -10,7 +9,6 @@ export default function (callback) {
     nextProps = {
       ...props,
       ...COMMON_PROPS,
-      dependencyContainer: () => dependencyContainer('build'),
     }
 
     nextProps = {
