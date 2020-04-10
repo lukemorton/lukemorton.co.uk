@@ -8,6 +8,7 @@ const buildFeed = async () => {
 
   const author = {
     name: 'Luke Morton',
+    email: 'lukemorton.dev@gmail.com',
     link: prefixUrl('/'),
   }
 
