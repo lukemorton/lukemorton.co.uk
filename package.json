@@ -41,7 +41,7 @@
     "blog": "NODE_ENV=development mkdir -p public/dist/content/articles && nodemon --exec markedly --watch content --ext md",
     "build:lib": "rm -rf lib && NODE_ENV=build:lib babel src -d lib",
     "build:blog": "mkdir -p public/dist/content/articles && markedly",
-    "build:static": "NODE_ENV=production FACTORY=build next build",
+    "build:static": "NODE_ENV=production next build",
     "build": "npm run build:lib && npm run build:blog && npm run build:static",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start",

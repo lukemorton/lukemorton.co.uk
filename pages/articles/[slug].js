@@ -6,7 +6,10 @@ import RelatedContent from '../../src/app/components/RelatedContent'
 import useLiveBlog from '../../src/app/hooks/useLiveBlog'
 import useDelayedRelatedContent from '../../src/app/hooks/useDelayedRelatedContent'
 import withCommonStaticProps from '../../src/app/propMiddleware/withCommonStaticProps'
-import dependencyContainer from '../../src/app/dependencyContainer'
+import {
+  fetchAllThoughts,
+  fetchOneThoughtBySlug,
+} from '../../src/app/factories/nodeFactory'
 
 export default function ThoughtPage(props) {
   const [thought] = useLiveBlog(props.thought)
@@ -31,7 +34,6 @@ export default function ThoughtPage(props) {
 }
 
 export const getStaticPaths = async () => {
-  const { fetchAllThoughts } = await dependencyContainer('build')
   const thoughts = await fetchAllThoughts()
 
   const paths = thoughts.map(({ slug }) => {
@@ -42,8 +44,6 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = withCommonStaticProps(async ({ params }) => {
-  const { fetchOneThoughtBySlug } = await dependencyContainer('build')
-
   return {
     props: {
       slug: params.slug,

@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fetch from 'cross-fetch'
 import {
   fetchOneThoughtBySlug,
   fetchRecentThoughts,
@@ -8,15 +8,19 @@ import {
   NoThoughtFoundBySlugError,
   NoThoughtsFoundByTopicNameError,
   NoThoughtsFoundByTopicSlugError,
-} from './factory'
+} from '../browserFactory'
 
-jest.mock('fs')
+jest.mock('cross-fetch')
 
 describe('listThoughts', () => {
   let jsonResponse
 
   beforeEach(() => {
-    fs.readFileSync.mockImplementation((_) => JSON.stringify(jsonResponse))
+    fetch.mockResolvedValue({
+      json() {
+        return jsonResponse
+      },
+    })
   })
 
   afterEach(() => {
@@ -28,7 +32,7 @@ describe('listThoughts', () => {
       jsonResponse = {} // thought returns object rather than array
     })
 
-    test('it uses fs.readFileSync', async () => {
+    test('it uses fetch', async () => {
       const expectedThought = {
         slug: 'lightweight-docker-images-for-go',
       }
@@ -40,20 +44,16 @@ describe('listThoughts', () => {
       }
 
       await fetchOneThoughtBySlug(null, expectedThought.slug)
-      expect(fs.readFileSync).toHaveBeenCalledWith(
+      expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/content/articles/index.json')
       )
     })
 
     test('it returns thought with matching slug', async () => {
-      const expectedThought = {
-        slug: 'lightweight-docker-images-for-go',
-      }
+      const expectedThought = { slug: 'a-slug' }
 
       jsonResponse = {
-        '2017-01-17-lightweight-docker-images-for-go': {
-          slug: '2017-01-17-lightweight-docker-images-for-go',
-        },
+        '2012-01-01-a-slug': { slug: '2012-01-01-a-slug' },
       }
 
       const t = await fetchOneThoughtBySlug(null, expectedThought.slug)
@@ -72,9 +72,9 @@ describe('listThoughts', () => {
       jsonResponse = []
     })
 
-    test('it uses fs.readFileSync', async () => {
+    test('it uses fetch', async () => {
       await fetchRecentThoughts(null)
-      expect(fs.readFileSync).toHaveBeenCalledWith(
+      expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/content/articles/recent.json')
       )
     })
@@ -96,9 +96,9 @@ describe('listThoughts', () => {
       jsonResponse = []
     })
 
-    test('it uses fs.readFileSync', async () => {
+    test('it uses fetch', async () => {
       await fetchAllThoughts(null)
-      expect(fs.readFileSync).toHaveBeenCalledWith(
+      expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/content/articles/archive.json')
       )
     })
@@ -120,9 +120,9 @@ describe('listThoughts', () => {
       jsonResponse = []
     })
 
-    test('it uses fs.readFileSync', async () => {
+    test('it uses fetch', async () => {
       await fetchThoughtsByTopicName(null, 'Ruby on Rails')
-      expect(fs.readFileSync).toHaveBeenCalledWith(
+      expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/content/articles/topics/rails.json')
       )
     })
@@ -150,9 +150,9 @@ describe('listThoughts', () => {
       jsonResponse = []
     })
 
-    test('it uses fs.readFileSync', async () => {
+    test('it uses fetch', async () => {
       await fetchThoughtsByTopicSlug(null, 'rails')
-      expect(fs.readFileSync).toHaveBeenCalledWith(
+      expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/content/articles/topics/rails.json')
       )
     })
@@ -171,6 +171,15 @@ describe('listThoughts', () => {
     test('it raises exception if topic doesnt exist', async () => {
       expect(fetchThoughtsByTopicSlug(null, 'jimbob')).rejects.toThrow(
         NoThoughtsFoundByTopicSlugError
+      )
+    })
+  })
+
+  describe('passing origin to fetch methods', () => {
+    test('it uses requst object to build URL', async () => {
+      await fetchThoughtsByTopicSlug('https://lukemorton.tech', 'rails')
+      expect(fetch).toHaveBeenCalledWith(
+        'https://lukemorton.tech/dist/content/articles/topics/rails.json'
       )
     })
   })

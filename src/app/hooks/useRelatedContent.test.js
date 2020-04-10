@@ -1,9 +1,9 @@
 import { act } from 'react-dom/test-utils'
 import useRelatedContent from './useRelatedContent'
 import testHook from './testHook'
-import { fetchThoughtsByTopicName } from '../factory'
+import { fetchThoughtsByTopicName } from '../factories/browserFactory'
 
-jest.mock('../factory')
+jest.mock('../factories/browserFactory')
 
 function buildThought(slug, publishedAtIso) {
   return {

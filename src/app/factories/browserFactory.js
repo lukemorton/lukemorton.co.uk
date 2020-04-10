@@ -5,24 +5,24 @@ import {
   fetchAllThoughts as _fetchAllThoughts,
   fetchThoughtsByTopicName as _fetchThoughtsByTopicName,
   fetchThoughtsByTopicSlug as _fetchThoughtsByTopicSlug,
-} from '../blog/fetchThoughts'
+} from '../capabilities/fetchThoughts'
 import {
   fetchAllTopics as _fetchAllTopics,
   fetchTopicBySlug as _fetchTopicBySlug,
-} from '../blog/fetchTopic'
-import { loadJsonPath } from '../blog/httpThoughtGateway'
+} from '../capabilities/fetchTopic'
+import { loadJsonPath } from '../adapters/httpThoughtGateway'
 import {
   allTopics,
   findTopicByName,
   findTopicBySlug,
   topicSlugExists,
-} from '../blog/staticTopicGateway'
+} from '../adapters/staticTopicGateway'
 
 export {
   NoThoughtFoundBySlugError,
   NoThoughtsFoundByTopicNameError,
   NoThoughtsFoundByTopicSlugError,
-} from '../blog/fetchThoughts'
+} from '../capabilities/fetchThoughts'
 
 export function fetchOneThoughtBySlug(origin, slug) {
   return _fetchOneThoughtBySlug(partial(loadJsonPath, origin), slug)
@@ -52,7 +52,7 @@ export function fetchThoughtsByTopicSlug(origin, topicSlug) {
   )
 }
 
-export { NoTopicFoundBySlugError } from '../blog/fetchTopic'
+export { NoTopicFoundBySlugError } from '../capabilities/fetchTopic'
 
 export function fetchAllTopics() {
   return _fetchAllTopics(allTopics)

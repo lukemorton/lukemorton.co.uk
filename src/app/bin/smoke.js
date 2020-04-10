@@ -2,7 +2,7 @@
 
 import fetch from 'cross-fetch'
 import fs from 'fs'
-import { fetchAllThoughts, fetchAllTopics } from '../factory'
+import { fetchAllThoughts, fetchAllTopics } from '../factories/browserFactory'
 
 function testUrl(origin, path) {
   const url = `${origin}${path || ''}`
