@@ -18,9 +18,7 @@ export default function ThoughtPage(props) {
       title={thought.title.plain}
       description={thought.excerpt.plain}
       image={thought.featuredImage}
-      canonical={
-        thought.canonical || `https://lukemorton.tech/articles/${thought.slug}`
-      }
+      canonical={thought.canonical || `/articles/${thought.slug}`}
       url={`/articles/${thought.slug}`}
     >
       <main>
