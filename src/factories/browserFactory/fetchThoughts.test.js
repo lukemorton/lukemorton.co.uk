@@ -179,7 +179,7 @@ describe('listThoughts', () => {
     test('it uses requst object to build URL', async () => {
       await fetchThoughtsByTopicSlug('https://lukemorton.tech', 'rails')
       expect(fetch).toHaveBeenCalledWith(
-        'https://lukemorton.tech/dist/src/content/articles/topics/rails.json'
+        expect.stringContaining('/dist/src/content/articles/topics/rails.json')
       )
     })
   })

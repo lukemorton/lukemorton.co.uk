@@ -40,13 +40,13 @@
     "test": "jest",
     "ci": "prettier --check '{.github,src}/**/*.{js,css,md,yml}' && jest",
     "blog": "NODE_ENV=development mkdir -p public/dist/src/content/articles && nodemon --exec markedly --watch content --ext md",
-    "build:lib": "rm -rf lib && NODE_ENV=build:lib babel src -d lib",
+    "build:lib": "rm -rf lib && NODE_ENV=build:lib babel src -d lib/src && babel packages -d lib/packages",
     "build:blog": "mkdir -p public/dist/src/content/articles && markedly",
     "build:static": "NODE_ENV=production next build",
     "build": "npm run build:lib && npm run build:blog && npm run build:static",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start",
-    "smoke": "npm run build:lib && ./lib/bin/smoke.js"
+    "smoke": "npm run build:lib && ./lib/src/bin/smoke.js"
   },
   "jest": {
     "setupFiles": [

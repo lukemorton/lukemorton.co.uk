@@ -52,7 +52,7 @@ if (state === 'success') {
     })
   })()
   ;(async () => {
-    const topics = await fetchAllTopics()
+    const topics = await fetchAllTopics(targetUrl)
     topics.forEach((t) => {
       testUrl(targetUrl, `/topics/${t.slug}`)
     })

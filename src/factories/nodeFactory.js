@@ -9,7 +9,13 @@ import {
   fetchAllTopics as _fetchAllTopics,
   fetchTopicBySlug as _fetchTopicBySlug,
 } from 'blog/capabilities/fetchTopic'
-import { loadJsonPath } from '../adapters/fileThoughtGateway'
+import {
+  thoughtsIndex,
+  recentThoughts,
+  allThoughts,
+  thoughtsByTopicSlug,
+  loadJsonPath,
+} from '../adapters/fileThoughtGateway'
 import {
   allTopics,
   findTopicByName,
@@ -24,23 +30,31 @@ export {
 } from 'blog/capabilities/fetchThoughts'
 
 export function fetchOneThoughtBySlug(_, slug) {
-  return _fetchOneThoughtBySlug(loadJsonPath, slug)
+  return _fetchOneThoughtBySlug({ thoughtsIndex, slug })
 }
 
-export function fetchRecentThoughts(_) {
-  return _fetchRecentThoughts(loadJsonPath)
+export function fetchRecentThoughts() {
+  return _fetchRecentThoughts({ recentThoughts })
 }
 
-export function fetchAllThoughts(_) {
-  return _fetchAllThoughts(loadJsonPath)
+export function fetchAllThoughts() {
+  return _fetchAllThoughts({ allThoughts })
 }
 
-export function fetchThoughtsByTopicName(_, topicName) {
-  return _fetchThoughtsByTopicName(loadJsonPath, findTopicByName, topicName)
+export function fetchThoughtsByTopicName(_, name) {
+  return _fetchThoughtsByTopicName({
+    thoughtsByTopicSlug,
+    findTopicByName,
+    name,
+  })
 }
 
-export function fetchThoughtsByTopicSlug(_, topicSlug) {
-  return _fetchThoughtsByTopicSlug(loadJsonPath, topicSlugExists, topicSlug)
+export function fetchThoughtsByTopicSlug(_, slug) {
+  return _fetchThoughtsByTopicSlug({
+    thoughtsByTopicSlug,
+    topicSlugExists,
+    slug,
+  })
 }
 
 export { NoTopicFoundBySlugError } from 'blog/capabilities/fetchTopic'
