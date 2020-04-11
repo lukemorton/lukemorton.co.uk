@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import AboutPage from 'pages/about'
+import AboutPage from '../pages/about'
 import About from 'src/components/About'
 
 test('content renders', () => {

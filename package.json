@@ -36,9 +36,9 @@
     "node": "12.x"
   },
   "scripts": {
-    "format": "prettier --write '{.github,page*,src,thoughts}/**/*.{js,css,md,yml}'",
+    "format": "prettier --write '{.github,src}/**/*.{js,css,md,yml}'",
     "test": "jest",
-    "ci": "prettier --check '{.github,page*,src,thoughts}/**/*.{js,css,md,yml}' && jest",
+    "ci": "prettier --check '{.github,src}/**/*.{js,css,md,yml}' && jest",
     "blog": "NODE_ENV=development mkdir -p public/dist/src/content/articles && nodemon --exec markedly --watch content --ext md",
     "build:lib": "rm -rf lib && NODE_ENV=build:lib babel src -d lib",
     "build:blog": "mkdir -p public/dist/src/content/articles && markedly",

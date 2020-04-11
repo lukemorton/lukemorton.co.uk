@@ -17,9 +17,8 @@ module.exports = (api) => {
   ]
 
   const ignoreTests = [
-    'pageTests/**/*.test.js',
     'src/**/*.test.js',
-    'src/**/testHooks.js',
+    'src/**/test*.js',
     'src/setupTests.js',
   ]
 
