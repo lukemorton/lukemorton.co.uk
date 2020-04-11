@@ -1,4 +1,5 @@
-import { Page, Projects } from '../ui'
+import { Projects } from 'ui'
+import Page from './Page'
 
 export default ({ githubUrl, projects }) => (
   <Page title="An exploration of the way we use technology">

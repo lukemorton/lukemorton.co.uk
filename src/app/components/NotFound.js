@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Page } from '../ui'
+import Page from './Page'
 
 export default ({ indexUrl }) => (
   <Page title="Page not found (404)">

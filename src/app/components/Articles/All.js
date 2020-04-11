@@ -1,4 +1,5 @@
-import { Page, Prose, Thoughts } from '../../ui'
+import { Prose, Thoughts } from 'ui'
+import Page from '../Page'
 
 export default ({ indexUrl, thoughts }) => (
   <Page title="All articles">
