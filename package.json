@@ -39,9 +39,9 @@
     "format": "prettier --write '{.github,page*,src,thoughts}/**/*.{js,css,md,yml}'",
     "test": "jest",
     "ci": "prettier --check '{.github,page*,src,thoughts}/**/*.{js,css,md,yml}' && jest",
-    "blog": "NODE_ENV=development mkdir -p public/dist/content/articles && nodemon --exec markedly --watch content --ext md",
+    "blog": "NODE_ENV=development mkdir -p public/dist/src/content/articles && nodemon --exec markedly --watch content --ext md",
     "build:lib": "rm -rf lib && NODE_ENV=build:lib babel src -d lib",
-    "build:blog": "mkdir -p public/dist/content/articles && markedly",
+    "build:blog": "mkdir -p public/dist/src/content/articles && markedly",
     "build:static": "NODE_ENV=production next build",
     "build": "npm run build:lib && npm run build:blog && npm run build:static",
     "dev": "NODE_ENV=development next dev",
@@ -67,7 +67,7 @@
     ]
   },
   "markedly": {
-    "dir": "content/articles",
+    "dir": "src/content/articles",
     "outDir": "public/dist",
     "lists": {
       "recent": {

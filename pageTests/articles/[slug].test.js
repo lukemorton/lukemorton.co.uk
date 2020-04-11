@@ -40,7 +40,7 @@ async function waitForUpdate(callback) {
 
 test('it loads relevant content', async () => {
   nock(TEST_ORIGIN)
-    .get('/dist/content/articles/topics/clean-architecture.json')
+    .get('/dist/src/content/articles/topics/clean-architecture.json')
     .reply(200, [firstThought(), secondThought()])
 
   const page = await waitForUpdate(() =>

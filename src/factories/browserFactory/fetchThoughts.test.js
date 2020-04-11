@@ -45,7 +45,7 @@ describe('listThoughts', () => {
 
       await fetchOneThoughtBySlug(null, expectedThought.slug)
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/index.json')
+        expect.stringContaining('/dist/src/content/articles/index.json')
       )
     })
 
@@ -75,7 +75,7 @@ describe('listThoughts', () => {
     test('it uses fetch', async () => {
       await fetchRecentThoughts(null)
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/recent.json')
+        expect.stringContaining('/dist/src/content/articles/recent.json')
       )
     })
 
@@ -99,7 +99,7 @@ describe('listThoughts', () => {
     test('it uses fetch', async () => {
       await fetchAllThoughts(null)
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/archive.json')
+        expect.stringContaining('/dist/src/content/articles/archive.json')
       )
     })
 
@@ -123,7 +123,7 @@ describe('listThoughts', () => {
     test('it uses fetch', async () => {
       await fetchThoughtsByTopicName(null, 'Ruby on Rails')
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/topics/rails.json')
+        expect.stringContaining('/dist/src/content/articles/topics/rails.json')
       )
     })
 
@@ -153,7 +153,7 @@ describe('listThoughts', () => {
     test('it uses fetch', async () => {
       await fetchThoughtsByTopicSlug(null, 'rails')
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/topics/rails.json')
+        expect.stringContaining('/dist/src/content/articles/topics/rails.json')
       )
     })
 
@@ -179,7 +179,7 @@ describe('listThoughts', () => {
     test('it uses requst object to build URL', async () => {
       await fetchThoughtsByTopicSlug('https://lukemorton.tech', 'rails')
       expect(fetch).toHaveBeenCalledWith(
-        'https://lukemorton.tech/dist/content/articles/topics/rails.json'
+        'https://lukemorton.tech/dist/src/content/articles/topics/rails.json'
       )
     })
   })

@@ -41,7 +41,7 @@ describe('listThoughts', () => {
 
       await fetchOneThoughtBySlug(null, expectedThought.slug)
       expect(fs.readFileSync).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/index.json')
+        expect.stringContaining('/dist/src/content/articles/index.json')
       )
     })
 
@@ -75,7 +75,7 @@ describe('listThoughts', () => {
     test('it uses fs.readFileSync', async () => {
       await fetchRecentThoughts(null)
       expect(fs.readFileSync).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/recent.json')
+        expect.stringContaining('/dist/src/content/articles/recent.json')
       )
     })
 
@@ -99,7 +99,7 @@ describe('listThoughts', () => {
     test('it uses fs.readFileSync', async () => {
       await fetchAllThoughts(null)
       expect(fs.readFileSync).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/archive.json')
+        expect.stringContaining('/dist/src/content/articles/archive.json')
       )
     })
 
@@ -123,7 +123,7 @@ describe('listThoughts', () => {
     test('it uses fs.readFileSync', async () => {
       await fetchThoughtsByTopicName(null, 'Ruby on Rails')
       expect(fs.readFileSync).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/topics/rails.json')
+        expect.stringContaining('/dist/src/content/articles/topics/rails.json')
       )
     })
 
@@ -153,7 +153,7 @@ describe('listThoughts', () => {
     test('it uses fs.readFileSync', async () => {
       await fetchThoughtsByTopicSlug(null, 'rails')
       expect(fs.readFileSync).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/content/articles/topics/rails.json')
+        expect.stringContaining('/dist/src/content/articles/topics/rails.json')
       )
     })
 
