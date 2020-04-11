@@ -1,4 +1,5 @@
-import { Page, Prose } from '../ui'
+import { Prose } from 'ui'
+import Page from './Page'
 
 export default ({ indexUrl }) => (
   <Page title="About the Author">

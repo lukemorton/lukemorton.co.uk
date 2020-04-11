@@ -1,4 +1,5 @@
-import { Page, Thought, RelatedContent } from '../../ui'
+import { Thought, RelatedContent } from 'ui'
+import Page from '../Page'
 import useLiveBlog from '../../hooks/useLiveBlog'
 import useDelayedRelatedContent from '../../hooks/useDelayedRelatedContent'
 

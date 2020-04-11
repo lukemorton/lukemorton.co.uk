@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Page, Prose, Thoughts } from '../ui'
+import { Prose, Thoughts } from 'ui'
+import Page from './Page'
 
 export default ({ archiveUrl, thoughts }) => (
   <Page
