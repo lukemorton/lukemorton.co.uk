@@ -1,61 +1,10 @@
-import React from 'react'
-import Link from 'next/link'
-import Page from '../src/app/components/Page'
-import Prose from '../src/app/components/Prose'
-import Thoughts from '../src/app/components/Thoughts'
-import withCommonStaticProps from '../src/app/propMiddleware/withCommonStaticProps'
+import Home from '../src/app/components/Home'
+import withCommonProps from '../src/app/hocs/withCommonProps'
 import { fetchRecentThoughts } from '../src/app/factories/nodeFactory'
 
-export default function Index({ archiveUrl, thoughts }) {
-  return (
-    <Page
-      title="Exploring teams & technology"
-      description="I've spent the last 15 years building software and technology teams and this website represents some of what I have learned so far."
-    >
-      <main>
-        <Prose>
-          <h1 className="larger">Exploring teams & technology</h1>
+export default withCommonProps(Home)
 
-          <p>
-            Technology is consuming every aspect of society and yet in a rapidly
-            changing landscape we struggle to keep up. Organisations are left
-            with a decision: innovate or be disrupted.
-          </p>
-
-          <p>
-            I've spent the last 15 years building software and technology teams
-            and this website represents some of what I have learned so far. Here
-            you will find a collection of{' '}
-            <Link href={archiveUrl}>
-              <a>articles</a>
-            </Link>{' '}
-            about software, people and everything inbetween.
-          </p>
-        </Prose>
-      </main>
-
-      <aside>
-        <Thoughts
-          title={<h2>Recent articles</h2>}
-          thoughtTitleWrapper={(title) => <h3>{title}</h3>}
-          thoughts={thoughts}
-          after={
-            <p>
-              <Link href={archiveUrl}>
-                <a>Read more articles by Luke</a>
-              </Link>
-            </p>
-          }
-        />
-      </aside>
-    </Page>
-  )
+export const getStaticProps = async () => {
+  const thoughts = await fetchRecentThoughts()
+  return { props: { thoughts } }
 }
-
-export const getStaticProps = withCommonStaticProps(async () => {
-  return {
-    props: {
-      thoughts: await fetchRecentThoughts(),
-    },
-  }
-})

@@ -1,11 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import OpenSource from '../pages/open-source'
-import Page from '../src/app/components/Page'
-import Projects from '../src/app/components/Projects'
+import OpenSourcePage from '../pages/open-source'
+import OpenSource from '../src/app/components/OpenSource'
 
 test('content renders', () => {
-  const page = shallow(<OpenSource />)
-  expect(page.find(Page).length).toBe(1)
-  expect(page.find(Projects).length).toBe(1)
+  const page = shallow(<OpenSourcePage />)
+  expect(page.find(OpenSource).length).toBe(1)
 })

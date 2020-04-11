@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import About from '../pages/about'
-import Page from '../src/app/components/Page'
+import AboutPage from '../pages/about'
+import About from '../src/app/components/About'
 
 test('content renders', () => {
-  const page = shallow(<About />)
-  expect(page.find(Page).length).toBe(1)
+  const page = shallow(<AboutPage />)
+  expect(page.find(About).length).toBe(1)
 })
