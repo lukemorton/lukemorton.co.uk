@@ -22,10 +22,6 @@ export class NoThoughtsFoundByTopicSlugError extends Error {
   }
 }
 
-async function fetchThoughtMap(loadJsonPath) {
-  return loadJsonPath('/dist/src/content/articles/index.json')
-}
-
 const datelessSlug = (slug) => slug.slice('0000-00-00-'.length)
 
 const withDatelessSlug = (article) => ({
@@ -45,45 +41,35 @@ const arrayWithDatelessSlug = (array) => array.map(withDatelessSlug)
 const mapWithDatelessSlug = (map) =>
   Object.keys(map).reduce(mapWithDatelessSlugReducer(map), {})
 
-export async function fetchOneThoughtBySlug(loadJsonPath, slug) {
-  const thoughts = mapWithDatelessSlug(await fetchThoughtMap(loadJsonPath))
+export async function fetchOneThoughtBySlug({ thoughtsIndex, slug }) {
+  const thoughts = mapWithDatelessSlug(await thoughtsIndex())
   if (!thoughts[slug]) throw new NoThoughtFoundBySlugError(slug)
   return thoughts[slug]
 }
 
-export async function fetchRecentThoughts(loadJsonPath) {
-  return arrayWithDatelessSlug(
-    (await loadJsonPath('/dist/src/content/articles/recent.json')) || []
-  )
+export async function fetchRecentThoughts({ recentThoughts }) {
+  return arrayWithDatelessSlug((await recentThoughts()) || [])
 }
 
-export async function fetchAllThoughts(loadJsonPath) {
-  return arrayWithDatelessSlug(
-    (await loadJsonPath('/dist/src/content/articles/archive.json')) || []
-  )
+export async function fetchAllThoughts({ allThoughts }) {
+  return arrayWithDatelessSlug((await allThoughts()) || [])
 }
 
-export async function fetchThoughtsByTopicName(
-  loadJsonPath,
+export async function fetchThoughtsByTopicName({
+  thoughtsByTopicSlug,
   findTopicByName,
-  name
-) {
+  name,
+}) {
   const topic = findTopicByName(name)
   if (!topic) throw new NoThoughtsFoundByTopicNameError(name)
-  return arrayWithDatelessSlug(
-    (await loadJsonPath(
-      `/dist/src/content/articles/topics/${topic.slug}.json`
-    )) || []
-  )
+  return arrayWithDatelessSlug((await thoughtsByTopicSlug(topic.slug)) || [])
 }
 
-export async function fetchThoughtsByTopicSlug(
-  loadJsonPath,
+export async function fetchThoughtsByTopicSlug({
+  thoughtsByTopicSlug,
   topicSlugExists,
-  slug
-) {
+  slug,
+}) {
   if (!topicSlugExists(slug)) throw new NoThoughtsFoundByTopicSlugError(slug)
-  return arrayWithDatelessSlug(
-    (await loadJsonPath(`/dist/src/content/articles/topics/${slug}.json`)) || []
-  )
+  return arrayWithDatelessSlug((await thoughtsByTopicSlug(slug)) || [])
 }

@@ -10,7 +10,13 @@ import {
   fetchAllTopics as _fetchAllTopics,
   fetchTopicBySlug as _fetchTopicBySlug,
 } from 'blog/capabilities/fetchTopic'
-import { loadJsonPath } from '../adapters/httpThoughtGateway'
+import {
+  thoughtsIndex,
+  recentThoughts,
+  allThoughts,
+  thoughtsByTopicSlug,
+  loadJsonPath,
+} from '../adapters/httpThoughtGateway'
 import {
   allTopics,
   findTopicByName,
@@ -25,31 +31,40 @@ export {
 } from 'blog/capabilities/fetchThoughts'
 
 export function fetchOneThoughtBySlug(origin, slug) {
-  return _fetchOneThoughtBySlug(partial(loadJsonPath, origin), slug)
+  return _fetchOneThoughtBySlug({
+    thoughtsIndex: () => thoughtsIndex(partial(loadJsonPath, origin)),
+    slug,
+  })
 }
 
 export function fetchRecentThoughts(origin) {
-  return _fetchRecentThoughts(partial(loadJsonPath, origin))
+  return _fetchRecentThoughts({
+    recentThoughts: () => recentThoughts(partial(loadJsonPath, origin)),
+  })
 }
 
 export function fetchAllThoughts(origin) {
-  return _fetchAllThoughts(partial(loadJsonPath, origin))
+  return _fetchAllThoughts({
+    allThoughts: () => allThoughts(partial(loadJsonPath, origin)),
+  })
 }
 
-export function fetchThoughtsByTopicName(origin, topicName) {
-  return _fetchThoughtsByTopicName(
-    partial(loadJsonPath, origin),
+export function fetchThoughtsByTopicName(origin, name) {
+  return _fetchThoughtsByTopicName({
+    thoughtsByTopicSlug: (slug) =>
+      thoughtsByTopicSlug(partial(loadJsonPath, origin), slug),
     findTopicByName,
-    topicName
-  )
+    name,
+  })
 }
 
-export function fetchThoughtsByTopicSlug(origin, topicSlug) {
-  return _fetchThoughtsByTopicSlug(
-    partial(loadJsonPath, origin),
+export function fetchThoughtsByTopicSlug(origin, slug) {
+  return _fetchThoughtsByTopicSlug({
+    thoughtsByTopicSlug: (slug) =>
+      thoughtsByTopicSlug(partial(loadJsonPath, origin), slug),
     topicSlugExists,
-    topicSlug
-  )
+    slug,
+  })
 }
 
 export { NoTopicFoundBySlugError } from 'blog/capabilities/fetchTopic'

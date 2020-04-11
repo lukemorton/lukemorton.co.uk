@@ -1,9 +1,55 @@
 import fetch from 'cross-fetch'
-import { loadJsonPath } from './httpThoughtGateway'
+import {
+  thoughtsIndex,
+  recentThoughts,
+  allThoughts,
+  thoughtsByTopicSlug,
+  loadJsonPath,
+} from './httpThoughtGateway'
 
 jest.mock('cross-fetch')
 
 describe('httpThoughtGateway', () => {
+  describe('.thoughtsIndex()', () => {
+    it('uses loadJsonPath', async () => {
+      const loadJsonPath = jest.fn()
+      await thoughtsIndex(loadJsonPath)
+      expect(loadJsonPath).toHaveBeenCalledWith(
+        expect.stringContaining('/dist/src/content/articles/index.json')
+      )
+    })
+  })
+
+  describe('.recentThoughts()', () => {
+    it('uses loadJsonPath', async () => {
+      const loadJsonPath = jest.fn()
+      await recentThoughts(loadJsonPath)
+      expect(loadJsonPath).toHaveBeenCalledWith(
+        expect.stringContaining('/dist/src/content/articles/recent.json')
+      )
+    })
+  })
+
+  describe('.allThoughts()', () => {
+    it('uses loadJsonPath', async () => {
+      const loadJsonPath = jest.fn()
+      await allThoughts(loadJsonPath)
+      expect(loadJsonPath).toHaveBeenCalledWith(
+        expect.stringContaining('/dist/src/content/articles/archive.json')
+      )
+    })
+  })
+
+  describe('.thoughtsByTopicSlug()', () => {
+    it('uses loadJsonPath', async () => {
+      const loadJsonPath = jest.fn()
+      await thoughtsByTopicSlug(loadJsonPath, 'rails')
+      expect(loadJsonPath).toHaveBeenCalledWith(
+        expect.stringContaining('/dist/src/content/articles/topics/rails.json')
+      )
+    })
+  })
+
   describe('.loadJsonPath()', () => {
     const origin = TEST_ORIGIN
 

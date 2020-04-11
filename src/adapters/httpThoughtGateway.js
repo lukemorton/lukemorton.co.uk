@@ -27,3 +27,19 @@ export async function loadJsonPath(origin, path) {
     throw e
   }
 }
+
+export async function thoughtsIndex(loadJsonPath) {
+  return loadJsonPath('/dist/src/content/articles/index.json')
+}
+
+export async function recentThoughts(loadJsonPath) {
+  return loadJsonPath('/dist/src/content/articles/recent.json')
+}
+
+export async function allThoughts(loadJsonPath) {
+  return loadJsonPath('/dist/src/content/articles/archive.json')
+}
+
+export async function thoughtsByTopicSlug(loadJsonPath, slug) {
+  return loadJsonPath(`/dist/src/content/articles/topics/${slug}.json`)
+}

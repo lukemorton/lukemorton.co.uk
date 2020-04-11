@@ -10,94 +10,97 @@ import {
 } from './fetchThoughts'
 
 describe('fetchThoughts', () => {
-  const loadJsonPath = jest.fn()
-
   afterEach(() => {
     jest.clearAllMocks()
   })
 
   describe('.fetchOneThoughtBySlug()', () => {
-    test('it uses loadJsonPath', async () => {
+    const thoughtsIndex = jest.fn()
+
+    test('it uses thoughtsIndex', async () => {
       const expectedThought = {
         slug: 'lightweight-docker-images-for-go',
       }
 
-      loadJsonPath.mockReturnValue({
+      thoughtsIndex.mockReturnValue({
         '2017-01-17-lightweight-docker-images-for-go': {
           slug: '2017-01-17-lightweight-docker-images-for-go',
         },
       })
 
-      await fetchOneThoughtBySlug(loadJsonPath, expectedThought.slug)
-      expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/src/content/articles/index.json')
-      )
+      await fetchOneThoughtBySlug({ thoughtsIndex, slug: expectedThought.slug })
+      expect(thoughtsIndex).toHaveBeenCalledWith()
     })
 
     test('it returns thought with matching slug', async () => {
       const expectedThought = { slug: 'a-slug' }
 
-      loadJsonPath.mockReturnValue({
+      thoughtsIndex.mockReturnValue({
         '2017-01-17-a-slug': { slug: '2017-01-17-a-slug' },
       })
 
-      const t = await fetchOneThoughtBySlug(loadJsonPath, expectedThought.slug)
+      const t = await fetchOneThoughtBySlug({
+        thoughtsIndex,
+        slug: expectedThought.slug,
+      })
       expect(t).toEqual(expectedThought)
     })
 
     test('it raises exception if thought doesnt exist', async () => {
-      loadJsonPath.mockReturnValue({})
+      thoughtsIndex.mockReturnValue({})
       expect(
-        fetchOneThoughtBySlug(loadJsonPath, 'doesnt-exist')
+        fetchOneThoughtBySlug({ thoughtsIndex, slug: 'doesnt-exist' })
       ).rejects.toThrow(NoThoughtFoundBySlugError)
     })
   })
 
   describe('.fetchRecentThoughts()', () => {
-    test('it uses loadJsonPath', async () => {
-      loadJsonPath.mockReturnValue([])
-      await fetchRecentThoughts(loadJsonPath)
-      expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/src/content/articles/recent.json')
-      )
+    const recentThoughts = jest.fn()
+
+    test('it uses recentThoughts', async () => {
+      recentThoughts.mockReturnValue([])
+      await fetchRecentThoughts({ recentThoughts })
+      expect(recentThoughts).toHaveBeenCalledWith()
     })
 
     test('it returns JSON response', async () => {
-      loadJsonPath.mockReturnValue([])
-      const response = await fetchRecentThoughts(loadJsonPath)
+      recentThoughts.mockReturnValue([])
+      const response = await fetchRecentThoughts({ recentThoughts })
       expect(response).toEqual([])
     })
 
     test('it returns empty array when json response is null', async () => {
-      loadJsonPath.mockReturnValue(null)
-      const response = await fetchRecentThoughts(loadJsonPath)
+      recentThoughts.mockReturnValue(null)
+      const response = await fetchRecentThoughts({ recentThoughts })
       expect(response).toEqual([])
     })
   })
 
   describe('.fetchAllThoughts()', () => {
-    test('it uses loadJsonPath', async () => {
-      loadJsonPath.mockReturnValue([])
-      await fetchAllThoughts(loadJsonPath)
-      expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/src/content/articles/archive.json')
-      )
+    const allThoughts = jest.fn()
+
+    test('it uses allThoughts', async () => {
+      allThoughts.mockReturnValue([])
+      await fetchAllThoughts({ allThoughts })
+      expect(allThoughts).toHaveBeenCalledWith()
     })
 
     test('it returns JSON response', async () => {
-      loadJsonPath.mockReturnValue([])
-      const response = await fetchAllThoughts(loadJsonPath)
+      allThoughts.mockReturnValue([])
+      const response = await fetchAllThoughts({ allThoughts })
       expect(response).toEqual([])
     })
 
     test('it returns empty array when json response is null', async () => {
-      loadJsonPath.mockReturnValue(null)
-      const response = await fetchAllThoughts(loadJsonPath)
+      allThoughts.mockReturnValue(null)
+      const response = await fetchAllThoughts({ allThoughts })
       expect(response).toEqual([])
     })
   })
 
   describe('.fetchThoughtsByTopicName()', () => {
+    const thoughtsByTopicSlug = jest.fn()
+
     let findTopicByName = () => {
       return {
         name: 'Ruby on Rails',
@@ -105,83 +108,92 @@ describe('fetchThoughts', () => {
       }
     }
 
-    test('it uses loadJsonPath', async () => {
-      loadJsonPath.mockReturnValue([])
-      await fetchThoughtsByTopicName(
-        loadJsonPath,
+    test('it uses thoughtsByTopicSlug', async () => {
+      thoughtsByTopicSlug.mockReturnValue([])
+      await fetchThoughtsByTopicName({
+        thoughtsByTopicSlug,
         findTopicByName,
-        'Ruby on Rails'
-      )
-      expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/src/content/articles/topics/rails.json')
-      )
+        name: 'Ruby on Rails',
+      })
+      expect(thoughtsByTopicSlug).toHaveBeenCalledWith('rails')
     })
 
     test('it returns JSON response', async () => {
-      loadJsonPath.mockReturnValue([])
-      const response = await fetchThoughtsByTopicName(
-        loadJsonPath,
+      thoughtsByTopicSlug.mockReturnValue([])
+      const response = await fetchThoughtsByTopicName({
+        thoughtsByTopicSlug,
         findTopicByName,
-        'Ruby on Rails'
-      )
+        name: 'Ruby on Rails',
+      })
       expect(response).toEqual([])
     })
 
     test('it returns empty array when json response is null', async () => {
-      loadJsonPath.mockReturnValue(null)
-      const response = await fetchThoughtsByTopicName(
-        loadJsonPath,
+      thoughtsByTopicSlug.mockReturnValue(null)
+      const response = await fetchThoughtsByTopicName({
+        thoughtsByTopicSlug,
         findTopicByName,
-        'Ruby on Rails'
-      )
+        name: 'Ruby on Rails',
+      })
       expect(response).toEqual([])
     })
 
     test('it raises exception if topic doesnt exist', async () => {
-      loadJsonPath.mockReturnValue([])
+      thoughtsByTopicSlug.mockReturnValue([])
       findTopicByName = () => null
       expect(
-        fetchThoughtsByTopicName(loadJsonPath, findTopicByName, 'Jim Bob')
+        fetchThoughtsByTopicName({
+          thoughtsByTopicSlug,
+          findTopicByName,
+          name: 'Jim Bob',
+        })
       ).rejects.toThrow(NoThoughtsFoundByTopicNameError)
     })
   })
 
   describe('.fetchThoughtsByTopicSlug()', () => {
+    const thoughtsByTopicSlug = jest.fn()
     let topicSlugExists = () => true
 
-    test('it uses loadJsonPath', async () => {
-      loadJsonPath.mockReturnValue([])
-      await fetchThoughtsByTopicSlug(loadJsonPath, topicSlugExists, 'rails')
-      expect(loadJsonPath).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/src/content/articles/topics/rails.json')
-      )
+    test('it uses thoughtsByTopicSlug', async () => {
+      thoughtsByTopicSlug.mockReturnValue([])
+      await fetchThoughtsByTopicSlug({
+        thoughtsByTopicSlug,
+        topicSlugExists,
+        slug: 'rails',
+      })
+      expect(thoughtsByTopicSlug).toHaveBeenCalledWith('rails')
     })
 
     test('it returns JSON response', async () => {
-      loadJsonPath.mockReturnValue([])
-      const response = await fetchThoughtsByTopicSlug(
-        loadJsonPath,
+      thoughtsByTopicSlug.mockReturnValue([])
+      const response = await fetchThoughtsByTopicSlug({
+        thoughtsByTopicSlug,
         topicSlugExists,
-        'rails'
-      )
+        slug: 'rails',
+      })
       expect(response).toEqual([])
     })
 
     test('it returns empty array when json response is null', async () => {
-      loadJsonPath.mockReturnValue(null)
-      const response = await fetchThoughtsByTopicSlug(
-        loadJsonPath,
+      thoughtsByTopicSlug.mockReturnValue(null)
+      const response = await fetchThoughtsByTopicSlug({
+        thoughtsByTopicSlug,
         topicSlugExists,
-        'rails'
-      )
+        slug: 'rails',
+      })
       expect(response).toEqual([])
     })
 
     test('it raises exception if topic doesnt exist', async () => {
-      loadJsonPath.mockReturnValue([])
+      thoughtsByTopicSlug.mockReturnValue([])
       topicSlugExists = () => false
       expect(
-        fetchThoughtsByTopicSlug(loadJsonPath, topicSlugExists, 'jimbob')
+        fetchThoughtsByTopicSlug({
+          thoughtsByTopicSlug,
+          topicSlugExists,
+          slug: 'jimbob',
+        })
       ).rejects.toThrow(NoThoughtsFoundByTopicSlugError)
     })
   })
