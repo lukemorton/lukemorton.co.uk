@@ -2,10 +2,9 @@ import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount, shallow } from 'enzyme'
 import nock from 'nock'
-import ShowThought from '../../pages/articles/[slug]'
-import Page from '../../src/app/components/Page'
-import Thought from '../../src/app/components/Thought'
-import RelatedContent from '../../src/app/components/RelatedContent'
+import ArticleBySlugPage from '../../pages/articles/[slug]'
+import Article from '../../src/app/components/Articles/Article'
+import { RelatedContent } from '../../src/app/ui'
 import useLiveBlog from '../../src/app/hooks/useLiveBlog'
 
 jest.mock('../../src/app/hooks/useLiveBlog')
@@ -15,13 +14,12 @@ beforeEach(() => {
 })
 
 test('content renders', () => {
-  const page = shallow(<ShowThought thought={firstThought()} />)
-  expect(page.find(Page).length).toBe(1)
-  expect(page.find(Thought).length).toBe(1)
+  const page = shallow(<ArticleBySlugPage thought={firstThought()} />)
+  expect(page.find(Article).length).toBe(1)
 })
 
 test('derives state from prop sensibly', () => {
-  const page = shallow(<ShowThought thought={firstThought()} />)
+  const page = mount(<ArticleBySlugPage thought={firstThought()} />)
   page.setProps({ thought: secondThought() })
   expect(page.find({ title: secondThought().title.plain }).length).toBe(1)
 })
@@ -44,7 +42,7 @@ test('it loads relevant content', async () => {
     .reply(200, [firstThought(), secondThought()])
 
   const page = await waitForUpdate(() =>
-    mount(<ShowThought thought={firstThought()} />)
+    mount(<ArticleBySlugPage thought={firstThought()} />)
   )
 
   expect(page.find(RelatedContent).isEmptyRender()).toBe(false)

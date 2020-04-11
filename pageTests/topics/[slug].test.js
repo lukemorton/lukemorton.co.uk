@@ -1,12 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Topic from '../../pages/topics/[slug]'
-import Page from '../../src/app/components/Page'
-import Thoughts from '../../src/app/components/Thoughts'
+import TopicPage from '../../pages/topics/[slug]'
+import Topic from '../../src/app/components/Topics/Topic'
 import { fetchAllTopics } from '../../src/app/factories/nodeFactory'
 
 test('content renders', () => {
-  const page = shallow(<Topic topic={fetchAllTopics()[0]} thoughts={[]} />)
-  expect(page.find(Page).length).toBe(1)
-  expect(page.find(Thoughts).length).toBe(1)
+  const page = shallow(<TopicPage topic={fetchAllTopics()[0]} thoughts={[]} />)
+  expect(page.find(Topic).length).toBe(1)
 })
