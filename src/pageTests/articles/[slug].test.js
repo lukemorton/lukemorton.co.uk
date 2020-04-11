@@ -1,12 +1,13 @@
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount, shallow } from 'enzyme'
-import nock from 'nock'
+import fetch from 'cross-fetch'
 import ArticleBySlugPage from '../../pages/articles/[slug]'
 import Article from 'src/components/Articles/Article'
 import { RelatedContent } from 'ui'
 import useLiveBlog from 'src/hooks/useLiveBlog'
 
+jest.mock('cross-fetch')
 jest.mock('src/hooks/useLiveBlog')
 
 beforeEach(() => {
@@ -18,9 +19,19 @@ test('content renders', () => {
   expect(page.find(Article).length).toBe(1)
 })
 
-test('derives state from prop sensibly', () => {
-  const page = mount(<ArticleBySlugPage thought={firstThought()} />)
-  page.setProps({ thought: secondThought() })
+test('derives state from prop sensibly', async () => {
+  fetch.mockResolvedValue({
+    json() {
+      return [firstThought(), secondThought()]
+    },
+  })
+
+  const page = await waitForUpdate(() =>
+    mount(<ArticleBySlugPage thought={firstThought()} />)
+  )
+
+  await waitForUpdate(() => page.setProps({ thought: secondThought() }))
+
   expect(
     page.find({ title: secondThought().title.plain }).length
   ).toBeGreaterThan(0)
@@ -39,9 +50,11 @@ async function waitForUpdate(callback) {
 }
 
 test('it loads relevant content', async () => {
-  nock(TEST_ORIGIN)
-    .get('/dist/src/content/articles/topics/clean-architecture.json')
-    .reply(200, [firstThought(), secondThought()])
+  fetch.mockResolvedValue({
+    json() {
+      return [firstThought(), secondThought()]
+    },
+  })
 
   const page = await waitForUpdate(() =>
     mount(<ArticleBySlugPage thought={firstThought()} />)
