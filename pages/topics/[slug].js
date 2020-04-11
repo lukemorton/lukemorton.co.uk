@@ -1,10 +1,10 @@
-import Topic from '../../src/app/components/Topics/Topic'
-import withCommonProps from '../../src/app/hocs/withCommonProps'
+import Topic from 'src/components/Topics/Topic'
+import withCommonProps from 'src/hocs/withCommonProps'
 import {
   fetchAllTopics,
   fetchThoughtsByTopicSlug,
   fetchTopicBySlug,
-} from '../../src/app/factories/nodeFactory'
+} from 'src/factories/nodeFactory'
 
 export default withCommonProps(Topic)
 

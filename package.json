@@ -46,7 +46,7 @@
     "build": "npm run build:lib && npm run build:blog && npm run build:static",
     "dev": "NODE_ENV=development next dev",
     "start": "NODE_ENV=production next start",
-    "smoke": "npm run build:lib && ./lib/app/bin/smoke.js"
+    "smoke": "npm run build:lib && ./lib/bin/smoke.js"
   },
   "jest": {
     "setupFiles": [

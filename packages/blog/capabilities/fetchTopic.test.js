@@ -3,22 +3,29 @@ import {
   fetchTopicBySlug,
   NoTopicFoundBySlugError,
 } from './fetchTopic'
-import { allTopics, findTopicBySlug } from '../adapters/staticTopicGateway'
+import Topic from '../entities/Topic'
+
+const MOCK_TOPICS = [Topic('Clean Architecture', 'clean-architecture')]
 
 describe('fetchAllTopics()', () => {
   test('returns all topics', () => {
-    expect(fetchAllTopics(allTopics)).toEqual(allTopics())
+    const allTopics = jest.fn().mockReturnValue(MOCK_TOPICS)
+    const topics = fetchAllTopics(allTopics)
+    expect(allTopics).toHaveBeenCalled()
+    expect(topics).toEqual(MOCK_TOPICS)
   })
 })
 
 describe('fetchTopicBySlug()', () => {
-  allTopics().forEach((topic) => {
+  MOCK_TOPICS.forEach((topic) => {
     test(`returns topic for ${topic.slug}`, () => {
+      const findTopicBySlug = jest.fn().mockReturnValue(MOCK_TOPICS[0])
       expect(fetchTopicBySlug(findTopicBySlug, topic.slug)).toBeDefined()
     })
   })
 
   test('throws when topic does not exist', () => {
+    const findTopicBySlug = jest.fn().mockReturnValue(undefined)
     expect(() => fetchTopicBySlug(findTopicBySlug, 'doesnt-exist')).toThrow(
       NoTopicFoundBySlugError
     )

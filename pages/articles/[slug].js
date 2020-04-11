@@ -1,9 +1,9 @@
-import Article from '../../src/app/components/Articles/Article'
-import withCommonProps from '../../src/app/hocs/withCommonProps'
+import Article from 'src/components/Articles/Article'
+import withCommonProps from 'src/hocs/withCommonProps'
 import {
   fetchAllThoughts,
   fetchOneThoughtBySlug,
-} from '../../src/app/factories/nodeFactory'
+} from 'src/factories/nodeFactory'
 
 export default withCommonProps(Article)
 

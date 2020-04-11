@@ -9,6 +9,7 @@ module.exports = (api) => {
       {
         root: ['.'],
         alias: {
+          blog: './packages/blog',
           ui: './packages/ui',
         },
       },
@@ -18,6 +19,7 @@ module.exports = (api) => {
   const ignoreTests = [
     'pageTests/**/*.test.js',
     'src/**/*.test.js',
+    'src/**/testHooks.js',
     'src/setupTests.js',
   ]
 

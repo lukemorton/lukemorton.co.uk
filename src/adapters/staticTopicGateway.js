@@ -1,18 +1,4 @@
-function Topic(name, slug) {
-  return {
-    get name() {
-      return name
-    },
-
-    get slug() {
-      return slug
-    },
-
-    get path() {
-      return `/dist/content/articles/topics/${slug}.json`
-    },
-  }
-}
+import Topic from 'blog/entities/Topic'
 
 const TOPICS = [
   Topic('Clean Architecture', 'clean-architecture'),

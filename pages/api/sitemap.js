@@ -1,8 +1,5 @@
 import { SitemapStream, streamToPromise } from 'sitemap'
-import {
-  fetchAllThoughts,
-  fetchAllTopics,
-} from '../../src/app/factories/nodeFactory'
+import { fetchAllThoughts, fetchAllTopics } from 'src/factories/nodeFactory'
 
 const buildPages = async () => {
   const staticPages = [
