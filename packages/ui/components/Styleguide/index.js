@@ -1,7 +1,7 @@
 import { Page } from '..'
 
 export default () => (
-  <Page title="Styleguide">
+  <Page title="Styleguide" prefixUrl={(path) => path}>
     <style jsx>
       {`
         .example {

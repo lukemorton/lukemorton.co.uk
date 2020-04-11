@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme'
 import nock from 'nock'
 import ArticleBySlugPage from '../../pages/articles/[slug]'
 import Article from '../../src/app/components/Articles/Article'
-import { RelatedContent } from '../../src/app/ui'
+import { RelatedContent } from 'ui'
 import useLiveBlog from '../../src/app/hooks/useLiveBlog'
 
 jest.mock('../../src/app/hooks/useLiveBlog')

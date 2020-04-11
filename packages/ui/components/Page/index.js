@@ -9,7 +9,6 @@ import reset from '../../shared/reset.css'
 import general from '../../shared/general.css'
 import typography from '../../shared/typography.css'
 import utils from '../../shared/utils.css'
-import prefixUrl from '../../helpers/prefixUrl'
 
 const DEFAULT_IMAGE =
   'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=200'
@@ -21,6 +20,7 @@ export default ({
   url,
   canonical,
   image,
+  prefixUrl,
   children,
 }) => (
   <div className="page">
