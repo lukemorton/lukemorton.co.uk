@@ -1,5 +1,5 @@
-import OpenSource from '../src/app/components/OpenSource'
-import withCommonProps from '../src/app/hocs/withCommonProps'
+import OpenSource from 'src/components/OpenSource'
+import withCommonProps from 'src/hocs/withCommonProps'
 
 export default withCommonProps(OpenSource)
 

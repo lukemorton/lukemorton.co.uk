@@ -1,6 +1,6 @@
 import { Feed } from 'feed'
-import { fetchAllThoughts } from '../../src/app/factories/nodeFactory'
-import prefixUrl from '../../src/app/helpers/prefixUrl'
+import { fetchAllThoughts } from 'src/factories/nodeFactory'
+import prefixUrl from 'src/helpers/prefixUrl'
 
 const buildFeed = async () => {
   const thoughts = await fetchAllThoughts()

@@ -2,12 +2,12 @@ import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount, shallow } from 'enzyme'
 import nock from 'nock'
-import ArticleBySlugPage from '../../pages/articles/[slug]'
-import Article from '../../src/app/components/Articles/Article'
+import ArticleBySlugPage from 'pages/articles/[slug]'
+import Article from 'src/components/Articles/Article'
 import { RelatedContent } from 'ui'
-import useLiveBlog from '../../src/app/hooks/useLiveBlog'
+import useLiveBlog from 'src/hooks/useLiveBlog'
 
-jest.mock('../../src/app/hooks/useLiveBlog')
+jest.mock('src/hooks/useLiveBlog')
 
 beforeEach(() => {
   useLiveBlog.mockImplementation((thought) => [thought])
@@ -21,7 +21,9 @@ test('content renders', () => {
 test('derives state from prop sensibly', () => {
   const page = mount(<ArticleBySlugPage thought={firstThought()} />)
   page.setProps({ thought: secondThought() })
-  expect(page.find({ title: secondThought().title.plain }).length).toBe(1)
+  expect(
+    page.find({ title: secondThought().title.plain }).length
+  ).toBeGreaterThan(0)
 })
 
 async function waitForUpdate(callback) {

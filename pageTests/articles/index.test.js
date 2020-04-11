@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ArticlesIndexPage from '../../pages/articles'
-import AllArticles from '../../src/app/components/Articles/All'
+import ArticlesIndexPage from 'pages/articles'
+import AllArticles from 'src/components/Articles/All'
 
 test('content renders', () => {
   const page = shallow(<ArticlesIndexPage />)

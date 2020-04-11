@@ -1,6 +1,6 @@
-import Home from '../src/app/components/Home'
-import withCommonProps from '../src/app/hocs/withCommonProps'
-import { fetchRecentThoughts } from '../src/app/factories/nodeFactory'
+import Home from 'src/components/Home'
+import withCommonProps from 'src/hocs/withCommonProps'
+import { fetchRecentThoughts } from 'src/factories/nodeFactory'
 
 export default withCommonProps(Home)
 

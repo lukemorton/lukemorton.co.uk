@@ -1,4 +1,4 @@
-import About from '../src/app/components/About'
-import withCommonProps from '../src/app/hocs/withCommonProps'
+import About from 'src/components/About'
+import withCommonProps from 'src/hocs/withCommonProps'
 
 export default withCommonProps(About)
