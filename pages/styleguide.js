@@ -1,3 +1,3 @@
-import Styleguide from '../src/app/ui/Styleguide'
+import Styleguide from 'ui/components/Styleguide'
 
 export default Styleguide
