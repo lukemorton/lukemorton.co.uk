@@ -9,7 +9,7 @@ export default function Topic(name, slug) {
     },
 
     get path() {
-      return `/dist/content/articles/topics/${slug}.json`
+      return `/dist/src/content/articles/topics/${slug}.json`
     },
   }
 }
