@@ -1,10 +1,10 @@
-import NodeContainer from './NodeContainer'
+import AppContainer from './AppContainer'
 
-describe('NodeContainer', () => {
+describe('AppContainer', () => {
   let container
 
   beforeEach(() => {
-    container = new NodeContainer()
+    container = new AppContainer()
   })
 
   it('returns fetchAllThoughts', () => {

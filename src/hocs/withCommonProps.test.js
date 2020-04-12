@@ -1,6 +1,6 @@
 import withCommonProps from './withCommonProps'
 import COMMON_PROPS from './commonProps'
-import NodeContainer from '../containers/NodeContainer'
+import AppContainer from '../containers/AppContainer'
 
 describe('withCommonProps', () => {
   it('passes COMMON_PROPS as props', () => {
@@ -21,7 +21,7 @@ describe('withCommonProps', () => {
     const MockComponent = jest.fn()
     withCommonProps(MockComponent)()
     expect(MockComponent).toBeCalledWith(
-      expect.objectContaining({ container: expect.any(NodeContainer) })
+      expect.objectContaining({ container: expect.any(AppContainer) })
     )
   })
 })

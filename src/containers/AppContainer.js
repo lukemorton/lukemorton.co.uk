@@ -1,6 +1,6 @@
 import * as nodeFactory from '../factories/nodeFactory'
 
-export default class NodeContainer {
+export default class AppContainer {
   getFetchAllThoughts() {
     return nodeFactory.fetchAllThoughts
   }

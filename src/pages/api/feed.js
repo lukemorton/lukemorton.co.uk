@@ -1,5 +1,5 @@
 import { Feed } from 'feed'
-import withNodeContainer from 'src/middleware/withNodeContainer'
+import withContainer from 'src/middleware/withContainer'
 import prefixUrl from 'src/helpers/prefixUrl'
 
 const buildFeed = async (fetchAllThoughts) => {
@@ -39,7 +39,7 @@ const buildFeed = async (fetchAllThoughts) => {
   return feed
 }
 
-export default withNodeContainer(async (req, res, { container }) => {
+export default withContainer(async (req, res, { container }) => {
   let feed
 
   switch (req.query.type) {

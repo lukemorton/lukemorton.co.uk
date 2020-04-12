@@ -1,5 +1,5 @@
 import { SitemapStream, streamToPromise } from 'sitemap'
-import withNodeContainer from '../../middleware/withNodeContainer'
+import withContainer from '../../middleware/withContainer'
 
 const buildPages = async ({ fetchAllThoughts, fetchAllTopics }) => {
   const staticPages = [
@@ -32,7 +32,7 @@ const handleError = (context) => (e) => {
   exit(1)
 }
 
-export default withNodeContainer(async (req, res, { container }) => {
+export default withContainer(async (req, res, { container }) => {
   res.setHeader('Content-Type', 'application/xml')
   res.on('error', handleError('res'))
 
