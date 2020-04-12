@@ -10,4 +10,8 @@ describe('NodeContainer', () => {
   it('returns fetchAllThoughts', () => {
     expect(container.getFetchAllThoughts()).toBeDefined()
   })
+
+  it('returns fetchAllTopics', () => {
+    expect(container.getFetchAllTopics()).toBeDefined()
+  })
 })
