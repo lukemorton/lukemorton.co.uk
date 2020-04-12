@@ -50,7 +50,11 @@
   "jest": {
     "setupFiles": [
       "<rootDir>/src/setupTests.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "content/articles/index.json$": "<rootDir>src/mocks/markedlyIndex.json.js",
+      "content/articles/.+json$": "<rootDir>src/mocks/markedlyList.json.js"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
