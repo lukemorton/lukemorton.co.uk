@@ -43,7 +43,7 @@ describe('listThoughts', () => {
         },
       }
 
-      await fetchOneThoughtBySlug(null, expectedThought.slug)
+      await fetchOneThoughtBySlug(expectedThought)
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/src/content/articles/index.json')
       )
@@ -56,12 +56,12 @@ describe('listThoughts', () => {
         '2012-01-01-a-slug': { slug: '2012-01-01-a-slug' },
       }
 
-      const t = await fetchOneThoughtBySlug(null, expectedThought.slug)
+      const t = await fetchOneThoughtBySlug(expectedThought)
       expect(t).toEqual(expectedThought)
     })
 
     test('it raises exception if thought doesnt exist', async () => {
-      expect(fetchOneThoughtBySlug(null, 'doesnt-exist')).rejects.toThrow(
+      expect(fetchOneThoughtBySlug({ slug: 'doesnt-exist' })).rejects.toThrow(
         NoThoughtFoundBySlugError
       )
     })
@@ -73,20 +73,20 @@ describe('listThoughts', () => {
     })
 
     test('it uses fetch', async () => {
-      await fetchRecentThoughts(null)
+      await fetchRecentThoughts()
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/src/content/articles/recent.json')
       )
     })
 
     test('it returns JSON response', async () => {
-      const response = await fetchRecentThoughts(null)
+      const response = await fetchRecentThoughts()
       expect(response).toEqual(jsonResponse)
     })
 
     test('it returns empty array when json response is null', async () => {
       jsonResponse = null
-      const response = await fetchRecentThoughts(null)
+      const response = await fetchRecentThoughts()
       expect(response).toEqual([])
     })
   })
@@ -97,20 +97,20 @@ describe('listThoughts', () => {
     })
 
     test('it uses fetch', async () => {
-      await fetchAllThoughts(null)
+      await fetchAllThoughts()
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/src/content/articles/archive.json')
       )
     })
 
     test('it returns JSON response', async () => {
-      const response = await fetchAllThoughts(null)
+      const response = await fetchAllThoughts()
       expect(response).toEqual(jsonResponse)
     })
 
     test('it returns empty array when json response is null', async () => {
       jsonResponse = null
-      const response = await fetchAllThoughts(null)
+      const response = await fetchAllThoughts()
       expect(response).toEqual([])
     })
   })
@@ -121,25 +121,25 @@ describe('listThoughts', () => {
     })
 
     test('it uses fetch', async () => {
-      await fetchThoughtsByTopicName(null, 'Ruby on Rails')
+      await fetchThoughtsByTopicName({ name: 'Ruby on Rails' })
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/src/content/articles/topics/rails.json')
       )
     })
 
     test('it returns JSON response', async () => {
-      const response = await fetchThoughtsByTopicName(null, 'Ruby on Rails')
+      const response = await fetchThoughtsByTopicName({ name: 'Ruby on Rails' })
       expect(response).toEqual(jsonResponse)
     })
 
     test('it returns empty array when json response is null', async () => {
       jsonResponse = null
-      const response = await fetchThoughtsByTopicName(null, 'Ruby on Rails')
+      const response = await fetchThoughtsByTopicName({ name: 'Ruby on Rails' })
       expect(response).toEqual([])
     })
 
     test('it raises exception if topic doesnt exist', async () => {
-      expect(fetchThoughtsByTopicName(null, 'Jim Bob')).rejects.toThrow(
+      expect(fetchThoughtsByTopicName({ name: 'Jim Bob' })).rejects.toThrow(
         NoThoughtsFoundByTopicNameError
       )
     })
@@ -151,25 +151,25 @@ describe('listThoughts', () => {
     })
 
     test('it uses fetch', async () => {
-      await fetchThoughtsByTopicSlug(null, 'rails')
+      await fetchThoughtsByTopicSlug({ slug: 'rails' })
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/src/content/articles/topics/rails.json')
       )
     })
 
     test('it returns JSON response', async () => {
-      const response = await fetchThoughtsByTopicSlug(null, 'rails')
+      const response = await fetchThoughtsByTopicSlug({ slug: 'rails' })
       expect(response).toEqual(jsonResponse)
     })
 
     test('it returns empty array when json response is null', async () => {
       jsonResponse = null
-      const response = await fetchThoughtsByTopicSlug(null, 'rails')
+      const response = await fetchThoughtsByTopicSlug({ slug: 'rails' })
       expect(response).toEqual([])
     })
 
     test('it raises exception if topic doesnt exist', async () => {
-      expect(fetchThoughtsByTopicSlug(null, 'jimbob')).rejects.toThrow(
+      expect(fetchThoughtsByTopicSlug({ slug: 'jimbob' })).rejects.toThrow(
         NoThoughtsFoundByTopicSlugError
       )
     })
@@ -177,9 +177,12 @@ describe('listThoughts', () => {
 
   describe('passing origin to fetch methods', () => {
     test('it uses requst object to build URL', async () => {
-      await fetchThoughtsByTopicSlug('https://lukemorton.tech', 'rails')
+      await fetchThoughtsByTopicSlug({
+        slug: 'rails',
+        origin: 'https://lukemorton.tech',
+      })
       expect(fetch).toHaveBeenCalledWith(
-        expect.stringContaining('/dist/src/content/articles/topics/rails.json')
+        'https://lukemorton.tech/dist/src/content/articles/topics/rails.json'
       )
     })
   })

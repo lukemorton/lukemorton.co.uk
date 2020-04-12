@@ -42,14 +42,20 @@ describe('useRelatedContent()', () => {
   test('fetches related content by tag', async () => {
     const expectedTags = ['Clean Architecture']
     await act(async () => setTags('a-slug', expectedTags))
-    expect(fetchThoughtsByTopicName).toHaveBeenCalledWith(null, expectedTags[0])
+    expect(fetchThoughtsByTopicName).toHaveBeenCalledWith({
+      name: expectedTags[0],
+    })
   })
 
   test('fetches related content for multiple tags', async () => {
     const expectedTags = ['Clean Architecture', 'Ruby on Rails']
     await act(async () => setTags('a-slug', expectedTags))
-    expect(fetchThoughtsByTopicName).toHaveBeenCalledWith(null, expectedTags[0])
-    expect(fetchThoughtsByTopicName).toHaveBeenCalledWith(null, expectedTags[1])
+    expect(fetchThoughtsByTopicName).toHaveBeenCalledWith({
+      name: expectedTags[0],
+    })
+    expect(fetchThoughtsByTopicName).toHaveBeenCalledWith({
+      name: expectedTags[1],
+    })
   })
 
   test('adds related content for tag', async () => {

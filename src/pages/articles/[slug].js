@@ -14,6 +14,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const { slug } = params
-  const thought = await fetchOneThoughtBySlug(null, params.slug)
+  const thought = await fetchOneThoughtBySlug({ slug: params.slug })
   return { props: { slug, thought } }
 }

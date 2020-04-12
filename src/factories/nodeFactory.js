@@ -32,7 +32,7 @@ export {
   NoThoughtsFoundByTopicSlugError,
 } from 'blog/capabilities/fetchThoughts'
 
-export function fetchOneThoughtBySlug(_, slug) {
+export function fetchOneThoughtBySlug({ slug }) {
   return _fetchOneThoughtBySlug({ thoughtsIndex, slug })
 }
 
@@ -44,7 +44,7 @@ export function fetchAllThoughts() {
   return _fetchAllThoughts({ allThoughts })
 }
 
-export function fetchThoughtsByTopicName(_, name) {
+export function fetchThoughtsByTopicName({ name }) {
   return _fetchThoughtsByTopicName({
     thoughtsByTopicSlug,
     findTopicByName,
@@ -52,7 +52,7 @@ export function fetchThoughtsByTopicName(_, name) {
   })
 }
 
-export function fetchThoughtsByTopicSlug(_, slug) {
+export function fetchThoughtsByTopicSlug({ slug }) {
   return _fetchThoughtsByTopicSlug({
     thoughtsByTopicSlug,
     topicSlugExists,
@@ -63,9 +63,12 @@ export function fetchThoughtsByTopicSlug(_, slug) {
 export { NoTopicFoundBySlugError } from 'blog/capabilities/fetchTopic'
 
 export function fetchAllTopics() {
-  return _fetchAllTopics(allTopics)
+  return _fetchAllTopics({ allTopics })
 }
 
-export function fetchTopicBySlug(slug) {
-  return _fetchTopicBySlug(findTopicBySlug, slug)
+export function fetchTopicBySlug({ slug }) {
+  return _fetchTopicBySlug({
+    topicBySlug: findTopicBySlug,
+    slug,
+  })
 }

@@ -6,12 +6,12 @@ export class NoTopicFoundBySlugError extends Error {
   }
 }
 
-export function fetchAllTopics(allTopics) {
+export function fetchAllTopics({ allTopics }) {
   return allTopics()
 }
 
-export function fetchTopicBySlug(findTopicBySlug, slug) {
-  const topic = findTopicBySlug(slug)
+export function fetchTopicBySlug({ topicBySlug, slug }) {
+  const topic = topicBySlug(slug)
   if (!topic) throw new NoTopicFoundBySlugError(slug)
   return topic
 }
