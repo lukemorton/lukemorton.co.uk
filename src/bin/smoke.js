@@ -4,14 +4,14 @@ import fetch from 'cross-fetch'
 import fs from 'fs'
 import { fetchAllThoughts, fetchAllTopics } from '../factories/browserFactory'
 
-function testUrl(origin, path) {
+function testUrl(origin, path, expectedStatus = 200) {
   const url = `${origin}${path || ''}`
 
   fetch(url)
     .then((res) => {
       console.log(`URL: ${url}`)
 
-      if (res.status === 200) {
+      if (res.status === expectedStatus) {
         console.log('Status:', res.status)
       } else {
         console.error('Status:', res.status)
@@ -57,6 +57,12 @@ if (state === 'success') {
       testUrl(targetUrl, `/topics/${t.slug}`)
     })
   })()
+
+  // Ensure /api URLs all 404
+  testUrl(targetUrl, '/api', 404)
+  testUrl(targetUrl, '/api/redirectThoughts', 404)
+  testUrl(targetUrl, '/api/sitemap', 404)
+  testUrl(targetUrl, '/api/feed', 404)
 } else {
   console.error('Should not be run unless success')
   process.exit(1)
