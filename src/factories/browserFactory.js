@@ -1,4 +1,5 @@
 import partial from 'lodash.partial'
+
 import {
   fetchOneThoughtBySlug as _fetchOneThoughtBySlug,
   fetchRecentThoughts as _fetchRecentThoughts,
@@ -6,10 +7,12 @@ import {
   fetchThoughtsByTopicName as _fetchThoughtsByTopicName,
   fetchThoughtsByTopicSlug as _fetchThoughtsByTopicSlug,
 } from 'blog/capabilities/fetchThoughts'
+
 import {
   fetchAllTopics as _fetchAllTopics,
   fetchTopicBySlug as _fetchTopicBySlug,
 } from 'blog/capabilities/fetchTopic'
+
 import {
   thoughtsIndex,
   recentThoughts,
@@ -17,6 +20,7 @@ import {
   thoughtsByTopicSlug,
   loadJsonPath,
 } from '../adapters/httpThoughtGateway'
+
 import {
   allTopics,
   findTopicByName,
