@@ -1,11 +1,10 @@
 import Article from 'src/components/Articles/Article'
-import withCommonProps from 'src/hocs/withCommonProps'
 import {
   fetchAllThoughts,
   fetchOneThoughtBySlug,
 } from 'src/factories/nodeFactory'
 
-export default withCommonProps(Article)
+export default Article
 
 export const getStaticPaths = async () => {
   const thoughts = await fetchAllThoughts()

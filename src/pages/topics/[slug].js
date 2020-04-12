@@ -1,12 +1,11 @@
 import Topic from 'src/components/Topics/Topic'
-import withCommonProps from 'src/hocs/withCommonProps'
 import {
   fetchAllTopics,
   fetchThoughtsByTopicSlug,
   fetchTopicBySlug,
 } from 'src/factories/nodeFactory'
 
-export default withCommonProps(Topic)
+export default Topic
 
 export const getStaticPaths = async () => {
   const topics = await fetchAllTopics()
