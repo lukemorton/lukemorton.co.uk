@@ -1,7 +1,7 @@
 import { SitemapStream, streamToPromise } from 'sitemap'
-import { fetchAllThoughts, fetchAllTopics } from 'src/factories/nodeFactory'
+import withNodeContainer from '../../middleware/withNodeContainer'
 
-const buildPages = async () => {
+const buildPages = async ({ fetchAllThoughts, fetchAllTopics }) => {
   const staticPages = [
     { url: '/', changefreq: 'weekly' },
     { url: '/about', changefreq: 'weekly' },
@@ -20,9 +20,9 @@ const buildPages = async () => {
   return [].concat(staticPages, articlePages, topicPages)
 }
 
-const writeSitemap = async () => {
+const writeSitemap = async ({ fetchAllThoughts, fetchAllTopics }) => {
   const sitemap = new SitemapStream({ hostname: 'https://lukemorton.tech/' })
-  const pages = await buildPages()
+  const pages = await buildPages({ fetchAllThoughts, fetchAllTopics })
   pages.map((page) => sitemap.write(page))
   return sitemap
 }
@@ -32,12 +32,15 @@ const handleError = (context) => (e) => {
   exit(1)
 }
 
-export default async (req, res) => {
+export default withNodeContainer(async (req, res, { container }) => {
   res.setHeader('Content-Type', 'application/xml')
   res.on('error', handleError('res'))
 
-  const sitemap = await writeSitemap()
+  const sitemap = await writeSitemap({
+    fetchAllThoughts: container.getFetchAllThoughts(),
+    fetchAllTopics: container.getFetchAllTopics(),
+  })
   sitemap.on('error', handleError('sitemap'))
   sitemap.pipe(res)
   sitemap.end()
-}
+})
