@@ -69,14 +69,14 @@ describe('httpThoughtGateway', () => {
     })
 
     test('it uses fetch', async () => {
-      await loadJsonPath(origin, '/dist/src/content/articles/index.json')
+      await loadJsonPath('/dist/src/content/articles/index.json', { origin })
       expect(fetch).toHaveBeenCalledWith(
         expect.stringContaining('/dist/src/content/articles/index.json')
       )
     })
 
     test('it uses prepends origin', async () => {
-      await loadJsonPath(origin, '/dist/src/content/articles/index.json')
+      await loadJsonPath('/dist/src/content/articles/index.json', { origin })
       expect(fetch).toHaveBeenCalledWith(
         `${origin}/dist/src/content/articles/index.json`
       )
@@ -96,7 +96,7 @@ describe('httpThoughtGateway', () => {
 
       test('it uses window.location for origin if null', async () => {
         window.location = { hostname: 'lukemorton.tech' }
-        await loadJsonPath(null, '/dist/src/content/articles/index.json')
+        await loadJsonPath('/dist/src/content/articles/index.json')
         expect(fetch).toHaveBeenCalledWith(
           'https://lukemorton.tech/dist/src/content/articles/index.json'
         )
@@ -104,7 +104,7 @@ describe('httpThoughtGateway', () => {
 
       test('it replaces localhost with lvh.me', async () => {
         window.location = { hostname: 'localhost' }
-        await loadJsonPath(null, '/dist/src/content/articles/index.json')
+        await loadJsonPath('/dist/src/content/articles/index.json')
         expect(fetch).toHaveBeenCalledWith(
           'http://lvh.me:3000/dist/src/content/articles/index.json'
         )
@@ -115,7 +115,7 @@ describe('httpThoughtGateway', () => {
       const err = new Error('Uh oh')
       fetch.mockRejectedValueOnce(err)
       await expect(
-        loadJsonPath(origin, '/dist/src/content/articles/index.json')
+        loadJsonPath('/dist/src/content/articles/index.json', { origin })
       ).rejects.toThrow(err)
     })
 
@@ -123,7 +123,7 @@ describe('httpThoughtGateway', () => {
       const err = new Error('Uh oh')
       fetch.mockRejectedValueOnce(err)
       try {
-        await loadJsonPath(origin, '/dist/src/content/articles/index.json')
+        await loadJsonPath('/dist/src/content/articles/index.json', { origin })
       } catch {}
       expect(console.error).toHaveBeenCalled()
     })

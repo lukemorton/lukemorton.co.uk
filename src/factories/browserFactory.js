@@ -35,37 +35,45 @@ export {
 } from 'blog/capabilities/fetchThoughts'
 
 export function fetchOneThoughtBySlug(origin, slug) {
+  const _load = (path) => loadJsonPath(path, { origin })
+
   return _fetchOneThoughtBySlug({
-    thoughtsIndex: () => thoughtsIndex(partial(loadJsonPath, origin)),
+    thoughtsIndex: () => thoughtsIndex(_load),
     slug,
   })
 }
 
 export function fetchRecentThoughts(origin) {
+  const _load = (path) => loadJsonPath(path, { origin })
+
   return _fetchRecentThoughts({
-    recentThoughts: () => recentThoughts(partial(loadJsonPath, origin)),
+    recentThoughts: () => recentThoughts(_load),
   })
 }
 
 export function fetchAllThoughts(origin) {
+  const _load = (path) => loadJsonPath(path, { origin })
+
   return _fetchAllThoughts({
-    allThoughts: () => allThoughts(partial(loadJsonPath, origin)),
+    allThoughts: () => allThoughts(_load),
   })
 }
 
 export function fetchThoughtsByTopicName(origin, name) {
+  const _load = (path) => loadJsonPath(path, { origin })
+
   return _fetchThoughtsByTopicName({
-    thoughtsByTopicSlug: (slug) =>
-      thoughtsByTopicSlug(partial(loadJsonPath, origin), slug),
+    thoughtsByTopicSlug: (slug) => thoughtsByTopicSlug(_load, slug),
     findTopicByName,
     name,
   })
 }
 
 export function fetchThoughtsByTopicSlug(origin, slug) {
+  const _load = (path) => loadJsonPath(path, { origin })
+
   return _fetchThoughtsByTopicSlug({
-    thoughtsByTopicSlug: (slug) =>
-      thoughtsByTopicSlug(partial(loadJsonPath, origin), slug),
+    thoughtsByTopicSlug: (slug) => thoughtsByTopicSlug(_load, slug),
     topicSlugExists,
     slug,
   })

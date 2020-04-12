@@ -14,7 +14,7 @@ function buildOriginFromWindowIfNull(origin) {
   }
 }
 
-export async function loadJsonPath(origin, path) {
+export async function loadJsonPath(path, { origin } = {}) {
   origin = buildOriginFromWindowIfNull(origin)
 
   const url = `${origin}${path}`
