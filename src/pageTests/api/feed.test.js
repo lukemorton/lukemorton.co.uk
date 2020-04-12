@@ -1,0 +1,86 @@
+import feed from '../../pages/api/feed'
+
+describe('feed', () => {
+  let req
+  let res
+  let mockFetchAllThoughts
+  let container
+
+  beforeEach(() => {
+    req = { query: {} }
+    res = {
+      status: jest.fn(),
+      setHeader: jest.fn(),
+      send: jest.fn(),
+      end: jest.fn(),
+    }
+    mockFetchAllThoughts = jest.fn()
+    container = {
+      getFetchAllThoughts: jest.fn().mockReturnValue(mockFetchAllThoughts),
+    }
+  })
+
+  it('returns error if type not set', async () => {
+    await feed(req, res, { container })
+    expect(res.status).toHaveBeenCalledWith(400)
+    expect(res.send).toHaveBeenCalledWith({ error: 'Unknown feed type' })
+  })
+
+  it('returns error if type unknown', async () => {
+    req.query.type = 'phony'
+    await feed(req, res, { container })
+    expect(res.status).toHaveBeenCalledWith(400)
+    expect(res.send).toHaveBeenCalledWith({ error: 'Unknown feed type' })
+  })
+
+  it('calls container.getFetchAllThoughts', async () => {
+    req.query.type = 'json'
+    mockFetchAllThoughts.mockReturnValue([])
+    await feed(req, res, { container })
+    expect(container.getFetchAllThoughts).toHaveBeenCalledWith()
+  })
+
+  it('returns rss feed', async () => {
+    req.query.type = 'rss'
+    mockFetchAllThoughts.mockReturnValue([])
+    await feed(req, res, { container })
+    expect(res.setHeader).toHaveBeenCalledWith(
+      'Content-Type',
+      'application/rss+xml'
+    )
+    expect(res.end).toHaveBeenCalledWith(
+      expect.stringContaining('<?xml version="1.0" encoding="utf-8"?>')
+    )
+  })
+
+  it('returns atom feed', async () => {
+    req.query.type = 'atom'
+    mockFetchAllThoughts.mockReturnValue([])
+    await feed(req, res, { container })
+    expect(res.setHeader).toHaveBeenCalledWith(
+      'Content-Type',
+      'application/atom+xml'
+    )
+    expect(res.end).toHaveBeenCalledWith(
+      expect.stringContaining('<?xml version="1.0" encoding="utf-8"?>')
+    )
+  })
+
+  it('returns json feed', async () => {
+    req.query.type = 'json'
+    mockFetchAllThoughts.mockReturnValue([])
+    res.end.mockImplementation((json) => {
+      expect(JSON.parse(json)).toEqual(
+        expect.objectContaining({
+          version: 'https://jsonfeed.org/version/1',
+        })
+      )
+    })
+    expect.assertions(2)
+    await feed(req, res, { container })
+    expect(res.setHeader).toHaveBeenCalledWith(
+      'Content-Type',
+      'application/feed+json'
+    )
+  })
+})
