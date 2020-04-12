@@ -4,7 +4,6 @@
   "repository": "https://github.com/lukemorton/lukemorton.co.uk",
   "license": "UNLICENSED",
   "dependencies": {
-    "@use-it/interval": "^0.1.3",
     "cross-fetch": "^3.0.4",
     "feed": "^4.1.0",
     "lodash.partial": "^4.2.1",
@@ -12,7 +11,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
-    "sitemap": "^6.1.0"
+    "sitemap": "^6.1.0",
+    "swr": "^0.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
