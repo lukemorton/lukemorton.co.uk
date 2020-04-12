@@ -46,13 +46,13 @@ if (state === 'success') {
   testUrl(targetUrl, '/feed.atom')
   testUrl(targetUrl, '/feed.json')
   ;(async () => {
-    const thoughts = await fetchAllThoughts(targetUrl)
+    const thoughts = await fetchAllThoughts({ origin: targetUrl })
     thoughts.forEach((t) => {
       testUrl(targetUrl, `/articles/${t.slug}`)
     })
   })()
   ;(async () => {
-    const topics = await fetchAllTopics(targetUrl)
+    const topics = await fetchAllTopics({ origin: targetUrl })
     topics.forEach((t) => {
       testUrl(targetUrl, `/topics/${t.slug}`)
     })

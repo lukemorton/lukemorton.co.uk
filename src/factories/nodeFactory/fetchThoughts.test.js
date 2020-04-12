@@ -15,12 +15,12 @@ describe('listThoughts', () => {
       const expectedThought = {
         slug: 'lightweight-docker-images-for-go',
       }
-      const t = await fetchOneThoughtBySlug(null, expectedThought.slug)
+      const t = await fetchOneThoughtBySlug({ slug: expectedThought.slug })
       expect(t).toEqual(expectedThought)
     })
 
     it('raises exception if thought doesnt exist', async () => {
-      expect(fetchOneThoughtBySlug(null, 'doesnt-exist')).rejects.toThrow(
+      expect(fetchOneThoughtBySlug({ slug: 'doesnt-exist' })).rejects.toThrow(
         NoThoughtFoundBySlugError
       )
     })
@@ -28,26 +28,26 @@ describe('listThoughts', () => {
 
   describe('.fetchRecentThoughts()', () => {
     it('returns list of thoughts', async () => {
-      const response = await fetchRecentThoughts(null)
+      const response = await fetchRecentThoughts()
       expect(response.length).toEqual(1)
     })
   })
 
   describe('.fetchAllThoughts()', () => {
     it('returns list of thoughts', async () => {
-      const response = await fetchAllThoughts(null)
+      const response = await fetchAllThoughts()
       expect(response.length).toEqual(1)
     })
   })
 
   describe('.fetchThoughtsByTopicName()', () => {
     it('returns list of thoughts', async () => {
-      const response = await fetchThoughtsByTopicName(null, 'Ruby on Rails')
+      const response = await fetchThoughtsByTopicName({ name: 'Ruby on Rails' })
       expect(response.length).toEqual(1)
     })
 
     it('raises exception if topic doesnt exist', async () => {
-      expect(fetchThoughtsByTopicName(null, 'Jim Bob')).rejects.toThrow(
+      expect(fetchThoughtsByTopicName({ name: 'Jim Bob' })).rejects.toThrow(
         NoThoughtsFoundByTopicNameError
       )
     })
@@ -55,12 +55,12 @@ describe('listThoughts', () => {
 
   describe('.fetchThoughtsByTopicSlug()', () => {
     it('returns list of thoughts', async () => {
-      const response = await fetchThoughtsByTopicSlug(null, 'rails')
+      const response = await fetchThoughtsByTopicSlug({ slug: 'rails' })
       expect(response.length).toEqual(1)
     })
 
     it('raises exception if topic doesnt exist', async () => {
-      expect(fetchThoughtsByTopicSlug(null, 'jimbob')).rejects.toThrow(
+      expect(fetchThoughtsByTopicSlug({ slug: 'jimbob' })).rejects.toThrow(
         NoThoughtsFoundByTopicSlugError
       )
     })

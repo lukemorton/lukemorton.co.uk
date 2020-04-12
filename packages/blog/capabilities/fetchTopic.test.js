@@ -10,7 +10,7 @@ const MOCK_TOPICS = [Topic('Clean Architecture', 'clean-architecture')]
 describe('fetchAllTopics()', () => {
   test('returns all topics', () => {
     const allTopics = jest.fn().mockReturnValue(MOCK_TOPICS)
-    const topics = fetchAllTopics(allTopics)
+    const topics = fetchAllTopics({ allTopics })
     expect(allTopics).toHaveBeenCalled()
     expect(topics).toEqual(MOCK_TOPICS)
   })
@@ -19,15 +19,15 @@ describe('fetchAllTopics()', () => {
 describe('fetchTopicBySlug()', () => {
   MOCK_TOPICS.forEach((topic) => {
     test(`returns topic for ${topic.slug}`, () => {
-      const findTopicBySlug = jest.fn().mockReturnValue(MOCK_TOPICS[0])
-      expect(fetchTopicBySlug(findTopicBySlug, topic.slug)).toBeDefined()
+      const topicBySlug = jest.fn().mockReturnValue(MOCK_TOPICS[0])
+      expect(fetchTopicBySlug({ topicBySlug, slug: topic.slug })).toBeDefined()
     })
   })
 
   test('throws when topic does not exist', () => {
-    const findTopicBySlug = jest.fn().mockReturnValue(undefined)
-    expect(() => fetchTopicBySlug(findTopicBySlug, 'doesnt-exist')).toThrow(
-      NoTopicFoundBySlugError
-    )
+    const topicBySlug = jest.fn().mockReturnValue(undefined)
+    expect(() =>
+      fetchTopicBySlug({ topicBySlug, slug: 'doesnt-exist' })
+    ).toThrow(NoTopicFoundBySlugError)
   })
 })

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { fetchThoughtsByTopicName } from '../factories/browserFactory'
 
 async function fetchThoughtsForEachTag(topics) {
-  return Promise.all(topics.map((t) => fetchThoughtsByTopicName(null, t)))
+  return Promise.all(topics.map((name) => fetchThoughtsByTopicName({ name })))
 }
 
 const concatInto = (arr, a) => arr.concat(a)

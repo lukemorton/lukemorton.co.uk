@@ -34,7 +34,7 @@ export {
   NoThoughtsFoundByTopicSlugError,
 } from 'blog/capabilities/fetchThoughts'
 
-export function fetchOneThoughtBySlug(origin, slug) {
+export function fetchOneThoughtBySlug({ slug, origin }) {
   const _load = (path) => loadJsonPath(path, { origin })
 
   return _fetchOneThoughtBySlug({
@@ -43,7 +43,7 @@ export function fetchOneThoughtBySlug(origin, slug) {
   })
 }
 
-export function fetchRecentThoughts(origin) {
+export function fetchRecentThoughts({ origin } = {}) {
   const _load = (path) => loadJsonPath(path, { origin })
 
   return _fetchRecentThoughts({
@@ -51,7 +51,7 @@ export function fetchRecentThoughts(origin) {
   })
 }
 
-export function fetchAllThoughts(origin) {
+export function fetchAllThoughts({ origin } = {}) {
   const _load = (path) => loadJsonPath(path, { origin })
 
   return _fetchAllThoughts({
@@ -59,7 +59,7 @@ export function fetchAllThoughts(origin) {
   })
 }
 
-export function fetchThoughtsByTopicName(origin, name) {
+export function fetchThoughtsByTopicName({ name, origin }) {
   const _load = (path) => loadJsonPath(path, { origin })
 
   return _fetchThoughtsByTopicName({
@@ -69,7 +69,7 @@ export function fetchThoughtsByTopicName(origin, name) {
   })
 }
 
-export function fetchThoughtsByTopicSlug(origin, slug) {
+export function fetchThoughtsByTopicSlug({ slug, origin }) {
   const _load = (path) => loadJsonPath(path, { origin })
 
   return _fetchThoughtsByTopicSlug({
@@ -82,9 +82,12 @@ export function fetchThoughtsByTopicSlug(origin, slug) {
 export { NoTopicFoundBySlugError } from 'blog/capabilities/fetchTopic'
 
 export function fetchAllTopics() {
-  return _fetchAllTopics(allTopics)
+  return _fetchAllTopics({ allTopics })
 }
 
-export function fetchTopicBySlug(slug) {
-  return _fetchTopicBySlug(findTopicBySlug, slug)
+export function fetchTopicBySlug({ slug }) {
+  return _fetchTopicBySlug({
+    topicBySlug: findTopicBySlug,
+    slug,
+  })
 }

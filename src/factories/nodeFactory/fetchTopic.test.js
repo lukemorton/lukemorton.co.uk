@@ -13,12 +13,12 @@ describe('fetchAllTopics()', () => {
 describe('fetchTopicBySlug()', () => {
   fetchAllTopics().forEach((topic) => {
     test(`returns topic for ${topic.slug}`, () => {
-      expect(fetchTopicBySlug(topic.slug)).toBeDefined()
+      expect(fetchTopicBySlug({ slug: topic.slug })).toBeDefined()
     })
   })
 
   test('throws when topic does not exist', () => {
-    expect(() => fetchTopicBySlug('doesnt-exist')).toThrow(
+    expect(() => fetchTopicBySlug({ slug: 'doesnt-exist' })).toThrow(
       NoTopicFoundBySlugError
     )
   })
