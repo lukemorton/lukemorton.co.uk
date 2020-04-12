@@ -4,4 +4,8 @@ export default class NodeContainer {
   getFetchAllThoughts() {
     return nodeFactory.fetchAllThoughts
   }
+
+  getFetchAllTopics() {
+    return nodeFactory.fetchAllTopics
+  }
 }
