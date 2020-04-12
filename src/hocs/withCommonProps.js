@@ -1,5 +1,7 @@
 import COMMON_PROPS from './commonProps'
+import NodeContainer from '../containers/NodeContainer'
 
 export default function (Component) {
-  return (props) => Component({ ...COMMON_PROPS, ...props })
+  const container = new NodeContainer()
+  return (props) => Component({ ...COMMON_PROPS, container, ...props })
 }
