@@ -1,8 +1,7 @@
-import { useState } from 'react'
-import useInterval from '@use-it/interval'
+import useSWR from 'swr'
 import { fetchOneThoughtBySlug } from '../factories/browserFactory'
 
-const INTERVAL = process.env.NODE_ENV === 'development' ? 1000 : null
+const INTERVAL = process.env.NODE_ENV === 'development' ? 500 : 0
 
 function buildOrigin() {
   const host = window.location.hostname
@@ -12,15 +11,10 @@ function buildOrigin() {
 }
 
 export default function (propThought, origin) {
-  const [thought, setThought] = useState(propThought)
-
-  if (propThought.slug !== thought.slug) setThought(propThought)
-
-  useInterval(() => {
-    ;(async () => {
-      setThought(await fetchOneThoughtBySlug(buildOrigin(), propThought.slug))
-    })()
-  }, INTERVAL)
-
-  return [thought, setThought]
+  const { data: thought } = useSWR(
+    propThought.slug,
+    (query) => fetchOneThoughtBySlug(buildOrigin(), propThought.slug),
+    { initialData: propThought, refreshInterval: INTERVAL }
+  )
+  return [thought]
 }
