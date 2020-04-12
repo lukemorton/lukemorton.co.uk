@@ -5,10 +5,12 @@ import {
   fetchThoughtsByTopicName as _fetchThoughtsByTopicName,
   fetchThoughtsByTopicSlug as _fetchThoughtsByTopicSlug,
 } from 'blog/capabilities/fetchThoughts'
+
 import {
   fetchAllTopics as _fetchAllTopics,
   fetchTopicBySlug as _fetchTopicBySlug,
 } from 'blog/capabilities/fetchTopic'
+
 import {
   thoughtsIndex,
   recentThoughts,
@@ -16,6 +18,7 @@ import {
   thoughtsByTopicSlug,
   loadJsonPath,
 } from '../adapters/fileThoughtGateway'
+
 import {
   allTopics,
   findTopicByName,
