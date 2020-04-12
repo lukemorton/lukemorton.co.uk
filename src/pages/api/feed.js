@@ -1,8 +1,8 @@
 import { Feed } from 'feed'
-import { fetchAllThoughts } from 'src/factories/nodeFactory'
+import withNodeContainer from 'src/middleware/withNodeContainer'
 import prefixUrl from 'src/helpers/prefixUrl'
 
-const buildFeed = async () => {
+const buildFeed = async (fetchAllThoughts) => {
   const thoughts = await fetchAllThoughts()
 
   const author = {
@@ -39,26 +39,30 @@ const buildFeed = async () => {
   return feed
 }
 
-export default async (req, res) => {
-  const feed = await buildFeed()
+export default withNodeContainer(async (req, res, { container }) => {
+  let feed
 
   switch (req.query.type) {
     case 'rss':
-      res.setHeader('Content-Type', 'application/rss+xml')
+      feed = await buildFeed(container.getFetchAllThoughts())
       feed.options.feed = prefixUrl('/feed.rss')
+      res.setHeader('Content-Type', 'application/rss+xml')
       res.end(feed.rss2())
       return
     case 'atom':
-      res.setHeader('Content-Type', 'application/atom+xml')
+      feed = await buildFeed(container.getFetchAllThoughts())
       feed.options.feed = prefixUrl('/feed.atom')
+      res.setHeader('Content-Type', 'application/atom+xml')
       res.end(feed.atom1())
       return
     case 'json':
-      res.setHeader('Content-Type', 'application/feed+json')
+      feed = await buildFeed(container.getFetchAllThoughts())
       feed.options.feed = prefixUrl('/feed.json')
+      res.setHeader('Content-Type', 'application/feed+json')
       res.end(feed.json1())
       return
     default:
+      res.status(400)
       res.send({ error: 'Unknown feed type' })
   }
-}
+})
