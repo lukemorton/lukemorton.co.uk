@@ -3,7 +3,6 @@ import feed from '../../pages/api/feed'
 describe('feed', () => {
   let req
   let res
-  let mockFetchAllThoughts
   let container
 
   beforeEach(() => {
@@ -14,9 +13,8 @@ describe('feed', () => {
       send: jest.fn(),
       end: jest.fn(),
     }
-    mockFetchAllThoughts = jest.fn()
     container = {
-      getFetchAllThoughts: jest.fn().mockReturnValue(mockFetchAllThoughts),
+      getFetchAllThoughts: jest.fn().mockReturnValue(() => []),
     }
   })
 
@@ -35,14 +33,12 @@ describe('feed', () => {
 
   it('calls container.getFetchAllThoughts', async () => {
     req.query.type = 'json'
-    mockFetchAllThoughts.mockReturnValue([])
     await feed(req, res, { container })
     expect(container.getFetchAllThoughts).toHaveBeenCalledWith()
   })
 
   it('returns rss feed', async () => {
     req.query.type = 'rss'
-    mockFetchAllThoughts.mockReturnValue([])
     await feed(req, res, { container })
     expect(res.setHeader).toHaveBeenCalledWith(
       'Content-Type',
@@ -55,7 +51,6 @@ describe('feed', () => {
 
   it('returns atom feed', async () => {
     req.query.type = 'atom'
-    mockFetchAllThoughts.mockReturnValue([])
     await feed(req, res, { container })
     expect(res.setHeader).toHaveBeenCalledWith(
       'Content-Type',
@@ -68,7 +63,6 @@ describe('feed', () => {
 
   it('returns json feed', async () => {
     req.query.type = 'json'
-    mockFetchAllThoughts.mockReturnValue([])
     res.end.mockImplementation((json) => {
       expect(JSON.parse(json)).toEqual(
         expect.objectContaining({
