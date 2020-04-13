@@ -8,6 +8,7 @@ export const GuidePartList = ({ children }) => (
         font-size: 0.9em;
         justify-content: space-between;
         list-style: none;
+        margin: 0 -1em;
         padding: 0;
       }
 
@@ -30,7 +31,7 @@ export const GuidePartListItem = ({ title, description, links }) => (
         background: #f7f7f7;
         border-top: 3px solid #eee;
         margin: 0 0 2em 0;
-        padding: 1em 2em;
+        padding: 1em 1em;
       }
 
       @media ${fromLarge} {

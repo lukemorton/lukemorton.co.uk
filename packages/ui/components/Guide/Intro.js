@@ -1,15 +1,22 @@
 import { Prose } from '..'
+import { fromLarge } from '../../settings/breakpoints'
 
 export const GuideIntro = ({ children }) => (
   <>
     <style jsx>{`
       .intro :global(p:first-of-type) {
         font-size: 1.2em;
-        margin-top: 4em;
+        margin: 1.6em 0;
       }
 
-      .intro :global(p:last-of-type) {
-        margin-bottom: 4em;
+      @media ${fromLarge} {
+        .intro :global(p:first-of-type) {
+          margin-top: 4em;
+        }
+
+        .intro :global(p:last-of-type) {
+          margin-bottom: 4em;
+        }
       }
     `}</style>
 
