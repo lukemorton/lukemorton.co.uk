@@ -12,8 +12,8 @@ export default () => (
   <Page title="A team guide to Software Development">
     <main>
       <GuideIntro>
-        <h1>
-          <TypeSpan largeFontSize="1.2em">
+        <h1 className="larger">
+          <TypeSpan largeFontSize="1.07em">
             <TypeSpan largeFontSize=".95em">A team guide to</TypeSpan>{' '}
             <TypeSpan largeFontSize="1.68em">Software</TypeSpan>{' '}
             <TypeSpan largeFontSize="1.125em">Development</TypeSpan>
