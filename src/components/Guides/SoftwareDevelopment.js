@@ -1,5 +1,11 @@
 import Link from 'next/link'
-import { GuideIntro, GuidePartList, GuidePartListItem, Prose } from 'ui'
+import {
+  GuideIntro,
+  GuidePartList,
+  GuidePartListItem,
+  Prose,
+  TypeSpan,
+} from 'ui'
 import Page from '../Page'
 
 export default () => (
@@ -7,11 +13,11 @@ export default () => (
     <main>
       <GuideIntro>
         <h1>
-          <span style={{ fontSize: '1.2em' }}>
-            <span style={{ fontSize: '.95em' }}>A team guide to</span>{' '}
-            <span style={{ fontSize: '1.68em' }}>Software</span>{' '}
-            <span style={{ fontSize: '1.125em' }}>Development</span>
-          </span>
+          <TypeSpan largeFontSize="1.2em">
+            <TypeSpan largeFontSize=".95em">A team guide to</TypeSpan>{' '}
+            <TypeSpan largeFontSize="1.68em">Software</TypeSpan>{' '}
+            <TypeSpan largeFontSize="1.125em">Development</TypeSpan>
+          </TypeSpan>
         </h1>
 
         <p>
@@ -51,8 +57,8 @@ export default () => (
         <GuidePartListItem
           title={
             <h2>
-              <span style={{ fontSize: '1.535em' }}>The software</span>{' '}
-              <span style={{ fontSize: '1.08em' }}>development team</span>
+              <TypeSpan largeFontSize="1.535em">The software</TypeSpan>{' '}
+              <TypeSpan largeFontSize="1.08em">development team</TypeSpan>
             </h2>
           }
           description="Learn about software development teams, from the roles and skills they need to succeed, to how they interact with their organisations."
@@ -70,7 +76,7 @@ export default () => (
           title={
             <h2 style={{ paddingTop: '.125em' }}>
               Ways of working to{' '}
-              <span style={{ fontSize: '1.535em' }}>deliver value</span>
+              <TypeSpan largeFontSize="1.535em">deliver value</TypeSpan>
             </h2>
           }
           description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
@@ -87,9 +93,9 @@ export default () => (
         <GuidePartListItem
           title={
             <h2>
-              <span style={{ fontSize: '1.535em' }}>Architecting</span>
+              <TypeSpan largeFontSize="1.535em">Architecting</TypeSpan>
               {` `}
-              <span style={{ fontSize: '1.08em' }}>for change</span>
+              <TypeSpan largeFontSize="1.08em">for change</TypeSpan>
             </h2>
           }
           description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
@@ -109,9 +115,9 @@ export default () => (
         <GuidePartListItem
           title={
             <h2 style={{ paddingTop: '.125em' }}>
-              <span style={{ fontSize: '1.08em' }}>Lean software</span>
+              <TypeSpan largeFontSize="1.08em">Lean software</TypeSpan>
               {` `}
-              <span style={{ fontSize: '1.45em' }}>delivery</span>
+              <TypeSpan largeFontSize="1.45em">delivery</TypeSpan>
             </h2>
           }
           description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
