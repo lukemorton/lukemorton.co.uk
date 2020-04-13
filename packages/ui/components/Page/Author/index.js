@@ -19,8 +19,10 @@ export default () => (
         .avatar img {
           border-radius: 50%;
           filter: brightness(1.2);
+          height: 4rem;
           max-width: none;
           vertical-align: bottom;
+          width: 4rem;
         }
 
         @media ${columnLayoutBreakpoint} {
@@ -28,6 +30,11 @@ export default () => (
             float: none;
             margin-top: 1em;
             text-align: right;
+          }
+
+          .avatar img {
+            height: 6rem;
+            width: 6rem;
           }
         }
       `}
@@ -37,7 +44,8 @@ export default () => (
       <img
         alt="A photograph of Luke smiling in a smart white shirt"
         src="https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=200"
-        style={{ height: '6rem', width: '6rem' }}
+        height="6rem"
+        width="6rem"
       />
     </p>
 
