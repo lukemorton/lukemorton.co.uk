@@ -5,7 +5,6 @@ export const GuidePartList = ({ children }) => (
   <>
     <style jsx>{`
       .part-list {
-        font-size: 0.9em;
         justify-content: space-between;
         list-style: none;
         margin: 0 -1em;
@@ -15,6 +14,7 @@ export const GuidePartList = ({ children }) => (
       @media ${fromLarge} {
         .part-list {
           display: flex;
+          font-size: 0.9em;
           flex-wrap: wrap;
           margin: 0 -2em;
         }
