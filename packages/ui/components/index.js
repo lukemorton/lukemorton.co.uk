@@ -1,3 +1,4 @@
+export * from './Guide'
 import Page from './Page'
 import Projects from './Projects'
 import Prose from './Prose'
