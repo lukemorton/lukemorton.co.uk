@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Prose, Thoughts } from 'ui'
+import { Prose, Thoughts, TypeSpan } from 'ui'
 import Page from './Page'
 
 export default ({ archiveUrl, thoughts }) => (
@@ -9,7 +9,12 @@ export default ({ archiveUrl, thoughts }) => (
   >
     <main>
       <Prose>
-        <h1 className="larger">Exploring teams & technology</h1>
+        <h1 className="larger">
+          <TypeSpan largeFontSize="1.09em">
+            Exploring teams{' '}
+            <TypeSpan largeFontSize="1.22em">& technology</TypeSpan>
+          </TypeSpan>
+        </h1>
 
         <p>
           Technology is consuming every aspect of society and yet in a rapidly
