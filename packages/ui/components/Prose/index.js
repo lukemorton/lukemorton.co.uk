@@ -19,7 +19,7 @@ export default ({ noIntro, children }) => (
         }
 
         .prose :global(h1) {
-          margin: 0 0 1rem 0;
+          margin: 0 0 2rem 0;
         }
 
         .prose :global(h4) {
@@ -30,7 +30,10 @@ export default ({ noIntro, children }) => (
           margin: 0 0 1.6em 0;
         }
 
-        ${noIntro ? '' : introRule}
+        .prose :global(p:first-of-type) {
+          font-size: 1.2em;
+          margin: 1.6em 0;
+        }
 
         .prose :global(.meta) + :global(p) {
           font-size: 1.2em;
