@@ -1,12 +1,23 @@
 import Link from 'next/link'
-import { Prose, Thoughts } from 'ui'
+import { GuideBanner, Prose, Thoughts } from 'ui'
 import Page from '../Page'
 
 export default ({ archiveUrl, topic, thoughts }) => (
   <Page title={`Articles on ${topic.name}`}>
     <main>
+      {topic.guide && (
+        <GuideBanner>
+          This topic is part of a team guide to{' '}
+          <Link href="/guides/software-development">
+            <a>Software Development</a>
+          </Link>
+        </GuideBanner>
+      )}
+
       <Prose>
         <h1 className="larger">{topic.name}</h1>
+
+        {topic.description && <p>{topic.description}</p>}
       </Prose>
 
       <Thoughts
