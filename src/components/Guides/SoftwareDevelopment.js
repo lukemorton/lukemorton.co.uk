@@ -21,9 +21,10 @@ export default () => (
         </h1>
 
         <p>
-          This guide is for software development teams working in organistions
-          who've realised that software isn't just a necessity – it's the
-          mechanism by which they will achieve their mission and purpose.
+          This guide is for <mark>software development teams</mark> working in
+          organistions who've realised that software isn't just a
+          necessity – it's the mechanism by which they will achieve their
+          mission and purpose.
         </p>
 
         <p>
@@ -92,28 +93,6 @@ export default () => (
 
         <GuidePartListItem
           title={
-            <h2>
-              <TypeSpan largeFontSize="1.535em">Architecting</TypeSpan>
-              {` `}
-              <TypeSpan largeFontSize="1.08em">for change</TypeSpan>
-            </h2>
-          }
-          description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
-          links={[
-            <Link href="/">
-              <a>How teams architect for change</a>
-            </Link>,
-            <>
-              Topic:{' '}
-              <Link href="/">
-                <a>Clean Architecture</a>
-              </Link>
-            </>,
-          ]}
-        />
-
-        <GuidePartListItem
-          title={
             <h2 style={{ paddingTop: '.125em' }}>
               <TypeSpan largeFontSize="1.08em">Lean software</TypeSpan>
               {` `}
@@ -128,6 +107,28 @@ export default () => (
             <Link href="/">
               <a>Decoupling deploy from release</a>
             </Link>,
+          ]}
+        />
+
+        <GuidePartListItem
+          title={
+            <h2>
+              <TypeSpan largeFontSize="1.535em">Architecting</TypeSpan>
+              {` `}
+              <TypeSpan largeFontSize="1.08em">for change</TypeSpan>
+            </h2>
+          }
+          description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
+          links={[
+            <Link href="/">
+              <a>How teams architect for change</a>
+            </Link>,
+            <>
+              Topic:{' '}
+              <Link href="/topics/[slug]" as="/topics/clean-architecture">
+                <a>Clean Architecture</a>
+              </Link>
+            </>,
           ]}
         />
       </GuidePartList>
