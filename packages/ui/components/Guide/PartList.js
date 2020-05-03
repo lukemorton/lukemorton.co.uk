@@ -28,7 +28,7 @@ export const GuidePartListItem = ({ title, description, links }) => (
   <>
     <style jsx>{`
       .part {
-        background: hsl(163, 75%, 98%);
+        background: hsl(163, 75%, 95%);
         border-top: 3px solid hsl(163, 100%, 50%);
         color: hsl(163, 100%, 10%);
         margin: 0 0 2em 0;

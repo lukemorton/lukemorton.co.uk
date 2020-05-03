@@ -15,7 +15,7 @@ export const GuideIntro = ({ children }) => (
       }
 
       .intro :global(mark) {
-        background: hsl(163, 100%, 85%);
+        background: hsl(163, 100%, 70%);
       }
 
       @media ${fromLarge} {
