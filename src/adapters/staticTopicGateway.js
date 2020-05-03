@@ -5,6 +5,7 @@ const TOPICS = [
   Topic('Ruby on Rails', 'rails'),
   Topic('Trunk-based development', 'trunk-based-development'),
   Topic('COVID19', 'covid-19'),
+  Topic('Software Development Teams', 'software-development-teams'),
 ]
 
 export function allTopics() {
