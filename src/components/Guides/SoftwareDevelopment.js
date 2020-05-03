@@ -64,7 +64,10 @@ export default () => (
           }
           description="Learn about software development teams, from the roles and skills they need to succeed, to how they interact with their organisations."
           links={[
-            <Link href="/">
+            <Link
+              href="/articles/[slug]"
+              as="/articles/what-is-a-software-development-team"
+            >
               <a>What is a software development team?</a>
             </Link>,
             <Link href="/">
