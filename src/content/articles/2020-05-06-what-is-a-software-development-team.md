@@ -33,7 +33,7 @@ A multidisciplinary approach is needed for each of these factors to be considere
 
 There are five properties a team must have in order to be successful in developing working software: **empathy**, **trust**, **capability**, **time** and **feedback**.
 
-<p><img src="/media/properties-of-team.png" alt="" width="3000" height="2000" /></p>
+<p><img src="/media/successful-team.png" alt="" width="3000" /></p>
 
 A high degree of **empathy** is needed when developing software and in fact, is a property of all high-performing teams. Empathy for each other is needed in order for a team to work well together and understand each other. Diversity can be a strength for teams but only when the team also has empathy. Empathy is also needed for organisational and user needs. A team must understand the drivers behind the software they are developing.
 
@@ -78,7 +78,7 @@ Short feedback cycles will minimise wasted time building the wrong thing and wil
 
 A team must be healthy in order to be sustainably successful. The health of a team has several measures including safety, balance, learning and happiness.
 
-<p><img src="/media/team-health.png" alt="" width="3000" height="2000" /></p>
+<p><img src="/media/healthy-team.png" alt="" width="3000" /></p>
 
 The team needs certain **safety** levels in order to be honest and productive while working together. You can measure safety levels by looking at the team's ability to express how they're feeling. Can they provide and receive honest feedback? Is blame projected when things go wrong? Do they feel they can push back if they disagree? Are they able to compromise in order to move forward?
 
