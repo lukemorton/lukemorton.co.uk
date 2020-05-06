@@ -101,4 +101,4 @@ Measuring value, usability and feasibility should be a continuous process of the
 
 Problem statements and missions can sometimes be long-lived, and so the team will also want to set out smaller problems, missions or hypotheses to work on. Each should have experiments and measurable objectives that can be used to determine success.
 
-At no point should the team consider they are done after releasing software. Before they are done they must prove what they released is working. Only then are they truly accountable and empowered to develop software that is valuable, usable and feasible.
+At no point should the team consider they are done after releasing software. Before they are done they must prove what they released is working. Only then are they truly accountable and empowered to develop software that is valuable, usable and feasible. Only then have they delivered working software.
