@@ -1,5 +1,6 @@
 ---
 publishedAt: 2020-05-06
+featuredImage: /media/successful-team.png
 tags:
   - Software Development Teams
 ---
