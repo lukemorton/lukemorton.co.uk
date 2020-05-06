@@ -26,7 +26,7 @@ A successful team will weigh up each of these factors and make tradeoffs where n
 - If what you build is usable and feasible but not valuable to your users, then I'm sorry to say but no one will use your software
 - If what you build is valuable and feasible but not usable, congratulations – you built enterprise software
 
-The last point was a little tounge-in-cheek, as you might have detected. It's an important point, though. Often business users do not get a choice in the software they use to do their job. Often their managers or directors will have made a purchasing decision based on cost rather than usability.
+The last point was a little tongue-in-cheek, as you might have detected. It's an important point, though. Often business users do not get a choice in the software they use to do their job. Often their managers or directors will have made a purchasing decision based on cost rather than usability.
 
 A multidisciplinary approach is needed for each of these factors to be considered. We combine two sets of needs with the skills required to develop software. We combine organisational needs with the needs of it's users to identify value. We bring both design and development folk together to translate this value into usable and feasible software, or in other words, working software.
 
