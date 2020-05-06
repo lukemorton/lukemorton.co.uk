@@ -50,13 +50,15 @@ A continuous cycle of **feedback** is the only way a team will be able to test w
 
 Each of the properties need to be understood when forming a team, and be protected throughout the lifetime of the team.
 
-In order for a team to have empathy they must first have a shared purpose and understanding of the needs they are attempting to meet. There a number of ways you can express this purpose:
+A team first and foremost must have empathy for each other and the people they are solving problems for: their users and even their most tricky organisational stakeholders. Empathy must be nurtured throughout the course of the team's life in order for it to be maintained. It is critical for everyone, but especially leaders, to demonstrate and champion empathy.
+
+Having a shared understanding and purpose is a good starting point for focusing the team and fostering empathy. There a number of ways you can express a team's purpose:
 
 - A purpose, vision, mission and values statement
 - Objectives in the form of OKRs, MOKRs and/or KPIs
 - A problem statement
 
-Your team may complete one or more of the above, or use a different activity altogether, all they need to ensure is that they have a shared understanding of why the team exists.
+Your team may complete one or more of the above, or use a different activity altogether, the important thing here is that they have a shared understanding of why the team exists, the challenges they face and that the challenges can only be overcome through teamwork.
 
 The organisation must trust the team to solve problems and should therefore give the team a problem to solve rather than instructions to be completed. Your team may at this point wish to define a problem statement, or the sponsor establishing the team may seek to define a problem statement with the team.
 
