@@ -1,7 +1,11 @@
-import { Thought, RelatedContent } from 'ui'
+import Link from 'next/link'
+import { GuideBanner, Thought, RelatedContent } from 'ui'
 import Page from '../Page'
 import useLiveBlog from '../../hooks/useLiveBlog'
 import useDelayedRelatedContent from '../../hooks/useDelayedRelatedContent'
+
+const inSoftwareDevelopmentGuide = (thought) =>
+  thought.tags && thought.tags.find((t) => t === 'Software development')
 
 export default (props) => {
   const [thought] = useLiveBlog(props.thought)
@@ -17,6 +21,15 @@ export default (props) => {
       url={`/articles/${thought.slug}`}
     >
       <main>
+        {inSoftwareDevelopmentGuide(thought) && (
+          <GuideBanner>
+            This article is part of a team guide to{' '}
+            <Link href="/topics/[slug]" as="/topics/software-development">
+              <a>software development</a>
+            </Link>
+          </GuideBanner>
+        )}
+
         <Thought {...props} thought={thought} />
 
         <RelatedContent thoughts={relatedContent} />

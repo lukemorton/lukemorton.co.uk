@@ -5,7 +5,9 @@ const TOPICS = [
   Topic('Ruby on Rails', 'rails'),
   Topic('Trunk-based development', 'trunk-based-development'),
   Topic('COVID19', 'covid-19'),
-  Topic('Software development', 'software-development'),
+  Topic('Software development', 'software-development', {
+    guide: 'software-development',
+  }),
   Topic('Software development teams', 'software-development-teams'),
 ]
 
