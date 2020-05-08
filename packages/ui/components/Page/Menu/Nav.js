@@ -78,8 +78,8 @@ export default () => (
 
     <ul>
       <li>
-        <Link href="/topics/[slug]" as="/topics/software-development-teams">
-          <a>Software Development Teams</a>
+        <Link href="/topics/[slug]" as="/topics/software-development">
+          <a>Software Development</a>
         </Link>
       </li>
 

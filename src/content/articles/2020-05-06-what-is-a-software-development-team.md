@@ -2,7 +2,8 @@
 publishedAt: 2020-05-06
 featuredImage: /media/successful-team.png
 tags:
-  - Software Development Teams
+  - Software development
+  - Software development teams
 ---
 
 # What is a software development team?
