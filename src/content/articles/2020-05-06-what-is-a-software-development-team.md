@@ -51,7 +51,7 @@ A continuous cycle of **feedback** is the only way a team will be able to test w
 
 Each of the properties need to be understood when forming a team, and be protected throughout the lifetime of the team.
 
-A team first and foremost must have empathy for each other and the people they are solving problems for: their users and even their most tricky organisational stakeholders. Empathy must be nurtured throughout the course of the team's life in order for it to be maintained. It is critical for everyone, but especially leaders, to demonstrate and champion empathy.
+A team first and foremost must have empathy for each other and the people they are solving problems for: [their users and even their most tricky organisational stakeholders](https://lukemorton.tech/articles/what-is-a-software-development-team). Empathy must be nurtured throughout the course of the team's life in order for it to be maintained. It is critical for everyone, but especially leaders, to demonstrate and champion empathy.
 
 Having a shared understanding and purpose is a good starting point for focusing the team and fostering empathy. There a number of ways you can express a team's purpose:
 
