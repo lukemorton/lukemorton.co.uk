@@ -16,6 +16,7 @@ export default () => (
         }
 
         .navigation ul {
+          line-height: 1.25;
           margin: 0 0 1em 0;
         }
 
@@ -26,7 +27,7 @@ export default () => (
 
         .navigation li {
           color: #595959;
-          margin: 0;
+          margin: 0.5rem 0 0 0;
         }
 
         .navigation a {
@@ -76,6 +77,12 @@ export default () => (
     <div className="h3">Topics</div>
 
     <ul>
+      <li>
+        <Link href="/topics/[slug]" as="/topics/software-development-teams">
+          <a>Software Development Teams</a>
+        </Link>
+      </li>
+
       <li>
         <Link href="/topics/[slug]" as="/topics/clean-architecture">
           <a>Clean Architecture</a>
