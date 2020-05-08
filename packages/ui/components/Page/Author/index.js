@@ -50,9 +50,10 @@ export default () => (
     </p>
 
     <p>
-      <small>A website by</small>
+      Teams &<br />
+      Technology
       <br />
-      Luke&nbsp;Morton
+      <small>by Luke&nbsp;Morton</small>
     </p>
   </div>
 )
