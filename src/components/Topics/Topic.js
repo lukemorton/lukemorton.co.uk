@@ -5,11 +5,11 @@ import Page from '../Page'
 export default ({ archiveUrl, topic, thoughts }) => (
   <Page title={`Articles on ${topic.name}`}>
     <main>
-      {topic.guide && (
+      {topic.guide === 'software-development' && (
         <GuideBanner>
           This topic is part of a team guide to{' '}
-          <Link href="/guides/software-development">
-            <a>Software Development</a>
+          <Link href="/topics/software-development">
+            <a>software development</a>
           </Link>
         </GuideBanner>
       )}
