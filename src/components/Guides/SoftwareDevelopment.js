@@ -70,8 +70,11 @@ export default () => (
             >
               <a>What is a software development team?</a>
             </Link>,
-            <Link href="/">
-              <a>Every team is a software team</a>
+            <Link
+              href="/articles/[slug]"
+              as="/articles/every-team-helps-to-develop-software"
+            >
+              <a>Every team helps to develop software</a>
             </Link>,
           ]}
         />
