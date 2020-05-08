@@ -1,6 +1,7 @@
 ---
 publishedAt: 2019-12-31
 tags:
+  - Software development
   - Trunk-based development
 ---
 

@@ -98,10 +98,16 @@
           "Trunk-based development"
         ]
       },
+      "topics/software-development": {
+        "reverse": true,
+        "tags": [
+          "Software development"
+        ]
+      },
       "topics/software-development-teams": {
         "reverse": true,
         "tags": [
-          "Software Development Teams"
+          "Software development teams"
         ]
       },
       "topics/covid-19": {
