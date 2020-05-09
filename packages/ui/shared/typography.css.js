@@ -29,7 +29,8 @@ export default css.global`
   h2,
   h3,
   .h3,
-  h4 {
+  h4,
+  .h4 {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: bold;
     line-height: 1.25;
@@ -87,7 +88,8 @@ export default css.global`
     font-size: 1.5em;
   }
 
-  h4 {
+  h4,
+  .h4 {
     font-size: 1.2em;
   }
 `
