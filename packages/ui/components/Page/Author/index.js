@@ -1,4 +1,4 @@
-import React from 'react'
+import Link from 'next/link'
 import columnLayoutBreakpoint from '../columnLayoutBreakpoint'
 
 export default () => (
@@ -6,13 +6,19 @@ export default () => (
     <style jsx>
       {`
         .author {
-          color: #595959;
           float: left;
           line-height: 1.2em;
           margin: 0 0 1em 0;
         }
 
+        .home {
+          display: block;
+          text-decoration: none;
+        }
+
+        .text,
         .avatar {
+          display: block;
           margin-bottom: 0.5em;
         }
 
@@ -23,6 +29,10 @@ export default () => (
           max-width: none;
           vertical-align: bottom;
           width: 4rem;
+        }
+
+        .authorName {
+          color: #595959;
         }
 
         @media ${columnLayoutBreakpoint} {
@@ -40,22 +50,28 @@ export default () => (
       `}
     </style>
 
-    <p className="avatar">
-      <img
-        alt="A photograph of Luke smiling in a smart white shirt"
-        src="https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=200"
-        height="6rem"
-        width="6rem"
-      />
-    </p>
+    <div>
+      <Link href="/">
+        <a className="home">
+          <span className="avatar">
+            <img
+              alt="A photograph of Luke smiling in a smart white shirt"
+              src="https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=200"
+              height="6rem"
+              width="6rem"
+            />
+          </span>
 
-    <p>
-      <span className="h4">
-        Teams &<br />
-        Technology
-      </span>
-      <br />
-      <small>by Luke&nbsp;Morton</small>
-    </p>
+          <span className="text">
+            <span className="h4">
+              Teams &<br />
+              Technology
+            </span>
+            <br />
+            <small className="authorName">by Luke&nbsp;Morton</small>
+          </span>
+        </a>
+      </Link>
+    </div>
   </div>
 )
