@@ -24,7 +24,8 @@ export default css.global`
   h2,
   h3,
   .h3,
-  h4 {
+  h4,
+  .h4 {
     color: #000;
   }
 
@@ -43,7 +44,8 @@ export default css.global`
   h2 a,
   h3 a,
   .h3 a,
-  h4 a {
+  h4 a,
+  .h4 a {
     color: #0063cc;
   }
 
@@ -56,7 +58,8 @@ export default css.global`
   h2 a:focus,
   h3 a:focus,
   .h3 a:focus,
-  h4 a:focus {
+  h4 a:focus,
+  .h4 a:focus {
     color: #004c9e;
   }
 `

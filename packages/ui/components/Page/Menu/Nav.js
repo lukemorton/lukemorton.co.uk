@@ -11,7 +11,7 @@ export default () => (
           text-align: right;
         }
 
-        .navigation .h3 {
+        .navigation .h4 {
           margin-top: 0;
         }
 
@@ -46,7 +46,8 @@ export default () => (
         }
       `}
     </style>
-    <div className="h3">Menu</div>
+
+    <div className="h4">Menu</div>
 
     <ul>
       <li>
@@ -74,7 +75,7 @@ export default () => (
       </li>
     </ul>
 
-    <div className="h3">Topics</div>
+    <div className="h4">Topics</div>
 
     <ul>
       <li>

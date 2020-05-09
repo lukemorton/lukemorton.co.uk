@@ -50,8 +50,10 @@ export default () => (
     </p>
 
     <p>
-      Teams &<br />
-      Technology
+      <span className="h4">
+        Teams &<br />
+        Technology
+      </span>
       <br />
       <small>by Luke&nbsp;Morton</small>
     </p>
