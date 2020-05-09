@@ -38,7 +38,6 @@ export default () => (
         @media ${columnLayoutBreakpoint} {
           .author {
             float: none;
-            margin-top: 1em;
             text-align: right;
           }
 
