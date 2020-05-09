@@ -24,17 +24,23 @@ const buildFeed = async (fetchAllThoughts) => {
     author,
   })
 
-  thoughts.forEach(({ title, publishedAt, featuredImage, excerpt, slug }) => {
-    feed.addItem({
-      title: title.plain,
-      id: prefixUrl(`/articles/${slug}`),
-      link: prefixUrl(`/articles/${slug}`),
-      description: excerpt.html,
-      author: [author],
-      date: new Date(publishedAt.iso),
-      image: featuredImage ? prefixUrl(featuredImage) : undefined,
-    })
-  })
+  thoughts.forEach(
+    ({ title, publishedAt, featuredImage, excerpt, content, slug }) => {
+      feed.addItem({
+        title: title.plain,
+        id: prefixUrl(`/articles/${slug}`),
+        link: prefixUrl(`/articles/${slug}`),
+        content: content.html.replace(
+          /<img src="\/media/g,
+          `<img src="${prefixUrl('/media')}`
+        ),
+        description: excerpt.html,
+        author: [author],
+        date: new Date(publishedAt.iso),
+        image: featuredImage ? prefixUrl(featuredImage) : undefined,
+      })
+    }
+  )
 
   return feed
 }
