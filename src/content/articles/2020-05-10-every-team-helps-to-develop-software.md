@@ -11,7 +11,9 @@ On how truly digital organisations include every team in their software developm
 
 As traditional sales and service channels are replaced by digital means, software has been brought to the organisational frontline, as well as the back office. Software now impacts every member of staff in their day-to-day.
 
-Technology startups embrace the symbiotic relationship between software and how they provide their services. By pivoting and iterating both their business model and their software together, they are able to sense and respond quickly. This means that every team in a technology startup is part of the software development process.
+Technology startups embrace the symbiotic relationship between software and the services they provide their customers. By pivoting and iterating both their business model and their software together, they are able to sense and respond in competitive markets.
+
+Think about Uber's ability to launch a new service, Uber Eats, in response to consumer demand for simple food delivery. Their software development teams were able to respond with technology at a rapid pace that enabled them to enter a competitive market with a compelling product. In technology startups, every team is involved in the software development process.
 
 This is why disrupted organisations, such as banks, have to play catch-up feature by feature, rather than being able to innovate their services and software in parallel. They have not embraced a sense and respond approach, they have not empowered their software development teams, and they haven't got every team in the organisation feeding into the process.
 
@@ -21,13 +23,17 @@ For organisations to be transformed, they must ensure that every team is represe
 
 The value that users derive from your software is in enabling their needs to be met. Users are employing your software to complete a task; they might be buying new clothes, renewing a driving license or preparing month-end accounts. For users to do that successfully the [software must too be usable](https://lukemorton.tech/articles/what-is-a-software-development-team#they-develop-working-software).
 
-All too often software is shaped to solve organisational needs, rather than user needs. Why did I have to confirm my email address with Atlassian as I logged into Trello, even though I've been signed up to Trello for years? Why did I have to jump through confusing hoops – in this example, a multistep form – completely unrelated to my own needs of using Trello? I then found that my username all over Trello had changed to an outdated username from my days of using BitBucket. To resolve that I then had to sign into Atlassian once again and change my details there, just so my colleagues that I shared Trello boards with would stop teasing me about my old gamer username.
+All too often software is shaped to solve organisational needs, rather than user needs. Why did I have to confirm my email address with Atlassian as I logged into Trello, even though I've been signed up to Trello for years? Why did I have to jump through confusing hoops – in this example, a multistep form – completely unrelated to my own needs of using Trello?
+
+I later found that my username all over Trello had changed to an outdated username from my days of using BitBucket. To resolve that I then had to sign into Atlassian once again and change my details there, just so my colleagues that I shared Trello boards with would stop teasing me about my old gamer username.
 
 Of course, organisational and user needs must be balanced. After all, it is organisational resources being spent on software so that the organisation's own needs are met. An e-commerce business wants to sell its wares in order to generate revenue and profit. That's the organisational value derived from e-commerce software.
 
 The important thing for organisations to remember, is that in order for its needs to be met sustainably, its software must also meet the needs of its users. If your e-commerce store sucks and you've got competition: your revenue will not be sustainable. If you don't have competition: you are a sitting duck awaiting disruption.
 
-It is therefore critical to represent both sets of needs in your team. The whole team ought to be empathetic towards both users and the organisation. User researchers and designers in particular can help focus the team on user needs, but design and research should be a team sport that everyone is involved in. Subject-matter experts can also be included in your team to represent organisational policy and users within your team.
+It is therefore critical to represent both sets of needs in your team. The whole team ought to be empathetic towards both users and the organisation. User researchers and designers in particular can help focus the team on user needs, but design and research should be a team sport that everyone is involved in.
+
+Subject-matter experts (SME) can also be included in your team to represent organisational policy and users within your team. Having a finance controller as an SME in a software development team developing a refunds and reconciliation service means that they will be able to explain finance jargon and can be a proxy for other finance users.
 
 ## Supporting staff
 
@@ -51,6 +57,6 @@ This leadership must be able to challenge the wider organisation. If issues outs
 
 ## Software is a good excuse for organisational change
 
-Software and digital transformation in general presents a great opportunity for organisational change. By acting more like technology startups, slow-moving organisations can begin to embrace change more readily. Even governments could benefit from a sense and respond approach to policy.
+Software and digital transformation in general presents a great opportunity for organisational change. By acting more like technology startups, slow-moving organisations can begin to embrace change more readily.
 
 Only when your software development team embraces the wider organisation and users can they realise the true value of the software they are creating.
