@@ -6,7 +6,7 @@ tags:
   - Software development teams
 ---
 
-# What is a software development team?
+# <span class="larger">What is a software development team?</span>
 
 On software development teams: how to form one, what good looks like and how to set them up for success.
 
