@@ -5,7 +5,7 @@ tags:
   - Trunk-based development
 ---
 
-# An introduction to trunk-based development
+# Introduction to trunk-based development
 
 Introducing trunk-based development and it's relationship to the widely used practice continuous integration. If you do continuous integration, you should be doing trunk-based development.
 
