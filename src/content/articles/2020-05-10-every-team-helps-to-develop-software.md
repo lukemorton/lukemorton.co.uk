@@ -9,11 +9,11 @@ tags:
 
 On how truly digital organisations include every team in their software development process. In order to deliver working software, organisational leadership must be represented in the software development team – as well as users, and back office and frontline staff.
 
-As traditional sales and service channels are replaced by digital means, software has been brought to the organisational frontline, as well as the back office. Software now impacts every member of staff in their day-to-day.
+As traditional sales and service channels are replaced by digital means, software has been brought to the organisational frontline and the back office too. Software now impacts every member of staff in their day-to-day.
 
 Technology startups embrace the symbiotic relationship between software and the services they provide their customers. By pivoting and iterating both their business model and their software together, they are able to sense and respond in competitive markets.
 
-Think about Uber's ability to launch a new service, Uber Eats, in response to consumer demand for simple food delivery. Their software development teams were able to respond with technology at a rapid pace that enabled them to enter a competitive market with a compelling product. In technology startups, every team is involved in the software development process.
+Think about Uber's ability to launch a new service, Uber Eats, in response to consumer demand for simple food delivery. Their software development teams were able to respond with technology at a rapid pace that enabled them to enter a competitive market with a compelling product.
 
 This is why disrupted organisations, such as banks, have to play catch-up feature by feature, rather than being able to innovate their services and software in parallel. They have not embraced a sense and respond approach, they have not empowered their software development teams, and they haven't got every team in the organisation feeding into the process.
 
@@ -33,7 +33,7 @@ The important thing for organisations to remember, is that in order for its need
 
 It is therefore critical to represent both sets of needs in your team. The whole team ought to be empathetic towards both users and the organisation. User researchers and designers in particular can help focus the team on user needs, but design and research should be a team sport that everyone is involved in.
 
-Subject-matter experts (SME) can also be included in your team to represent organisational policy and users within your team. Having a finance controller as an SME in a software development team developing a refunds and reconciliation service means that they will be able to explain finance jargon and can be a proxy for other finance users.
+A subject-matter expert (SME) can also be included in your team to represent organisational policy and users within your team. Having a finance controller as an SME in a software development team developing a refunds and reconciliation service means that they will be able to explain finance jargon and can be a proxy for other finance users.
 
 ## Supporting staff
 
