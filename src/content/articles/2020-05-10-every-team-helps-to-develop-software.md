@@ -1,5 +1,6 @@
 ---
 publishedAt: 2020-05-10
+featuredImage: /media/every-team-social.png
 tags:
   - Software development
   - Software development teams
@@ -8,6 +9,8 @@ tags:
 # <span class="large">Every team helps to develop software</span>
 
 On how truly digital organisations include every team in their software development process. In order to deliver working software, organisational leadership must be represented in the software development team – as well as users, and back office and frontline staff.
+
+<p><img src="/media/every-team.png" alt="Venn diagram of Product, Design, and Tech – encircled by Users, Leadership and Subject Matter Experts" width="3000" height="2000" /></p>
 
 As traditional sales and service channels are replaced by digital means, software has been brought to the organisational frontline and the back office too. Software now impacts every member of staff in their day-to-day.
 
@@ -28,6 +31,8 @@ All too often software is shaped to solve organisational needs, rather than user
 I later found that my username all over Trello had changed to an outdated username from my days of using BitBucket. To resolve that I then had to sign into Atlassian once again and change my details there, just so my colleagues that I shared Trello boards with would stop teasing me about my old gamer username.
 
 Of course, organisational and user needs must be balanced. After all, it is organisational resources being spent on software so that the organisation's own needs are met. An e-commerce business wants to sell its wares in order to generate revenue and profit. That's the organisational value derived from e-commerce software.
+
+<p><img src="/media/user-org-balance.png" alt="A set of balanced scales depicting Needs, with User on one side and organisation on the other" width="3000" /></p>
 
 The important thing for organisations to remember, is that in order for its needs to be met sustainably, its software must also meet the needs of its users. If your e-commerce store sucks and you've got competition: your revenue will not be sustainable. If you don't have competition: you are a sitting duck awaiting disruption.
 
