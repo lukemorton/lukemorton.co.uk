@@ -8,7 +8,7 @@ tags:
 
 # <span class="large">Every team helps to develop software</span>
 
-On how truly digital organisations include every team in their software development process. In order to deliver working software, organisational leadership must be represented in the software development team – as well as users, and back office and frontline staff.
+On how truly digital organisations include every team in their software development process. Technology is no longer just an IT affair.
 
 <p><img src="/media/every-team.png" alt="Venn diagram of Product, Design, and Tech – encircled by Users, Leadership and Subject Matter Experts" width="3000" height="2000" /></p>
 
@@ -18,7 +18,7 @@ Technology startups embrace the symbiotic relationship between software and the 
 
 Think about Uber's ability to launch a new service, Uber Eats, in response to consumer demand for simple food delivery. Their software development teams were able to respond with technology at a rapid pace that enabled them to enter a competitive market with a compelling product.
 
-This is why disrupted organisations, such as banks, have to play catch-up feature by feature, rather than being able to innovate their services and software in parallel. They have not embraced a sense and respond approach, they have not empowered their software development teams, and they haven't got every team in the organisation feeding into the process.
+The opposite is true for disrupted organisations, such as banks, as they have to play catch-up feature by feature, rather than being able to innovate their services and software in parallel. They have not embraced a sense and respond approach, they have not empowered their software development teams, and they haven't got every team in the organisation feeding into the process.
 
 For organisations to be transformed, they must ensure that every team is represented in the software development team.
 
@@ -34,7 +34,10 @@ Of course, organisational and user needs must be balanced. After all, it is orga
 
 <p><img src="/media/user-org-balance.png" alt="A set of balanced scales depicting Needs, with User on one side and organisation on the other" width="3000" /></p>
 
-The important thing for organisations to remember, is that in order for its needs to be met sustainably, its software must also meet the needs of its users. If your e-commerce store sucks and you've got competition: your revenue will not be sustainable. If you don't have competition: you are a sitting duck awaiting disruption.
+The important thing for organisations to remember, is that in order for its needs to be met sustainably, its software must also meet the needs of its users:
+
+- If your e-commerce store sucks and you've got competition: your revenue will not be sustainable
+- If you don't have competition: you are a sitting duck awaiting disruption
 
 It is therefore critical to represent both sets of needs in your team. The whole team ought to be empathetic towards both users and the organisation. User researchers and designers in particular can help focus the team on user needs, but design and research should be a team sport that everyone is involved in.
 
@@ -62,6 +65,6 @@ This leadership must be able to challenge the wider organisation. If issues outs
 
 ## Software is a good excuse for organisational change
 
-Software and digital transformation in general presents a great opportunity for organisational change. By acting more like technology startups, slow-moving organisations can begin to embrace change more readily.
+Software, and digital transformation in general, presents a great opportunity for organisational change. By acting more like technology startups, slow-moving organisations can begin to embrace change more readily.
 
-Only when your software development team embraces the wider organisation and users can they realise the true value of the software they are creating.
+Only when your software development team works hand-in-hand with the wider organisation and it's users, can they maximise the impact of the software they are developing.
