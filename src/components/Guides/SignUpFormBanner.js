@@ -16,7 +16,7 @@ export default () => (
     </Link>
 
     <div>
-      <p className="h3">Sign up new content weekly</p>
+      <p className="h3">Sign up for new content weekly</p>
 
       <SignUpForm />
     </div>
