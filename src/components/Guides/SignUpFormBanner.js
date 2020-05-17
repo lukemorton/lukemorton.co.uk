@@ -1,16 +1,9 @@
 import Link from 'next/link'
-import { GuideBookPromo } from 'ui'
+import { GuideBookPromo, LayoutSideBySide } from 'ui'
 import SignUpForm from './SignUpForm'
 
 export default () => (
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      margin: '3em 0',
-    }}
-  >
+  <LayoutSideBySide>
     <Link href="/guides/software-development" passHref>
       <GuideBookPromo />
     </Link>
@@ -20,5 +13,5 @@ export default () => (
 
       <SignUpForm />
     </div>
-  </div>
+  </LayoutSideBySide>
 )

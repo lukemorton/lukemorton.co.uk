@@ -1,5 +1,6 @@
 export * from './Form'
 export * from './Guide'
+export * from './Layout'
 import Page from './Page'
 import Projects from './Projects'
 import Prose from './Prose'
