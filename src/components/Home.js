@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Prose, Thoughts, TypeSpan } from 'ui'
 import Page from './Page'
+import SignUpFormBanner from './Guides/SignUpFormBanner'
 
 export default ({ archiveUrl, thoughts }) => (
   <Page
@@ -31,10 +32,22 @@ export default ({ archiveUrl, thoughts }) => (
           </Link>{' '}
           about software, people and everything inbetween.
         </p>
-      </Prose>
-    </main>
 
-    <aside>
+        <h2>My team guide to software development</h2>
+
+        <p>
+          I'm writing a new{' '}
+          <Link href="/guides/software-development">
+            <a>team guide to software development</a>
+          </Link>
+          . New content is added every week on everything from how to set teams
+          up successfully to tips and techniques teams can adopt. You can sign
+          up for updates by email too.
+        </p>
+      </Prose>
+
+      <SignUpFormBanner />
+
       <Thoughts
         title={<h2>Recent articles</h2>}
         thoughtTitleWrapper={(title) => <h3>{title}</h3>}
@@ -47,6 +60,6 @@ export default ({ archiveUrl, thoughts }) => (
           </p>
         }
       />
-    </aside>
+    </main>
   </Page>
 )
