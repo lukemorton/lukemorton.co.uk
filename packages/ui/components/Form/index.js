@@ -17,13 +17,14 @@ export const Fieldset = ({ hasError, children }) => (
   <>
     <style jsx>{`
       .fieldset {
-        border-left: 3px solid transparent;
+        border-left: 0.2em solid transparent;
+        border-right: 0.2em solid transparent;
         margin: 0 -1em 1em -1em;
-        padding: 0 1em;
+        padding: 0 0.8em;
       }
 
       .fieldset.hasError {
-        border-left: 3px solid red;
+        border-left: 0.2em solid red;
       }
     `}</style>
     <div className={hasError ? 'fieldset hasError' : 'fieldset'}>
@@ -101,7 +102,7 @@ export const EmailField = forwardRef(({ error, hint }, ref) => {
         className={hasError ? 'hasError' : ''}
         placeholder="yourname@example.com"
         spellcheck="false"
-        autocomplete="email"
+        autoComplete="email"
         ref={ref}
       />
     </Fieldset>
