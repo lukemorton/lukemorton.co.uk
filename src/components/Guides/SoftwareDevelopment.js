@@ -7,7 +7,7 @@ import {
   TypeSpan,
 } from 'ui'
 import Page from '../Page'
-import SignUpForm from './SignUpForm'
+import SignUpFormBanner from './SignUpFormBanner'
 
 export default () => (
   <Page title="A team guide to Software Development">
@@ -135,7 +135,7 @@ export default () => (
       </GuidePartList>
 
       <Prose noIntro>
-        <h2>Sign up for new content weekly</h2>
+        <h2>Subscribe for updates</h2>
 
         <p>
           I'd love to keep you updated on my progress as I add new content to
@@ -143,9 +143,11 @@ export default () => (
           to email you more than once per week and will only contact you
           regarding team guide updates.
         </p>
+      </Prose>
 
-        <SignUpForm />
+      <SignUpFormBanner />
 
+      <Prose noIntro>
         <h2>Your feedback is helpful</h2>
 
         <p>
