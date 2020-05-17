@@ -8,6 +8,11 @@
       "src": "/thoughts/(?<slug>[^/]*)",
       "dest": "api/redirectThoughts?slug=$slug"
     },
+    {
+      "src": "/articles/",
+      "status": 301,
+      "headers": { "Location": "/articles" }
+    },
     { "src": "/sitemap.xml", "dest": "api/sitemap" },
     { "src": "/feed.rss", "dest": "api/feed?type=rss" },
     { "src": "/feed.atom", "dest": "api/feed?type=atom" },
