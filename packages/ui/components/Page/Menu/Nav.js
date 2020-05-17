@@ -75,15 +75,19 @@ export default () => (
       </li>
     </ul>
 
-    <div className="h4">Topics</div>
+    <div className="h4">Guides</div>
 
     <ul>
       <li>
-        <Link href="/topics/[slug]" as="/topics/software-development">
+        <Link href="/guides/software-development">
           <a>Software Development</a>
         </Link>
       </li>
+    </ul>
 
+    <div className="h4">Topics</div>
+
+    <ul>
       <li>
         <Link href="/topics/[slug]" as="/topics/clean-architecture">
           <a>Clean Architecture</a>
@@ -93,6 +97,12 @@ export default () => (
       <li>
         <Link href="/topics/[slug]" as="/topics/rails">
           <a>Ruby on Rails</a>
+        </Link>
+      </li>
+
+      <li>
+        <Link href="/topics/[slug]" as="/topics/software-development-teams">
+          <a>Teams</a>
         </Link>
       </li>
     </ul>
