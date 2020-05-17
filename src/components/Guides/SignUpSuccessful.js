@@ -28,7 +28,7 @@ export default () => (
           guides, up to one per week. You can of course unsubscribe at anytime.
         </p>
 
-        <h2>Feedback is helpful</h2>
+        <h2>Your feedback is helpful</h2>
 
         <p>
           I'm very open to feedback, please to get in touch with your comments

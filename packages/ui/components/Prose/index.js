@@ -1,14 +1,7 @@
 import React from 'react'
 
-const introRule = `
-  .prose :global(p:first-of-type) {
-    font-size: 1.2em;
-    margin: 1.6em 0;
-  }
-`
-
 export default ({ noIntro, children }) => (
-  <div className="prose">
+  <div className={`prose ${noIntro ? 'noIntro' : ''}`}>
     <style jsx>
       {`
         .prose :global(h1),
@@ -32,6 +25,11 @@ export default ({ noIntro, children }) => (
 
         .prose :global(p:first-of-type) {
           font-size: 1.2em;
+          margin: 1.6em 0;
+        }
+
+        .prose.noIntro :global(p:first-of-type) {
+          font-size: 1em;
           margin: 1.6em 0;
         }
 

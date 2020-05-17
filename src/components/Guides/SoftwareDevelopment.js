@@ -37,19 +37,23 @@ export default () => (
 
         <p>
           At the core of these organisations are the teams who produce the
-          software that acts as their unique selling point and competitive
-          advantage. These teams must adapt to ever-changing market and
-          environmental conditions. They aren't part of a production line
-          working in widget factories – they are problem solvers and innovators.
+          software that drives their success. These teams must adapt to
+          ever-changing market and environmental conditions. They aren't part of
+          a production line working in widget factories – they are problem
+          solvers and innovators and need to be empowered as such.
         </p>
 
         <p>
-          The guide has been organised into parts. Over time content will change
-          and new content will be added – you can subscribe for updates below.
+          In this guide you will find: articles on what a successful team looks
+          like, how to set one up for success, technical advice for evolutionary
+          architectures, team practices and importantly how to have fun while
+          delivering working software.
         </p>
 
         <p>
-          Enjoy and good luck out there!
+          The guide is a work in progress, with new content released weekly. You
+          can sign up for updates by email below. Enjoy and good luck out there!
+          <br />
           <br />
           Luke
         </p>
@@ -63,7 +67,7 @@ export default () => (
               <TypeSpan largeFontSize="1.08em">development team</TypeSpan>
             </h2>
           }
-          description="Learn about software development teams, from the roles and skills they need to succeed, to how they interact with their organisations."
+          description="Learn about software development teams, from what good looks like and how to set one up, to how they interact with their organisations."
           links={[
             <Link
               href="/articles/[slug]"
@@ -87,14 +91,10 @@ export default () => (
               <TypeSpan largeFontSize="1.535em">deliver value</TypeSpan>
             </h2>
           }
-          description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
+          description="Learn how software development teams work effectively together. From agile delivery practices, to focusing on problems rather than solutions."
           links={[
-            <Link href="/">
-              <a>Defining your ways of working</a>
-            </Link>,
-            <Link href="/">
-              <a>Problem statements and hypotheses</a>
-            </Link>,
+            <span>🚧 Defining your ways of working</span>,
+            <span>🚧 Problem statements and hypotheses</span>,
           ]}
         />
 
@@ -108,12 +108,8 @@ export default () => (
           }
           description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
           links={[
-            <Link href="/">
-              <a>Delivering in slices</a>
-            </Link>,
-            <Link href="/">
-              <a>Decoupling deploy from release</a>
-            </Link>,
+            <span>🚧 Delivering in slices</span>,
+            <span>🚧 Decoupling deploy from release</span>,
           ]}
         />
 
@@ -127,9 +123,7 @@ export default () => (
           }
           description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
           links={[
-            <Link href="/">
-              <a>How teams architect for change</a>
-            </Link>,
+            <span>🚧 How teams architect for change</span>,
             <>
               Topic:{' '}
               <Link href="/topics/[slug]" as="/topics/clean-architecture">
@@ -140,25 +134,19 @@ export default () => (
         />
       </GuidePartList>
 
-      <Prose>
+      <Prose noIntro>
         <h2>Subscribe for updates</h2>
 
         <p>
-          There will be an email subscription to keep you in the loop of updates
-          to this team guide to Software Development and other future guides.
+          I'd love to keep you updated on my progress as I add new content to
+          this guide. I'm writing an article a week at the moment, I promise not
+          to email you more than once per week and will only contact you
+          regarding team guide updates.
         </p>
 
         <SignUpForm />
 
-        <p>
-          Register your interest by emailing{' '}
-          <a href="mailto:subscriptions@lukemorton.tech">
-            subscriptions@lukemorton.tech
-          </a>
-          .
-        </p>
-
-        <h2>Feedback</h2>
+        <h2>Your feedback is helpful</h2>
 
         <p>
           If you've found this content useful, you've spotted an error, or have
@@ -171,8 +159,10 @@ export default () => (
         </p>
 
         <p>
-          If you'd just like to get in touch to say thanks, please email{' '}
-          <a href="mailto:contact@lukemorton.tech">contact@lukemorton.tech</a>.
+          I'm very open to feedback, please to get in touch with your comments
+          and suggestions:
+          <br />
+          <a href="mailto:contact@lukemorton.tech">contact@lukemorton.tech</a>
         </p>
       </Prose>
     </main>
