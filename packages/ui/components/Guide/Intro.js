@@ -14,8 +14,10 @@ export const GuideIntro = ({ children }) => (
         margin: 1.6em 0;
       }
 
-      .intro :global(mark) {
+      .intro :global(mark),
+      .intro :global(strong) {
         background: hsl(163, 100%, 70%);
+        font-weight: normal;
       }
 
       @media ${fromLarge} {
