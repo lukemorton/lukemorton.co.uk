@@ -11,8 +11,8 @@ export default ({ noIntro, children }) => (
           margin: 1em 0 0.5em 0;
         }
 
-        .prose :global(h1) {
-          margin: 0 0 2rem 0;
+        .prose :global(:first-child) {
+          margin-top: 0;
         }
 
         .prose :global(h4) {
