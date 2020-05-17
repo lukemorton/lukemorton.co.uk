@@ -26,7 +26,9 @@ export default css.global`
   }
 
   h1,
+  .h1,
   h2,
+  .h2,
   h3,
   .h3,
   h4,
@@ -37,49 +39,59 @@ export default css.global`
     text-rendering: optimizelegibility;
   }
 
-  h1 {
+  h1,
+  .h1 {
     font-size: 3em;
     line-height: 1.1;
   }
 
-  h1.larger {
+  h1.larger,
+  .h1.larger {
     font-size: 3.5em;
   }
 
-  h1 span.larger {
+  h1 span.larger,
+  .h1 span.larger {
     font-size: 1.16667em;
   }
 
   @media ${fromMedium} {
-    h1 {
+    h1,
+    .h1 {
       font-size: 4em;
     }
 
-    h1.larger {
+    h1.larger,
+    .h1.larger {
       font-size: 4.5em;
     }
 
-    h1 span.larger {
+    h1 span.larger,
+    .h1 span.larger {
       font-size: 1.125em;
     }
   }
 
   /* Special case media query for keeping h1 size small on tiny screens */
   @media ${maxWidth('568px')} and (max-height: 568px) {
-    h1 {
+    h1,
+    .h1 {
       font-size: 2.5em;
     }
 
-    h1.larger {
+    h1.larger,
+    .h1.larger {
       font-size: 3em;
     }
 
-    h1 span.larger {
+    h1 span.larger,
+    .h1 span.larger {
       font-size: 1.2em;
     }
   }
 
-  h2 {
+  h2,
+  .h2 {
     font-size: 2em;
   }
 
