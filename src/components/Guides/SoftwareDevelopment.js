@@ -135,7 +135,7 @@ export default () => (
       </GuidePartList>
 
       <Prose noIntro>
-        <h2>Subscribe for updates</h2>
+        <h2>Sign up new content weekly</h2>
 
         <p>
           I'd love to keep you updated on my progress as I add new content to
