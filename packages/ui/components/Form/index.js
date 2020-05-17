@@ -5,7 +5,6 @@ export const Form = forwardRef((props, ref) => (
     <style jsx>{`
       form {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        margin: 0 auto;
         max-width: 30em;
         text-rendering: optimizelegibility;
       }
@@ -19,7 +18,7 @@ export const Fieldset = ({ hasError, children }) => (
     <style jsx>{`
       .fieldset {
         border-left: 3px solid transparent;
-        margin-bottom: 1em;
+        margin: 0 -1em 1em -1em;
         padding: 0 1em;
       }
 
@@ -43,7 +42,6 @@ export const EmailField = forwardRef(({ error, hint }, ref) => {
       <style jsx>{`
         label[for],
         input[type='email'] {
-          font-size: 1.1em;
           line-height: 1.25;
         }
 
@@ -114,7 +112,6 @@ export const Buttonset = ({ children }) => (
   <>
     <style jsx>{`
       .buttons {
-        padding: 0 1em;
       }
     `}</style>
     <div className="buttons">{children}</div>
