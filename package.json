@@ -75,7 +75,7 @@
     "outDir": "public/dist",
     "lists": {
       "recent": {
-        "limit": 10,
+        "limit": 4,
         "reverse": true
       },
       "archive": {
