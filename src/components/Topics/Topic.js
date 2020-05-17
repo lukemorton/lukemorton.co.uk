@@ -7,9 +7,9 @@ export default ({ archiveUrl, topic, thoughts }) => (
     <main>
       {topic.guide === 'software-development' && (
         <GuideBanner>
-          This topic is part of a team guide to{' '}
-          <Link href="/topics/software-development">
-            <a>software development</a>
+          This topic features in a team guide to{' '}
+          <Link href="/guides/software-development">
+            <a>software&nbsp;development</a>
           </Link>
         </GuideBanner>
       )}

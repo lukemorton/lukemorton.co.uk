@@ -23,9 +23,9 @@ export default (props) => {
       <main>
         {inSoftwareDevelopmentGuide(thought) && (
           <GuideBanner>
-            This article is part of a team guide to{' '}
-            <Link href="/topics/[slug]" as="/topics/software-development">
-              <a>software development</a>
+            This article features in a team guide to{' '}
+            <Link href="/guides/software-development">
+              <a>software&nbsp;development</a>
             </Link>
           </GuideBanner>
         )}
