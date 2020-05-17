@@ -4,11 +4,13 @@ import SignUpForm from './SignUpForm'
 
 export default () => (
   <LayoutSideBySide>
-    <Link href="/guides/software-development" passHref>
-      <GuideBookPromo />
-    </Link>
+    <div className="w-40">
+      <Link href="/guides/software-development" passHref>
+        <GuideBookPromo />
+      </Link>
+    </div>
 
-    <div>
+    <div className="w-60 stretch">
       <p className="h3">Sign up for new content weekly</p>
 
       <SignUpForm />

@@ -11,8 +11,21 @@ export const LayoutSideBySide = ({ children }) => (
         margin: 3em 0;
       }
 
+      .side-by-side :global(.w-40) {
+        flexbasis: 40%;
+      }
+
+      .side-by-side :global(.w-60) {
+        flexbasis: 60%;
+      }
+
+      .side-by-side :global(.stretch) {
+        align-self: stretch;
+      }
+
       @media ${fromLarge} {
         .side-by-side {
+          align-items: start;
           flex-direction: row;
         }
       }
