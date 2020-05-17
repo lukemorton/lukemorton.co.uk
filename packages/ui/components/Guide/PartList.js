@@ -7,7 +7,6 @@ export const GuidePartList = ({ children }) => (
       .part-list {
         justify-content: space-between;
         list-style: none;
-        // margin: 0 -1em;
         padding: 0;
       }
 
