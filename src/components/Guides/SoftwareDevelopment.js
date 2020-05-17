@@ -7,6 +7,7 @@ import {
   TypeSpan,
 } from 'ui'
 import Page from '../Page'
+import SignUpForm from './SignUpForm'
 
 export default () => (
   <Page title="A team guide to Software Development">
@@ -146,6 +147,8 @@ export default () => (
           There will be an email subscription to keep you in the loop of updates
           to this team guide to Software Development and other future guides.
         </p>
+
+        <SignUpForm />
 
         <p>
           Register your interest by emailing{' '}
