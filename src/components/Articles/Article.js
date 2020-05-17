@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { GuideBanner, Thought, RelatedContent } from 'ui'
 import Page from '../Page'
+import SignUpFormBanner from '../Guides/SignUpFormBanner'
 import useLiveBlog from '../../hooks/useLiveBlog'
 import useDelayedRelatedContent from '../../hooks/useDelayedRelatedContent'
 
@@ -31,6 +32,10 @@ export default (props) => {
         )}
 
         <Thought {...props} thought={thought} />
+
+        <hr />
+
+        <SignUpFormBanner />
 
         <RelatedContent thoughts={relatedContent} />
       </main>
