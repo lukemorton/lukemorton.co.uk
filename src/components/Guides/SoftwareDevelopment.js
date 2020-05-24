@@ -90,7 +90,13 @@ export default () => (
           }
           description="Learn how software development teams work effectively together. From agile delivery practices, to focusing on problems rather than solutions."
           links={[
-            <span>🚧 Defining your ways of working</span>,
+            <Link
+              href="/"
+              href="/articles/[slug]"
+              as="/articles/defining-your-ways-of-working"
+            >
+              <a>Defining your ways of working</a>
+            </Link>,
             <span>🚧 Problem statements and hypotheses</span>,
           ]}
         />
