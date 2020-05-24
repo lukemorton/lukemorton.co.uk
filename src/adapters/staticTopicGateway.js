@@ -13,6 +13,13 @@ const TOPICS = [
   Topic('Software development teams', 'software-development-teams', {
     guide: 'software-development',
   }),
+  Topic(
+    'Software development ways of working',
+    'software-development-ways-of-working',
+    {
+      guide: 'software-development',
+    }
+  ),
 ]
 
 export function allTopics() {

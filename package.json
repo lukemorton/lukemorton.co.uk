@@ -112,6 +112,12 @@
           "Software development teams"
         ]
       },
+      "topics/software-development-ways-of-working": {
+        "reverse": true,
+        "tags": [
+          "Software development ways of working"
+        ]
+      },
       "topics/covid-19": {
         "reverse": true,
         "tags": [
