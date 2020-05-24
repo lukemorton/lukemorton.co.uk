@@ -48,6 +48,11 @@ export default ({ noIntro, children }) => (
           margin-bottom: 1em;
         }
 
+        .prose :global(ul.short-list) :global(li),
+        .prose :global(ol.short-list) :global(li) {
+          margin-bottom: 0.2em;
+        }
+
         .prose :global(blockquote) {
           padding: 0 0 0 1em;
           margin: 0 0 1.6em 0;
