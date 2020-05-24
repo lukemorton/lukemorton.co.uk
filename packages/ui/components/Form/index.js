@@ -101,7 +101,7 @@ export const EmailField = forwardRef(({ error, hint }, ref) => {
         id="email"
         className={hasError ? 'hasError' : ''}
         placeholder="yourname@example.com"
-        spellcheck="false"
+        spellCheck="false"
         autoComplete="email"
         ref={ref}
       />
