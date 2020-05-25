@@ -64,8 +64,10 @@ export default ({ noIntro, children }) => (
         }
 
         .prose :global(blockquote) :global(p) :global(cite) {
-          font-size: 0.8em;
           color: #595959;
+          font-size: 0.8em;
+          font-style: normal;
+          quotes: '“' '”';
         }
 
         .prose :global(h2) + :global(blockquote) {
