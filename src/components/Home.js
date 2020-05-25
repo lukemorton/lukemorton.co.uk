@@ -11,10 +11,8 @@ export default ({ archiveUrl, thoughts }) => (
     <main>
       <Prose>
         <h1 className="larger">
-          <TypeSpan largeFontSize="1.09em">
-            Exploring teams{' '}
-            <TypeSpan largeFontSize="1.22em">& technology</TypeSpan>
-          </TypeSpan>
+          Exploring teams{' '}
+          <TypeSpan largeFontSize="1.22em">& technology</TypeSpan>
         </h1>
 
         <p>

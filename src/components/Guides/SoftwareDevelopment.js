@@ -14,11 +14,8 @@ export default () => (
     <main>
       <GuideIntro>
         <h1 className="larger">
-          <TypeSpan largeFontSize="1.07em">
-            <TypeSpan largeFontSize=".95em">A team guide to</TypeSpan>{' '}
-            <TypeSpan largeFontSize="1.68em">Software</TypeSpan>{' '}
-            <TypeSpan largeFontSize="1.125em">Development</TypeSpan>
-          </TypeSpan>
+          A team guide to <TypeSpan largeFontSize="1.77em">Software</TypeSpan>{' '}
+          <TypeSpan largeFontSize="1.2em">Development</TypeSpan>
         </h1>
 
         <p>
