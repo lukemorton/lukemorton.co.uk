@@ -1,6 +1,7 @@
 import { forwardRef } from 'react'
-import { GuideIntro } from '.'
+import { fromLarge } from '../../settings/breakpoints'
 import { TypeSpan } from '..'
+import { GuideIntro } from '.'
 
 export const GuideBookPromo = forwardRef(({ href, onClick }, ref) => (
   <>
@@ -19,7 +20,6 @@ export const GuideBookPromo = forwardRef(({ href, onClick }, ref) => (
         padding: 1em;
         text-decoration: none;
         transition: transform 0.2s ease-out;
-        transform: scale(1.1);
         width: 12em;
       }
 
@@ -28,14 +28,20 @@ export const GuideBookPromo = forwardRef(({ href, onClick }, ref) => (
         padding-top: 0.5em;
       }
 
-      .book:hover {
-        transform: scale(1.15);
-      }
-
       .author {
         color: black;
         font-size: 0.8em;
         margin-top: 3em;
+      }
+
+      @media ${fromLarge} {
+        .book {
+          transform: scale(1.1);
+        }
+
+        .book:hover {
+          transform: scale(1.15);
+        }
       }
     `}</style>
 
