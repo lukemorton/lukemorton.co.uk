@@ -38,7 +38,7 @@ const Thought = ({
 
     {thoughtTitleWrapper(
       <Link href="/articles/[slug]" as={`/articles/${slug}`}>
-        <a>{title.plain}</a>
+        <a dangerouslySetInnerHTML={{ __html: title.plain }} />
       </Link>
     )}
 

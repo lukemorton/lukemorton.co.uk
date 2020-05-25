@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import { AllHtmlEntities } from 'html-entities'
 import Author from './Author'
 import Menu from './Menu'
 import { SkipToMainContentLink, MainContentMarker } from './SkipToMainContent'
@@ -13,6 +14,11 @@ import utils from '../../shared/utils.css'
 const DEFAULT_IMAGE =
   'https://s.gravatar.com/avatar/e7f62d126dec76b03e6d2393e44247ad?s=200'
 
+const unescape = (v) => {
+  const entities = new AllHtmlEntities()
+  return entities.decode(v)
+}
+
 export default ({
   article,
   title,
@@ -24,14 +30,15 @@ export default ({
   children,
 }) => (
   <div className="page">
+    {console.log(title, unescape(title))}
     <SkipToMainContentLink />
 
     <Head>
       <meta charSet="utf-8" />
 
-      <title>{title} – Luke Morton</title>
-      <meta name="title" content={title} />
-      <meta name="description" content={description} />
+      <title>{unescape(title)} – Luke Morton</title>
+      <meta name="title" content={unescape(title)} />
+      <meta name="description" content={unescape(description)} />
       <meta name="theme-color" content="#ffffff" />
 
       {canonical && <link rel="canonical" href={prefixUrl(canonical)} />}
@@ -58,8 +65,10 @@ export default ({
       />
 
       <meta property="og:type" content={article ? 'article' : 'website'} />
-      <meta property="og:title" content={title} />
-      {description && <meta property="og:description" content={description} />}
+      <meta property="og:title" content={unescape(title)} />
+      {description && (
+        <meta property="og:description" content={unescape(description)} />
+      )}
       {image && <meta property="og:image" content={prefixUrl(image)} />}
       {url && <meta property="og:url" content={prefixUrl(url)} />}
 
@@ -67,7 +76,7 @@ export default ({
         name="twitter:card"
         content={image ? 'summary_large_image' : 'summary'}
       />
-      <meta property="twitter:title" content={title} />
+      <meta property="twitter:title" content={unescape(title)} />
       <meta property="twitter:site" content="@lukemorton" />
       <meta property="twitter:creator" content="@lukemorton" />
       <meta
@@ -75,7 +84,7 @@ export default ({
         content={prefixUrl(image || DEFAULT_IMAGE)}
       />
       {description && (
-        <meta property="twitter:description" content={description} />
+        <meta property="twitter:description" content={unescape(description)} />
       )}
       {url && <meta property="twitter:url" content={prefixUrl(url)} />}
 
