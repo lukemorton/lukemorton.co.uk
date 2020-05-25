@@ -42,7 +42,6 @@ export const GuidePartListItem = ({ title, description, links }) => (
       }
 
       .part :global(h2) {
-        font-size: 1.8em;
         margin: 0.5em 0 1em;
       }
 

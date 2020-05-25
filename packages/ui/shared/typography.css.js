@@ -63,7 +63,7 @@ export default css.global`
 
   h2,
   .h2 {
-    font-size: 2.2em;
+    font-size: 2.1em;
   }
 
   h3,
