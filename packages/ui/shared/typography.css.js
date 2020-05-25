@@ -49,7 +49,7 @@ export default css.global`
   @media ${fromMedium} {
     h1,
     .h1 {
-      font-size: 5.5em;
+      font-size: 4.9em;
     }
   }
 
