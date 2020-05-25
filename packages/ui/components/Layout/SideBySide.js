@@ -8,7 +8,6 @@ export const LayoutSideBySide = ({ children }) => (
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        margin: 3em 0;
       }
 
       .side-by-side :global(.w-40) {
@@ -27,6 +26,7 @@ export const LayoutSideBySide = ({ children }) => (
         .side-by-side {
           align-items: start;
           flex-direction: row;
+          margin: 2em 0;
         }
       }
     `}</style>
