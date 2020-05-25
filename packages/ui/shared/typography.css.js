@@ -8,7 +8,7 @@ import {
 
 export default css.global`
   body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'PT Serif', Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
     line-height: 1.8em;
   }
@@ -33,7 +33,8 @@ export default css.global`
   .h3,
   h4,
   .h4 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial,
+      sans-serif;
     font-weight: bold;
     line-height: 1.25;
     text-rendering: optimizelegibility;
@@ -41,34 +42,14 @@ export default css.global`
 
   h1,
   .h1 {
-    font-size: 3em;
+    font-size: 4em;
     line-height: 1.1;
-  }
-
-  h1.larger,
-  .h1.larger {
-    font-size: 3.5em;
-  }
-
-  h1 span.larger,
-  .h1 span.larger {
-    font-size: 1.16667em;
   }
 
   @media ${fromMedium} {
     h1,
     .h1 {
-      font-size: 4em;
-    }
-
-    h1.larger,
-    .h1.larger {
-      font-size: 4.5em;
-    }
-
-    h1 span.larger,
-    .h1 span.larger {
-      font-size: 1.125em;
+      font-size: 5.5em;
     }
   }
 
@@ -76,23 +57,13 @@ export default css.global`
   @media ${maxWidth('568px')} and (max-height: 568px) {
     h1,
     .h1 {
-      font-size: 2.5em;
-    }
-
-    h1.larger,
-    .h1.larger {
       font-size: 3em;
-    }
-
-    h1 span.larger,
-    .h1 span.larger {
-      font-size: 1.2em;
     }
   }
 
   h2,
   .h2 {
-    font-size: 2em;
+    font-size: 2.2em;
   }
 
   h3,

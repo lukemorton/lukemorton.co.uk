@@ -100,6 +100,11 @@ export default ({
 
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@700&display=swap"
+      />
+
       <meta
         name="google-site-verification"
         content="lzxFltmFH5mp8y-5rFiNDfH9qQN8rHw_1zcwFVWQl7A"
