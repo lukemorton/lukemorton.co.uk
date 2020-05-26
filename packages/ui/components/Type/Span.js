@@ -1,12 +1,23 @@
 import { fromLarge } from '../../settings/breakpoints'
 
-export const TypeSpan = ({ largeFontSize, largeLineHeight, children }) => (
+const fontSizeRule = (fontSize) => {
+  if (fontSize) {
+    return `font-size: ${fontSize};`
+  } else {
+    return ''
+  }
+}
+
+export const TypeSpan = ({ fontSize, largeFontSize, children }) => (
   <>
     <style jsx>{`
+      .type {
+        ${fontSizeRule(fontSize)}
+      }
+
       @media ${fromLarge} {
         .type {
-          font-size: ${largeFontSize};
-          line-height: ${largeLineHeight || 'inherit'};
+          ${fontSizeRule(largeFontSize)}
         }
       }
     `}</style>
