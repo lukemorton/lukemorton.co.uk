@@ -47,12 +47,10 @@ export const GuideBookPromo = forwardRef(({ href, onClick }, ref) => (
 
     <a className="book" href={href} onClick={onClick} ref={ref}>
       <span className="h4">
-        <TypeSpan largeFontSize="1.07em">
-          <TypeSpan largeFontSize=".95em">A team guide to</TypeSpan>{' '}
-          <TypeSpan largeFontSize="1.68em" largeLineHeight="1">
-            Software
-          </TypeSpan>{' '}
-          <TypeSpan largeFontSize="1.125em">Development</TypeSpan>
+        <TypeSpan fontSize="1.07em">
+          <TypeSpan fontSize=".95em">A team guide to</TypeSpan>{' '}
+          <TypeSpan fontSize="1.68em">Software</TypeSpan>{' '}
+          <TypeSpan fontSize="1.125em">Development</TypeSpan>
         </TypeSpan>
       </span>
 
