@@ -33,7 +33,7 @@ export default (props) => {
 
         <Thought {...props} thought={thought} />
 
-        <hr />
+        <hr className="mt mb" />
 
         <SignUpFormBanner />
 

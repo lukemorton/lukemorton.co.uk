@@ -9,7 +9,6 @@ export default ({ thoughts }) => {
       <style jsx>
         {`
           .related_content {
-            margin-top: 2em;
             border-top: 3px solid #eee;
             padding-top: 1em;
           }

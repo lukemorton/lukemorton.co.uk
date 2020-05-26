@@ -1,5 +1,5 @@
 import css from 'styled-jsx/css'
-import { fromSmall, fromMedium } from '../settings/breakpoints'
+import { fromSmall, fromMedium, fromLarge } from '../settings/breakpoints'
 
 export default css.global`
   /* hr style */
@@ -9,7 +9,21 @@ export default css.global`
   }
 
   hr + p {
-    margin-top: 1.5rem;
+    margin-top: 1.5em;
+  }
+
+  hr.mt {
+    margin-top: 2em;
+  }
+
+  hr.mb {
+    margin-bottom: 2em;
+  }
+
+  @media ${fromLarge} {
+    hr.mb {
+      margin-bottom: 4em;
+    }
   }
 
   /* Breakpoint utilities for titles in blog posts */
