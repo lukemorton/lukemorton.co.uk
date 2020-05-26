@@ -1,5 +1,6 @@
 ---
 publishedAt: 2020-05-17
+featuredImage: /media/flow-with-artefacts-and-ceremonies-social.png
 tags:
   - Software development
   - Software development ways of working
@@ -8,6 +9,8 @@ tags:
 # Defining your ways of working
 
 On defining your ways of working: turning ideas into value, deciding how to work together, nurturing a feedback culture and adapting your process to meet changing needs.
+
+<p><img src="/media/flow.png" alt="" width="3000" height="2000"/></p>
 
 Software development teams are able to adapt their process to meet the problems they face. In a rapidly changing digital world, the ability to learn and adapt is a competitive advantage. Teams must be enabled to define their ways of working and continuously learn and adapt as they go.
 
@@ -43,6 +46,8 @@ The lack of design process in such frameworks then pushes design back into a wat
 Therefore your team can start with this or that framework but you must ultimately define a flow that works for your team, probably composing a number of different methodologies. This is what some people refer as the idea of _being agile_ rather than _doing agile_. There is no magic process, the magic is in your team's ability to adapt to their environment.
 
 To create a shared understanding as a team you can map out your **flow**, **artefacts** and **ceremonies** on a whiteboard.
+
+<p><img src="/media/flow-with-artefacts-and-ceremonies.png" alt="" width="3000" height="2000"/></p>
 
 ### Flow
 
@@ -84,6 +89,8 @@ I wouldn't feel too bad if I were you. It's not like the "Agile Manifesto" is sa
 Individuals and interactions are however more important than processes and tools. The quality and impact of your work is dependent on a team that works well together. You are solving problems, and how you do that may have to change, you can't just blindly follow a process and hope for the best.
 
 Together you need to agree on your **shared values** that underpin your work. You will need to define **roles and responsibilities** that describe what tasks and activities and who they are owned by or shared between the team. You should also define **core practices** you will use to complete your work.
+
+<p><img src="/media/team-canvas.png" alt="" width="3000" height="2000"/></p>
 
 ### Shared values
 
