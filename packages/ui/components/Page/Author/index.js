@@ -12,14 +12,18 @@ export default () => (
         }
 
         .home {
-          display: block;
+          display: flex;
           text-decoration: none;
         }
 
-        .text,
-        .avatar {
+        .avatar,
+        .text {
           display: block;
           margin-bottom: 0.5em;
+        }
+
+        .text {
+          margin-left: 1em;
         }
 
         .avatar img {
@@ -36,6 +40,10 @@ export default () => (
         }
 
         @media ${columnLayoutBreakpoint} {
+          .home {
+            display: block;
+          }
+
           .author {
             float: none;
             text-align: right;
