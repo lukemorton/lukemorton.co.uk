@@ -140,11 +140,11 @@ You'll never complete a full list of practices, especially as you may occasional
 
 Fast feedback cycles are a key tenet of agile software delivery. They enable your team to minimise waste, make failing safe for all and guide you towards success.
 
-<p><img src="/media/feedback.png" alt="" width="3000" /></p>
-
 Your teams can minimise waste by testing hypotheses before building anything. Researchers, designers and developers can work together to define problem and solution hypotheses that enable them to test ideas. You might choose to spend a certain amount of an iteration testing hypotheses with user research, surveys, technical spikes and prototypes.
 
 By releasing software early and often your team can have earlier opportunities to learn. You can test your software with users, particularly early adopters, to ensure you are building the right thing. The more frequently you can release software, the more opportunity you have to correct a wrong or find out if an idea has failed. Failing becomes safe when failure is cheap, and you make failure cheap by seeking feedback on a daily or weekly basis which will ensure failure costs you days rather than months.
+
+<p><img src="/media/feedback.png" alt="" width="3000" /></p>
 
 Ensuring your team has enough feedback mechanisms built into their ways of working means that they will have regular opportunities to adjust their course. The more frequently the team can correct their bearing the sooner they will deliver software that generates value for both their organisation and its users.
 
