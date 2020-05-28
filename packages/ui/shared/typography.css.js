@@ -35,21 +35,33 @@ export default css.global`
   .h4 {
     font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, Arial,
       sans-serif;
-    font-weight: bold;
+    font-weight: 700;
     line-height: 1.25;
     text-rendering: optimizelegibility;
   }
 
   h1,
   .h1 {
-    font-size: 4em;
+    font-size: 2.75em;
     line-height: 1.1;
+  }
+
+  .display {
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 900;
   }
 
   @media ${fromMedium} {
     h1,
     .h1 {
-      font-size: 4.9em;
+      font-size: 4.25em;
+    }
+  }
+
+  @media ${fromLarge} {
+    h1,
+    .h1 {
+      font-size: 4.75em;
     }
   }
 
@@ -57,7 +69,7 @@ export default css.global`
   @media ${maxWidth('568px')} and (max-height: 568px) {
     h1,
     .h1 {
-      font-size: 3em;
+      font-size: 2.25em;
     }
   }
 

@@ -62,7 +62,7 @@ export default () => (
           </span>
 
           <span className="text">
-            <span className="h4">
+            <span className="display h4">
               Teams &<br />
               Technology
             </span>

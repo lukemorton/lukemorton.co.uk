@@ -111,7 +111,7 @@ export default ({
 
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@700&family=Roboto:wght@900&display=swap"
       />
 
       <meta
