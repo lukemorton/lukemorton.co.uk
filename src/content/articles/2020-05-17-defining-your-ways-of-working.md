@@ -94,8 +94,6 @@ Individuals and interactions are however more important than processes and tools
 
 Together you need to agree on your **shared values** that underpin your work. You will need to define **roles and responsibilities** that describe what tasks and activities need to be performed by the team. You should also define **core practices** you will use to complete your work.
 
-<p><img src="/media/team-canvas.png" alt="" width="3000" height="2000"/></p>
-
 ### Shared values
 
 Values are the shared attributes that you expect and encourage from each of your team members. Your values are the foundation of how you will work together as a team.
@@ -109,6 +107,8 @@ I’d suggest an exercise where each team member spends some time individually c
 It's important to remember that you're forming a multidisciplinary team and that each of your team members are contributing their various strengths to the team. Roles in your team aren't there to create silos, burden individuals, or create hierarchy in the team. Roles should create clarity on what your team needs to do, those roles may be shared by the whole team, or be mostly owned by a person with certain skills.
 
 You can draw a team canvas that includes the various stakeholders and skill sets needed in your team. On this canvas you can place post-its that represent the roles your team has decided on.
+
+<p><img src="/media/team-canvas.png" alt="" width="3000" height="2000"/></p>
 
 If you are practicing Scrum, you might include product owner in the product circle, developer in the technology circle, and scrum master in the middle of the Venn diagram. You will also need to include roles that Scrum doesn't define, such as user researcher and interaction designer, those go in the design circle.
 
