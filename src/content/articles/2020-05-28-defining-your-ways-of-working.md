@@ -1,5 +1,5 @@
 ---
-publishedAt: 2020-05-17
+publishedAt: 2020-05-28
 featuredImage: /media/flow-with-artefacts-and-ceremonies-social.png
 tags:
   - Software development
