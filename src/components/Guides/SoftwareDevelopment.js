@@ -19,10 +19,10 @@ export default () => (
         </h1>
 
         <p>
-          This guide is for <mark>software development teams</mark> working in
-          organistions who've realised that software isn't just a
-          necessity – it's the mechanism by which they will achieve their
-          mission and purpose.
+          This guide is for new and established{' '}
+          <mark>software development teams</mark> working in organistions that
+          understand software isn't just a necessity – it's the mechanism by
+          which they will achieve their mission and purpose.
         </p>
 
         <p>
