@@ -12,9 +12,9 @@ On defining your ways of working: turning ideas into value, deciding how to work
 
 <p><img src="/media/flow.png" alt="" width="3000" height="2000"/></p>
 
-Software development teams are able to adapt their process to meet the problems they face. In a rapidly changing digital world, the ability to learn and adapt is a competitive advantage. Teams must be enabled to define their ways of working and continuously learn and adapt as they go.
+Software development teams are able to adapt their process to meet the problems they face. In a rapidly changing digital world, the ability to learn and adapt is a competitive advantage. Teams must be enabled to define their ways of working and continue to learn and adapt as they go.
 
-Ways of working go way beyond just picking a software development process such as Scrum, Kanban, or (hopefully not) SAFe. Frameworks are never complete, except in the case of SAFe, which in my opinion is completely bonkers.
+Ways of working go way beyond just picking a software development process such as Scrum, Kanban, or (hopefully not) SAFe. Frameworks are never _complete_, except may be in the case of SAFe, which in my opinion is _completely_ bonkers.
 
 In a lot of ways, you need to forget about wholesale dropping in an entire process that was likely designed for very different needs than yours.
 
@@ -30,7 +30,7 @@ Start by defining your flow, or as you may know it, product development lifecycl
 
 <ul class="short-list">
   <li>How will you turn ideas into value?</li>
-  <li>How will the team work together?</li>
+  <li>How will you work together?</li>
   <li>How will you seek feedback?</li>
   <li>How will you evolve your process?</li>
 </ul>
@@ -81,7 +81,7 @@ If you're not sure where to start, I recommend starting with a framework such as
 
 What you won't get from Scrum or Kanban is how your team should work together to validate ideas, develop software or prove that your software is meeting the needs of your organisation and users. Don't worry, we'll get onto that next.
 
-## How will the team work together?
+## How will you work together?
 
 So far we've focussed on processes and tools. If you've seen the agile manifesto you may now be feeling bad. After all:
 
