@@ -20,11 +20,11 @@ Think about Uber's ability to launch a new service, Uber Eats, in response to co
 
 The opposite is true for disrupted organisations, such as banks, as they have to play catch-up feature by feature, rather than being able to innovate their services and software in parallel. They have not embraced a sense and respond approach, they have not empowered their software development teams, and they haven't got every team in the organisation feeding into the process.
 
-For organisations to be transformed, they must ensure that every team is represented in the software development team.
+For organisations to be transformed, they must ensure that every team is represented in the [software development team](/articles/what-is-a-software-development-team).
 
 ## Balancing user and organisational needs
 
-The value that users derive from your software is in enabling their needs to be met. Users are employing your software to complete a task; they might be buying new clothes, renewing a driving license or preparing month-end accounts. For users to do that successfully the [software must too be usable](https://lukemorton.tech/articles/what-is-a-software-development-team#they-develop-working-software).
+The value that users derive from your software is in enabling their needs to be met. Users are employing your software to complete a task; they might be buying new clothes, renewing a driving license or preparing month-end accounts. For users to do that successfully the software must too be usable.
 
 All too often software is shaped to solve organisational needs, rather than user needs. Why did I have to confirm my email address with Atlassian as I logged into Trello, even though I've been signed up to Trello for years? Why did I have to jump through confusing hoops – in this example, a multistep form – completely unrelated to my own needs of using Trello?
 

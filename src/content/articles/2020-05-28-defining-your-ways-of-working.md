@@ -12,7 +12,7 @@ On defining your ways of working: turning ideas into value, deciding how to work
 
 <p><img src="/media/flow.png" alt="" width="3000" height="2000"/></p>
 
-Software development teams are able to adapt their process to meet the problems they face. In a rapidly changing digital world, the ability to learn and adapt is a competitive advantage. Teams must be enabled to define their ways of working and continue to learn and adapt as they go.
+[Software development teams](/articles/what-is-a-software-development-team) are able to adapt their process to meet the problems they face. In a rapidly changing digital world, the ability to learn and adapt is a competitive advantage. Teams must be enabled to define their ways of working and continue to learn and adapt as they go.
 
 Ways of working go way beyond just picking a software development process such as Scrum, Kanban, or (hopefully not) SAFe. Frameworks are never _complete_, except may be in the case of SAFe, which in my opinion is _completely_ bonkers.
 
