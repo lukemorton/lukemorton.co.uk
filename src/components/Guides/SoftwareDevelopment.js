@@ -20,9 +20,9 @@ export default () => (
 
         <p>
           This guide is for new and established{' '}
-          <mark>software development teams</mark> working in organistions that
-          understand software isn't just a necessity – it's the mechanism by
-          which they will achieve their mission and purpose.
+          <strong>software development teams</strong> working in organistions
+          that understand software isn't just a necessity – it's the mechanism
+          by which they will achieve their mission and purpose.
         </p>
 
         <p>
