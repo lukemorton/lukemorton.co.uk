@@ -51,7 +51,7 @@ A continuous cycle of **feedback** is the only way a team will be able to test w
 
 Each of the properties need to be understood when forming a team, and be protected throughout the lifetime of the team.
 
-A team first and foremost must have empathy for each other and the people they are solving problems for: [their users and even their most tricky organisational stakeholders](https://lukemorton.tech/articles/what-is-a-software-development-team). Empathy must be nurtured throughout the course of the team's life in order for it to be maintained. It is critical for everyone, but especially leaders, to demonstrate and champion empathy.
+A team first and foremost must have empathy for each other and the people they are solving problems for: [their users and even their most tricky organisational stakeholders](/articles/every-team-helps-to-develop-software). Empathy must be nurtured throughout the course of the team's life in order for it to be maintained. It is critical for everyone, but especially leaders, to demonstrate and champion empathy.
 
 Having a shared understanding and purpose is a good starting point for focusing the team and fostering empathy. There a number of ways you can express a team's purpose:
 
@@ -69,7 +69,7 @@ With empathy and trust established, next you need to ensure your team has the ca
 
 This also means recruiting a team with necessary skills. The team will need the leadership necessary to make decisions on value, usability and feasibility. This will often involve product, design and development skillsets, but may also include subject matter experts, senior leadership and even users.
 
-Finally, the team need to agree cadences of ceremonies that enable rapid feedback cycles. Regardless of your approach to process you need to ensure your team are regularly:
+Finally, the team need to define and agree [ways of working](/articles/defining-your-ways-of-working) that enable rapid feedback cycles. Regardless of your approach to process you need to ensure your team are regularly:
 
 - Providing feedback to each other
 - Seeking feedback from the organisation and users
