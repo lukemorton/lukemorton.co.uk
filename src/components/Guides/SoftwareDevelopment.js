@@ -109,7 +109,7 @@ export default () => (
               <TypeSpan largeFontSize="1.45em">delivery</TypeSpan>
             </h2>
           }
-          description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
+          description="Learn how to use lean software delivery practices to reduce risk of change, reduce wasted effort and increase your team's learning opportunities."
           links={[
             <span>🚧 Delivering in slices</span>,
             <span>🚧 Decoupling deploy from release</span>,
@@ -124,7 +124,7 @@ export default () => (
               <TypeSpan largeFontSize="1.08em">for change</TypeSpan>
             </h2>
           }
-          description="Learn how software development teams work effectively together. From agile and lean methodologies, to focusing on problems rather than solutions."
+          description="Learn how to architect digital services and platforms that enable teams to deliver value at a rapid pace in a sustainable way."
           links={[
             <span>🚧 How teams architect for change</span>,
             <>
