@@ -50,7 +50,7 @@ export const GuidePartListItem = ({ title, description, links }) => (
       }
 
       .part ul {
-        margin: 0 0 2em 1.5em;
+        margin: 0 0 2em 1.2em;
         padding: 0;
       }
 
