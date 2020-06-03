@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch'
+import moment from 'moment'
 
 export default async (req, res) => {
   const email = req.body.email
@@ -6,7 +7,7 @@ export default async (req, res) => {
 
   await fetch(process.env.SIGN_UP_HOOK, {
     method: 'POST',
-    body: JSON.stringify({ email }),
+    body: JSON.stringify({ email, when: moment().format() }),
   })
 
   res.status(301)
