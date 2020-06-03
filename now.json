@@ -17,6 +17,7 @@
     { "src": "/feed.rss", "dest": "api/feed?type=rss" },
     { "src": "/feed.atom", "dest": "api/feed?type=atom" },
     { "src": "/feed.json", "dest": "api/feed?type=json" },
+    { "src": "/api/signUp", "dest": "api/signUp" },
     { "src": "/api/(.*)", "status": 404, "dest": "/404" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "status": 404, "dest": "/404" }

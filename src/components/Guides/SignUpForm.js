@@ -14,7 +14,7 @@ export default () => {
 
   return (
     <Form
-      action="https://upscri.be/chbfps"
+      action="/api/signUp"
       method="post"
       noValidate
       onSubmit={handleSubmit(nativeSubmit)}

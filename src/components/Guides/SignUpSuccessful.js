@@ -13,7 +13,7 @@ export default () => (
   <Page title="Thanks for signing up">
     <main>
       <GuideIntro>
-        <h1 className="larger">Thanks for signing up!</h1>
+        <h1 className="display">Thanks for signing up!</h1>
 
         <p>
           You are awesome! I'm very excited that you signed up. You'll receive
