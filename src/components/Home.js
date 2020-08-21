@@ -38,7 +38,7 @@ export default ({ archiveUrl, thoughts }) => (
           <Link href="/guides/software-development">
             <a>team guide to software development</a>
           </Link>
-          . New content is added every week on everything from how to set teams
+          . New content is added regularly on everything from how to set teams
           up successfully to tips and techniques teams can adopt. You can sign
           up for updates by email too.
         </p>

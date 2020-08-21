@@ -48,8 +48,9 @@ export default () => (
         </p>
 
         <p>
-          The guide is a work in progress, with new content released weekly. You
-          can sign up for updates by email below. Enjoy and good luck out there!
+          The guide is a work in progress, with new content released regularly.
+          You can sign up for updates by email below. Enjoy and good luck out
+          there!
           <br />
           <br />
           Luke
@@ -142,9 +143,8 @@ export default () => (
 
         <p>
           I'd love to keep you updated on my progress as I add new content to
-          this guide. I'm writing an article a week at the moment, I promise not
-          to email you more than once per week and will only contact you
-          regarding team guide updates.
+          this guide. I promise not to email you more than once per week and
+          will only contact you regarding team guide updates.
         </p>
       </Prose>
 
