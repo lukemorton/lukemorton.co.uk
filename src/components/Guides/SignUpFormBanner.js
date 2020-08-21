@@ -11,7 +11,7 @@ export default () => (
     </div>
 
     <div className="w-60 stretch">
-      <p className="h3">Sign up for new content weekly</p>
+      <p className="h3">Sign up for new content updates</p>
 
       <SignUpForm />
     </div>
