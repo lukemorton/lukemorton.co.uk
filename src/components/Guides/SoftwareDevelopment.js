@@ -73,6 +73,7 @@ export default () => (
             >
               <a>What is a software development team?</a>
             </Link>,
+            <span>🚧 Roles in a software development team</span>,
             <Link
               href="/articles/[slug]"
               as="/articles/every-team-helps-to-develop-software"
