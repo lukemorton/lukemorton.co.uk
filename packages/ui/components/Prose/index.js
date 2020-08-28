@@ -54,13 +54,20 @@ export default ({ noIntro, children }) => (
         }
 
         .prose :global(blockquote) {
-          padding: 0 0 0 1em;
+          border: 3px dotted #eee;
+          padding: 1em 2em;
           margin: 0 0 1.6em 0;
           font-style: italic;
         }
 
         .prose :global(blockquote) :global(p) {
-          font-size: 1.2em;
+          font-size: 1.1em;
+          margin: 0 0 1em 0;
+        }
+
+        .prose :global(blockquote) :global(p:first-of-type) {
+          font-size: 1.1em;
+          margin: 1em 0;
         }
 
         .prose :global(blockquote) :global(p) :global(cite) {
