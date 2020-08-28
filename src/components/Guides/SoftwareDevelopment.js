@@ -98,6 +98,7 @@ export default () => (
               <a>Defining your ways of working</a>
             </Link>,
             <span>🚧 Problem statements and hypotheses</span>,
+            <span>🚧 Empowering teams with MOKRs</span>,
           ]}
         />
 
