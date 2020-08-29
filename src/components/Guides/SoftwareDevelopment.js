@@ -59,12 +59,7 @@ export default () => (
 
       <GuidePartList>
         <GuidePartListItem
-          title={
-            <h2>
-              <TypeSpan largeFontSize="1.535em">The software</TypeSpan>{' '}
-              <TypeSpan largeFontSize="1.08em">development team</TypeSpan>
-            </h2>
-          }
+          title={<h2>The team</h2>}
           description="Learn about software development teams, from what good looks like and how to set one up, to how they interact with their organisations."
           links={[
             <Link
@@ -73,25 +68,22 @@ export default () => (
             >
               <a>What is a software development team?</a>
             </Link>,
-            <span>🚧 Roles in a software development team</span>,
+            // <span>🚧 Roles in a software development team</span>,
             <Link
               href="/articles/[slug]"
               as="/articles/every-team-helps-to-develop-software"
             >
               <a>Every team helps to develop software</a>
             </Link>,
+            // <span>🚧 Building autonomous teams</span>,
           ]}
         />
 
         <GuidePartListItem
-          title={
-            <h2 style={{ paddingTop: '.125em' }}>
-              Ways of working to{' '}
-              <TypeSpan largeFontSize="1.535em">deliver value</TypeSpan>
-            </h2>
-          }
+          title={<h2>Ways of working</h2>}
           description="Learn how software development teams work effectively together. From agile delivery practices, to focusing on problems rather than solutions."
           links={[
+            <span>🚧 What are agile ways of working?</span>,
             <Link
               href="/"
               href="/articles/[slug]"
@@ -99,37 +91,26 @@ export default () => (
             >
               <a>Defining your ways of working</a>
             </Link>,
-            <span>🚧 Problem statements and hypotheses</span>,
-            <span>🚧 Empowering teams with MOKRs</span>,
+            <span>🚧 Agile vs Scrum vs Kanban</span>,
           ]}
         />
 
         <GuidePartListItem
-          title={
-            <h2 style={{ paddingTop: '.125em' }}>
-              <TypeSpan largeFontSize="1.08em">Lean software</TypeSpan>
-              {` `}
-              <TypeSpan largeFontSize="1.45em">delivery</TypeSpan>
-            </h2>
-          }
+          title={<h2>Continuous delivery</h2>}
           description="Learn how to use lean software delivery practices to reduce risk of change, reduce wasted effort and increase your team's learning opportunities."
           links={[
-            <span>🚧 Delivering in slices</span>,
+            <span>🚧 What is continuous delivery?</span>,
+            <span>🚧 Vertical slices</span>,
             <span>🚧 Decoupling deploy from release</span>,
           ]}
         />
 
         <GuidePartListItem
-          title={
-            <h2>
-              <TypeSpan largeFontSize="1.535em">Architecting</TypeSpan>
-              {` `}
-              <TypeSpan largeFontSize="1.08em">for change</TypeSpan>
-            </h2>
-          }
+          title={<h2>Architecture</h2>}
           description="Learn how to architect digital services and platforms that enable teams to deliver value at a rapid pace in a sustainable way."
           links={[
-            <span>🚧 How teams architect for change</span>,
+            <span>🚧 What is architecture?</span>,
+            <span>🚧 Agile architecture</span>,
             <>
               Topic:{' '}
               <Link href="/topics/[slug]" as="/topics/clean-architecture">
