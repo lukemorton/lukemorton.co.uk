@@ -20,7 +20,7 @@ Three factors need to be considered when developing software: value, usability a
 
 <p><img src="/media/working-software.png" alt="Venn diagram of valuable, usable and feasible" width="3000" height="2000" /></p>
 
-A successful team will weigh up each of these factors and make tradeoffs where necessary when deciding what to build, when to build and how to build. Failing to balance these factors can have undesired consequences:
+A successful team will weigh up each of these factors and make tradeoffs where necessary when deciding what to build, when to build and [how to build](/articles/what-is-architecture). Failing to balance these factors can have undesired consequences:
 
 - If what you develop is valuable and usable but not feasible you'll never actually release any software
 - If what you build is usable and feasible but not valuable to your organisation, then you won't be able to claim any return on your investment
