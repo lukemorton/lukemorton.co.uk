@@ -100,7 +100,13 @@ export default () => (
           description="Learn how to use lean software delivery practices to reduce risk of change, reduce wasted effort and increase your team's learning opportunities."
           links={[
             <span>🚧 What is continuous delivery?</span>,
-            <span>🚧 Vertical slices</span>,
+            <Link
+              href="/"
+              href="/articles/[slug]"
+              as="/articles/vertical-slices"
+            >
+              <a>Vertical slices</a>
+            </Link>,
             <span>🚧 Decoupling deploy from release</span>,
           ]}
         />
